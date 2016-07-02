@@ -1,0 +1,164 @@
+<div class="tab-head">
+  <p class="pull-left">BODY PROGRESS <!--a href="" class="icon-help"></a--></p>
+
+  <p class="pull-right date-change">
+    <input  id="date" name="date" value="Select Date" disabled />
+  </p>
+</div>
+<form id="progress-form" data-role="progress-form">
+  <div class="tab-body">
+
+      <!--picturenew -->
+    <div id="picContainer" class="picturenew pull-left">
+      <div data-role="progress-photo-container" class="hide">
+        <img data-role="preview-image">
+      </div>
+      <div class="empty_right" data-role="progress-empty-photo">
+        <div class="circle"><div class="camara"></div></div>
+        <h3 class="text-center">Not Photo yet?</h3>
+        <p class="text-center">Take a moment, take a photo of yourself. Come back later and compare your progress.</p>
+        <!-- <button class="btn btn-primary">upload photo</button> -->
+      </div>
+      <span data-role="upload-photo">
+        <!-- backboen crop view -->
+      </span>
+    </div> <!-- /picture -->
+
+    <div class="details_bodynew pull-left">
+      <ul class="list-unstyled">
+        <li>
+          Chest
+          <div class="input-group pull-right">
+
+              <input class="form-control mask-number" type="text" name="_chest" placeholder="0.00" value="" />
+              <span class="input-group-addon"><%=Helpers.getUnitsPerMeassurement("longitud", app.me.get("widgets").meassure)%></span>
+          </div>
+        </li>
+        <li>
+          Upper Arm Right
+          <div class="input-group pull-right">
+              <input class="form-control mask-number" type="text" name="_upperArmRight" placeholder="0.00" value="" />
+              <span class="input-group-addon"><%=Helpers.getUnitsPerMeassurement("longitud", app.me.get("widgets").meassure)%></span>
+          </div>
+        </li>
+        <li>
+          Hips
+          <div class="input-group pull-right">
+              <input class="form-control mask-number" type="text" name="_hips" placeholder="0.00" value="" />
+              <span class="input-group-addon"><%=Helpers.getUnitsPerMeassurement("longitud", app.me.get("widgets").meassure)%></span>
+          </div>
+        </li>
+        <li>
+          Forearm Right
+          <div class="input-group pull-right">
+              <input class="form-control mask-number" type="text" name="_forearmRight" placeholder="0.00" value="" />
+              <span class="input-group-addon"><%=Helpers.getUnitsPerMeassurement("longitud", app.me.get("widgets").meassure)%></span>
+          </div>
+        </li>
+        <li>
+          Thigh Right
+          <div class="input-group pull-right">
+              <input class="form-control mask-number" type="text" name="_thighRight" placeholder="0.00" value="" />
+              <span class="input-group-addon"><%=Helpers.getUnitsPerMeassurement("longitud", app.me.get("widgets").meassure)%></span>
+          </div>
+        </li>
+        <li>
+          Calf Right
+          <div class="input-group pull-right">
+              <input class="form-control mask-number" type="text" name="_calfRight" placeholder="0.00" value="" />
+              <span class="input-group-addon"><%=Helpers.getUnitsPerMeassurement("longitud", app.me.get("widgets").meassure)%></span>
+          </div>
+        </li>
+        <li>
+          Neck
+          <div class="input-group pull-right">
+              <input class="form-control mask-number" type="text" name="_neck" placeholder="0.00" value="" />
+              <span class="input-group-addon"><%=Helpers.getUnitsPerMeassurement("longitud", app.me.get("widgets").meassure)%></span>
+          </div>
+        </li>
+        <li>
+          Upper Arm Left
+          <div class="input-group pull-right">
+              <input class="form-control mask-number" type="text" name="_upperArmLeft" placeholder="0.00" value="" />
+              <span class="input-group-addon"><%=Helpers.getUnitsPerMeassurement("longitud", app.me.get("widgets").meassure)%></span>
+          </div>
+        </li>
+        <li>
+          Waist
+          <div class="input-group pull-right">
+              <input class="form-control mask-number" type="text" name="_waist" placeholder="0.00" value="" />
+              <span class="input-group-addon"><%=Helpers.getUnitsPerMeassurement("longitud", app.me.get("widgets").meassure)%></span>
+          </div>
+        </li>
+        <li>
+          Forearm Left
+          <div class="input-group pull-right">
+              <input class="form-control mask-number" type="text" name="_forearmLeft" placeholder="0.00" value="" />
+              <span class="input-group-addon"><%=Helpers.getUnitsPerMeassurement("longitud", app.me.get("widgets").meassure)%></span>
+          </div>
+        </li>
+        <li>
+          Thigh Left
+          <div class="input-group pull-right">
+              <input class="form-control mask-number" type="text" name="_thighLeft" placeholder="0.00" value="" />
+              <span class="input-group-addon"><%=Helpers.getUnitsPerMeassurement("longitud", app.me.get("widgets").meassure)%></span>
+          </div>
+        </li>
+        <li>
+          Calf Left
+          <div class="input-group pull-right">
+              <input class="form-control mask-number" type="text" name="_calfLeft" placeholder="0.00" value="" />
+              <span class="input-group-addon"><%=Helpers.getUnitsPerMeassurement("longitud", app.me.get("widgets").meassure)%></span>
+          </div>
+        </li>
+      </ul>
+    </div><!-- /details_body -->
+    <div class="observationsnew pull-right">
+      <div class="form">
+        <div class="form-group">
+          <label for="title">TITLE</label>
+          <input type="text" class="form-control" id="title" name="title" value=""/>
+          <p id="title_error" class="error"></p>
+        </div>
+
+        <div class="form-group">
+          <label for="observations">OBSERVATIONS</label>
+          <textarea class="form-control" id="observations" name="observations"></textarea>
+          <p id="observations_error" class="error"></p>
+        </div>
+
+
+      </div>
+    </div><!-- /observations -->
+
+  </div>
+  <div class="tab-aside2">
+    <ul class="list-unstyled">
+      <li>
+        HEIGHT
+        <div class="input-group pull-right">
+            <input class="form-control" disabled="disabled" type="text" name="height" placeholder="0.00" value="<%= Helpers.getValuesPerMeassurement(app.me.get('height').value, 'height', app.me.get('widgets').meassure) %>" />
+            <span class="input-group-addon"><%=Helpers.getUnitsPerMeassurement("longitud", app.me.get("widgets").meassure)%></span>
+        </div>
+      </li>
+      <li>
+        WEIGHT
+        <div class="input-group pull-right">
+            <input class="form-control mask-number" type="text" name="_weight" placeholder="0.00" value="" />
+            <span class="input-group-addon"><%=Helpers.getUnitsPerMeassurement("mass", app.me.get("widgets").meassure)%></span>
+        </div>
+      </li>
+      <li>
+        BMI
+        <p class="pull-right cal" id="bmi-calculation"> ...Calculating</p>
+      </li>
+    </ul>
+  </div>
+  <div class="tab-foot">
+    <p class="pull-left">We recommend you to track your progrees within the next 7 days.</p>
+    <button class="btn-blue-open mrgtop-16 pull-right submit">submit</button>
+    <% if (show_cancel) { %>
+      <button class="btn btn-default pull-right cancel">cancel</button>
+    <% } %>
+  </div>
+</form>

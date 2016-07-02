@@ -1,0 +1,43 @@
+
+<div id="page-progress" class="main_section">
+	<h1 class="main_section__title">my progress</h1>
+	<div class="main_info">
+		<ul class="nav nav-tabs" id="myprogresstab">
+			<li class="active"><a href="#body" data-toggle="tab" data-role="body">Body Tracker</a></li>
+			<li><a href="#photo" data-toggle="tab" data-role="photo">Photo Comparison</a></li>
+		</ul>
+		<div class="tab-content">
+			<div class="tab-pane fade in active" id="body">
+				<div id="first-view">
+		          	<div data-role="last-item-container">
+		            <!-- NOTE: will be overwrited if there is a progress  how to-->
+		            
+		          	</div>
+
+		          	<div class="tab-foot" data-role="footer">
+		            	<p class="pull-left">We recommend you to track your progrees within the next 7 days.</p>
+		            	<button type="button" id="newprogress" class="btn-blue-open mrgtop-16 pull-right">new entry</button>
+		          	</div>
+        		</div>
+
+        		<!-- new or edit -->
+				<div class="neworedit" data-role="new-item">
+					<!-- backbone view new-item -->
+				</div><!-- /new or edit -->
+			</div>
+			<%
+				var latestPhotos = collection.getLatestsTwoImages();
+				var actualImage = latestPhotos[0];
+				var oldImage = latestPhotos[1];
+			 %>
+			<div class="tab-pane fade" id="photo" data-role="compare-tab">
+				<!-- Backbone progress compare view  -->
+			</div>
+		</div>
+	</div><!-- /main info -->
+
+  	<div classs="timeline" data-role="timeline">
+    	<!-- Backbone timeline view -->
+  	</div>
+
+</div><!-- /main section -->

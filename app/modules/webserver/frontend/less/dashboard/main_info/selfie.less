@@ -1,0 +1,96 @@
+@import "../../variables";
+@import "../../mixins";
+
+  	.selfie, .noselfie {
+        background: @bg-small-user;         
+        border-top-left-radius:5px;          
+        border-bottom-left-radius:5px; 
+        min-height: 418px;
+        position: relative;
+
+        img {
+            width: 313px;
+            height: 418px;
+            border-top-left-radius:5px;          
+            border-bottom-left-radius:5px; 
+        }
+
+        .custom_file {
+            display: none;
+        }
+
+    }
+
+    .selfie {
+
+        .jquery-filestyle {
+
+            label {
+
+                span {
+                    display: none
+                }
+
+            }
+
+        }
+
+    }
+
+    .noselfie {
+      	background: @bg-box-welcome;
+
+      	.cam {
+	        padding-top: 65px;
+
+	        .circle {
+	          	width: 100px;
+	          	height: 100px;
+	          	margin: 0 auto;
+	          	.border-radius(50px);
+	          	background: @bg-body url("../img/camara_gris.png") center no-repeat;
+	        }
+      	}
+
+      	h3 {
+        	.open-light(24px);
+        	margin-bottom: 20px;
+      	}
+
+      	p {
+        	font-size: 13px;
+        	font-weight: 400;
+        	padding: 0 30px;
+        	margin-bottom: 40px;
+      	}
+
+      	.jquery-filestyle {
+	        top: inherit;
+	        bottom: 70px;
+	        right: 0;
+	        left: 0;
+
+        	label {
+                .border-radius(4px);
+	          	background: @blue;
+	          	height: 40px;
+	          	width: 140px;
+                .button-transition();
+
+                span {
+                    color: @white;
+                    .open-bold(11px);
+                    line-height: 31px;
+                    text-transform: uppercase;
+                }
+
+                &:hover {
+                    background: @lightblue;
+                    .button-transition();
+                }
+
+        	}
+
+      	}
+
+    }

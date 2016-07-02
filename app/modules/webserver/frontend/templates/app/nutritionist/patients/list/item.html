@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col-md-1 avatar">
+    <img src="<%= model.get('patient').avatar_src %>" alt="<%= model.get('patient').full_name %>"><span class="badge"></span>
+  </div>
+  <div class="col-md-3 username">
+    <h4><%= model.get("patient").full_name %></h4>
+    <p><%= model.get("patient").email %></p>
+  </div>
+  <div class="col-md-3 infouser">
+    <ul class="list-unstyled list-inline">
+      <li>Age: <span><br><%= new moment().diff(model.get('patient').dob, 'years') %> yrs</span></li>
+      <li>Weight: <span><br><% if (model.get('weight') ) { %> <%= Helpers.getValuesPerMeassurement(model.get('weight').value, "mass", model.get("patient").widgets.meassure)%> <%=Helpers.getUnitsPerMeassurement("mass", model.get("patient").widgets.meassure)%><% } %></span></li>
+      <li>Height: <span><br><% if (model.get('height') ) { %><%= Helpers.getValuesPerMeassurement(model.get('height').value, "height", model.get("patient").widgets.meassure)%><%=Helpers.getUnitsPerMeassurement("height", model.get("patient").widgets.meassure)%><% } %></span></li>
+    </ul>
+  </div>
+  <div class="col-md-3 status">
+    <p>Patient closed this consultation on:</p>
+    <h5 class="closed"><%= Helpers.timeToNow(model.get('createdAt')) %></h5>
+  </div>
+  <div class="col-md-2 options">
+    <a href="/historial/<%= model.get('patient')._id %>" class="route" data-role="route">
+      <button type="button" class="pull-left btn btn-default"></button>
+    </a>
+    <a href="/appointment/<%= model.id %>" class="route" data-role="route">
+      <button type="button" class="pull-right btn btn-primary">Go!</button>
+    </a>
+  </div>
+</div>

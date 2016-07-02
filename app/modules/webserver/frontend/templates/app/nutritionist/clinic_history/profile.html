@@ -1,0 +1,57 @@
+  <h4 class="text-left">historia clinica</h4>
+  <div class="box-history">
+    <div class="row box_top">
+      <div class="col-md-7">
+        <div class="row">
+          <div class="col-md-3 avatar"><img src="<%= model.get('avatar_src') %>" alt="<%= model.get('full_name') %>"></div>
+          <div class="col-md-9 info_user text-left">
+            <h4><%= model.get('full_name') %></h4>
+            <p><%= model.get('email') %></p>
+            <ul class="list-unstyled list-inline">
+              <li>Age: <%= Helpers.age(model.get('dob')) %> yrs</li>
+              <li>Weight: <% if (model.get('weight') ) { %><%= model.get('weight').value %><%= model.get('weight').unit %><% } %></li>
+              <li>Height: <% if (model.get('height') ) { %><%= model.get('height').value %><%= model.get('height').unit %><% } %></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-6 goals">
+                <div id="weater"><span class="<%= Helpers.getWeatherIcon(patientPreferences.get('weather'))%>"></span>
+                  <p><%= Helpers.getWeatherMessage(patientPreferences.get("weather"))%></p>
+                </div>
+              </div>
+              <div class="col-md-6 goals">
+                <div id="exercesy"><span class="<%= Helpers.getWorkoutIcon(patientPreferences.get('workout'))%>"></span>
+                  <p>exercesy activity</p>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 goals">
+                <div id="sedentary"><span class="<%= Helpers.getActivityIcon(patientPreferences.get('activity'))%>"></span>
+                  <p><%= Helpers.getActivityMessage(patientPreferences.get("activity"))%></p>
+                </div>
+              </div>
+              <div class="col-md-6 goals">
+                <div id="weight"><span class="<%= Helpers.getGoalIcon(patientPreferences.get('maintain'))%>"></span>
+                  <p><%= Helpers.getGoalMessage(patientPreferences.get("maintain"))%></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="objetivo">
+          <h4 class="text-left">objetivo del paciente</h4>
+          <p class="text-left"><%= model.get('goals').text %></p>
+        </div>
+      </div>
+    </div>
+  </div>

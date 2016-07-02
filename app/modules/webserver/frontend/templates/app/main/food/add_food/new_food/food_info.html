@@ -1,0 +1,214 @@
+<div class="title_sidebar">
+	<div class="back">
+		<a id="backButtonInfo" href="javascript:void(0);" class="aux">BACK</a>
+	</div>
+	<h4 class="title_sidebar-center">MEAL PLANNING MADE EASY</h4>
+</div>
+
+<div class="box_search">
+	<div class="box text-left">
+		<div class="form-inline row_one">
+			<div class="form-group">
+				<label for="name">Food Brand / Restaurant</label>
+				<input type="text" class="form-control" id="name" name="name" />
+			</div>
+			<p id="name_error" class="error"></p>
+			<div class="form-group">
+				<label for="description">Food Description</label>
+				<input type="text" class="form-control" id="description" name="description" />
+			</div>
+			<p id="description_error" class="error"></p>
+		</div>
+
+		<div class="form-inline row_two">
+			<div class="form-group">
+				<label for="size">Servicing size</label>
+				<input type="text" class="form-control big" id="size" name="serving_type"/>
+			</div>
+			<p id="size_error" class="error"></p>
+			<div class="form-group">
+				<label for="container">Serving per Container</label>
+				<input type="text" class="form-control small" id="container" name="serving_per_container" onkeypress="return isNumberKey(event)"/>
+			</div>
+			<p id="container_error" class="error"></p>
+		</div>
+		<div class="form-inline row_three">
+			<div class="form-group small_box">
+				<label for="calories">Calories</label>
+				<label class="pull-right impar">&nbsp;&nbsp;</label>
+				<input type="text" class="form-control pull-right" id="calories" name="calories" onkeypress="return isNumberKey(event)"/>
+			    <p id="calories_error" class="error"></p>
+			</div>
+
+
+			<div class="form-group">
+				<label for="sodium" class="par">Sodium</label>
+				<label class="pull-right">mg</label>
+				<input type="text" class="form-control pull-right" id="sodium" name="sodium" onkeypress="return isNumberKey(event)"/>
+				<p id="sodium_error" class="error"></p>
+			</div>
+
+
+			<div class="form-group small_box">
+				<label for="total_fat">Total Fat</label>
+				<label class="pull-right impar">g</label>
+				<input type="text" class="form-control pull-right" id="fat" name="fat" onkeypress="return isNumberKey(event)"/>
+				<p id="total_fat_error" class="error"></p>
+			</div>
+
+
+			<div class="form-group">
+				<label for="potassium" class="par">Potassium</label>
+				<label class="pull-right">mg</label>
+				<input type="text" class="form-control pull-right" id="potassium" name="potassium" onkeypress="return isNumberKey(event)"/>
+				<p id="potassium_error" class="error"></p>
+			</div>
+
+
+			<div class="form-group small_box">
+				<label for="saturated"><span>Saturated</span></label>
+				<label class="pull-right impar">g</label>
+				<input type="text" class="form-control pull-right" id="saturated" name="satured" onkeypress="return isNumberKey(event)"/>
+				<p id="saturated_error" class="error"></p>
+			</div>
+
+
+
+			<div class="form-group">
+				<label for="total_carbs" class="par">Total Carbs</label>
+				<label class="pull-right two_letter">g</label>
+				<input type="text" class="form-control pull-right" id="carbs" name="carbs" onkeypress="return isNumberKey(event)"/>
+				<p id="total_carbs_error" class="error"></p>
+			</div>
+
+
+			<div class="form-group small_box">
+				<label for="polyunsaturated"><span>Polyunsaturated</span></label>
+				<label class="pull-right impar">g</label>
+				<input type="text" class="form-control pull-right" id="polyunsaturated" name="polyunsaturated" onkeypress="return isNumberKey(event)"/>
+				<p id="polyunsaturated_error" class="error"></p>
+			</div>
+
+
+			<div class="form-group">
+				<label for="dietary_fiber" class="par"><span>Dietary Fiber</span></label>
+				<label class="pull-right two_letter">g</label>
+				<input type="text" class="form-control pull-right" id="dietary_fiber" name="dietary_fiber" onkeypress="return isNumberKey(event)"/>
+				<p id="dietary_fiber_error" class="error"></p>
+			</div>
+
+
+			<div class="form-group small_box">
+				<label for="monounsaturated"><span>Monounsaturated</span></label>
+				<label class="pull-right impar">g</label>
+				<input type="text" class="form-control pull-right" id="monounsaturated" name="monounsaturated"onkeypress="return isNumberKey(event)"/>
+				<p id="monounsaturated_error" class="error"></p>
+			</div>
+
+
+			<div class="form-group">
+				<label for="sugars" class="par"><span>Sugars</span></label>
+				<label class="pull-right two_letter">g</label>
+				<input type="text" class="form-control pull-right" id="sugars" name="sugars" onkeypress="return isNumberKey(event)"/>
+				<p id="sugars_error" class="error"></p>
+			</div>
+
+
+			<div class="form-group small_box">
+				<label for="trans"><span>Trans</span></label>
+				<label class="pull-right impar">g</label>
+				<input type="text" class="form-control pull-right" id="trans" name="trans" onkeypress="return isNumberKey(event)"/>
+				<p id="trans_error" class="error"></p>
+			</div>
+
+
+
+			<div class="form-group">
+				<label for="protein" class="par">Protein</label>
+				<label class="pull-right two_letter">g</label>
+				<input type="text" class="form-control pull-right" id="protein" name="protein" onkeypress="return isNumberKey(event)"/>
+				<p id="protein_error" class="error"></p>
+			</div>
+
+
+
+			<div class="form-group last">
+				<label for="cholesterol">Cholesterol</label>
+				<label class="pull-right impar">mg</label>
+				<input type="text" class="form-control pull-right" id="cholesterol" name="cholesterol" onkeypress="return isNumberKey(event)"/>
+				<p id="cholesterol_error" class="error"></p>
+			</div>
+
+
+
+		</div>
+
+		<div class="form-inline row_three">
+			<div class="form-group small_box">
+				<label for="vitamin_a">Vitamin A</label>
+				<label class="pull-right one_simbol_left">%</label>
+				<input type="text" class="form-control pull-right" id="vitamin_a" name="vitamin_a" onkeypress="return isNumberKey(event)"/>
+				<p id="vitamin_a_error" class="error"></p>
+			</div>
+
+
+
+			<div class="form-group">
+				<label for="calcium" class="par">Calcium</label>
+				<label class="pull-right one_simbol">%</label>
+				<input type="text" class="form-control pull-right" id="calcium" name="calcium" onkeypress="return isNumberKey(event)"/>
+				<p id="calcium_error" class="error"></p>
+			</div>
+
+
+			<div class="form-group small_box">
+				<label for="vitamin_c">Vitamin C</label>
+				<label class="pull-right one_simbol_left">%</label>
+				<input type="text" class="form-control pull-right" id="vitamin_c" name="vitamin_c" onkeypress="return isNumberKey(event)"/>
+				<p id="vitamin_c_error" class="error"></p>
+			</div>
+
+
+			<div class="form-group">
+				<label for="iron" class="par">Iron</label>
+				<label class="pull-right one_simbol">%</label>
+				<input type="text" class="form-control pull-right" id="iron" name="iron" onkeypress="return isNumberKey(event)"/>
+				<p id="iron_error" class="error"></p>
+			</div>
+
+
+		</div>
+
+		<div class="form-group last">
+
+			<label>WOULD YOU LIKE TO ADD THIS FOOD TO YOUR FOOD LOG?</label>
+
+			<div class="custom_radio">
+				<input type="radio" id="addToFoodLog" value="yes" name="to_food_log" />
+				<p class="help">Yes</p>
+
+				<input class="form-control" name="num" type="text" />
+
+				<p class="help">Servings to</p>
+
+				<div class="bfh-selectbox medium" data-name="meal_type" data-value="">
+					<div data-value="breakfast">Breakfast</div>
+					<div data-value="early_snack">Early Snack</div>
+					<div data-value="lunch">Lunch</div>
+					<div data-value="afternoon_snack">Afternoon Snack</div>
+					<div data-value="dinner">Dinner</div>
+					<div data-value="late_snack">Late Snack</div>
+				</div>
+			</div>
+
+			<div class="custom_radio last">
+				<input type="radio" value="no" name="to_food_log" checked/>
+				<p class="help">No, skip this for the time being</p>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="addmore"> </div>
+
+</div>

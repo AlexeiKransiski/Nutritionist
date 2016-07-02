@@ -1,0 +1,77 @@
+
+<div class="exercise-cart" data-role="exercise-cart">      
+    <div class="title_sidebar">
+        <h4 id="listName" class="title_sidebar-center">new list</h4>
+
+        <button style="display:none;" type="submit" class="saveList btn-green-open-small pull-right actions hide" data-role="save-list">save list</button>
+        <button type="click" class="newList btn-green-open-small pull-right actions hide" data-role="new-list" style="display:none;">new list</button>
+    </div>
+    <div class="result_list">
+        <div class="empty cart">
+          <p>NO EXERCISES ADDED YET</p>
+          <p>Please Select Exercises From Search Panel</p>
+        </div>
+        <ul class="list-unstyled cart hide" data-role="cart-items">
+
+        </ul>
+    </div>
+    <div class="addmore actions hide">
+        <button style="display:none;"  type="button" class="saveList btn-green-open-small mrg-btn-down pull-right" data-role="save-list">save list</button>
+        <button type="click" class="newList btn-green-open-small mrg-btn-down pull-right actions hide" data-role="new-list" style="display:none;">new list</button>
+    </div>
+</div> 
+
+<!-- recently added --> 
+<div class="newexer-list added-list">
+    <div class="title_sidebar">
+        <h4 class="title_sidebar-center">before doing exercises...</h4>                                             
+    </div>  
+    <div class="result_list">
+        <ul class="list-unstyled tips">
+            <li>
+                Check all your exercise equipments if those are functional. Playing your favorite music during exercise's keeps you motivated! 
+            </li>
+            <li>
+                Whatever your goals and medical condition, approach any new exercise regimen with caution. 
+            </li>
+            <li>
+                After the warm up you should stretch your muscles and hold it for about 15 seconds. When the muscles are warmed up you are less likely to get injured.
+            </li>
+            <li>
+                Do some less strenuous exercises to cool your body down after the more intense part of the workout.  
+            </li>
+        </ul>
+    </div>
+    <div class="addmore">
+        <p></p>                                            
+    </div>
+</div>
+
+<!-- save list -->
+<div class="save-list" data-role="create-list">
+    <div class="title_sidebar">
+        <h4 class="title_sidebar-center">exercises list</h4>
+    </div>
+    <div class="result_list">
+        <form role="form" data-role="new-list-form">
+            <div class="form-group">
+                <label for="name" class="lb-open">List name</label>
+                <input type="text" class="form-control" id="name" required/>
+            </div>
+            <div class="form-group">
+                <label for="description" class="lb-open">Description</label>
+                <textarea class="form-control" id="description"></textarea>
+            </div>
+            <button type="submit" class="btn-green-open-small mrg-no pull-right save" data-role="send-list">save</button>
+            <button type="reset" class="btn btn-default pull-right cancel" data-role="cancel-send">cancel</button>
+        </form>
+    </div>
+    <div class="addmore"></div>
+</div><!-- save list -->
+
+<!-- food info list -->
+<div class="foodinfo-list" data-role="food-info">
+  <!-- backbone view foo_info -->
+</div><!-- food-info-list -->
+
+

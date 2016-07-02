@@ -1,0 +1,500 @@
+{% extends "base.html" %}
+
+  {%block styles%}
+  <link rel="stylesheet" type="text/css" href="/css/login.css">
+  {%endblock%}
+
+
+{%block scripts%}
+{% parent %}
+  <script type="text/javascript" src="/js/signup.js"></script>
+{%endblock%}
+
+{% block layout %}
+
+<script>
+
+  window.appId = "{{appId}}";
+
+  function getUrlParameter(sParam)
+  {
+      var sPageURL = window.location.search.substring(1);
+      var sURLVariables = sPageURL.split('&');
+      for (var i = 0; i < sURLVariables.length; i++) 
+      {
+          var sParameterName = sURLVariables[i].split('=');
+          if (sParameterName[0] == sParam) 
+          {
+              return sParameterName[1];
+          }
+      }
+  }  
+
+  
+  $( document ).ready(function() {
+      if(getUrlParameter('warn') !== '' && getUrlParameter('warn') !== undefined){
+        $("#signupFaceboookButton").hide();
+        
+
+        if(getUrlParameter('error') !== '' && getUrlParameter('error') !== undefined){
+          $("#messageContainer").hide();
+          $("#messageContainerError").show();
+          $("#messageContainerError").append(unescape(getUrlParameter('warn')));
+        }else{
+          $("#messageContainer").show();
+          $("#messageContainerError").hide();
+          $("#messageContainer").append('<b>You are almost set!</b>&nbsp;' + unescape(getUrlParameter('warn')));
+          var userName="";
+          if(getUrlParameter('name') !== '' && getUrlParameter('name') !== undefined){
+            userName=getUrlParameter('name');
+          }
+          if(getUrlParameter('lastName') !== '' && getUrlParameter('lastName') !== undefined){
+            userName = userName + getUrlParameter('lastName');
+            $("#username").val(unescape(userName.trim()));
+          }
+        }
+
+ 
+
+      }
+
+
+      var validation = $("#signup-form").validate({
+          rules: {
+            email: {
+              required: true,
+              email: true
+            },
+            password: {
+              required: true
+            },
+            reppassword: {
+              required: true
+            }
+          },
+          messages: {
+            email: "Please enter a valid email address",
+            password: "Please enter your password",
+            reppassword: "Please enter your password",
+          }
+      });
+
+
+      $("#signupBtn").click(function(event){
+
+          if($("#signup-form").valid()){
+            console.log("Es valido")
+                if(!$("#minimal-checkbox-7")[0].checked){
+                      $("#messageContainerError").empty();
+                      $("#messageContainerError").show();
+                      $("#messageContainerError").append("Please accept the terms and conditions");
+                }else{
+
+                    if($("#password").val() != $("#reppassword").val()){
+                      $("#messageContainerError").empty();
+                      $("#messageContainerError").show();
+                      $("#messageContainerError").append("The passwords provided are different");
+                    }else{
+                      $.ajax({
+                        url:'/api/v1/users',
+                        type:'post',
+                        data:{
+                          first_name:$("#firstname").val(),
+                          last_name:$("#lastname").val(),
+                          password:$("#password").val(),
+                          email:$("#email").val()
+                        },
+                        success: function(data) {
+                          console.log(data);
+                          if(data.errors){
+                            var error="<ul>";
+                            if(data.errors.username){
+                                error = "<li>the username " + data.errors.username.value + " is already register in our system</li>";                        
+                            }
+                            if(data.errors.email){
+                              error = "<li>the email " + data.errors.email.value + " is already register in our system</li>";
+                            }
+                            error = error + "</ul>";
+                            $("#messageContainerError").empty();
+                            $("#messageContainerError").show();
+                            $("#messageContainerError").append(error);
+                          }else{
+
+                            $.ajax({
+                              url:'/api/v1/auth/local',
+                              type:'post',
+                              data:{
+                                email:$("#email").val(),
+                                password:$("#password").val()
+                              },
+                              success: function(data) {
+                                console.log(data);
+                                $.cookies.set('auth_token', data.token);
+                                $.cookies.set('user', data);
+                                return window.location.href = '/'; 
+                              }
+                            });
+                          }
+
+
+
+                        },
+                        error: function(xhr, error) {
+                          alert("Error to be handled");
+                        }
+                      });
+                    }
+                }
+          }
+
+
+
+      });
+
+
+  });
+
+  function statusChangeCallback2(response) {
+    console.log(response);
+    if (response.status === 'connected') {
+      //Check if user is register on the system.
+
+      $.ajax({
+          url: '/api/v1/auth/facebook/token',
+          type: 'post',
+          data: {
+            access_token:response.authResponse.accessToken,
+            id:response.authResponse.userID,
+            checkUser:true
+          },
+          dataType: 'json',
+          success: function(data) {
+            console.log(data)
+            $.cookies.set('auth_token', data.token);
+            data.facebook_token=data.facebook_token;
+            $.cookies.set('user', data);
+            console.log("success")
+            return window.location.href = '/';
+          },
+          error: function(xhr, error) {
+            console.log("error")
+            console.log(xhr)
+            console.log(error)
+            if(xhr.responseJSON.status == 404){
+              FB.api('/me', function(responseme) {
+                    console.log('Successful login for: ' + response.name);
+                    console.log(responseme);
+                    var userName = responseme.first_name;
+                    var lastName = responseme.last_name;
+                    var email = responseme.email;
+                    var gender = responseme.gender;
+                    var token = response.authResponse.accessToken;
+                    var url = '/signupinfo?name=' + userName + '&lastname=' + lastName + '&email=' + email + "&gender=" + gender + "&accesstoken=" + token;
+                    return window.location.href = url;
+                    //$("#username").val(unescape(userName.trim()));
+              });
+            }
+          }
+        });
+
+    } else if (response.status === 'not_authorized') {
+
+    } else {
+
+    }
+  }
+  // This is called with the results from from FB.getLoginStatus().
+  /*function statusChangeCallback(response) {
+    console.log(response);
+    if (response.status === 'connected') {
+      // Logged into your app and Facebook.
+      var ResponseFace = response;
+      $("#signupFaceboookButton").hide();
+          
+          FB.api('/me', function(response) {
+            console.log('Successful login for: ' + response.name);
+            console.log(response);
+            if(response.email == undefined || response.email == "undefined"){
+              $.ajax({
+                        url: '/api/v1/check-login',
+                        type: 'post',
+                        data: {
+                          email:response.name,
+                          password:"asdas",
+                          id:response.id
+                        },
+                        dataType: 'json',
+                        success: function(data) {
+                          
+                          console.log(data)
+                          if(data.user != false){
+                            $.cookies.set('auth_token', data.token);
+                            data.facebook_token=data.facebook_token;
+                            $.cookies.set('user', data);
+                            console.log("success")
+                            return window.location.href = '/';
+                          }else{
+                            return window.location.href = "/singupdata";
+                          }
+                        },
+                        error: function(xhr, error) {
+                          console.log("error")
+                          console.log(xhr)
+                          console.log(error)
+                          //console.log(xhr.responseJSON.message);
+                          //Get account data.
+
+
+                          
+                        }
+                      });
+            }else{
+              $.ajax({
+                url: '/api/v1/auth/facebook/token',
+                type: 'post',
+                data: {
+                  access_token:ResponseFace.authResponse.accessToken
+                },
+                dataType: 'json',
+                success: function(data) {
+                  console.log(data.token);
+                  console.log("user data");
+                  console.log(data)
+                  $.cookies.set('auth_token', data.token);
+                  data.facebook_token=ResponseFace.authResponse.accessToken;
+                  $.cookies.set('user', data);
+                  return window.location.href = '/';
+                },
+                error: function(xhr, error) {
+                  console.log(xhr.responseJSON.message);
+                  $("#signupFaceboookButton").hide();
+                  $("#messageContainer").show();
+                  $("#messageContainer").append(xhr.responseJSON.message);
+                  FB.api('/me', function(response) {
+                    console.log('Successful login for: ' + response.name);
+                    console.log(response);
+                    var userName = response.first_name + response.last_name;
+                    $("#username").val(unescape(userName.trim()));
+                  });
+                  //alert(xhr.responseJSON.message);
+                  //return window.location.href = '/signup';
+                }
+              });
+            }
+            
+          });
+
+    } else if (response.status === 'not_authorized') {
+
+    } else {
+
+    }
+  }*/
+
+  // This function is called when someone finishes with the Login
+  // Button.  See the onlogin handler attached to it in the sample
+  // code below.
+  function checkLoginState() {
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback2(response);
+    });
+  }
+
+  window.fbAsyncInit = function() {
+  FB.init({
+    appId      : window.appId,
+    cookie     : true,  // enable cookies to allow the server to access 
+    xfbml      : true,  // parse social plugins on this page
+    version    : 'v2.2' // use version 2.2
+  });
+
+  };
+
+  // Load the SDK asynchronously
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
+
+ 
+</script>
+
+  <header>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="title-web">
+            <h2>
+              <a href="#" title="Qalorie"><img src="/img/logo.png" alt"Qalorie" /></a>
+            </h2>
+          </div>
+
+          <div class="pull-right ">
+            <p>Alredy have an account?</p>
+            <a href="/login" class="btn btn-success">login</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section>
+
+    <div class="container-fluid">
+
+      <div class="row">
+
+        <div id="signup">
+
+          <h2>sign up</h2>
+          <h5>Lorem ipsum dolor sit amet,  eros sit amet iaculis sagittis, di, scelerisque.</h5>
+
+          <div id="signupContainer" class="signup">
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque pulvinar felis vel interdum accumsan:</p>
+
+            <div class="row">
+              <div class="col-md-12">
+                <div id="messageContainer" class="alert alert-error" style="display:none;">
+                </div>
+                <div id="messageContainerError" class="alert alert-error" style="display:none;">
+                </div>
+              </div>              
+            </div>
+
+            <a id='signupFaceboookButton' href="javascript:void(0);" title="" class="btn btn-primary">sign up with facebook</a>
+            <script>
+            (function ($) {
+            $(function () {
+              $("#signupFaceboookButton").on("click", function () {
+                    FB.login(function(response) {
+                      checkLoginState(); 
+                    }, {scope: 'email'});
+              });
+            });
+            })(jQuery);
+            </script>
+
+            <h6>OR</h6>
+
+            <form class="text-left" id="signup-form">
+              <!--
+              <div class="form-group">
+                <label for="username">FIRSTNAME</label>
+                <input type="text" id="firstname" class="form-control" name="firstname"/>
+              </div>
+              <div class="form-group">
+                <label for="username">LASTNAME</label>
+                <input type="text" id="lastname" class="form-control" name="lastname" />
+<<<<<<< HEAD
+              </div-->
+              <!--div class="form-group">
+=======
+              </div>
+              <div class="form-group">
+>>>>>>> exercises_yop
+                <label for="username">USERNAME</label>
+                <input type="text" id="username" class="form-control" name="username" />
+              </div-->
+              <div class="form-group">
+                <label for="email">EMAIL</label>
+                <input type="text" id="email" class="form-control" name="email" />
+              </div>
+              <div class="form-group">
+                <label for="password">PASSWORD</label>
+                <input type="password" id="password" class="form-control" name="password" />
+              </div>
+              <div class="form-group">
+                <label for="reppassword">REPEAT PASSWORD</label>
+                <input type="password" id="reppassword" class="form-control last" name="reppassword" />
+              </div>
+              <div class="form-group terms">
+                <input tabindex="5" type="checkbox" id="minimal-checkbox-7" name="terms">
+                <p>I agree to the <a href="">Terms and Conditions</a></p>
+              </div>
+
+              <button id="signupBtn" type="button" class="btn btn-success pull-right">sign up</button>
+
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container-fluid">
+      <div class="row">
+
+        <div class="main_section">
+
+          <div class="pull-left text-left">
+            <p>
+              COPYRIGHT ©2009 - 2013 QALORIE, INC. ALL RIGHT RESERVED. QALORIE IS A ®TRADEMARK OF NEUVANT,INC
+            </p>
+            <ul class="breadcrumb ">
+              <li><a href="">CONDICIONES DE USO</a></li>
+              <li><a href="">PRIVACIDAD</a></li>
+              <li><a href="">POLITICAS Y SEGURIDAD</a></li>
+            </ul>
+          </div>
+
+          <div class="pull-right ">
+
+            <h2><a href="" title=""><img src="/img/logo.png" alt"Qalorie" /></a></h2>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="myModalLabel">BIENVENIDO A QALORIE</h4>
+        </div>
+        <div class="modal-body">
+
+          <div class="user_section">
+            <div class="pull-left user-image">
+              <img src="img/avatars/yop.jpg" alt="Qalorie" />
+            </div>
+            <div class="pull-left user_name">
+              <p>
+                Elvis Milan
+              </p>
+              <p class="other">
+                No eres tu? <a href="">Inicia sesion con otra cuenta.</a>
+              </p>
+            </div>
+          </div>
+
+          <h6>INVITA A TUS AMIGOS A FORMAR PARTE DE N&F</h6>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque pulvinar felis vel interdum accumsan. Quisque quis nisl in est faucibus adipiscing.
+          </p>
+          <p class="conditions">
+            If you sign up, you agree to the <a href="">Terms and Conditions</a>
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">cancel</button>
+          <button type="button" class="btn btn-success">sign up</button>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock layout %}

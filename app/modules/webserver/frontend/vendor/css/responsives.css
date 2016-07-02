@@ -1,0 +1,64 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 27, 2014, 4:34:36 PM
+    Author     : Elvis Milan S
+*/
+
+
+/* Large desktop */
+  @media (min-width: 1200px) { 
+  
+      
+      
+  }
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 980px) and (max-width: 1100px) {   
+    
+    
+    
+}
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {  
+    
+    /* header section */
+    header .title-web {padding-left: 0;}
+    header .user-setting {padding-right: 10px;}
+    
+    
+    section .main {width: 90%; padding: 0 0 0 10px;}
+    section .main .main_section {width: 98%; margin: 40px 0 0;}
+    section .main .main_section h1.dashboard2:before, section .main .main_section h1.dashboard2:after {width: 0;}
+    
+    section .main .main_section h2:after {width: 485px; float: right; margin: 15px 3px 0 0;}
+    section .main .main_section .box_down .content {width: 100%;}
+    section .main .main_section .box_down .content .track {margin-right: 1px;}
+    section .main .main_section .box_down .content .boxes {width: 99.5%}
+    
+}
+ 
+  
+/* Landscape phone to portrait tablet */
+  @media (max-width: 767px) {
+	
+      
+      
+}  
+	
+
+/* Landscape phones and down */
+@media (max-width: 480px) { 
+	
+    
+    
+}
+ 
+ @media (max-width: 419px) { 
+     
+     
+    
+}

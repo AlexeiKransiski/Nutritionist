@@ -1,0 +1,18 @@
+<% if (collection.length == 0) { %>
+<div class="empty">
+  <p>YOU DON'T HAVE FAVORITES</p>
+</div>
+<% } else { %>
+<ul class="list-unstyled">
+  <% collection.forEach( function(exercise) { %>
+    <li>
+      <p class="ratings pull-left">
+        <input tabindex="5" type="checkbox" id="icheckbox_futurico-1" checked>
+      </p>
+      <span>Bicycling </span> - 16 - 19 kph, light (Cycling, Biking, bike riding).
+      <a href='' class="add">add</a>
+    </li>
+  <% }); %>
+
+</ul>
+<% } %>

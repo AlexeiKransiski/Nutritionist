@@ -1,0 +1,147 @@
+<div class="tab-head">
+    <p class="text-left">Appointment <%= moment(model.escape('createdAt')).format('MMM.D.YYYY') %></p>
+</div>
+
+<div class="tab-body">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="row_1">
+                <div class="row">
+                    <div class="col-sm-7 col-md-6">    
+                        <div class="boxs">
+                            <div class="row">
+                                <div class="col-sm-4 col-md-4 hidden-xs">
+                                    <div class="avatar">
+                                        <img src="<%= app.me.get('avatar_src') %>" alt="<%= app.me.escape('full_name') %>" width="133" />
+                                    </div>
+                                </div>
+                                <div class="col-sm-8 col-md-8">
+                                    <div class="info_user">
+                                      <% if (model.get("patient")) { %>
+                                      <h5 class="text-green upper"><%= model.get("patient").first_name %></h5>
+                                      <a href="mailto:<%= model.get("patient").email %>"><%= model.get("patient").email %></a>
+                                      <ul class="list-unstyled">
+                                        <li>
+                                          <span>Y:</span> <%= model.get('age') %> yrs
+                                        </li>
+                                        <li>
+                                          <span>W:</span> <% if (model.get('weight') ) { %> <%=Helpers.getValuesPerMeassurement(model.get('weight').value, "mass", app.me.get("widgets").meassure)%> <%=Helpers.getUnitsPerMeassurement("mass", app.me.get("widgets").meassure)%><%= model.get('weight').unit %><% } %>
+                                        </li>
+                                        <li>
+                                          <span>H:</span> <% if (model.get('height') ) { %><%= Helpers.getValuesPerMeassurement(model.get('height').value, "height", app.me.get("widgets").meassure)%> <%=Helpers.getUnitsPerMeassurement("longitud", app.me.get("widgets").meassure)%><% } %>
+                                        </li>
+                                      </ul>
+                                      <% } %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-5 col-md-6">
+                        <div class="boxs second">
+                            <ul class="list-unstyled life-style row">
+                                <li class="col-md-6">
+                                    <span class="<%= Helpers.getWeatherIcon(model.get("weather"))%>"></span>
+                                    <p><%= Helpers.getWeatherMessage(model.get("weather"))%></p>    
+                                </li>
+                                <li class="col-md-6">
+                                    <span class="<%= Helpers.getActivityIcon(model.get("activity"))%>"></span>
+                                    <p><%= Helpers.getActivityMessage(model.get("activity"))%></p>    
+                                </li>
+                                <li class="col-md-6 last">
+                                    <span class="<%= Helpers.getWorkoutIcon(model.get('workout'))%>"></span>
+                                    <p>Exercises</p>
+                                </li>
+                                <li class="col-md-6 last">
+                                    <span class="<%= Helpers.getGoalIcon(model.get("maintain"))%>"></span>
+                                    <p><%= Helpers.getGoalMessage(model.get("maintain"))%></p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="row_2">
+                <% if (model.get("quiz")) { %>
+                    <div class="row">
+                        <div class="col-sm-4 text-left">
+                            <div class="boxs">
+                                <h5>Lifestyle:</h5>
+                                <p><%= model.get("quiz").question1 %></p>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 text-left">
+                            <div class="boxs">
+                                <h5>Long Term Objectives:</h5>
+                                <p><%= model.get("quiz").question2 %></p>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 text-left">
+                          <div class="boxs last">
+                            <h5>Status Overall:</h5>
+                            <ul class="list-unstyled">
+                              <li>
+                                <p class="text-left">Mood</p>
+                                <div class="progress">
+                                  <div class="progress-bar progress-bar-prot" role="progressbar" aria-valuetransitiongoal="<%= Helpers.convertMoodToNumber(model.get('mood'))%>"></div>
+                                </div>
+                                <p class="levels">
+                                  <span class="pull-left">Bad</span>
+                                  Normal
+                                  <span class="pull-right">Great</span>
+                                </p>
+                              </li>
+                              <li>
+                                <p class="text-left">Nutrition Lv</p>
+                                <div class="progress">
+                                  <div class="progress-bar progress-bar-fat" role="progressbar" aria-valuetransitiongoal="<%= Helpers.renderNutritionLv(foodList)%>"></div>
+                                </div>
+                                <p class="levels">
+                                  <span class="pull-left">Bad</span>
+                                  Normal
+                                  <span class="pull-right">Great</span>
+                                </p>
+                              </li>
+                              <li>
+                                <p class="text-left">Stress Lv</p>
+                                <div class="progress">
+                                  <div class="progress-bar progress-bar-sod" role="progressbar" aria-valuetransitiongoal="<%= Helpers.renderStressLv(model.get('quiz').question3)%>"></div>
+                                </div>
+                                <p class="levels">
+                                  <span class="pull-left">Bad</span>
+                                  Normal
+                                  <span class="pull-right">Great</span>
+                                </p>
+                              </li>
+                              <li>
+                                <p class="text-left">Fitness Lv</p>
+                                <div class="progress">
+                                  <div class="progress-bar progress-bar-pot" role="progressbar" aria-valuetransitiongoal="<%= Helpers.renderFitnessLv(exerciseList)%>"></div>
+                                </div>
+                                <p class="levels">
+                                  <span class="pull-left">Bad</span>
+                                  Normal
+                                  <span class="pull-right">Great</span>
+                                </p>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="tab-foot">
+    <div class="row">
+        <div class="col-sm-12">
+            <p>STATUS: <%= model.escape("status") %></p>
+        </div>
+    </div>
+</div>

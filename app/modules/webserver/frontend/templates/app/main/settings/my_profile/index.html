@@ -1,0 +1,213 @@
+<style>
+    #cropContainerHeader {
+		width: 200px;
+		height: 150px;
+		position:relative; /* or fixed or absolute */
+    }
+</style>
+
+<div class="tab-head">
+    <div class="row">
+        <div class="col-sm-12 text-left">
+            <h5>personal information</h5>
+        </div>
+    </div>
+</div>
+
+<div class="tab-body text-left">
+    <form role="form" class="personal_info" data-role="personal-info-form">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="col-sm-5 col-md-4">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <!-- custom file -->
+                                    <div class="customs_file">
+                                        <% if(model.get('avatar')) { %>
+                                          <img src="<%= model.get('avatar_thumb') %>" data-role="avatar-preview" width="120">
+                                        <% }else{ %>
+                            				<img data-role="avatar-preview" width="120">
+                            			<% } %>
+                                        <span data-role="upload-avatar">
+                                            <!-- backboen crop view -->
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-7 col-md-8">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label class="lb-normal unupper" for="first_name">First Name</label>
+                                    <input type="text" id="first_name" class="form-control" value="<%= model.escape('first_name') %>" />
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label class="lb-normal unupper" for="last_name">Last Name</label>
+                                    <input type="text" id="last_name" class="form-control" value="<%= model.escape('last_name') %>" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12">
+                      
+                        <div class="form-group full">
+                            <label class="lb-normal unupper" for="gender">Gender</label>
+                            <div class="bfh-selectbox" id="genderSelect" data-name="gender" data-id="gender" data-value="">
+                                <div data-value="F">Female</div>
+                                <div data-value="M">Male</div>
+                            </div>
+                        </div>
+                      
+                    </div>
+
+                    <div id="femaleOptions">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label class="lb-normal unupper">Are you pregnant?</label>
+                                <div class="custom_radio">
+                                    <label>
+                                        <input type="radio" name="pregnant" value="No" />
+                                        no
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="pregnant" value="Yes" />
+                                        yes
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label class="lb-normal unupper">Are you breastfeeding?</label>
+                                <div class="custom_radio">
+                                    <label>
+                                        <input type="radio" name="breastfeeding" value="No" />
+                                        no
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="breastfeeding" value="Yes" />
+                                        yes
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <label class="lb-normal unupper">Date of Birth</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <div class="bfh-selectbox full" data-name="year" data-id="year" data-value="<%= moment(model.escape('dob')).format('YYYY') %>">
+                                        <div data-value=""></div>
+                                        <%= Helpers.bfYearOptions(moment(), -17, -90) %>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <div class="bfh-selectbox full" data-name="month" data-id="month" data-value="<%= moment(model.escape('dob')).format('MM') %>">
+                                        <div data-value=""></div>
+                                        <%= Helpers.bfMonthOptions() %>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <div class="bfh-selectbox full" data-name="day" data-id="day" data-value="<%= moment(model.escape('dob')).format('DD') %>">
+                                        <div data-value=""></div>
+                                        <%= Helpers.bfDayOptions() %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label class="lb-normal unupper" for="height">Height</label>
+                            <% if (app.me.get("widgets").meassure == "imperial") { %>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="input-group">
+                                            <input type="number" min="1" max="7" id="height_ft" class="form-control br-none"  value="<%= Helpers.getFtIn(model.get('height').value)[0] %>"/>
+                                            <span class="input-group-addon">ft</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="input-group">
+                        					<input  type="number" min="0" max="15" id="height_in" class="form-control br-none"  value="<%= Helpers.getFtIn(model.get('height').value)[1] %>"/>
+                                            <span class="input-group-addon">in</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            <% }else{ %>
+                                <div class="input-group">
+                                    <input type="text" id="height" class="form-control br-none"  value="<%=Helpers.getValuesPerMeassurement(model.get('height').value, "longitud", app.me.get("widgets").meassure)%>"/>
+                                    <span class="input-group-addon"><%=Helpers.getUnitsPerMeassurement("longitud", app.me.get("widgets").meassure)%></span>
+                                </div>
+                            <% } %>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label class="lb-normal unupper" for="weight">Current Weight</label>
+                            <div class="input-group">
+                                <input type="text" id="weight" class="form-control br-none" value="<%=Helpers.getValuesPerMeassurement(model.get('weight').value, "mass", app.me.get("widgets").meassure)%>"/>
+                                <span class="input-group-addon"><%=Helpers.getUnitsPerMeassurement("mass", app.me.get("widgets").meassure)%></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label class="lb-normal unupper" for="desired_weight">Desired Weight</label>
+                            <div class="input-group">
+                                <input type="text" id="desired_weight" class="form-control br-none"  value="<%=Helpers.getValuesPerMeassurement(model.get('desired_weight').value, "mass", app.me.get("widgets").meassure)%>"/>
+                                <span class="input-group-addon"><%=Helpers.getUnitsPerMeassurement("mass", app.me.get("widgets").meassure)%></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="tab-foot">
+    <div class="row">
+        <div class="col-sm-12 text-right">
+            <button type="button" id="newprogress" class="btn btn-primary" data-role="update-peronal-info">update</button>
+        </div>
+    </div>
+</div>
+
+<div class="rest_boxes profile_widgets">
+    <div data-role="account_information">
+
+    </div>
+    <div data-role="change_password">
+
+    </div>
+    <div data-role="delete_account">
+
+    </div>
+</div>

@@ -1,0 +1,214 @@
+<div class="" id="choose">
+
+    <h2 class="title-page text-green">let's get started for free!</h2>
+    <h5 class="subtitle-page">No annual contracts & No penalties for cancellation</h5>
+
+    <div class="row">
+        <div class="col-sm-5 col-md-4 pd-right_0">
+        
+            <div class="panel-box">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p class="subtitle-free text-green text-left">30 days FREE Trial</p>
+                        <p class="subtitle-free price-month"><del>$29.95/mo</del></p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h3 class="title-free text-blue">Today $0.00</h3>
+                        <div class="plans-descriptions-texts">
+                            <p class="plans-descriptions free-description">
+                              You will not be charged any amount while you are in the free trial.
+                              Cancel anytime without any penalty.
+                            </p>
+                            <p class="plans-descriptions free-description">
+                              Get access to health tools, food tracker, exercise tracker, progress tracker, nutrition consultations and much more!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="box-bottom">
+                            <div class="row">
+                                <div class="col-xs-7 col-sm-6">
+                                    <p>Enter Promo-Code:</p>
+                                </div>
+                                <div class="col-xs-5 col-sm-6 pd-left_0">
+                                    <input class="form-control" id="code" type="text" name="code" />
+                                </div>
+                            </div>
+                      </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-sm-7 col-md-8">
+            <div class="panel-box">
+                <div class="row">
+                    <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
+
+                        <form class="text-left" id="card-form" action="" method="POST" name="">
+                            <div class="form-group">
+                                <label for="firstname" class="lb-normal">FIRST NAME</label>
+                                <input type="text" id="firstname" class="form-control" name="firstname" />
+                                <label id="firstname_error" class="error bottom"></label>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastname" class="lb-normal">LAST NAME</label>
+                                <input type="text" id="lastname" class="form-control" name="lastname" />
+                                <label id="lastname_error" class="error bottom"></label>
+                            </div>
+                            <div class="form-group">
+                                <label for="creditcard" class="lb-normal inline-card">CREDIT CARD NUMBER</label>
+                                <span class="pull-right cards">
+                                    <img src="img/discover-icon.png" alt="Qalorie" class="" />
+                                </span>
+                                <span class="pull-right cards">
+                                    <img src="img/amex-icon.png" alt="Qalorie" class="" />
+                                </span>
+                                <span class="pull-right cards">
+                                    <img src="img/mc-icon.png" alt="Qalorie" class="" />
+                                </span>
+                                <span class="pull-right cards">
+                                    <img src="img/visa-icon.png" alt="Qalorie" class="" />
+                                </span>
+                                <input type="text" id="creditcard" class="form-control" name="creditcard" data-stripe="number" />
+                                <label id="creditcard_error" class="error bottom"></label>
+                                <label class="payment-errors error bottom"></label>
+                            </div>
+                        
+                            <div class="row">
+                                <div class="col-sm-5 col-md-6">
+                                    <div class="form-group">
+                                      <label for="cvv2" class="lb-normal inline-card">CVV2</label><a href="#" class="icon-help" data-toggle="modal" data-target="#myModal"></a>
+                                      <input type="text" id="cvv2" class="form-control" name="cvv2" data-stripe="cvc" />
+                                      <label id="cvv2_error" class="error bottom"></label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-7 col-md-6">
+                                    <div class="form-group">
+                                        <div class="row">    
+                                            <div class="col-sm-12 pd-left_0">
+                                                <label class="lb-normal">EXPIRATION DATE</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-6 pd-left_0">
+                                                <div id="monthExp" class="bfh-selectbox full" data-name="month" data-value="">
+                                                    <div data-value="">MM</div>
+                                                    <div data-value="1">Jan</div>
+                                                    <div data-value="2">Feb</div>
+                                                    <div data-value="3">Mar</div>
+                                                    <div data-value="4">Apr</div>
+                                                    <div data-value="5">May</div>
+                                                    <div data-value="6">Jun</div>
+                                                    <div data-value="7">Jul</div>
+                                                    <div data-value="8">Aug</div>
+                                                    <div data-value="9">Sept</div>
+                                                    <div data-value="10">Oct</div>
+                                                    <div data-value="11">Nov</div>
+                                                    <div data-value="12">Dec</div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-6 pd-left_0">
+                                                <div id="yearExp" class="bfh-selectbox full" data-name="year" data-value="" >
+                                                    <div data-value="">YYYY</div>
+                                                    <div data-value="2016">2016</div>
+                                                    <div data-value="2017">2017</div>
+                                                    <div data-value="2018">2018</div>
+                                                    <div data-value="2019">2019</div>
+                                                    <div data-value="2020">2020</div>
+                                                    <div data-value="2021">2021</div>
+                                                    <div data-value="2022">2022</div>
+                                                    <div data-value="2023">2023</div>
+                                                    <div data-value="2024">2024</div>
+                                                    <div data-value="2025">2025</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <label id="expiration_error" class="error bottom expiration"></label>
+                                        <input type="hidden" data-stripe="exp-year">
+                                        <input type="hidden" data-stripe="exp-month">
+                                        <input type="hidden" data-stripe="name">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>  
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="box-bottom">
+                            <div class="row">
+                                <div class="col-sm-8 pd-right_0">
+                                    <p>
+                                        <a href="#" class="plans-link-card" data-toggle="modal" data-target="#myModalAskingCard">
+                                            Why are we asking for your credit card?  
+                                        </a>
+                                    </p>
+                                </div>
+                                <div class="col-sm-4 text-center">
+                                    <button type="submit" class="btn-green-open pull-right" id="next-step">
+                                        Continue
+                                    </button>   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </div>
+
+</div><!-- /choose your plan -->
+
+<!-- Modal CVV -->
+<div class="modal fade cvv2" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title text-left" id="myModalLabel">WHAT IS A CARD SECURITY CODE?</h4>
+            </div>
+            <div class="modal-body text-center">
+                <p>
+                    A three- or four-digit code on your credit card, separate from the 16-digit card number. The location varies slightly depending on your type of card:
+                </p>
+                <img src="img/svv2.png" alt="Qalorie" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Asking Card -->
+<div class="modal fade asking-card" id="myModalAskingCard" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title text-left text-green" id="myModalLabel">30 Days Free Trial Terms</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    If you cancel your subscription before the 30 days trial ends, your card won't be charged. Qalorie needs your credit card information to ensure your membership is not interrupted.
+                </p>
+                <p>
+                    If you don't cancel the account after 30 days you will be enrolled automatically into our Monthly Plan and only then your credit card will be charged at the cost of $29.95 and every 30 days after that until you cancel without any penalty.
+                </p>
+                <p>
+                    You can cancel anytime at "Settings > My Profile > Delete Account" tab on our website.
+                </p>
+                <p>See Terms of Use for more details.</p>
+
+            </div>
+            <div class="modal-footer">
+                <button class="btn-blue-open" data-dismiss="modal" aria-label="Close">continue</button>
+            </div>
+        </div>
+    </div>
+</div>

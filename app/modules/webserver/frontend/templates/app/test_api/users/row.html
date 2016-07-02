@@ -1,0 +1,11 @@
+<td><%= model.id %></td>
+<td><%= model.escape('username') %></td>
+<td><% if (model.get('active')){ %>active<% }else { %>inactive<% } %></td>
+
+<td><%= moment(model.get('dob')).format('YYYY/MM/DD hh:mm a') %></td>
+<td><%= model.escape('type') %></td>
+<td><%= model.escape('role') %></td>
+<td><%= model.escape('customer') %></td>
+<td class="text-right">
+  <button class="btn btn-danger delete"><span class="glyphicon glyphicon-trash"></span></button>
+</td>

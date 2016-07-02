@@ -1,0 +1,60 @@
+<script>
+    // emoticons
+    $('.emo').click(function(){
+        //$e(this).parent().parent().parent().find('.emoticons').slideDown('slow');
+        if ($(this).parent().parent().parent().find('.emoticons').css('display') === 'none')
+        {
+            $(this).parent().parent().parent().find('.emoticons').slideDown('slow');
+            $(this).find('.caret').hide('fast');
+            $(this).addClass('active');
+        }
+        else{
+            $(this).parent().parent().parent().find('.emoticons').slideUp('slow');
+            $(this).find('.caret').show('fast');
+            $(this).removeClass('active');
+        }
+    });
+    $('.emoticons label').click(function(){
+        var icon = $(this).find('span').attr('class');
+        $(this).parent().parent().parent().find('.emoticons').slideUp('slow');
+        $(this).parent().parent().parent().find("button span[class*='icon-']").attr('class',icon);
+        $(this).parent().parent().parent().find('.caret').show('fast');
+        $(this).parent().parent().parent().find('.emo').removeClass('active');
+    });
+
+    $(".box_status").hover(function() {
+        $(this).find("a").fadeIn('slow');
+        }, function(){
+        $(this).find("a").fadeOut('slow');
+    });
+
+    $('.edit_comment').click(function(){
+        var id = $(this).attr('href');
+        $(this).parent().slideUp('slow', function(){
+            $('#' + id).slideDown('5000');
+        });
+
+        return false;
+    });
+
+</script>
+
+<div id="page-status" class="main_section" data-role="main">
+  <h1 class="dashboard2">MY STATUS</h1>
+  <h6>“Think of water drinking like wine tasting. Taste the various brands and types of bottled waters available”</h6>
+  <div class="main_info">
+
+  </div><!-- /main info -->
+
+  <!--h2>Status Timeline</h2-->
+  <div class="box_down">
+    <div id="statusTimeline" class="content pull-left">
+
+
+
+    </div>
+    <div class="sidebar-right pull-right">
+
+    </div>  
+  </div>
+</div>

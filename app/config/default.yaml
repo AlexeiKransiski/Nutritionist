@@ -1,0 +1,67 @@
+debug: true
+
+sentry:
+  user: "pepe"
+  password: "pepe"
+  url: "url"
+
+mongo:
+  ip: "local_vagrant"
+  port: "27017"
+  database: "qalorie-dev"
+  uri: null
+
+app:
+  baseUrl: "http://localhost:3000"
+  domain: "localhost"
+  host: "localhost"
+  port: 3000
+
+auth:
+  auth_token_secret: 'adfbb423-a9af-4494-9ee0-418c707f4457'
+
+facebook:
+  client_id: '508866709290728'
+  client_secret: 'ea6d0737c88649b896739721754a68c8'
+  callback_url: 'http://localhost:3000/auth/facebook/callback'
+
+sendgrid:
+  app_id: 'qalorie-app'
+  secret_id: 'tzP6RKFDFXmADRJC'
+  recover_id: '36640625-93bc-4628-a8ef-2c596addd583'
+  welcome_id: '8b0a29a7-a353-4ffd-af22-36096d359429'
+  delete_id:  'b2d0455b-305f-4986-a16f-7a0d72c496f5'
+
+stripe:
+  private_key: 'sk_test_9sIM8w8x4WrClNvIo0QgzK4U'
+  public_key: 'pk_test_ztzb4BStDrCTXAJbCCSvtMLJ'
+
+  plans:
+    trial:
+      id: '031T'
+      amount: 2995
+      name: 'Free Trial'
+
+    monthly:
+      id: '031'
+      amount: 2995
+      name: 'Monthly'
+
+    yearly:
+      id: '0365'
+      amount: 29950
+      name: 'Yearly'
+
+  products:
+    appointments:
+      id: '1_app'
+      discount:
+        4: 0
+        6: 2995
+        1: 0
+        2: 0
+        12: 8985
+
+emails:
+  sender: 'apps@nullindustries.co'
+  support: 'juanpgaviria@gmail.com'

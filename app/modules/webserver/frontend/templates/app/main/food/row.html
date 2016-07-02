@@ -1,0 +1,18 @@
+<td>
+  <p class="ratingsTable pull-left">
+  </p>
+</td>
+<td>
+  <p><%= Helpers.truncateString(model.get('food_detail').description, 100) %></p>
+  <span class="help">Servings: <%= model.escape('servings') %> of <%= model.escape('serving_type') %> </span>
+</td>
+<td>
+  <%= parseFloat(model.escape('calories')).toFixed(1) %>
+</td>
+<% if (patientPreferences.get("widgets_settings")!=undefined) { %>
+  <%= Helpers.renderColumns(model, patientPreferences.get("widgets_settings")) %>
+<% } %>
+<td>
+  <!--a href="" class="icon-edit"></a-->
+  <a href="javascript:void(0);" class="delete icon-delete"></a>
+</td>

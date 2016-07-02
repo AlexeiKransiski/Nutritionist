@@ -1,0 +1,1316 @@
+#page-exercise.main_section .dashboard2:before {
+  display: inline-block;
+  margin: 0 15px 8px 0;
+  height: 1px;
+  content: " ";
+  background: #bfbfbf;
+  width: 339px;
+}
+#page-exercise.main_section .dashboard2:after {
+  display: inline-block;
+  margin: 0 0 8px 15px;
+  height: 1px;
+  content: " ";
+  background: #bfbfbf;
+  width: 338px;
+}
+#page-exercise.main_section .box_down {
+  margin-top: 40px;
+}
+#page-exercise.main_section .box_down .content .sec-cont {
+  display: none;
+}
+#page-exercise.main_section .box_down .content .sec-cont .box_search {
+  border-top: 1px solid #bfbfbf;
+  background: #f6f7f8;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  height: 490px;
+  margin: 0 0 2px 1px;
+  -webkit-box-shadow: 0 1px 1px 0 #a8afb1;
+  -moz-box-shadow: 0 1px 1px 0 #a8afb1;
+  box-shadow: 0 1px 1px 0 #a8afb1;
+  position: relative;
+}
+#page-exercise.main_section .box_down .content .sec-cont .box_search .box {
+  height: 410px;
+  padding: 30px 30px 0 30px;
+}
+#page-exercise.main_section .box_down .content .sec-cont .box_search .box .form-group {
+  margin-bottom: 22px;
+}
+#page-exercise.main_section .box_down .content .sec-cont .box_search .box label {
+  color: #646b74;
+  font-family: "Open Sans";
+  font-weight: 600;
+  font-size: 14px;
+  text-align: left;
+  margin-bottom: 3px;
+}
+#page-exercise.main_section .box_down .content .sec-cont .box_search .box input {
+  height: 34px;
+  box-shadow: none;
+  border-color: #bfbfbf;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+}
+#page-exercise.main_section .box_down .content .sec-cont .box_search .box input.small {
+  width: 260px;
+}
+#page-exercise.main_section .box_down .content .sec-cont .box_search .box textarea {
+  height: 86px;
+  box-shadow: none;
+  border-color: #bfbfbf;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  resize: none;
+}
+#page-exercise.main_section .box_down .content .sec-cont .box_search .box p {
+  font-family: "Lato";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  color: #646b74;
+  padding-right: 150px;
+  line-height: 23px;
+}
+#page-exercise.main_section .box_down .content .sec-cont .box_search .addmore {
+  border-top: 1px solid #bfbfbf;
+  background: #ffffff;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  height: 70px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 619px;
+}
+#page-exercise.main_section .box_down .content .title_sidebar {
+  background: #ffffff;
+  height: 60px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  position: relative;
+}
+#page-exercise.main_section .box_down .content .title_sidebar h4 {
+  font-family: "Open Sans";
+  font-weight: 400;
+  font-size: 15px;
+  color: #86ca50;
+  margin: 0;
+  line-height: 60px;
+  display: inline-block;
+}
+#page-exercise.main_section .box_down .content .title_sidebar span.icon-fecha {
+  font-family: "Open Sans";
+  font-weight: 600;
+  font-size: 15px;
+  color: #646b74;
+  background-position: -90px -269px;
+  padding-right: 60px;
+  line-height: 60px;
+  position: absolute;
+  right: 7px;
+  top: 0;
+}
+#page-exercise.main_section .box_down .content .box_search ul {
+  width: 100%;
+  margin: 0;
+  border-bottom: 1px solid #bfbfbf;
+}
+#page-exercise.main_section .box_down .content .box_search ul li {
+  margin: 0px;
+  width: 25%;
+  padding: 0;
+  text-align: center;
+  height: 30px;
+  background: #ffffff;
+  border-top: 1px solid #bfbfbf;
+}
+#page-exercise.main_section .box_down .content .box_search ul li a {
+  padding: 0;
+  line-height: 30px;
+  margin: 0;
+  border: 0px;
+  color: #646b74;
+  font-family: "Open Sans";
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+  font-style: normal;
+}
+#page-exercise.main_section .box_down .content .box_search ul li:last-child {
+  height: 30px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+}
+#page-exercise.main_section .box_down .content .box_search ul li.active > a,
+#page-exercise.main_section .box_down .content .box_search ul li a:hover,
+#page-exercise.main_section .box_down .content .box_search ul li a:focus {
+  border: 0px;
+  background: #86ca50;
+  color: #ffffff;
+  margin: 0;
+  border-radius: 0px;
+}
+#page-exercise.main_section .box_down .content .box_search .tab-content {
+  border-top: none;
+  background: #f6f7f8;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  height: 460px;
+  margin: 0 0 2px 1px;
+  -webkit-box-shadow: 0 1px 1px 0 #a8afb1;
+  -moz-box-shadow: 0 1px 1px 0 #a8afb1;
+  box-shadow: 0 1px 1px 0 #a8afb1;
+}
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-searchs'] form,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recently'] form,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-favorites'] form,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-list'] form,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recipes'] form {
+  padding: 12px 0 0;
+  z-index: 0;
+}
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-searchs'] form input,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recently'] form input,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-favorites'] form input,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-list'] form input,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recipes'] form input {
+  font-family: "Lato";
+  font-size: 15px;
+  font-style: italic;
+  font-weight: 400;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  border-color: #bfbfbf;
+  box-shadow: none;
+  height: 40px;
+  width: 480px;
+  margin-right: 10px;
+}
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-searchs'] form input::-moz-placeholder,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recently'] form input::-moz-placeholder,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-favorites'] form input::-moz-placeholder,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-list'] form input::-moz-placeholder,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recipes'] form input::-moz-placeholder {
+  color: #a8afb1;
+  opacity: 1;
+}
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-searchs'] form input:-ms-input-placeholder,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recently'] form input:-ms-input-placeholder,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-favorites'] form input:-ms-input-placeholder,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-list'] form input:-ms-input-placeholder,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recipes'] form input:-ms-input-placeholder {
+  color: #a8afb1;
+}
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-searchs'] form input::-webkit-input-placeholder,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recently'] form input::-webkit-input-placeholder,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-favorites'] form input::-webkit-input-placeholder,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-list'] form input::-webkit-input-placeholder,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recipes'] form input::-webkit-input-placeholder {
+  color: #a8afb1;
+}
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-searchs'] form button.btn-success,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recently'] form button.btn-success,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-favorites'] form button.btn-success,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-list'] form button.btn-success,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recipes'] form button.btn-success {
+  background-color: #86ca50;
+  border: none;
+  font-family: "Open Sans";
+  font-weight: 600;
+  font-size: 11px;
+  height: 40px;
+  width: 100px;
+  text-transform: uppercase;
+  margin-right: 10px;
+}
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-searchs'] form .result,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recently'] form .result,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-favorites'] form .result,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-list'] form .result,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recipes'] form .result {
+  border-top: 1px solid #bfbfbf;
+  height: 310px;
+  margin: 20px 0 0;
+  padding: 5px 0 20px;
+  position: relative;
+  z-index: 0;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-searchs'] form .result .autocomplete,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recently'] form .result .autocomplete,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-favorites'] form .result .autocomplete,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-list'] form .result .autocomplete,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recipes'] form .result .autocomplete {
+  display: none;
+}
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-searchs'] form .result .empty,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recently'] form .result .empty,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-favorites'] form .result .empty,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-list'] form .result .empty,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recipes'] form .result .empty {
+  padding-top: 145px;
+}
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-searchs'] form .result .empty p,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recently'] form .result .empty p,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-favorites'] form .result .empty p,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-list'] form .result .empty p,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recipes'] form .result .empty p {
+  font-family: "Open Sans";
+  font-weight: 600;
+  font-size: 15px;
+  font-style: italic;
+  color: #646b74;
+}
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-searchs'] form .result ul,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recently'] form .result ul,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-favorites'] form .result ul,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-list'] form .result ul,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recipes'] form .result ul {
+  margin: 0 auto;
+  overflow: hidden;
+  width: 580px;
+  border: none;
+}
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-searchs'] form .result ul li,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recently'] form .result ul li,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-favorites'] form .result ul li,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-list'] form .result ul li,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recipes'] form .result ul li {
+  background: #f6f7f8;
+  font-family: "Open Sans";
+  font-weight: 400;
+  font-size: 13px;
+  font-style: normal;
+  line-height: 35px;
+  color: #646b74;
+  display: block;
+  width: 100%;
+  min-height: 60px;
+  border-bottom: 1px solid #bfbfbf;
+  padding: 12px 0 0 5px;
+  position: relative;
+  text-align: left;
+  border-top: none;
+}
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-searchs'] form .result ul li .ratings,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recently'] form .result ul li .ratings,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-favorites'] form .result ul li .ratings,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-list'] form .result ul li .ratings,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recipes'] form .result ul li .ratings {
+  overflow: hidden;
+  display: inline-block;
+  margin: -3px 15px 0 5px;
+}
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-searchs'] form .result ul li .ratings input,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recently'] form .result ul li .ratings input,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-favorites'] form .result ul li .ratings input,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-list'] form .result ul li .ratings input,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recipes'] form .result ul li .ratings input {
+  width: 17px;
+  margin: 0;
+  height: 17px;
+}
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-searchs'] form .result ul li span,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recently'] form .result ul li span,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-favorites'] form .result ul li span,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-list'] form .result ul li span,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recipes'] form .result ul li span {
+  color: #86ca50;
+  position: static;
+}
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-searchs'] form .result ul li span.help,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recently'] form .result ul li span.help,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-favorites'] form .result ul li span.help,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-list'] form .result ul li span.help,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recipes'] form .result ul li span.help {
+  display: block;
+  font-style: italic;
+  color: #8b959e;
+  line-height: 25px;
+  font-weight: 400;
+}
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-searchs'] form .result ul li a.add,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recently'] form .result ul li a.add,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-favorites'] form .result ul li a.add,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-list'] form .result ul li a.add,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recipes'] form .result ul li a.add,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-searchs'] form .result ul li a.view,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recently'] form .result ul li a.view,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-favorites'] form .result ul li a.view,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-list'] form .result ul li a.view,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recipes'] form .result ul li a.view {
+  font-family: "Open Sans";
+  font-weight: 400;
+  font-size: 12px;
+  font-style: italic;
+  position: absolute;
+  right: 25px;
+  top: 15px;
+  color: #646b74;
+  text-transform: capitalize;
+}
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-searchs'] form .result ul li a.add:hover,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recently'] form .result ul li a.add:hover,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-favorites'] form .result ul li a.add:hover,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-list'] form .result ul li a.add:hover,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recipes'] form .result ul li a.add:hover,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-searchs'] form .result ul li a.view:hover,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recently'] form .result ul li a.view:hover,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-favorites'] form .result ul li a.view:hover,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-list'] form .result ul li a.view:hover,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recipes'] form .result ul li a.view:hover {
+  background: transparent;
+  text-decoration: none;
+}
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-searchs'] form .result ul li a.view,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recently'] form .result ul li a.view,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-favorites'] form .result ul li a.view,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-list'] form .result ul li a.view,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recipes'] form .result ul li a.view,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-searchs'] form .result ul li a.delete,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recently'] form .result ul li a.delete,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-favorites'] form .result ul li a.delete,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-list'] form .result ul li a.delete,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recipes'] form .result ul li a.delete {
+  display: none;
+  right: 48px;
+}
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-searchs'] form .result ul li a.delete,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recently'] form .result ul li a.delete,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-favorites'] form .result ul li a.delete,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-list'] form .result ul li a.delete,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recipes'] form .result ul li a.delete {
+  height: 20px;
+  width: 16px;
+  background: url("../img/delete-list.png") 0 0 no-repeat;
+  position: absolute;
+  top: 20px;
+  right: 0px;
+  display: none;
+}
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-searchs'] form .result ul li:hover > a.view,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recently'] form .result ul li:hover > a.view,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-favorites'] form .result ul li:hover > a.view,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-list'] form .result ul li:hover > a.view,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recipes'] form .result ul li:hover > a.view,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-searchs'] form .result ul li:hover > a.delete,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recently'] form .result ul li:hover > a.delete,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-favorites'] form .result ul li:hover > a.delete,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-list'] form .result ul li:hover > a.delete,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recipes'] form .result ul li:hover > a.delete {
+  display: block;
+}
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-searchs'] form .result ul li:first-child,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recently'] form .result ul li:first-child,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-favorites'] form .result ul li:first-child,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-list'] form .result ul li:first-child,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recipes'] form .result ul li:first-child {
+  border-top: none;
+}
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-searchs'] form .result ul li.space,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recently'] form .result ul li.space,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-favorites'] form .result ul li.space,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-list'] form .result ul li.space,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recipes'] form .result ul li.space {
+  padding-left: 10px;
+  line-height: 14px;
+  font-size: 14px;
+}
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-searchs'] form .result ul li.active,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recently'] form .result ul li.active,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-favorites'] form .result ul li.active,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-list'] form .result ul li.active,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recipes'] form .result ul li.active {
+  position: relative;
+  background: #edeff0;
+}
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-searchs'] form .result ul li.active .triangle,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recently'] form .result ul li.active .triangle,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-favorites'] form .result ul li.active .triangle,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-list'] form .result ul li.active .triangle,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recipes'] form .result ul li.active .triangle {
+  background: #f2f3f4 url("../img/new-triangle.png") 0 -12px no-repeat;
+  position: absolute;
+  left: 12px;
+  width: 23px;
+  height: 13px;
+  top: -1px;
+}
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-searchs'] form .result ul li.active .form-inline .form-group,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recently'] form .result ul li.active .form-inline .form-group,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-favorites'] form .result ul li.active .form-inline .form-group,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-list'] form .result ul li.active .form-inline .form-group,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recipes'] form .result ul li.active .form-inline .form-group {
+  vertical-align: top;
+}
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-searchs'] form .result ul li.active .form-inline input,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recently'] form .result ul li.active .form-inline input,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-favorites'] form .result ul li.active .form-inline input,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-list'] form .result ul li.active .form-inline input,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recipes'] form .result ul li.active .form-inline input {
+  height: 32px;
+  width: 32px;
+  font-family: "Open Sans";
+  font-weight: 400;
+  font-size: 12px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  border-color: #bfbfbf;
+  box-shadow: none;
+  padding: 6px 2px;
+  text-align: center;
+  margin-left: 3px;
+}
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-searchs'] form .result ul li.active .form-inline div.bfh-selectbox,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recently'] form .result ul li.active .form-inline div.bfh-selectbox,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-favorites'] form .result ul li.active .form-inline div.bfh-selectbox,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-list'] form .result ul li.active .form-inline div.bfh-selectbox,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recipes'] form .result ul li.active .form-inline div.bfh-selectbox {
+  margin-left: 15px;
+  font-family: "Open Sans";
+  font-weight: 400;
+  font-size: 12px;
+  font-style: italic;
+  width: 240px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  border-color: #bfbfbf;
+  box-shadow: none;
+}
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-searchs'] form .result ul li.active .form-inline div.bfh-selectbox a,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recently'] form .result ul li.active .form-inline div.bfh-selectbox a,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-favorites'] form .result ul li.active .form-inline div.bfh-selectbox a,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-list'] form .result ul li.active .form-inline div.bfh-selectbox a,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recipes'] form .result ul li.active .form-inline div.bfh-selectbox a {
+  padding-left: 8px;
+  color: #8b959e;
+  display: block;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  border: 1px solid #bfbfbf;
+  box-shadow: none;
+  height: 32px;
+  line-height: 32px;
+  text-transform: none;
+}
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-searchs'] form .result ul li.active .form-inline div.bfh-selectbox a .bfh-selectbox-option,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recently'] form .result ul li.active .form-inline div.bfh-selectbox a .bfh-selectbox-option,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-favorites'] form .result ul li.active .form-inline div.bfh-selectbox a .bfh-selectbox-option,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-list'] form .result ul li.active .form-inline div.bfh-selectbox a .bfh-selectbox-option,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recipes'] form .result ul li.active .form-inline div.bfh-selectbox a .bfh-selectbox-option {
+  height: 32px;
+}
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-searchs'] form .result ul li.active .form-inline div.bfh-selectbox a span,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recently'] form .result ul li.active .form-inline div.bfh-selectbox a span,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-favorites'] form .result ul li.active .form-inline div.bfh-selectbox a span,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-list'] form .result ul li.active .form-inline div.bfh-selectbox a span,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recipes'] form .result ul li.active .form-inline div.bfh-selectbox a span {
+  color: #a8afb1;
+}
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-searchs'] form .result ul li.active .form-inline div.bfh-selectbox a:hover,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recently'] form .result ul li.active .form-inline div.bfh-selectbox a:hover,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-favorites'] form .result ul li.active .form-inline div.bfh-selectbox a:hover,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-list'] form .result ul li.active .form-inline div.bfh-selectbox a:hover,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recipes'] form .result ul li.active .form-inline div.bfh-selectbox a:hover,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-searchs'] form .result ul li.active .form-inline div.bfh-selectbox a:focus,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recently'] form .result ul li.active .form-inline div.bfh-selectbox a:focus,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-favorites'] form .result ul li.active .form-inline div.bfh-selectbox a:focus,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-list'] form .result ul li.active .form-inline div.bfh-selectbox a:focus,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recipes'] form .result ul li.active .form-inline div.bfh-selectbox a:focus {
+  background: #ffffff;
+}
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-searchs'] form .result ul li.active .form-inline div.bfh-selectbox a .selectbox-caret,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recently'] form .result ul li.active .form-inline div.bfh-selectbox a .selectbox-caret,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-favorites'] form .result ul li.active .form-inline div.bfh-selectbox a .selectbox-caret,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-list'] form .result ul li.active .form-inline div.bfh-selectbox a .selectbox-caret,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recipes'] form .result ul li.active .form-inline div.bfh-selectbox a .selectbox-caret {
+  color: #666666;
+  margin: -17px 12px 0 0;
+}
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-searchs'] form .result ul li.active .form-inline div.bfh-selectbox .bfh-selectbox-options,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recently'] form .result ul li.active .form-inline div.bfh-selectbox .bfh-selectbox-options,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-favorites'] form .result ul li.active .form-inline div.bfh-selectbox .bfh-selectbox-options,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-list'] form .result ul li.active .form-inline div.bfh-selectbox .bfh-selectbox-options,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recipes'] form .result ul li.active .form-inline div.bfh-selectbox .bfh-selectbox-options {
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  z-index: 9999;
+}
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-searchs'] form .result ul li.active .form-inline div.bfh-selectbox .bfh-selectbox-options ul,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recently'] form .result ul li.active .form-inline div.bfh-selectbox .bfh-selectbox-options ul,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-favorites'] form .result ul li.active .form-inline div.bfh-selectbox .bfh-selectbox-options ul,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-list'] form .result ul li.active .form-inline div.bfh-selectbox .bfh-selectbox-options ul,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recipes'] form .result ul li.active .form-inline div.bfh-selectbox .bfh-selectbox-options ul {
+  margin: 0px;
+  width: 238px;
+}
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-searchs'] form .result ul li.active .form-inline div.bfh-selectbox .bfh-selectbox-options ul li,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recently'] form .result ul li.active .form-inline div.bfh-selectbox .bfh-selectbox-options ul li,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-favorites'] form .result ul li.active .form-inline div.bfh-selectbox .bfh-selectbox-options ul li,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-list'] form .result ul li.active .form-inline div.bfh-selectbox .bfh-selectbox-options ul li,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recipes'] form .result ul li.active .form-inline div.bfh-selectbox .bfh-selectbox-options ul li {
+  border: none;
+  min-height: 25px;
+  padding: 3px;
+  background: transparent;
+}
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-searchs'] form .result ul li.active .form-inline div.bfh-selectbox .bfh-selectbox-options ul li a,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recently'] form .result ul li.active .form-inline div.bfh-selectbox .bfh-selectbox-options ul li a,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-favorites'] form .result ul li.active .form-inline div.bfh-selectbox .bfh-selectbox-options ul li a,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-list'] form .result ul li.active .form-inline div.bfh-selectbox .bfh-selectbox-options ul li a,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recipes'] form .result ul li.active .form-inline div.bfh-selectbox .bfh-selectbox-options ul li a {
+  line-height: 25px;
+  height: 20px;
+  border: none;
+}
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-searchs'] form .result ul li.active .form-inline div.bfh-selectbox .bfh-selectbox-options ul li a:hover,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recently'] form .result ul li.active .form-inline div.bfh-selectbox .bfh-selectbox-options ul li a:hover,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-favorites'] form .result ul li.active .form-inline div.bfh-selectbox .bfh-selectbox-options ul li a:hover,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-list'] form .result ul li.active .form-inline div.bfh-selectbox .bfh-selectbox-options ul li a:hover,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recipes'] form .result ul li.active .form-inline div.bfh-selectbox .bfh-selectbox-options ul li a:hover {
+  background: #f2f3f4;
+}
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-searchs'] form .result ul li.active .form-inline button.btn-primary,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recently'] form .result ul li.active .form-inline button.btn-primary,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-favorites'] form .result ul li.active .form-inline button.btn-primary,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-list'] form .result ul li.active .form-inline button.btn-primary,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recipes'] form .result ul li.active .form-inline button.btn-primary {
+  background-color: #3e96ef;
+  border: none;
+  font-family: "Open Sans";
+  font-weight: 600;
+  font-size: 11px;
+  height: 34px;
+  width: 75px;
+  text-transform: uppercase;
+  margin: 0 10px 0 0;
+  font-style: normal;
+}
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-searchs'] form .result ul li.active .form-inline button.btn-default,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recently'] form .result ul li.active .form-inline button.btn-default,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-favorites'] form .result ul li.active .form-inline button.btn-default,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-list'] form .result ul li.active .form-inline button.btn-default,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recipes'] form .result ul li.active .form-inline button.btn-default {
+  background-color: transparent;
+  border: none;
+  font-family: "Open Sans";
+  font-weight: 600;
+  font-size: 11px;
+  height: 34px;
+  width: 75px;
+  text-transform: uppercase;
+  color: #646b74;
+  position: static;
+  font-style: normal;
+}
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-searchs'] form .result ul li.active .form-inline p,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recently'] form .result ul li.active .form-inline p,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-favorites'] form .result ul li.active .form-inline p,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-list'] form .result ul li.active .form-inline p,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recipes'] form .result ul li.active .form-inline p {
+  display: inline-block;
+  font-family: "Open Sans";
+  font-weight: 400;
+  font-size: 12px;
+  font-style: italic;
+  color: #646b74;
+}
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-searchs'] form .addmore,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recently'] form .addmore,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-favorites'] form .addmore,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-list'] form .addmore,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recipes'] form .addmore {
+  border-top: 1px solid #bfbfbf;
+  background: #ffffff;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  height: 70px;
+  position: absolute;
+  bottom: 2px;
+  left: 1px;
+  width: 619px;
+}
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-searchs'] form .addmore p,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recently'] form .addmore p,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-favorites'] form .addmore p,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-list'] form .addmore p,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recipes'] form .addmore p {
+  text-align: center;
+  font-family: "Open Sans";
+  font-weight: 400;
+  font-size: 14px;
+  color: #646b74;
+  font-style: italic;
+  line-height: 70px;
+  margin: 0;
+}
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-searchs'] form .addmore p a,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recently'] form .addmore p a,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-favorites'] form .addmore p a,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-list'] form .addmore p a,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recipes'] form .addmore p a {
+  color: #86ca50;
+}
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-searchs'] form .addmore p a:hover,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recently'] form .addmore p a:hover,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-favorites'] form .addmore p a:hover,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-list'] form .addmore p a:hover,
+#page-exercise.main_section .box_down .content .box_search .tab-content [id$='-recipes'] form .addmore p a:hover {
+  text-decoration: none;
+}
+#page-exercise.main_section .box_down .sidebar-right {
+  position: relative;
+  height: 550px;
+  margin-bottom: 2px;
+}
+#page-exercise.main_section .box_down .sidebar-right .added-list,
+#page-exercise.main_section .box_down .sidebar-right .favorite-list,
+#page-exercise.main_section .box_down .sidebar-right .save-list,
+#page-exercise.main_section .box_down .sidebar-right .saved-list,
+#page-exercise.main_section .box_down .sidebar-right .food-list,
+#page-exercise.main_section .box_down .sidebar-right .exer-list,
+#page-exercise.main_section .box_down .sidebar-right .newexer-list,
+#page-exercise.main_section .box_down .sidebar-right .autocomplete {
+  display: none;
+}
+#page-exercise.main_section .box_down .sidebar-right .title_sidebar {
+  background: #ffffff;
+  height: 60px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+#page-exercise.main_section .box_down .sidebar-right .title_sidebar h4 {
+  font-family: "Open Sans";
+  font-weight: 400;
+  font-size: 15px;
+  color: #86ca50;
+  margin: 0;
+  line-height: 60px;
+  display: inline-block;
+}
+#page-exercise.main_section .box_down .sidebar-right .title_sidebar button.btn-success {
+  background-color: #86ca50;
+  border: none;
+  font-family: "Open Sans";
+  font-weight: 600;
+  font-size: 11px;
+  height: 36px;
+  width: 85px;
+  text-transform: uppercase;
+  margin: 12px 15px 0 0;
+}
+#page-exercise.main_section .box_down .sidebar-right .title_sidebar a.edit_list {
+  background: url("../img/new-edit.png") 0 0 no-repeat;
+  display: block;
+  height: 35px;
+  width: 35px;
+  position: absolute;
+  right: 10px;
+  top: 13px;
+  z-index: 99;
+}
+#page-exercise.main_section .box_down .sidebar-right .result_list {
+  border-top: 1px solid #bfbfbf;
+  height: 420px;
+  background: #f6f7f8;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  position: relative;
+  padding: 10px 0 5px;
+}
+#page-exercise.main_section .box_down .sidebar-right .result_list .empty {
+  padding-top: 226px;
+}
+#page-exercise.main_section .box_down .sidebar-right .result_list .empty p {
+  font-family: "Open Sans";
+  font-weight: 600;
+  font-size: 15px;
+  font-style: italic;
+  color: #646b74;
+  margin-bottom: 5px;
+}
+#page-exercise.main_section .box_down .sidebar-right .result_list ul {
+  border-bottom: none;
+  width: 285px;
+  margin: 0;
+}
+#page-exercise.main_section .box_down .sidebar-right .result_list ul li {
+  display: block;
+  width: 100%;
+  border-top: none;
+  border-bottom: 1px solid #bfbfbf;
+  height: 60px;
+  font-family: "Open Sans";
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 22px;
+  color: #646b74;
+  padding: 7px 40px 0 15px;
+  position: relative;
+  text-align: left;
+}
+#page-exercise.main_section .box_down .sidebar-right .result_list ul li:hover > a {
+  display: block;
+  border: none;
+}
+#page-exercise.main_section .box_down .sidebar-right .result_list ul li span {
+  color: #86ca50;
+  position: static;
+}
+#page-exercise.main_section .box_down .sidebar-right .result_list ul li a {
+  height: 20px;
+  width: 16px;
+  background: url("../img/delete-list.png") 0 0 no-repeat;
+  position: absolute;
+  top: 20px;
+  right: 0px;
+  display: none;
+}
+#page-exercise.main_section .box_down .sidebar-right .result_list ul li:last-child {
+  border-bottom: none;
+}
+#page-exercise.main_section .box_down .sidebar-right .result_list ul.tips {
+  border-bottom: none;
+  width: 285px;
+  margin: 0;
+}
+#page-exercise.main_section .box_down .sidebar-right .result_list ul.tips li {
+  width: 100%;
+  border: none;
+  height: auto;
+  font-family: "Open Sans";
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+  color: #646b74;
+  display: block;
+  padding: 7px 5px 0 15px;
+  text-align: left;
+  margin-bottom: 10px;
+}
+#page-exercise.main_section .box_down .sidebar-right .addmore {
+  border-top: 1px solid #bfbfbf;
+  background: #ffffff;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  height: 70px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 310px;
+}
+#page-exercise.main_section .box_down .sidebar-right .addmore p {
+  text-align: left;
+  font-family: "Open Sans";
+  font-weight: 400;
+  font-size: 14px;
+  color: #646b74;
+  line-height: 70px;
+  padding-left: 15px;
+  margin: 0;
+}
+#page-exercise.main_section .box_down .sidebar-right .addmore p a {
+  color: #86ca50;
+}
+#page-exercise.main_section .box_down .sidebar-right .addmore p a:hover {
+  text-decoration: none;
+}
+#page-exercise.main_section .box_down .sidebar-right .addmore button.btn-success {
+  background-color: #86ca50;
+  border: none;
+  font-family: "Open Sans";
+  font-weight: 600;
+  font-size: 11px;
+  height: 36px;
+  width: 85px;
+  text-transform: uppercase;
+  margin: 16px 15px 0 0;
+}
+#page-exercise.main_section .box_down .sidebar-right ul {
+  border-bottom: none;
+}
+#page-exercise.main_section .box_down .sidebar-right ul li {
+  width: 50%;
+}
+#page-exercise.main_section .box_down .sidebar-right .track_water {
+  height: 220px;
+}
+#page-exercise.main_section .box_down .sidebar-right .track_water .progress.vertical {
+  background: #ebedee;
+  width: 310px;
+  position: relative;
+}
+#page-exercise.main_section .box_down .sidebar-right .track_water .progress.vertical .medidas {
+  position: absolute;
+  left: 10px;
+  bottom: 14px;
+  z-index: 99;
+}
+#page-exercise.main_section .box_down .sidebar-right .track_water .progress.vertical .more,
+#page-exercise.main_section .box_down .sidebar-right .track_water .progress.vertical .less {
+  background: url("../img/fit_bg.png") 0 0 repeat;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  right: 9px;
+  z-index: 99;
+}
+#page-exercise.main_section .box_down .sidebar-right .track_water .progress.vertical .more {
+  top: 9px;
+}
+#page-exercise.main_section .box_down .sidebar-right .track_water .progress.vertical .more .icon-more {
+  background-position: -48px -190px;
+  width: 12px;
+  height: 12px;
+  margin: 9px;
+  display: block;
+}
+#page-exercise.main_section .box_down .sidebar-right .track_water .progress.vertical .less {
+  top: 43px;
+}
+#page-exercise.main_section .box_down .sidebar-right .track_water .progress.vertical .less .icon-less {
+  background-position: -48px -184px;
+  width: 12px;
+  height: 6px;
+  margin: 14px 0 0 9px;
+  display: block;
+}
+#page-exercise.main_section .box_down .sidebar-right .track_water .progress.vertical .porcent {
+  position: absolute;
+  width: 100%;
+  top: 60px;
+  z-index: 99;
+}
+#page-exercise.main_section .box_down .sidebar-right .track_water .progress.vertical .porcent p {
+  font-family: "Lato";
+  font-size: 46px;
+  font-style: normal;
+  font-weight: 300;
+  color: #ffffff;
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+}
+#page-exercise.main_section .box_down .sidebar-right .track_water .progress.vertical .progressbar-front-text {
+  font-family: "Lato";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+  bottom: 16px;
+  right: 14px;
+}
+#page-exercise.main_section .box_down .sidebar-right .track_water .progress.vertical .progressbar-front-text img {
+  vertical-align: inherit;
+}
+#page-exercise.main_section .box_down .sidebar-right .food_information {
+  height: 155px;
+  border-top: 1px solid #bfbfbf;
+  border-bottom: 1px solid #bfbfbf;
+  padding: 10px 15px;
+  text-align: left;
+}
+#page-exercise.main_section .box_down .sidebar-right .food_information h5 {
+  color: #86ca50;
+  font-family: "Open Sans";
+  font-weight: 600;
+  font-size: 14px;
+  display: block;
+  margin: 3px 0 10px;
+}
+#page-exercise.main_section .box_down .sidebar-right .food_information p {
+  font-family: "Open Sans";
+  font-weight: 400;
+  font-size: 13px;
+  color: #646b74;
+}
+#page-exercise.main_section .box_down .sidebar-right .food_information cite {
+  font-family: "Open Sans";
+  font-weight: 600;
+  font-size: 14px;
+  font-style: italic;
+  color: #8b959e;
+}
+#page-exercise.main_section .box_down .sidebar-right .save-list form,
+#page-exercise.main_section .box_down .sidebar-right .newexer-list form {
+  padding: 16px 10px 26px 25px;
+  overflow: hidden;
+  text-align: left;
+}
+#page-exercise.main_section .box_down .sidebar-right .save-list form .form-group,
+#page-exercise.main_section .box_down .sidebar-right .newexer-list form .form-group {
+  margin-bottom: 22px;
+}
+#page-exercise.main_section .box_down .sidebar-right .save-list form label,
+#page-exercise.main_section .box_down .sidebar-right .newexer-list form label {
+  color: #646b74;
+  font-family: "Open Sans";
+  font-weight: 600;
+  font-size: 14px;
+  font-style: italic;
+}
+#page-exercise.main_section .box_down .sidebar-right .save-list form input,
+#page-exercise.main_section .box_down .sidebar-right .newexer-list form input {
+  height: 34px;
+  box-shadow: none;
+  border-color: #bfbfbf;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+}
+#page-exercise.main_section .box_down .sidebar-right .save-list form textarea,
+#page-exercise.main_section .box_down .sidebar-right .newexer-list form textarea {
+  height: 214px;
+  box-shadow: none;
+  border-color: #bfbfbf;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  resize: none;
+}
+#page-exercise.main_section .box_down .sidebar-right .save-list form button.btn-default,
+#page-exercise.main_section .box_down .sidebar-right .newexer-list form button.btn-default {
+  background-color: transparent;
+  border: none;
+  font-family: "Open Sans";
+  font-weight: 600;
+  font-size: 11px;
+  height: 36px;
+  width: 85px;
+  text-transform: uppercase;
+  color: #646b74;
+}
+#page-exercise.main_section .box_down .sidebar-right .save-list form button.btn-success,
+#page-exercise.main_section .box_down .sidebar-right .newexer-list form button.btn-success {
+  background-color: #86ca50;
+  border: none;
+  font-family: "Open Sans";
+  font-weight: 600;
+  font-size: 11px;
+  height: 36px;
+  width: 85px;
+  text-transform: uppercase;
+}
+#page-exercise.main_section .box_down .sidebar-right .nutritions .title_sidebar {
+  background: #ffffff;
+  height: 60px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+}
+#page-exercise.main_section .box_down .sidebar-right .nutritions .title_sidebar h4 {
+  font-family: "Open Sans";
+  font-weight: 400;
+  font-size: 15px;
+  color: #86ca50;
+  margin: 0;
+  line-height: 60px;
+  display: inline-block;
+}
+#page-exercise.main_section .box_down .sidebar-right .nutritions ul {
+  background: #f6f7f8;
+  border-top: 1px solid #bfbfbf;
+  border-bottom: none;
+  padding: 23px 0px 15px 5px;
+  height: 200px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+#page-exercise.main_section .box_down .sidebar-right .nutritions ul li {
+  border-top: none;
+  width: 100%;
+}
+#page-exercise.main_section .box_down .sidebar-right .nutritions ul li p {
+  font-family: "Open Sans";
+  font-weight: 400;
+  font-size: 13px;
+  color: #646b74;
+  margin: 0 0 22px;
+}
+#page-exercise.main_section .box_down .text-left {
+  padding-left: 15px;
+}
+#page-exercise.main_section .totalcal {
+  height: 70px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background: #ffffff;
+  width: 948px;
+  margin: 20px 1px 0;
+  text-align: left;
+  -webkit-box-shadow: 0 1px 1px 0 #a8afb1;
+  -moz-box-shadow: 0 1px 1px 0 #a8afb1;
+  box-shadow: 0 1px 1px 0 #a8afb1;
+}
+#page-exercise.main_section .totalcal p {
+  display: inline-block;
+  font-family: "Open Sans";
+  font-weight: 600;
+  font-size: 18px;
+  font-style: italic;
+  color: #646b74;
+  padding: 16px 0 0 20px;
+  line-height: 20px;
+}
+#page-exercise.main_section .totalcal p span {
+  font-size: 15px;
+  font-style: normal;
+  color: #8b959e;
+  font-weight: 400;
+}
+#page-exercise.main_section .totalcal button.btn-default {
+  background-color: transparent;
+  border: none;
+  font-family: "Open Sans";
+  font-weight: 600;
+  font-size: 11px;
+  height: 36px;
+  width: 75px;
+  text-transform: uppercase;
+  color: #646b74;
+  margin-top: 17px;
+}
+#page-exercise.main_section .totalcal button.btn-primary {
+  background-color: #3e96ef;
+  border: none;
+  font-family: "Open Sans";
+  font-weight: 600;
+  font-size: 11px;
+  height: 36px;
+  width: 95px;
+  text-transform: uppercase;
+  margin: 17px 17px 0 0;
+}
+#page-exercise.main_section h2 {
+  margin-bottom: 40px;
+}
+#page-exercise.main_section h2:after {
+  display: inline-block;
+  margin: 0 0 8px 20px;
+  height: 1px;
+  content: " ";
+  background: #bfbfbf;
+  width: 622px;
+}
+#page-exercise.main_section #accordion h3 {
+  font-family: "Lato";
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 700;
+  color: #8b959e;
+  height: 59px;
+  line-height: 59px;
+  background: #ffffff;
+  border-bottom: 1px solid #bfbfbf;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  margin: 0;
+  text-align: left;
+  padding-left: 115px;
+  position: relative;
+  cursor: pointer;
+}
+#page-exercise.main_section #accordion h3 .ui-icon-triangle-1-e {
+  position: absolute;
+  top: 25px;
+  left: 23px;
+  background-position: -30px -234px;
+  width: 5px;
+  height: 10px;
+}
+#page-exercise.main_section #accordion h3 .ui-icon-triangle-1-s {
+  position: absolute;
+  top: 28px;
+  left: 22px;
+  background-position: -28px -208px;
+  width: 10px;
+  height: 5px;
+}
+#page-exercise.main_section #accordion h3 p {
+  color: #8b959e;
+  font-family: "Open Sans";
+  font-weight: 600;
+  font-size: 15px;
+  font-style: italic;
+  padding-right: 25px;
+  margin: 0;
+}
+#page-exercise.main_section #accordion h3 span {
+  position: absolute;
+  top: 17px;
+}
+#page-exercise.main_section #accordion h3 .icon-cardio {
+  background-position: -548px -120px;
+  height: 25px;
+  width: 28px;
+  left: 61px;
+}
+#page-exercise.main_section #accordion h3 .icon-strange {
+  background-position: -549px -165px;
+  height: 22px;
+  width: 24px;
+  left: 61px;
+}
+#page-exercise.main_section #accordion h3.ui-accordion-header-active,
+#page-exercise.main_section #accordion h3.ui-state-hover {
+  color: #646b74;
+}
+#page-exercise.main_section #accordion h3.ui-accordion-header-active p,
+#page-exercise.main_section #accordion h3.ui-state-hover p {
+  color: #646b74;
+}
+#page-exercise.main_section #accordion h3.ui-accordion-header-active .icon-cardio,
+#page-exercise.main_section #accordion h3.ui-state-hover .icon-cardio {
+  background-position: -493px -112px;
+  height: 40px;
+  width: 40px;
+  left: 53px;
+  top: 9px;
+}
+#page-exercise.main_section #accordion h3.ui-accordion-header-active .icon-strange,
+#page-exercise.main_section #accordion h3.ui-state-hover .icon-strange {
+  background-position: -493px -157px;
+  height: 40px;
+  width: 40px;
+  left: 53px;
+  top: 9px;
+}
+#page-exercise.main_section #accordion h3.first {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+#page-exercise.main_section #accordion h3.last {
+  border-bottom: none;
+}
+#page-exercise.main_section #accordion div {
+  border: none;
+}
+#page-exercise.main_section #accordion div .table {
+  margin: 0;
+}
+#page-exercise.main_section #accordion div .table > thead > tr > th {
+  font-family: "Lato";
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 700;
+  color: #646b74;
+  background: #edeff0;
+  border-bottom: none;
+  height: 30px;
+  padding: 0;
+  text-align: center;
+  vertical-align: middle;
+}
+#page-exercise.main_section #accordion div .table > thead > tr > th.left,
+#page-exercise.main_section #accordion div .table > tbody > tr > td.left {
+  text-align: left;
+  padding-left: 20px;
+}
+#page-exercise.main_section #accordion div .table > tbody > tr > td {
+  border-top: 1px solid #bfbfbf;
+  background: #f6f7f8;
+  font-family: "Lato";
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 700;
+  color: #646b74;
+  vertical-align: middle;
+  height: 60px;
+}
+#page-exercise.main_section #accordion div .table > tbody > tr > td p.ratings {
+  margin: 0;
+  padding-left: 7px;
+}
+#page-exercise.main_section #accordion div .table > tbody > tr > td p {
+  font-family: "Open Sans";
+  font-weight: 300;
+  font-size: 13px;
+  color: #646b74;
+  font-style: normal;
+  margin: 0;
+}
+#page-exercise.main_section #accordion div .table > tbody > tr > td p span {
+  color: #86ca50;
+}
+#page-exercise.main_section #accordion div .table > tbody > tr > td .icon-edit {
+  background-position: -97px -185px;
+  height: 19px;
+  width: 19px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 28px;
+}
+#page-exercise.main_section #accordion div .table > tbody > tr > td .icon-delete {
+  background-position: -144px -183px;
+  height: 20px;
+  width: 16px;
+  display: inline-block;
+  vertical-align: middle;
+}
+#page-exercise.main_section #accordion div .table tr td:nth-child(1) {
+  width: 43px;
+}
+#page-exercise.main_section #accordion div .table tr td:nth-child(2) {
+  width: 685px;
+  text-align: left;
+}
+#page-exercise.main_section #accordion div .table tr td:nth-child(5) {
+  width: 130px;
+}
+#page-exercise.main_section #accordion div .table > tbody:last-child > tr:last-child > td {
+  border-bottom: 1px solid #bfbfbf;
+}
+#page-exercise.main_section #accordion div .table-hover > tbody > tr:hover > td {
+  background: #ffffff;
+}
+#page-exercise.main_section #accordion div .table-hover > tbody > tr:hover > td .icon-edit {
+  background-position: -97px -208px;
+}
+#page-exercise.main_section #accordion div .table-hover > tbody > tr:hover > td .icon-delete {
+  background-position: -144px -207px;
+}
+#page-exercise.main_section .foot-accordion {
+  height: 60px;
+  background: #86ca50;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+#page-exercise.main_section .foot-accordion p {
+  font-family: "Lato";
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 900;
+  color: #ffffff;
+  padding-right: 25px;
+  margin: 0;
+  line-height: 60px;
+  word-spacing: 10px;
+}
+#page-exercise.main_section .foot-accordion p span {
+  font-size: 18px;
+  vertical-align: top;
+}
+#page-exercise.main_section .foot-accordion p span.small {
+  font-size: 12px;
+  padding-left: 7px;
+  word-spacing: 0px;
+  vertical-align: top;
+  font-weight: 700;
+}

@@ -1,0 +1,77 @@
+  	@import "variables.less";
+  	@import "mixins.less";
+    
+    .boxes-notifications {
+        background: @white;
+        .border-radius(5px);
+        .shadow-box();
+        .flex_main_container ();
+        margin: 0 0 20px 1px;
+        position: relative;
+        padding: 17px 13px;
+        width: 100%;
+        .align(left);
+
+        .edit_comment {
+            background: url("../img/edit-small.png") 0 0 no-repeat;
+            display: none;
+            height: 30px;
+            width: 30px;
+            position: absolute;
+            right: 4px;
+            top: 4px;
+        }
+    }
+
+    .notification-circle {
+        .border-radius(50%);
+        display: inline-block;
+        height: 60px;
+        margin-right: 13px;
+        position: relative;
+        .align(center);
+        width: 60px;
+
+        &.avatar-user {
+            img {
+                .border-radius(50%);
+                max-width: 100%;
+            }
+
+            .status_small_icon {
+                background: @white;
+                .border-radius(14px);
+                height: 28px;
+                position: absolute;
+                right: -5px;
+                bottom: -1px;
+                padding: 2px 0 0 2px;
+                width: 29px;
+            }
+        
+        }
+
+    }
+
+    .notification-box-comments {
+        display: inline-block;
+    }
+
+    .notification-date {
+        .open-normal(12px);
+        color: @green;            
+        line-height: 12px;
+        margin-bottom: 5px;
+        text-transform: capitalize;
+    }
+
+    .notification-comment {
+        .open-light(14px);
+        .align(left);
+
+        span {
+            font-weight: 600;
+            color: @green;
+        }
+                  
+    }

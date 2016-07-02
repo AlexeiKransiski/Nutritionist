@@ -1,0 +1,11 @@
+<div class="row">
+    <div class="col-xs-10 col-sm-11">
+        <p class="ratings pull-left">
+            <input tabindex="5" type="checkbox" id="icheckbox_futurico-1" <%= Helpers.checkedIfUserFoodFavorites(model, favorites) %>/>
+        </p>
+        <span> <%= model.get('name') %> </span> - 16 - 19 kph, light (Cycling, Biking, bike riding).
+    </div>
+    <div class="col-xs-2 col-sm-1">
+        <a href='javascript:void(0);' class="adds" data-toggle="add-list">add</a>
+    </div>
+</div>

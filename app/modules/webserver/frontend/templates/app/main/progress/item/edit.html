@@ -1,0 +1,162 @@
+<div class="tab-head">
+  <p class="pull-left">BODY PROGRESS <!--a href="" class="icon-help"></a--></p>
+  <p class="pull-right date">
+    <% if (model) { %><%= moment(model.escape('date')).format('MMM D, YYYY') %><% } %>
+    <span class="icon-fecha"></span>
+  </p>
+</div>
+<form id="progress-form" data-role='progress-form'>
+  <div class="tab-body">
+
+      <!--picturenew -->
+    <div id="picContainer" class="picturenew pull-left">
+      <div data-role="progress-photo-container" class="hide">
+        <img data-role="preview-image" src="<%= model.get('photo_src') %>">
+      </div>
+
+      <div class="empty_right" data-role="progress-empty-photo">
+        <div class="circle"><div class="camara"></div></div>
+        <h3 class="text-center">Not Photo yet?</h3>
+        <p class="text-center">Take a moment, take a photo of yourself. Come back later and compare your progress.</p>
+        <!-- <button class="btn btn-primary">upload photo</button> -->
+      </div>
+      <span data-role="upload-photo">
+        <!-- backboen crop view -->
+      </span>
+    </div> <!-- /picture -->
+
+    <div class="details_bodynew pull-left">
+      <ul class="list-unstyled">
+        <li>
+          Chest
+          <div class="input-group pull-right">
+              <input class="form-control mask-number" type="text" name="chest" placeholder="0.00" value="<%= Helpers.getValuesPerMeassurement(model.get('chest'), "longitud", app.me.get("widgets").meassure) %>" />
+              <span class="input-group-addon"><%=Helpers.getUnitsPerMeassurement("longitud", app.me.get("widgets").meassure)%></span>
+          </div>
+        </li>
+        <li>
+          Upper Arm Right
+          <div class="input-group pull-right">
+              <input class="form-control mask-number" type="text" name="upperArmRight" placeholder="0.00" value="<%= Helpers.getValuesPerMeassurement(model.get('upperArmRight'), "longitud", app.me.get("widgets").meassure) %>" />
+              <span class="input-group-addon"><%=Helpers.getUnitsPerMeassurement("longitud", app.me.get("widgets").meassure)%></span>
+          </div>
+        </li>
+        <li>
+          Hips
+          <div class="input-group pull-right">
+              <input class="form-control mask-number" type="text" name="hips" placeholder="0.00" value="<%= Helpers.getValuesPerMeassurement(model.get('hips'), "longitud", app.me.get("widgets").meassure) %>" />
+              <span class="input-group-addon"><%=Helpers.getUnitsPerMeassurement("longitud", app.me.get("widgets").meassure)%></span>
+          </div>
+        </li>
+        <li>
+          Forearm Right
+          <div class="input-group pull-right">
+              <input class="form-control mask-number" type="text" name="forearmRight" placeholder="0.00" value="<%= Helpers.getValuesPerMeassurement(model.get('forearmRight'), "longitud", app.me.get("widgets").meassure) %>" />
+              <span class="input-group-addon"><%=Helpers.getUnitsPerMeassurement("longitud", app.me.get("widgets").meassure)%></span>
+          </div>
+        </li>
+        <li>
+          Thigh Right
+          <div class="input-group pull-right">
+              <input class="form-control mask-number" type="text" name="thighRight" placeholder="0.00" value="<% if (model && model.get('thighRight')) { %><%= Helpers.getValuesPerMeassurement(model.get('thighRight'), "longitud", app.me.get("widgets").meassure)  %><% } %>" />
+              <span class="input-group-addon"><%=Helpers.getUnitsPerMeassurement("longitud", app.me.get("widgets").meassure)%></span>
+          </div>
+        </li>
+        <li>
+          Calf Right
+          <div class="input-group pull-right">
+              <input class="form-control mask-number" type="text" name="calfRight" placeholder="0.00" value="<%= Helpers.getValuesPerMeassurement(model.get('calfRight'), "longitud", app.me.get("widgets").meassure) %>" />
+              <span class="input-group-addon"><%=Helpers.getUnitsPerMeassurement("longitud", app.me.get("widgets").meassure)%></span>
+          </div>
+        </li>
+        <li>
+          Neck
+          <div class="input-group pull-right">
+              <input class="form-control mask-number" type="text" name="neck" placeholder="0.00" value="<%= Helpers.getValuesPerMeassurement(model.get('neck'), "longitud", app.me.get("widgets").meassure) %>" />
+              <span class="input-group-addon"><%=Helpers.getUnitsPerMeassurement("longitud", app.me.get("widgets").meassure)%></span>
+          </div>
+        </li>
+        <li>
+          Upper Arm Left
+          <div class="input-group pull-right">
+              <input class="form-control mask-number" type="text" name="upperArmLeft" placeholder="0.00" value="<%= Helpers.getValuesPerMeassurement(model.get('upperArmLeft'), "longitud", app.me.get("widgets").meassure) %>" />
+              <span class="input-group-addon"><%=Helpers.getUnitsPerMeassurement("longitud", app.me.get("widgets").meassure)%></span>
+          </div>
+        </li>
+        <li>
+          Waist
+          <div class="input-group pull-right">
+              <input class="form-control mask-number" type="text" name="waist" placeholder="0.00" value="<%= Helpers.getValuesPerMeassurement(model.get('waist'), "longitud", app.me.get("widgets").meassure) %>" />
+              <span class="input-group-addon"><%=Helpers.getUnitsPerMeassurement("longitud", app.me.get("widgets").meassure)%></span>
+          </div>
+        </li>
+        <li>
+          Forearm Left
+          <div class="input-group pull-right">
+              <input class="form-control mask-number" type="text" name="forearmLeft" placeholder="0.00" value="<% if (model && model.get('forearmLeft')) { %><%= Helpers.getValuesPerMeassurement(model.get('forearmLeft'), "longitud", app.me.get("widgets").meassure)  %><% } %>" />
+              <span class="input-group-addon"><%=Helpers.getUnitsPerMeassurement("longitud", app.me.get("widgets").meassure)%></span>
+          </div>
+        </li>
+        <li>
+          Thigh Left
+          <div class="input-group pull-right">
+              <input class="form-control mask-number" type="text" name="thighLeft" placeholder="0.00" value="<%= Helpers.getValuesPerMeassurement(model.get('thighLeft'), "longitud", app.me.get("widgets").meassure) %>" />
+              <span class="input-group-addon"><%=Helpers.getUnitsPerMeassurement("longitud", app.me.get("widgets").meassure)%></span>
+          </div>
+        </li>
+        <li>
+          Calf Left
+          <div class="input-group pull-right">
+              <input class="form-control mask-number" type="text" name="calfLeft" placeholder="0.00" value="<%= Helpers.getValuesPerMeassurement(model.get('calfLeft'), 'longitud', app.me.get('widgets').meassure) %>" />
+              <span class="input-group-addon"><%=Helpers.getUnitsPerMeassurement("longitud", app.me.get("widgets").meassure)%></span>
+          </div>
+        </li>
+      </ul>
+    </div><!-- /details_body -->
+    <div class="observationsnew pull-right">
+      <div class="form">
+        <div class="form-group">
+          <label for="title">TITLE</label>
+          <input type="text" class="form-control" id="title" name="title" value="<%= model.escape('title') %>"/>
+          <p id="title_error" class="error"></p>
+        </div>
+
+        <div class="form-group">
+          <label for="observations">OBSERVATIONS</label>
+          <textarea class="form-control" id="observations" name="observations"><% if (model) { %><%= model.escape('observations') %><% } %></textarea>
+          <p id="observations_error" class="error"></p>
+        </div>
+
+
+      </div>
+    </div><!-- /observations -->
+
+  </div>
+  <div class="tab-aside2">
+    <ul class="list-unstyled">
+      <li>
+        HEIGHT
+        <div class="input-group pull-right">
+            <input class="form-control" disabled="disabled" type="text" name="height" placeholder="0.00" value="<%= Helpers.getValuesPerMeassurement(app.me.get('height').value, 'longitud', app.me.get('widgets').meassure) %>" />
+            <span class="input-group-addon"><%=Helpers.getUnitsPerMeassurement("longitud", app.me.get("widgets").meassure)%></span>
+        </div>
+      </li>
+      <li>
+        WEIGHT
+        <div class="input-group pull-right">
+            <input class="form-control mask-number" type="text" name="weight" placeholder="0.00" value="<%=  Helpers.getValuesPerMeassurement(model.get('weight'), 'mass', app.me.get('widgets').meassure) %>" />
+            <span class="input-group-addon"><%=Helpers.getUnitsPerMeassurement("mass", app.me.get("widgets").meassure)%></span>
+        </div>
+      </li>
+      <li>
+        BMI
+        <p class="pull-right cal" id="bmi-calculation"><% if (model.get('bmi')) { %><%= model.escape('bmi') %> <% } else { %> ...Calculating <% } %></p>
+      </li>
+    </ul>
+  </div>
+  <div class="tab-foot">
+    <p class="pull-left">We recommend you to track your progrees within the next 7 days.</p>
+    <button class="btn-blue-open mrgtop-16 pull-right submit">submit</button>
+    <button class="btn btn-default pull-right cancel">cancel</button>
+  </div>
+</form>

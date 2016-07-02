@@ -1,0 +1,15 @@
+<div class="row">
+	<div class="col-xs-2 col-sm-1 pd-right_0">
+		<div class="ratings">   
+  			<input tabindex="5" type="checkbox" id="icheckbox_futurico-1" <%= Helpers.checkedIfUserFoodFavorites(model, favorites) %> />
+		</div>
+	</div>
+	<div class="col-xs-8 col-sm-10 pd-left_0">
+		<span class="search-description">
+			<%= Helpers.truncateString(model.escape('description'), 65) %>
+		</span>	
+	</div>
+	<div class="col-xs-2 col-sm-1 pd-left_0">
+		<a href='#' class="adds" data-role="add-servings">add</a>
+	</div>
+</div>

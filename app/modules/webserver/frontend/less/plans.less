@@ -1,0 +1,90 @@
+  	@import url("variables.less");
+  	@import url("mixins.less");
+
+  	// * Plans * //
+	.title-plans {
+		color: @green;
+		.font-size(@txt-h5 - 2);
+	  	font-weight: 400;
+	  	.align(left);
+	  	margin: 22px 0 48px 25px;
+	  	line-height: @txt-h5 - 2;
+	}
+	
+	.title-card {
+		.font-size(@txt-h5);
+		font-weight: 300;
+	    line-height: @txt-h5;
+	    margin: 0 0 0 35px;
+	    padding-top: 30px;
+	    text-transform: uppercase;
+	}
+
+	.subtitle-free {
+		font-size: 18px;
+		font-weight: 400;
+		padding: 25px 25px 0 20px;
+
+		&.price-month {
+			color: @font-menu;
+			font-weight: 400;
+			padding-top: 0;
+			position: absolute;
+			left: 73px;
+		}
+
+	}
+
+	.title-free {
+		line-height: 32px;
+		margin: 52px 0 30px;
+	}
+	
+	.plans-prices {
+		font-size: 30px;
+	    line-height: 30px;
+	  	.align(left);
+	  	margin: 0 0 10px 25px;
+
+		&.orange {
+	       color: @lightorange;
+	    }
+
+	    &.red {
+	      	color: @lightred;
+	    }
+
+	    &.blue {
+	      	color: @blue;
+	    }
+	}
+
+	.plans-descriptions {
+		.font-size(@txt-description - 2);
+		font-weight: 400;
+		line-height: 21px;
+	  	margin: 30px 33px 0 23px;
+	  	.align(left);
+
+	  	&.card-description {
+			margin: 0;
+	    	padding: 15px 40px 0 35px;
+		}
+
+		&.free-description {
+			font-size: 15px;
+			margin: 0 0 25px;
+			padding: 0 25px 0 20px;
+		}
+	}
+
+	.plans-link-card {
+		color: @font-new;
+		font-style: normal;
+		text-decoration: underline;
+
+		&:hover {
+			color: @font-new;
+			text-decoration: none;
+		}
+	}

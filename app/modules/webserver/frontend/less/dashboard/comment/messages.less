@@ -1,0 +1,52 @@
+    @import url("variables.less");
+    @import url("mixins.less");
+    
+    
+    .notification-box-comments{
+        .happy {
+            color: @orange
+        }
+        .chill {
+            color: @blue
+        }
+        .sick {
+            color: @morado
+        }
+        .bad {
+            color: @red
+        }
+        .depress {
+            color: @font-p
+        }
+        .glass {
+            color: @skyblue
+        }
+    }
+
+    .notification-circle {
+        
+        &.food {
+            background: @orange
+        }
+
+        &.glass {
+            background: @skyblue
+        }
+
+        &.progresss {
+            background: @morado
+        }
+
+        &.nutri {
+            background: @green
+        }
+
+        &.workout {
+            background: @blue
+        }
+
+        &.empty {
+            margin-top: -1px 11px 0 -1px;
+            width: 62px;
+        }
+    }

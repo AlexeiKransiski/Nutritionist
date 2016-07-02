@@ -1,0 +1,116 @@
+<div class="tab-head">
+    <div class="row">
+        <div class="col-sm-12 text-left">
+            <h5>nutritional information</h5>
+        </div>
+    </div>
+</div>
+
+<div class="tab-body text-left">
+
+    <h5>Arrange nutritional information in a way you like the most</h5>
+
+    <p>
+        You can now track and arrange the nutrients and calories you are taking from your meals. Qalorie allows you to track only those items you want to have under observations. This will in turn allow you to better observe the total food habit you are accustomed with.
+    </p>
+
+    <div class="row">
+        <div class="col-sm-6 subtitle">
+            <h5>1. Choose the priority for your displayed items</h5>
+
+            <label id="error" class="error widget">
+                Please choose the correct order for the nutrients
+            </label>
+
+            <div class="row ">
+                <div class="col-xs-3 col-md-2">
+                    <p>Position</p>
+                </div>
+                <div class="col-xs-9 col-md-10">
+                    <p>Tracking Sequence</p>
+                </div>
+            </div>
+
+            <ul class="list-unstyled priority ">
+                <% for (var i = 1; i <= 6; i++) { %>
+                <li class="row">
+                    <div class="col-xs-3 col-md-2 position text-center"><%= i %></div>
+                    <div class="col-xs-9 col-md-10">
+                        <div id="position<%= i %>" class="bfh-selectbox nutrient-fact-pos full" data-pos="<%= i %>" data-value="">
+                            <div data-value="carbs">Carbohydrates</div>
+                            <div data-value="fat">Fat</div>
+                            <div data-value="protein">Protein</div>
+                            <div data-value="cholesterol">Cholesterol</div>
+                            <div data-value="sodium">Sodium</div>
+                            <div data-value="sugars">Sugars</div>
+                            <div data-value="potassium">Potassium</div>
+                            <div data-value="vitamin_a">Vitamin A</div>
+                            <div data-value="vitamin_c">Vitamin C</div>
+                            <div data-value="calcium">Calcium</div>
+                            <div data-value="iron">Iron</div>
+                            <div data-value="dietary_fiber">Dietary Fiber</div>
+                            <div data-value="satured">Saturated</div>
+                            <div data-value="polyunsaturated">Polyunsaturated</div>
+                            <div data-value="monounsaturated">Monounsaturated</div>
+                            <div data-value="trans">Trans</div>
+                        </div>
+                    </div>
+                </li>
+                <% } %>
+            </ul>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="tab-foot">
+    <div class="row">
+        <div class="col-sm-12 text-right">
+            <button id="updateNutritionalWidget" type="button" class="btn btn-primary">update</button>
+        </div>
+    </div>
+</div>
+<!--
+
+<div class="tab-body text-left">
+  <form role="form" class="nutritionals text-left" data-role="nutricional-form">
+    <div class="pull-left" style="width:100%;">
+      <table class="table settings-widget-nutricional"  style="width:100%;">
+        <thead  style="width:100%;">
+          <tr>
+            <th>
+              Items
+            </th>
+            <th>
+              Currently Tracked
+            </th>
+          </tr>
+        </thead>
+        <tbody  style="width:100%;">
+          <tr>
+            <td class="left">
+              <ul class="element-boxes widget-nutricional" id="sortable1">
+                <li data-value="protein">Protein</li>
+                <li data-value="sodium">Sodium</li>
+                <li data-value="carbs">Carbohydrates</li>
+                <li data-value="cholesterol">Cholesterol</li>
+                <li data-value="fat">Fat</li>
+                <li data-value="potassium">Potassium</li>
+              </ul>
+            </td>
+            <td class="left">
+              <ul class="element-boxes widget-nutricional" id="sortable2">
+
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+  </form>
+
+</div-->

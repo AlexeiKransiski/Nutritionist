@@ -1,0 +1,107 @@
+@import 'variables.less';
+@import 'mixins.less';
+
+.tabs {
+  	border-bottom: 1px solid @line-new;
+  	list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    
+    &.small {
+        
+        li {
+            width: 50%
+        }
+    }
+
+  	li {       
+  		background: @white;     
+        border-top: 1px solid @line-new;   
+        float: left;     
+        height: 30px;  
+        margin: 0px;
+        padding: 0;
+        .align(center);  
+        width: 25%;
+
+      	a {
+        	padding: 0;
+    		line-height: 30px;
+  	      	margin: 0;
+  	      	border: 0px;
+  	      	color: @font-new;
+  	      	.open-bold(11px); 
+  	      	text-transform: uppercase;
+  	      	font-style: normal;
+  	      	.tab-transition();
+
+      	}
+
+      	&:last-child {
+    		.border-radius(0px);
+      	}
+
+  	}
+
+  	li.active > a, li a:hover, li a:focus, li a:active {
+        border: 0px;
+        background: @green;
+        color: @white;  
+        margin: 0; 
+        border-radius: 0px;
+        .tab-transition();
+  	}
+
+} // ul
+
+#myprogresstab {
+    border: none;
+    .align(right);
+
+    &.settingtab {
+        li {
+            float: left;
+            margin-right: 0;
+            width: 16.667%;
+        }
+    }
+
+    li {
+        display: inline-block;
+        float: none;
+        margin-right: -3px;
+        width: 156px;
+        .align(center);
+
+        a {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            background-color: @bg-active;
+            .open-bold(15px);
+            color: @font-new;
+            font-style: italic;
+            box-shadow: none;
+            border: none;
+            margin-right: 0px;
+            padding: 0;
+            height: 46px;
+            line-height: 46px;
+            
+            &:hover {
+                background-color: @white;
+                color: @green;
+            }
+        }
+
+        &:last-child {
+            margin-right: 0px
+        }
+    }
+    
+    li.active > a {
+        background-color: @white;
+        color: @green;
+    }
+
+}// ul

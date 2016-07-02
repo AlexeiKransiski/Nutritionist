@@ -1,0 +1,294 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 27, 2014, 4:34:36 PM
+    Author     : Elvis Milan S
+*/
+
+
+/* Large desktop */
+  @media (min-width: 1200px) { 
+  
+      
+      
+  }
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 980px) and (max-width: 1100px) {   
+    
+    /* first section */
+    section.firts_secc {padding: 0 10px;}
+    section.firts_secc .full_col {width: 100%;}
+    
+    
+    /* second section */
+    section.sec_secc .slider_box {width: 100%; padding: 0 10px;}
+    section.sec_secc .slider_box .nav {width: 700px;}
+    
+    
+    /* third section */
+    section.thrid_secc { padding: 0 10px;}
+    
+    
+    /* fourth section */
+    section.four_secc .full_col { width: 100%; padding: 0 10px;}
+    section.four_secc .full_col .right {width: 625px;}
+    section.four_secc .full_col .right h2 {text-align: center;}
+    section.four_secc .full_col .right .box_small {width: 300px;}
+    section.four_secc .full_col .right .box_small h5 {}
+    section.four_secc .full_col .right .box_small p {}
+    section.four_secc .full_col .right .box_started.pull-left {float: right !important;  text-align: center;}
+    section.four_secc .full_col .right .box_started p {font-size: 21px; margin-top: 10px; line-height: 25px; width: 100%;}
+    section.four_secc .full_col .right .box_started button.btn-primary {margin-top: 25px; float: none !important;}
+    
+    
+    /* fiveth section */
+    section.fiveth_secc { padding: 0 10px;}
+    section.fiveth_secc .full_col {width: 100%;}
+    section.fiveth_secc .full_col .left, section.fiveth_secc .full_col .right {width: 49%;}
+    section.fiveth_secc .full_col .left .box_litle, section.fiveth_secc .full_col .right .box_litle {padding-left: 10px; font-size: 16px;}
+    section.fiveth_secc .full_col .buttons_sec button.btn-default2, section.fiveth_secc .full_col .buttons_sec button.btn-success { width: 130px; height: 45px;}
+    section.fiveth_secc .full_col .buttons_sec .price_month p, section.fiveth_secc .full_col .buttons_sec .price_year p, section.fiveth_secc .full_col .buttons_sec .price_consult p {font-size: 32px;}
+    section.fiveth_secc .full_col .buttons_sec .price_consult p.mini {font-size: 9px;}
+    
+    
+    /* footer section */
+    footer {padding: 0 10px;}
+    footer .foot_down {width: 100%;}
+    
+}
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {  
+    
+    
+    /* LANDING PAGE */
+    /* first section */
+    section.firts_secc {padding: 0 10px;}
+    section.firts_secc .full_col {width: 100%;}
+    section.firts_secc .full_col .small_buttons {margin-top:30px; }
+    section.firts_secc .full_col .big_buttons {margin-top: 115px;}
+    
+    
+    /* second section */
+    section.sec_secc h3 { font-size: 28px; margin: 52px 0 47px;}
+    section.sec_secc .slider_box {width: 100%; padding: 0 10px;}
+    section.sec_secc .slider_box .nav {width: 700px;}
+    section.sec_secc .slider_box .nav li a {font-size: 10px;}
+    
+    
+    /* third section */
+    section.thrid_secc { padding: 0 10px;}
+    section.thrid_secc h3 {font-size: 28px; margin-top: 90px;}
+    
+    
+    /* fourth section */
+    section.four_secc .full_col { width: 100%; padding: 0 10px; min-height: 900px;}
+    section.four_secc .full_col .right {width: 100%;}
+    section.four_secc .full_col .right h2 {font-size: 28px; margin: 30px 0 25px; text-align: center;}
+    section.four_secc .full_col .right .box_small, section.four_secc .full_col .right .box_started {width: 393px;}
+    section.four_secc .full_col .right .box_small.pull-left {float: right !important;}
+    section.four_secc .full_col .right .box_small h5 {margin: 18px 0 20px; font-size: 17px;}
+    section.four_secc .full_col .right .box_small p {margin-bottom: 20px; font-size: 15px;}
+    section.four_secc .full_col .right .box_started.pull-left {float: right !important;  text-align: center;}
+    section.four_secc .full_col .right .box_started p {font-size: 21px; margin-top: 10px; line-height: 25px; width: 100%;}
+    section.four_secc .full_col .right .box_started button.btn-primary {margin-top: 25px; float: none !important;}
+    
+    
+    /* fiveth section */
+    section.fiveth_secc { padding: 0 10px;}
+    section.fiveth_secc .full_col {width: 100%;}
+    section.fiveth_secc .full_col h3 {font-size: 28px; margin: 52px 0 47px;}
+    section.fiveth_secc .full_col .left, section.fiveth_secc .full_col .right {width: 49%;}
+    section.fiveth_secc .full_col .left h5, section.fiveth_secc .full_col .right h5 {font-size: 17px;}
+    section.fiveth_secc .full_col .left p, section.fiveth_secc .full_col .right p {font-size: 15px;}
+    section.fiveth_secc .full_col .left .box_litle, section.fiveth_secc .full_col .right .box_litle {text-align: center; padding-left: 0; font-size: 14px;}
+    section.fiveth_secc .full_col .buttons_sec button.btn-default2, section.fiveth_secc .full_col .buttons_sec button.btn-success { width: 90px; height: 45px;}
+    section.fiveth_secc .full_col .buttons_sec .price_month p, section.fiveth_secc .full_col .buttons_sec .price_year p, section.fiveth_secc .full_col .buttons_sec .price_consult p {font-size: 32px;}
+    section.fiveth_secc .full_col .buttons_sec .price_consult p.mini {font-size: 9px;}
+    
+    
+    /* modal section */
+    .modal .modal-dialog {width: 100%; padding: 0 15px;}
+    .modal .modal-dialog .modal-content .modal-footer p {width: 500px;}
+    
+    
+    /* footer section */
+    footer {padding: 0 10px;}
+    footer .foot_down {width: 100%;}
+    
+    
+    /* SIGN UP PAGE  */
+    /* header section  */
+    header .title-web { left: 10px;}
+    header .main_section { width: 100%; padding: 0 10px; }   
+    
+    /* main section */
+    section .main_section { width: 100%; padding: 0 10px 125px;}
+    section .main_section .box_main .left, section .main_section .box_creditcard .left { width: 48%;}
+    section .main_section .box_main .left a.btn-primary, section .main_section .box_creditcard .left a.btn-primary { width: 100%;}
+    section .main_section .box_main .right, section .main_section .box_creditcard .right, section .main_section .box_main .login, section .main_section .box_creditcard .login { width: 48%;}
+    section .main_section .box_main .line_ver_up, section .main_section .box_creditcard .line_ver_up, section .main_section .box_main .line_ver_down, section .main_section .box_creditcard .line_ver_down {left: -15px;}
+    section .main_section .box_main .text_or, section .main_section .box_creditcard .text_or {left: -30px;}
+    section .main_section .box_creditcard .left {margin-right: 0;}
+    section .main_section .box_creditcard .left .plans { width: 100%;}
+    section .main_section .box_main .right p, section .main_section .box_creditcard .right p, section .main_section .box_main .login p, section .main_section .box_creditcard .login p {padding-left: 20px;}
+    section .main_section .box_main .right form, section .main_section .box_creditcard .right form, section .main_section .box_main .login form, section .main_section .box_creditcard .login form {padding: 0 20px}
+    section .main_section .box_main .right form .form-control, section .main_section .box_creditcard .right form .form-control, section .main_section .box_main .login form .form-control, section .main_section .box_creditcard .login form .form-control {margin-bottom: 20px;}
+    section .main_section .box_creditcard .right .input180 { width: 140px;}
+    
+    /* footer section  */
+    footer .main_section { width: 100%; padding: 0 10px; } 
+    
+    
+    /* LOGIN PAGE */
+    /* main section */
+    section .main_section .box_main .login a.btn-primary {width: 90%; }
+    section .main_section .box_main .login h5:before, section .main_section .box_main .login h5:after {width: 125px;}
+    section .main_section .box_main .login p {text-align: center; font-size: 14px; padding-left: 0;}
+    
+    
+}
+ 
+  
+/* Landscape phone to portrait tablet */
+  @media (max-width: 767px) {
+	
+      
+      
+  }  
+	
+
+/* Landscape phones and down */
+@media (max-width: 479px) { 
+	
+    /* first section */
+    section.firts_secc {padding: 0 10px;}
+    section.firts_secc .full_col {width: 100%;}
+    section.firts_secc .full_col .small_buttons {margin-top:20px;}
+    section.firts_secc .full_col .big_buttons {margin-top: 95px;}
+    section.firts_secc .full_col .big_buttons h1 {font-size: 40px; line-height: 50px;}
+    section.firts_secc .full_col .big_buttons button.btn-success, section.firts_secc .full_col .big_buttons button.btn-default {width: 100%; }
+    
+    
+    /* second section */
+    section.sec_secc h3 { font-size: 24px; margin: 30px 0 27px; line-height: 30px}
+    section.sec_secc .slider_box {width: 100%; padding: 0 10px;}
+    section.sec_secc .slider_box .nav {width: 100%;}
+    section.sec_secc .slider_box .nav li a {font-size: 10px;}
+    
+    
+    /* third section */
+    section.thrid_secc { padding: 0 10px;}
+    section.thrid_secc h3 {font-size: 24px; margin-top: 55px; line-height: 36px;}
+    section.thrid_secc button.btn-success {width: 250px; height: 55px;}
+    
+    
+    /* fourth section */
+    section.four_secc .full_col { width: 100%; background: none;}
+    section.four_secc .full_col .right {width: 100%;}
+    section.four_secc .full_col .right h2 {font-size: 24px; margin: 30px 0 25px; text-align: center; line-height: 30px}
+    section.four_secc .full_col .right .box_small, section.four_secc .full_col .right .box_started {width: 100%; padding: 0 10px;}
+    section.four_secc .full_col .right .box_small h5 {margin: 10px 0 15px; font-size: 16px;}
+    section.four_secc .full_col .right .box_small p {margin-bottom: 20px; font-size: 13px;}
+    section.four_secc .full_col .right .box_started {text-align: center; margin-bottom: 20px; }
+    section.four_secc .full_col .right .box_started p {font-size: 21px; margin-top: 10px; line-height: 25px; width: 100%; text-align: center;}
+    section.four_secc .full_col .right .box_started button.btn-primary {margin-top: 25px; float: none !important;}
+    
+    
+    /* fiveth section */
+    section.fiveth_secc { padding: 0 10px;}
+    section.fiveth_secc .full_col {width: 100%;}
+    section.fiveth_secc .full_col h3 {font-size: 24px; margin: 30px 0; line-height: 30px;}
+    section.fiveth_secc .full_col .left, section.fiveth_secc .full_col .right {width: 100%;}
+    section.fiveth_secc .full_col .left h5, section.fiveth_secc .full_col .right h5 {font-size: 16px; text-align: center;}
+    section.fiveth_secc .full_col .left p, section.fiveth_secc .full_col .right p {font-size: 14px; text-align: center;}
+    section.fiveth_secc .full_col .left .box_litle, section.fiveth_secc .full_col .right .box_litle {text-align: center; padding-left: 0; font-size: 11.5px; height: 50px; line-height: 50px; margin-left: 0;}
+    section.fiveth_secc .full_col .buttons_sec button.btn-default2, section.fiveth_secc .full_col .buttons_sec button.btn-success { width: 75px; height: 36px; text-transform: lowercase;}
+    section.fiveth_secc .full_col .buttons_sec {margin: 20px 0; overflow: hidden;}
+    section.fiveth_secc .full_col .buttons_sec .price_month p, section.fiveth_secc .full_col .buttons_sec .price_year p, section.fiveth_secc .full_col .buttons_sec .price_consult p {font-size: 20px;}
+    section.fiveth_secc .full_col .buttons_sec .price_month p span.small, section.fiveth_secc .full_col .buttons_sec .price_year p span.small, section.fiveth_secc .full_col .buttons_sec .price_consult p span.small {font-size: 12px;}
+    section.fiveth_secc .full_col .buttons_sec .price_month p span, section.fiveth_secc .full_col .buttons_sec .price_year p span, section.fiveth_secc .full_col .buttons_sec .price_consult p span {font-size: 12px;}
+    section.fiveth_secc .full_col .buttons_sec .price_consult p.mini {font-size: 7px;}
+    
+    
+    /* modal section */
+    .modal .modal-dialog {width: 100%; padding: 0 5px; margin:80px 0 0;}
+    .modal .modal-dialog .modal-content .modal-footer {height: auto; text-align: center;}
+    .modal .modal-dialog .modal-content .modal-footer p {width: 100%; margin: 0;}
+    .modal .modal-dialog .modal-content .modal-footer button.btn-primary.pull-right {float: none !important;}
+    
+    
+    /* footer section */
+    footer {padding: 0 10px;}
+    footer .foot_down {width: 100%; height: auto; margin: 15px 0 20px}
+    footer .foot_down .copyright {text-align: center; line-height: 25px; font-size: 13px;}
+    footer .foot_down .copyright img {display: block; text-align: center; margin: 0 auto 15px;}
+    footer .foot_down .copyright span {display: none !important}
+    
+    
+    /* SIGN UP PAGE  */
+    /* header section  */
+    header .title-web { left: 10px;}
+    header .main_section { width: 100%; padding: 0 10px; }  
+    header .main_section p {display: none !important;}
+    
+    /* main section */
+    section .main_section { width: 100%; padding: 0 10px 75px;}
+    section .main_section h3 {margin: 52px 0 20px;}
+    section .main_section .box_main .left, section .main_section .box_creditcard .left { width: 100%;}
+    section .main_section .box_main .left a.btn-primary, section .main_section .box_creditcard .left a.btn-primary { width: 100%;}
+    section .main_section .box_main .right, section .main_section .box_creditcard .right { width: 100%; margin-top: 50px;}
+    section .main_section .box_creditcard .right { margin-top: 30px; margin-bottom: 50px;}
+    section .main_section .box_main .line_ver_up, section .main_section .box_creditcard .line_ver_up, section .main_section .box_main .line_ver_down, section .main_section .box_creditcard .line_ver_down {left: -15px;}
+    section .main_section .box_main .text_or, section .main_section .box_creditcard .text_or {left: -30px;}
+    section .main_section .box_creditcard .left {margin-right: 0;}
+    section .main_section .box_creditcard .left .plans { width: 100%;}
+    section .main_section .box_creditcard {padding-bottom: 0;}
+    section .main_section .box_main .right p, section .main_section .box_creditcard .right p, section .main_section .box_main .login p, section .main_section .box_creditcard .login p {padding-left: 20px; font-size: 13px;}
+    section .main_section .box_main .right form, section .main_section .box_creditcard .right form, section .main_section .box_main .login form, section .main_section .box_creditcard .login form {padding: 0 20px}
+    section .main_section .box_main .right form .form-control, section .main_section .box_creditcard .right form .form-control, section .main_section .box_main .login form .form-control, section .main_section .box_creditcard .login form .form-control {margin-bottom: 20px;}
+
+    
+    /* footer section  */
+    footer .main_section { width: 100%; padding: 0 0px; }
+    footer .main_section .text-left { text-align: center;}
+    footer .main_section .breadcrumb {margin-bottom: 20px;}
+    footer .main_section .pull-right { display: none;}
+    
+    
+    /* LOGIN PAGE */
+    /* main section */
+    section .main_section .box_main .login {width: 100%;}
+    section .main_section .box_main .login a.btn-primary {width: 90%; }
+    section .main_section .box_main .login h5:before, section .main_section .box_main .login h5:after {width: 125px;}
+    section .main_section .box_main .login p {text-align: center; font-size: 14px; padding-left: 0;}
+    
+    
+    
+ }
+ 
+ @media (max-width: 419px) { 
+     
+
+    /* SIGN UP PAGE  */
+    /* main section */
+    section .main_section .box_creditcard .right {height: auto !important;}
+    section .main_section .box_main .right p, section .main_section .box_creditcard .right p, section .main_section .box_main .login p, section .main_section .box_creditcard .login p {padding-left: 10px; font-size: 12px;}
+    section .main_section .box_main .right form, section .main_section .box_creditcard .right form, section .main_section .box_main .login form, section .main_section .box_creditcard .login form {padding: 0 10px}
+    section .main_section .box_creditcard .right .input180 { width: 100%; display: block;}
+    section .main_section .box_creditcard .right .input170 { width: 100%;}
+    section .main_section .box_creditcard .right .input170 label {display: block;}
+    section .main_section .box_creditcard .right .bfh-selectbox { width: 31%;}
+    section .main_section .box_creditcard .right .bfh-selectbox .bfh-selectbox-options ul {width: 100%}
+    section .main_section .box_creditcard .left .plans h6, section .main_section .box_creditcard .left .plans p {font-size: 12px;}
+    
+    
+    /* LOGIN PAGE */
+    /* main section */
+    section .main_section .box_main .login a.btn-primary {width: 94%; }
+    section .main_section .box_main .login h5:before, section .main_section .box_main .login h5:after {width: 100px;}
+    
+ }

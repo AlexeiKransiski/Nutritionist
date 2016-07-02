@@ -1,0 +1,18 @@
+<!-- Modal -->
+<div class="modal delete_account fade" id="deleteItem" tabindex="-1" role="dialog" aria-labelledby="deleteItemLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="deleteItemLabel">Remove <%= model.name %></h4>
+      </div>
+      <div class="modal-body">
+        We will retain your user data for 1 year and then it will be deleted permanently. This action can’t be undone. You can reactivate your account at any point within 1 year just by logging back in. <%= model.delete_implication %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" data-role="close">cancel</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal" data-role="delete" data-toggle="modal" data-target-uncoment="#myModalFeedBack">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>

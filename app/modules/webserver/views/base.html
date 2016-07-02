@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Qalorie</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="img/qalorie-favicon.ico">
+
+        <meta name="description" content="Online Certified Nutritionist - Start managing your overweight, high cholesterol, diabetes, hypertension, arthritis and others!">
+        <meta name="author" content="Qalorie.com">
+
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,300italic,400italic,600italic,700italic|Lato:100,300,400,700,900,700italic,900italic,400italic,300italic,100italic|Source+Sans+Pro:400,900italic,700italic,600italic,400italic,300italic,200italic,900,700,600,300,200' rel='stylesheet' type='text/css'>
+
+        <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion_async.js" charset="utf-8"></script>
+
+        {%block styles%}
+            
+        {%endblock%}
+        {%block scripts%}
+
+            <link rel="stylesheet" type="text/css" href="css/responsive.css" />
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+            <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+            <script type="text/javascript" src="https://checkout.stripe.com/checkout.js"></script>
+  
+            {% if landing %}
+
+            {% endif %}
+
+            <script>
+                window.stripe_public_key = "{{stripe_public_key}}";
+                window.plans = {
+                    trial: {
+                        id: "{{plans.trial.id}}",
+                        amount: "{{plans.trial.amount}}",
+                        name: "{{plans.trial.name}}",
+                    },
+                    monthly: {
+                        id: "{{plans.monthly.id}}",
+                        amount: "{{plans.monthly.amount}}",
+                        name: "{{plans.monthly.name}}",
+                    },
+                    yearly: {
+                        id: "{{plans.yearly.id}}",
+                        amount: "{{plans.yearly.amount}}",
+                        name: "{{plans.yearly.name}}",
+                    }
+                };
+                // Google Analityc
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+                ga('create', 'UA-75326467-1', 'auto');
+                ga('send', 'pageview');
+          </script>
+
+        {%endblock%}
+
+    </head>
+    <body class="{%block bodyStyles%}{%endblock%}">
+        {% block layout %}
+
+        {% endblock %}
+
+        {% if !landing and !nutritionist %}
+            <script type="text/javascript">
+                window._chatlio = window._chatlio||[];
+                !function(){ var t=document.getElementById("chatlio-widget-embed");if(t&&window.ChatlioReact&&_chatlio.init)return void _chatlio.init(t,ChatlioReact);for(var e=function(t){return function(){_chatlio.push([t].concat(arguments)) }},i=["configure","identify","track","show","hide","isShown","isOnline"],a=0;a<i.length;a++)_chatlio[i[a]]||(_chatlio[i[a]]=e(i[a]));var n=document.createElement("script"),c=document.getElementsByTagName("script")[0];n.id="chatlio-widget-embed",n.src="https://w.chatlio.com/w.chatlio-widget.js",n.async=!0,n.setAttribute("data-embed-version","2.1");
+                   n.setAttribute('data-widget-id','347dd857-51cd-4602-6841-b948d747bdd2');
+                   c.parentNode.insertBefore(n,c);
+                }();
+            </script>
+        {% endif %}
+
+        <!-- Facebook Pixel Code -->
+        <script>
+        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+        document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+        fbq('init', '1146897485362208');
+        fbq('track', "PageView");</script>
+        <noscript><img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=1146897485362208&ev=PageView&noscript=1"
+        /></noscript>
+        <!-- End Facebook Pixel Code -->
+
+    </body>
+</html>

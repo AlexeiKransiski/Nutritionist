@@ -1,0 +1,92 @@
+<div class="row box_top">
+  <div class="col-md-7">
+    <div class="row">
+      <div class="col-md-3 avatar"><img src="<%= model.get('patient').avatar_src %>" alt="<%= model.get('patient').full_name %>"></div>
+      <div class="col-md-9 info_user text-left">
+        <h4><%= model.get('patient').full_name %></h4>
+        <p><%= model.get('patient').email %></p>
+        <ul class="list-unstyled list-inline">
+          <li>Age: <%= model.get('age') %> yrs</li>
+          <li>Weight: <% if (model.get('weight') ) { %> <%= Helpers.getValuesPerMeassurement(model.get('weight').value, "mass", model.get("patient").widgets.meassure)%> <%=Helpers.getUnitsPerMeassurement("mass", model.get("patient").widgets.meassure)%><% } %></li>
+          <li>Height: <% if (model.get('height') ) { %><%= Helpers.getValuesPerMeassurement(model.get('height').value, "height", model.get("patient").widgets.meassure)%> <%=Helpers.getUnitsPerMeassurement("longitud", model.get("patient").widgets.meassure)%><% } %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-5">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-6 goals">
+            <div id="weater"><span class="<%= Helpers.getWeatherIcon(model.get('weather'))%>"></span>
+              <p><%= Helpers.getWeatherMessage(model.get("weather"))%></p>
+            </div>
+          </div>
+          <div class="col-md-6 goals">
+            <div id="exercesy"><span class="<%= Helpers.getWorkoutIcon(model.get('workout'))%>"></span>
+              <p>exercesy activity</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 goals">
+            <div id="sedentary"><span class="<%= Helpers.getActivityIcon(model.get('activity'))%>"></span>
+              <p><%= Helpers.getActivityMessage(model.get("activity"))%></p>
+            </div>
+          </div>
+          <div class="col-md-6 goals">
+            <div id="weight"><span class="<%= Helpers.getGoalIcon(model.get('maintain'))%>"></span>
+              <p><%= Helpers.getGoalMessage(model.get("maintain"))%></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="box_down">
+  <div class="row">
+    <div class="col-md-4">
+      <h6 class="title_box">objetivos</h6>
+      <p><%= model.get("quiz").question2 %></p>
+    </div>
+    <div class="col-md-4">
+      <h6 class="title_box">estilo de vida</h6>
+      <p><%= model.get("quiz").question1 %></p>
+    </div>
+    <div class="col-md-4">
+      <h6 class="title_box">estado</h6>
+      <ul class="list-unstyled">
+        <li>
+          <p class="text-left">Mood</p>
+          <div class="progress">
+            <div role="progressbar" aria-valuetransitiongoal="<%= Helpers.convertMoodToNumber(model.get('mood'))%>" class="progress-bar progress-bar-prot"></div>
+          </div>
+          <p class="levels"><span class="pull-left">Bad</span>Normal<span class="pull-right">Great</span></p>
+        </li>
+        <li>
+          <p class="text-left">Nutrition Lv</p>
+          <div class="progress">
+            <div role="progressbar" aria-valuetransitiongoal="<%= Helpers.renderNutritionLv(foodList)%>" class="progress-bar progress-bar-fat"></div>
+          </div>
+          <p class="levels"><span class="pull-left">Bad</span>Normal<span class="pull-right">Great</span></p>
+        </li>
+        <li>
+          <p class="text-left">Stress Lv</p>
+          <div class="progress">
+            <div role="progressbar" aria-valuetransitiongoal="<%= Helpers.renderStressLv(model.get('quiz').question3)%>" class="progress-bar progress-bar-sod"></div>
+          </div>
+          <p class="levels"><span class="pull-left">Bad</span>Normal<span class="pull-right">Great</span></p>
+        </li>
+        <li>
+          <p class="text-left">Fitness Lv</p>
+          <div class="progress">
+            <div role="progressbar" aria-valuetransitiongoal="<%= Helpers.renderFitnessLv(exerciseList)%>" class="progress-bar progress-bar-pot"></div>
+          </div>
+          <p class="levels"><span class="pull-left">Bad</span>Normal<span class="pull-right">Great</span></p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

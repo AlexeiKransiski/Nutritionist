@@ -1,0 +1,126 @@
+
+<script>
+
+    $( document ).ready(function() { 
+        
+          $(".fitness").mCustomScrollbar({
+              autoHideScrollbar:true,
+              advanced:{
+                  updateOnContentResize: true
+              }
+          });
+
+          $(".nutritional").mCustomScrollbar({
+              autoHideScrollbar:true,
+              advanced:{
+                  updateOnContentResize: true
+              }
+          });
+
+          $(".mental").mCustomScrollbar({
+              autoHideScrollbar:true,
+              advanced:{
+                  updateOnContentResize: true
+              }
+          });
+
+          // custom checkbox sidebar right
+          $('.sidebar-right li input[type=checkbox]').iCheck({
+              checkboxClass: 'icheckbox_minimal-green'
+          });
+          
+          $('.sidebar-right li input[type=checkbox]').on('ifChecked', function(){
+              var text = $e(this).parent().parent().find('label').html();
+              $(this).parent().parent().find('label').empty().append('<del>' + text + '</del>');
+          });
+
+          $('.sidebar-right li input[type=checkbox]').on('ifUnchecked', function(){
+              var text = $e(this).parent().parent().find('label').text();
+              $(this).parent().parent().find('label').empty().append(text);
+          });
+
+          // add new checklist
+          $('#add_new_goal').click(function(){
+            console.log("Veamos que hacer");
+              var list = $('.sidebar-right .tab-content').find('.active').attr('id');
+              //alert(list)
+              var new_task = "<input type=\'text\' class=\'form-control newcheckelement\' placeholder=\'New\' />";
+              //$('#'+list+ ' div ul li:first-child').before('<li>'+new_task+'</li>');
+              $('#'+list+ ' div ul').before(new_task);
+              $('.sidebar-right .tab-content .active input[type=text]').focus();
+
+              return false;
+          });
+
+    });
+
+</script>
+
+<div class="title_sidebar">
+  <h4>MY GOALS</h4>
+</div>
+<ul class="nav nav-tabs" id="mychecklist">
+  <li class="active"><a id="fitnessTab" href="#fitness" data-toggle="tab">FITNESS</a></li>
+  <li><a id="nutritionalTab" href="#nutritional" data-toggle="tab">NUTRITIONAL</a></li>
+  <li><a id="mentalTab" href="#mental" data-toggle="tab">MENTAL</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="fitness">
+    <div class="col-md-12">
+      <div class="input-group">
+        <input type="text" class="form-control" id="newchecklistitem" name="newchecklistitem" placeholder="add here..">
+        <span class="input-group-btn">
+          <button class="btn btn-default icon-morecheck" type="button"></button>
+        </span>
+      </div>
+      <div class="today">
+        <ul id="fitnessChecklist" class="list-unstyled">
+           
+        </ul>
+        <p class="empty">
+          Add all the tasks that might help you
+          to achieve your health and physical goals
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="tab-pane" id="nutritional">
+    <div class="col-md-12">
+      <div class="input-group">
+        <input type="text" class="form-control" id="newchecklistitem" name="newchecklistitem" placeholder="add here..">
+        <span class="input-group-btn">
+          <button class="btn btn-default icon-morecheck" type="button"></button>
+        </span>
+      </div>
+      <div class="today">
+        <ul id="nutritionalChecklist" class="list-unstyled">
+           
+        </ul>
+        <p class="empty">
+          Add all the tasks that might help you
+          to achieve your health and physical goals
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="tab-pane" id="mental">
+    <div class="col-md-12">
+      <div class="input-group">
+        <input type="text" class="form-control" id="newchecklistitem" name="newchecklistitem" placeholder="add here..">
+        <span class="input-group-btn">
+          <button class="btn btn-default icon-morecheck" type="button"></button>
+        </span>
+      </div>
+      <div class="today">
+        <ul id="mentalChecklist" class="list-unstyled">
+           
+        </ul>
+        <p class="empty">
+          Add all the tasks that might help you
+          to achieve your health and physical goals
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

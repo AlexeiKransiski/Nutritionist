@@ -1,0 +1,101 @@
+<script type="text/javascript">
+    if (!$('.nav-tabs-responsive li').hasClass('next')) {
+        $('.nav-tabs-responsive li:nth-child(2)').addClass('next');
+    }
+
+    $('.nav-tabs-responsive a[data-toggle="tab"]').on('show.bs.tab', function (e) {
+        var $target = $(e.target);
+        var $tabs = $target.closest('.nav-tabs-responsive');
+        var $current = $target.closest('li');
+        var $next = $current.next();
+        var $prev = $current.prev();
+
+        $tabs.find('>li').removeClass('next prev');
+        $prev.addClass('prev');
+        $next.addClass('next');
+
+    })
+</script>
+<div id="page-settings" class="main_section" data-role="main-section">
+
+    <!--div class="alert alert-warning alert-dismissible fade in visible-xs visible-sm" role="alert">
+        <button class="close" aria-label="Close" data-dismiss="alert" type="button">
+            <span aria-hidden="true">x</span>
+        </button>
+        Settings is currently unavailable on Mobile and Table, however this function will be available on mobile soon. Please visit Settings section under a Desktop computer to make changes. Thanks for your support!
+    </div-->
+
+    <h1 class="main_section__title">settings</h1>
+
+    <div class="main_info">
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="nav nav-tabs nav-tabs-responsive settingtab" id="myprogresstab">
+                    <li class="active"><a href="#profile" data-toggle="tab">My Profile</a></li>
+                    <li><a href="#widget" data-toggle="tab">Widget Settings</a></li>
+                    <li><a href="#subscription" data-toggle="tab">Subscription</a></li>
+                    <li><a href="#preferences" data-toggle="tab">Preferences</a></li>
+                    <li><a href="#goals" data-toggle="tab">Goals</a></li>
+                    <li><a href="#help" data-toggle="tab">Help</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tab-content" data-role="tabs">
+          
+        </div><!-- tab-content -->
+    </div><!-- main_info -->
+  <!-- backbone views rest_boxes with tab complement data -->
+</div><!-- page-settings -->
+
+<div class="modal fade cvv2" id="myModal_card" tabindex="1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title text-left" id="myModalLabel">WHAT IS A CARD SECURITY CODE?</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    A three- or four digit code on your credit card, separate from the 16-digit card number. The location varies slightly depending on your type of card: 
+                </p>
+
+                <img src="img/svv2.png" alt="cvv2" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade feedback" id="myModalFeedBack" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="text-center">We are sad to watch you go! Please let us know about you experience!</h3>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal">
+          <textarea class="form-control"></textarea>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" data-role="close">cancel</button>
+        <button type="button" class="btn btn-success" data-dismiss="modal" data-toggle="modal" data-target="#myModalThankyou">submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade thankyou" id="myModalThankyou" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="text-center">Thank you! Hope to see you soon. We are going to be waiting for you.</h3>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-dismiss="modal">see you soon</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,554 @@
+{% extends 'base.html' %}
+
+{%block styles%}
+    <link rel="stylesheet" type="text/css" href="/css/landing.css">
+{%endblock%}
+
+{%block scripts%}
+{% parent %}
+    <script type="text/javascript" src="/js/landing.js"></script>
+{%endblock%}
+
+{% block layout %}
+<!-- first view -->
+<section class="firts_secc">
+    <div class="container">
+        <div class="tryal trial-text">
+            Try it for
+            <span class="upper">free</span>
+        </div>
+        <div class="row">
+            <!-- logo landing -->
+            <div class="col-xs-3 col-sm-6">
+                <div class="logo-landing">
+                    <a href="/" title="">
+                        <img src="img/qalorie_logo_pixel.svg" alt="Qalorie" height="95" />
+                    </a>
+                </div>
+            </div>
+            <!-- login access -->
+            <div class="col-xs-9 col-sm-6">
+                <div class="small_buttons text-right">
+                    <a href="login">
+                        <button class="btn btn-transparent no-border" type="button">login</button>
+                    </a>
+                    <a href="signup">
+                        <button class="btn btn-transparent" type="button">sign up</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- slogan website -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="big_buttons">
+                    <h1 class="title-web">
+                        experience<br>
+                        the<br>
+                        online<br>
+                        nutritionist<br>
+                        consulting
+                    </h1>
+                    <h3 class="subtitle-web">It’s time to get fit!</h3>
+                    <a href="signup">
+                        <button class="btn btn-green" type="button">try it now</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Second view -->
+<section class="sec_secc">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+
+                <h3 class="title-section">
+                    Seamless fitness system that sets your daily calorie budget, tracks your food & exercises,<br>and provides nutrition analysis with following user tools.
+                </h3>
+                <!-- Menu tab -->
+                <ul class="nav nav-tabs nav-tabs-responsive" id="myTab" role="tablist">
+                    <li class="active">
+                        <a href="#dashboard" data-toggle="tab" class="dashboard upper text-center">dashboard
+                            <span></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#status" data-toggle="tab" class="status upper text-center">status
+                            <span></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#progress" data-toggle="tab" class="progresss upper text-center">progress
+                            <span></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#food" data-toggle="tab" class="food upper text-center">food
+                            <span></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#exercises" data-toggle="tab" class="exercises upper text-center">exercises
+                            <span></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#nutritionist" data-toggle="tab" class="nutritionist upper text-center">nutritionist
+                            <span></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="tab-content">
+                    <!-- dashboard tag -->
+                    <div class="tab-pane fade in active" id="dashboard">
+                        <div class="box_ icon-landing-dashboard"></div>
+
+                        <div class="row">
+                            <div class="col-sm-12 col-md-5">
+                                <div class="box_left">
+                                    <h5>Everything you need assembled in one place</h5>
+                                    <p>
+                                        Dashboard will give you the ultimate boost in maintaining your own calorie budget. You can see everything you are logging about your foods, exercises, calorie loss, current progress and goals in dashboard section.
+                                    </p>
+                                    <p>
+                                        You can set your status, select your everyday mood, what motivates you and priorities on your checklist section. In the process, dashboard paves the path for your nutritionist to better judge your health condition.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-7">
+
+                                <div id="carousel-dashboard" class="carousel slide" data-ride="carousel" data-interval="5000">
+
+                                    <div class="carousel-inner" role="listbox">
+                                        <div class="item active text-center">
+                                          <img src="img/Dashboard1.png" alt="Qalorie - Dashboard">
+                                        </div>
+                                        <div class="item text-center">
+                                          <img src="img/Dashboard2.png" alt="Qalorie - Dashboard">
+                                        </div>
+
+                                    </div>
+
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#carousel-dashboard" data-slide-to="0" class="active"></li>
+                                        <li data-target="#carousel-dashboard" data-slide-to="1"></li>
+                                    </ol>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- status tag -->
+                    <div class="tab-pane fade" id="status">
+                        <div class="box_ icon-landing-status"></div>
+                        <div class="row">
+                            <div class="col-sm-12 col-md-5">
+                                <div class="box_left">
+                                    <h5>Get inspired by contemplating positive changes in your body</h5>
+                                    <p>
+                                        It’s always vital to know your current status if you want to achieve a certain goal at the end of the day. Based on this proven principle, the Status section of Qalorie allows users to view every single measurement of their different body parts.
+                                    </p>
+                                    <p>
+                                        The section is also dedicated to keep track of everything; like food intake, macronutrients, exercises and calories. You will be able to scale and overcome obstacles by making smarter choices.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-7">
+
+                                <div id="carousel-status" class="carousel slide" data-ride="carousel" data-interval="5000">
+
+                                    <div class="carousel-inner" role="listbox">
+                                        <div class="item active">
+                                          <img src="img/Status1.png" alt="Qalorie - Status">
+                                        </div>
+                                        <div class="item">
+                                          <img src="img/Status2.png" alt="Qalorie - Status">
+                                        </div>
+
+                                    </div>
+
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#carousel-status" data-slide-to="0" class="active"></li>
+                                        <li data-target="#carousel-status" data-slide-to="1"></li>
+                                    </ol>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- progress tag -->
+                    <div class="tab-pane fade" id="progress">
+                        <div class="box_ icon-landing-progress"></div>
+                        <div class="row">
+                            <div class="col-sm-12 col-md-5">
+                                <div class="box_left">
+                                    <h5>Discover the power of comparable photos!</h5>
+                                    <p>
+                                        Nothing is more gratifying than being able to track your own progress. Compare between two photos that are taken at different times to track your personalized progress. Our robust database can pin-point, even the smallest of changes you achieve.
+                                    </p>
+                                    <p>
+                                        You don’t need to seek suggestion from professional. You will be able to identify your positive changes from two comparable pictures and measurements. All you need to do is share that information with Qalorie!
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-7">
+
+                                <div id="carousel-progress" class="carousel slide" data-ride="carousel" data-interval="5000">
+
+                                    <div class="carousel-inner" role="listbox">
+                                        <div class="item active">
+                                          <img src="img/Progress1.png" alt="Qalorie - Progress">
+                                        </div>
+                                        <div class="item">
+                                          <img src="img/Progress2.png" alt="Qalorie - Progress">
+                                        </div>
+
+                                    </div>
+
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#carousel-progress" data-slide-to="0" class="active"></li>
+                                        <li data-target="#carousel-progress" data-slide-to="1"></li>
+                                    </ol>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- food tag -->
+                    <div class="tab-pane fade" id="food">
+                        <div class="box_ icon-landing-food"></div>
+                        <div class="row">
+                            <div class="col-sm-12 col-md-5">
+                                <div class="box_left">
+                                    <h5>Record what you eat and start get healthy</h5>
+                                    <p>
+                                        People who track food achieve more benefits on the way to better health. No matter if you are a vegetarian, pregnant, on a low fat or low carb diet; you can find personalized food information about the nutrients you need to eat.
+                                    </p>
+                                    <p>
+                                        Just record your daily food consumption and our Qalorie will do the hard work. Choose your own foods or meal plans recommended by our experts. You decide what goes for you.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-7">
+
+                                <div id="carousel-food" class="carousel slide" data-ride="carousel" data-interval="5000">
+
+                                    <div class="carousel-inner" role="listbox">
+                                        <div class="item active">
+                                          <img src="img/Food1.png" alt="Qalorie - Food">
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- exercises tag -->
+                    <div class="tab-pane fade" id="exercises">
+                        <div class="box_ icon-landing-exercises"></div>
+                        <div class="row">
+                            <div class="col-sm-12 col-md-5">
+                                <div class="box_left">
+                                    <h5>See how much calories you burn</h5>
+                                    <p>
+                                        Gone are the days when you were confused of what exercises to perform. You will find hundreds of exercises under two different categories (Cardio & Strength). Just search for the exercises you prefer and start logging it.
+                                    </p>
+                                    <p>
+                                        Devote yourself only in doing the chosen exercises; Qalorie will do the rest for you. Just log how much time you spend in the exercise and we will show you how much calories you burned. In the process, you will have a tailor-made plan.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-7">
+
+                                <div id="carousel-exercise" class="carousel slide" data-ride="carousel" data-interval="5000">
+
+                                    <div class="carousel-inner" role="listbox">
+                                        <div class="item active">
+
+                                          <img src="img/Exercise1.png" alt="Qalorie - Exercise">
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- nutritionist tag -->
+                    <div class="tab-pane fade" id="nutritionist">
+                        <div class="box_ icon-landing-nutritionist"></div>
+                        <div class="row">
+                            <div class="col-sm-12 col-md-5">
+                                <div class="box_left">
+                                    <h5>Your personal online Nutritionist available 24/7</h5>
+                                    <p>
+                                        Reach your goal with the help of our certified nutritionists. Together we will create & monitor custom health and fitness plan. You will receive around-the-clock motivation from our expert.
+                                    </p>
+                                    <p>
+                                        When you are running out of time to visit a nutritionist's chamber due to busy schedule, Qalorie is committed to create a healthy lifestyle for you. Get all the support you need from registered nutritionist from the privacy of your home.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-7">
+
+                                <div id="carousel-nutritionist" class="carousel slide" data-ride="carousel" data-interval="5000">
+
+                                    <div class="carousel-inner" role="listbox">
+                                        <div class="item active">
+
+                                          <img src="img/Nutritionist1.png" alt="Qalorie - Nutritionist">
+                                        </div>
+                                        <div class="item">
+                                          <img src="img/Nutritionist2b.png" alt="Qalorie - Nutritionist">
+                                        </div>
+                                    </div>
+
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#carousel-nutritionist" data-slide-to="0" class="active"></li>
+                                        <li data-target="#carousel-nutritionist" data-slide-to="1"></li>
+                                    </ol>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Third view -->
+<section class="thrid_secc text-center">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-offset-1 col-md-10">
+
+                <h3 class="title-section text-white">
+                  Join now to access our powerful resources and reach the goals of healthy lifestyle that you have planned throughout the life!
+                </h3>
+
+                <a href="signup" title="">
+                  <button class="btn btn-green" type="button">try it now</button>
+                </a>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Fiveth view -->
+<section class="fiveth_secc">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-offset-1 col-md-10">
+
+                <h3 class="title-section">
+                  Qalorie is the unrivalled destination for the people who want to create their healthy living success stories
+                </h3>
+                <!-- Subtitles -->
+                <div class="row hidden-xs">
+                    <div class="col-sm-6">
+                        <h5 class="title-subsection">Qalorie empowers you to pursue the healthy life</h5>
+
+                        <p class="description-subsection">
+                            We encourage people to celebrate their daily triumph through the transformative power of nutritive foods, healthy living & fitness practices
+                        </p>
+                    </div>
+                    <div class="col-sm-6">
+                        <h5 class="title-subsection">Common Nutrition experts take more time & money</h5>
+
+                        <p class="description-subsection">
+                            After a hectic business week you wouldn’t want to spend your weekends in the queue of a nutritionist’s chamber knowing that you need to disburse more money there compared to Qalorie
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!-- Qalorie -->
+                    <div class="col-sm-6">
+
+                        <div class="row visible-xs">
+                            <div class="col-xs-12">
+                                <h5 class="title-subsection">Qalorie empowers you to pursue the healthy life</h5>
+
+                                <p class="description-subsection">
+                                    We encourage people to celebrate their daily triumph through the transformative power of nutritive foods, healthy living & fitness practices
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="box-centered shadow-box-one">
+                            <p class="qualities">
+                                Recommended by health professionals, Qalorie creates a complete and permanent healthy living lifestyle for you
+                            </p>
+                        </div>
+                        <div class="box-centered shadow-box-one">
+                            <p class="qualities">
+                                With topmost privacy, Qalorie offers full time accurate consultation with all the growing health trends
+                            </p>
+                        </div>
+                        <div class="box-centered shadow-box-one">
+                            <p class="qualities">
+                                Get exclusive advice and seamless access to certified nutritionist and fitness expert 24/7. It’s easier than you think!
+                                </p>
+                        </div>
+                        <div class="box-centered shadow-box-one">
+                            <p class="qualities">
+                                Qalorie is all about getting smart nutrition from the comfort of home and a budget that you would love
+                            </p>
+                        </div>
+
+                        <div class="row visible-xs">
+                            <div class="col-xs-12">
+
+                                <div class="buttons_sec">
+                                    <div class="price_month pull-left">
+                                        <p class="text-green">Just For<span class="small"> </span></p>
+                                    </div>
+                                    <div class="price_month pull-right">
+                                        <p class="text-green"><span class="small">$ </span>29.95<span>/ Month</span></p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- Common Nutritionist -->
+                    <div class="col-sm-6">
+                        <!-- Description -->
+                        <div class="row visible-xs mg-top2">
+                            <div class="col-xs-12">
+                                <h5 class="title-subsection">Common Nutrition experts take more time & money</h5>
+
+                                <p class="description-subsection">
+                                    After a hectic business week you wouldn’t want to spend your weekends in the queue of a nutritionist’s chamber knowing that you need to disburse more money there compared to Qalorie
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="box-centered shadow-box-one consult">
+                            <p class="qualities">
+                                Healthy living is portrayed as something very ‘complex’ in traditional nutritionist’s office. It's simpler with Qalorie
+                                </p>
+                        </div>
+                        <div class="box-centered shadow-box-one consult">
+                            <p class="qualities">
+                                Traditional nutritionists offer consultation that is incomplete and inaccurate. Hence, the end result is not satisfactory
+                            </p>
+                        </div>
+                        <div class="box-centered shadow-box-one consult">
+                            <p class="qualities">
+                                Stop wasting time in a nutritionist's chamber! They always take more time to understand your lifestyle & food habit
+                            </p>
+                        </div>
+                        <div class="box-centered shadow-box-one consult">
+                            <p class="qualities">
+                                Restrain yourself from extravagant cost! Usual fee of a nutritionist & fitness expert is always higher than Qalorie services
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- Prices -->
+                <div class="row mg-top">
+
+                    <div class="col-sm-6 hidden-xs">
+
+                        <div class="price_month pull-left">
+                            <p class="text-green">Just For<span class="small"> </span></p>
+                        </div>
+                        <div class="price_month pull-right">
+                            <p class="text-green"><span class="small">$ </span>29.95<span>/ Month</span></p>
+                        </div>
+
+                    </div>
+
+                    <div class="col-sm-6 text-right">
+
+                        <div class="price_consult">
+                            <p><span class="small">$ </span>350.00<span>/ Month</span></p>
+                            <p class="mini">*More than a  year of Qalorie Services</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Footer -->
+<footer>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-offset-1 col-md-10">
+
+                <p class="copyright">
+                    <img src="/img/qalorie_logo_pixel.svg" height="40" onerror="this.onerror=null; this.src='/img/logo.png'" alt"Qalorie" />
+                    Copyright © 2016 Qalorie™, Inc. All Rights Reserved. <span>|</span>
+                    <a href="/terms">Terms of Use</a> |
+                    <a href="/privacy-policy">Privacy Policy</a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+</footer>
+<script type="text/javascript">
+
+    if (!$('.nav-tabs-responsive li').hasClass('next')) {
+        $('.nav-tabs-responsive li:nth-child(2)').addClass('next');
+    }
+
+    $('.nav-tabs-responsive a[data-toggle="tab"]').on('show.bs.tab', function (e) {
+        var $target = $(e.target);
+        var $tabs = $target.closest('.nav-tabs-responsive');
+        var $current = $target.closest('li');
+        var $next = $current.next();
+        var $prev = $current.prev();
+
+        $tabs.find('>li').removeClass('next prev');
+        $prev.addClass('prev');
+        $next.addClass('next');
+
+    })
+
+    scaleVideoContainer();
+
+    $(window).on('resize', function() {
+        scaleVideoContainer();
+    });
+
+    function scaleVideoContainer() {
+
+        var height = $(window).height();
+        var unitHeight = parseInt(height) + 'px';
+
+        //var head_height = $('.head').outerHeight(true);
+
+        $('.firts_secc').css('height',unitHeight);
+
+    }
+
+</script>
+{% endblock %}

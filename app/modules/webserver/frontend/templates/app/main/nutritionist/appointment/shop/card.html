@@ -1,0 +1,12 @@
+<div class="row">
+	<div class="col-xs-9 col-sm-3 col-md-2">
+		<input type="radio" name="cards" <% if (Helpers.checkDefaultCard(model)) { %>checked="checked"<% } %> />
+		<img src="<%= Helpers.getCardBrandLogo(model.get('brand')) %>" alt="" />
+	</div>
+	<div class="col-xs-offset-0 col-xs-3 col-sm-offset-1 col-sm-1">
+		<span> <%= model.get('last4') %></span>
+	</div>
+	<div class="col-sm-offset-2 col-sm-3 col-md-offset-2 col-md-2 hidden-xs">
+		<span> Exp: <%= model.get('exp_month') %>/<%= model.get('exp_year') %></span>
+	</div>
+</div>

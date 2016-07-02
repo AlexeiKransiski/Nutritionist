@@ -1,0 +1,11 @@
+<li>
+	<input tabindex="5" type="checkbox" id="minimal-checkbox-<%= model.get('_id') %>" <% if (model.get('done')) { %>checked<% } %>>
+	
+	<% if (model.get('done')) { %>
+		<label><del><%= model.escape('description') %></del></label>
+	<% }else{ %>
+		<label><%= model.escape('description') %></label>
+	<% } %>
+
+	<a href="javascript:void(0)" id="remove"></a>
+</li>

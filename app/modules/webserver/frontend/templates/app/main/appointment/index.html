@@ -1,0 +1,52 @@
+<script type="text/javascript">
+    if (!$('.nav-tabs-responsive li').hasClass('next')) {
+        $('.nav-tabs-responsive li:nth-child(2)').addClass('next');
+    }
+
+    $('.nav-tabs-responsive a[data-toggle="tab"]').on('show.bs.tab', function (e) {
+        var $target = $(e.target);
+        var $tabs = $target.closest('.nav-tabs-responsive');
+        var $current = $target.closest('li');
+        var $next = $current.next();
+        var $prev = $current.prev();
+
+        $tabs.find('>li').removeClass('next prev');
+        $prev.addClass('prev');
+        $next.addClass('next');
+
+    })
+</script>
+<div id="page-nutritionist" class="main_section">
+
+    <h1 class="main_section__title">nutritionist</h1>
+
+    <!-- message -->
+    <div id="message">
+        <div class="main_info">
+            <div class="row">
+                <div class="col-xs-12 col-sm-3 text-left"> 
+                    <div class="back">
+                        <a href="#nutritionist" class="backr">Back to Nutritionist</a>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-9">
+                    <ul class="nav nav-tabs nav-tabs-responsive" id="myprogresstab">
+                        <li class="active"><a href="#profile" data-toggle="tab">My Profile</a></li>
+                        <li><a href="#statu" data-toggle="tab">Status Chart</a></li>
+                        <li><a href="#preferences" data-toggle="tab">Preferences</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="tab-content" data-role="tabs">
+
+            </div> <!-- /tab content -->
+        </div><!-- /main info -->
+
+        <!-- comments -->
+        <div data-role="timeline">
+            <!-- Backbone timeline view -->
+        </div>
+    </div><!-- /message -->
+
+</div><!-- /main_section -->

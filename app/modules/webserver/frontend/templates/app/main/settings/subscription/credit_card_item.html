@@ -1,0 +1,14 @@
+<td class="custom_radio">
+  <input type="radio" id="polaris-radio-1" name="polaris-radio" <% if (Helpers.checkDefaultCard(model)) { %>checked="checked"<% } %> >
+    <!-- <div class="custom_radio">
+    </div> -->
+</td>
+<td>
+    <%= model.get('brand') %>
+</td>
+<td><p><%=model.get("name")%></p></td>
+<td><p>**** **** **** <%=model.get("last4")%></p></td>
+<td>
+    <!-- <a href="" class="icon-edit"></a> -->
+    <a href="" class="icon-delete"></a>
+</td>

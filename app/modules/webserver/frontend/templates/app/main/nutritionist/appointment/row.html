@@ -1,0 +1,28 @@
+<div class="box">
+  <div class="date pull-left">
+    <p><%= moment(model.escape('createdAt')).format('D MMM YYYY') %></p>
+  </div>
+  <div class="image-nutri pull-left">
+    <p>
+      <img src="<%= model.get('nutritionist_info').avatar_src %>" alt="<%= model.get('nutritionist_info').full_name %>"/>
+    </p>
+  </div>
+  <div class="consult pull-left text-left">
+    <span class="assigned">Status: <%= model.escape("status") %></span>
+    <p>
+      <a href="/appointment/<%= model.get('_id') %>" class="route" data-role="route">Nutritionist:  <%= model.get('nutritionist_info').full_name %></a><br>
+      <%= Helpers.getAppointmentReason(model).substr(0, 130) %> <a href="/appointment/<%= model.get('_id') %>" class="more route" data-role="route">View More...</a>
+    </p>
+  </div>
+  <div class="replies pull-left">
+    <p><%= model.get('replies').length %></p>
+  </div>
+  <div class="case pull-right">
+    <p>
+      CN: <%= Helpers.getAppointmentID(model) %>
+      <% if (model.get('status') == 'completed') { %>
+        <br>Closed
+      <% } %>
+    </p>
+  </div>
+</div>

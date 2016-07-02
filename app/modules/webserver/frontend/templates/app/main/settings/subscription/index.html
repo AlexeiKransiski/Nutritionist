@@ -1,0 +1,74 @@
+<div class="tab-head">
+    <div class="row">
+        <div class="col-sm-12 text-left">
+            <h5>my plan</h5>
+        </div>
+    </div>
+</div>
+
+<div class="tab-body">
+    <div class="row">
+        <!--div class="col-sm-12">
+            <div id="planstwo" class="flexslider carousel">
+
+                <ul class="row slides"-->
+                    <div class="col-sm-4">
+                        <div id="widgetPlanFree" class="box_plan expired">
+                            <h5 class="text-green">Beginner Plan</h5>
+                            <h2 class="blue">Free Membership</h2>
+                            <p>
+                                This plan will give you access to all our fantastic tools for a healthy living.
+                            </p>
+                            <div class="down">
+                              <button type="submit" id="freePlan" class="btn btn-default pull-right plan-selector plan disabled" value="<%= Config.stripe.plans.trial.id %>" data-amount="<%= Config.stripe.plans.trial.amount %>"><%=Helpers.getActivePlanBtnLabel(Config.stripe.plans.trial.id)%></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div id="widgetPlanMonth" class="box_plan <%=Helpers.getActivePlan( Config.stripe.plans.monthly.id )%>">
+                            <h5 class="text-green">Monthly Plan</h5>
+                            <h2 class="red">$29.95/Month</h2>
+                            <p>
+                                Experience our nutritionist platform and get access to monthly consultations.                 
+                            </p>
+                            <div class="down">
+                              <button type="submit" id="monthPlan" class="btn btn-default pull-right plan-selector plan <%=Helpers.getActivePlan(Config.stripe.plans.monthly.id)%>" value="<%= Config.stripe.plans.monthly.id %>" data-amount="<%= Config.stripe.plans.monthly.amount %>" data-plan='month'><%=Helpers.getActivePlanBtnLabel(Config.stripe.plans.monthly.id)%></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div id="widgetPlanYear" class="box_plan <%=Helpers.getActivePlan( Config.stripe.plans.yearly.id)%>">
+                            <h5 class="text-green">Yearly Plan</h5>
+                            <h2 class="orange">$299.50/Yearly</h2>
+                            <p>
+                              You are currently on the Yearly Subscription plan and walking towards a healthy lifestyle!
+                            </p>
+                            <div class="down">
+                              <button type="submit" id="yearPlan" class="btn btn-default pull-right plan-selector plan <%=Helpers.getActivePlan(Config.stripe.plans.yearly.id)%>" value="<%= Config.stripe.plans.yearly.id %>" data-amount="<%= Config.stripe.plans.yearly.amount %>" data-plan="year"><%=Helpers.getActivePlanBtnLabel(Config.stripe.plans.yearly.id)%></button>
+                           </div>
+                        </div>
+                    </div>
+                <!--/ul>
+            </div>
+
+        </div-->
+    </div>
+</div>
+
+<div class="tab-foot">
+    <div class="row">
+        <div class="col-sm-12 text-right">
+            <button type="button" class="btn btn-primary update-subscription">update</button>
+        </div>
+    </div>
+</div>
+
+<!-- widgets suscriptions -->
+<div class="rest_boxes">
+    <div data-role="credit_card_information">
+
+    </div>
+    <div data-role="discounts">
+
+    </div>
+</div>

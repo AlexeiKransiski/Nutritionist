@@ -1,0 +1,221 @@
+{%extends 'base.html'%}
+
+<!-- classes to be added to the body tag -->
+{%block bodyStyles%}login{%endblock%}
+
+{%block styles%}
+  <link rel="stylesheet" type="text/css" href="/css/login.css">
+{%endblock%}
+
+{%block scripts%}
+{% parent %}
+  <script type="text/javascript" src="/js/login.js"></script>
+{%endblock%}
+
+{%block layout%}
+
+<script>
+
+  window.appId = "{{appId}}";
+
+  function statusChangeCallback2(response) {
+    console.log(response);
+    if (response.status === 'connected') {
+      //Check if user is register on the system.
+
+      $.ajax({
+          url: '/api/v1/auth/facebook/token',
+          type: 'post',
+          data: {
+            access_token:response.authResponse.accessToken,
+            id:response.authResponse.userID,
+            checkUser:true
+          },
+          dataType: 'json',
+          success: function(data) {
+            console.log(data)
+            $.cookies.set('auth_token', data.token);
+            data.facebook_token=data.facebook_token;
+            $.cookies.set('user_id', data._id);
+            $.cookies.set('avatar', data.avatar)
+
+            console.log("success")
+            if (data.profileFilled) {
+              return window.location.href = '/';  
+            } else {
+              alert('Please sign up first.')
+            }
+            
+          },
+          error: function(xhr, error) {
+            console.log("error")
+            console.log(xhr)
+            console.log(error)
+            alert('Please sign up first.')
+            // if(xhr.responseJSON.status == 404){
+            //   FB.api('/me', {fields: 'last_name,first_name,gender,email'}, function(responseme) {
+            //         console.log('Successful login for: ' + response.name);
+            //         console.log(responseme);
+            //         var userName = responseme.first_name;
+            //         var lastName = responseme.last_name;
+            //         var email = responseme.email;
+            //         var gender = responseme.gender;
+            //         var token = response.authResponse.accessToken;
+            //         var url = '/signupinfo?name=' + userName + '&lastname=' + lastName + '&email=' + email + "&gender=" + gender + "&accesstoken=" + token;
+            //         return window.location.href = url;
+            //         //$("#username").val(unescape(userName.trim()));
+            //   });
+            // }
+          }
+        });
+
+    } else if (response.status === 'not_authorized') {
+
+    } else {
+
+    }
+  }
+
+  // This function is called when someone finishes with the Login
+  // Button.  See the onlogin handler attached to it in the sample
+  // code below.
+  function checkLoginState() {
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback2(response);
+    });
+  }
+
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : window.appId,
+      cookie     : true,  // enable cookies to allow the server to access
+      xfbml      : true,  // parse social plugins on this page
+      version    : 'v2.2' // use version 2.2
+    });
+
+  };
+
+  // Load the SDK asynchronously
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
+</script>
+
+<header>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12">
+      
+        <div class="logo-head">
+          <a href="/" title="Qalorie">
+            <img src="/img/qalorie_logo_pixel.svg" height="40" onerror="this.onerror=null; this.src='/img/logo.png'" alt"Qalorie" />
+          </a>
+        </div>
+
+        <div class="pull-right">
+          <p>New to Qalorie?</p>
+          <a href="/signup" class="btn-green-open btn-large mg-header-login">create account</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+
+        <h2 class="title-page text-green">login</h2>
+        <h5 class="subtitle-page">
+          Log your foods, exercises, biometrics and notes and more.
+        </h5>
+
+        <div class="box-centered text-center">
+          <p class="description-box">
+            Just a simple, easy to use application that helps you stay in your calorie budget
+          </p>
+          <a id='login' href="javascript:void(0);" title="" class="btn-facebook">login with facebook</a>
+
+          <script>
+            (function ($) {
+              $(function () {
+                $("#login").on("click", function () {
+                      FB.login(function(response) {
+                        checkLoginState();
+                      }, {scope: 'email'});
+                });
+              });
+            })(jQuery);
+          </script>
+
+          <h6 class="other">OR</h6>
+
+          <form class="form-login" id="form-login" novalidate="novalidate">
+            <div class="form-group">
+              <label for="usernameid" class="lb-normal">email</label>
+              <input type="text" class="form-control" id="email" name="email" autocomplete="off" />
+            </div>
+            <div class="form-group">
+              <label for="passwords" class="lb-normal">password</label>
+              <input type="password" id="password" name="password" class="form-control" autocomplete="off" />
+            </div>
+            <div class="form-group terms">
+              <input tabindex="5" type="checkbox" id="checkbox-remember" name="checkbox-remember" value="remember-me">
+              <p class="text-with-link">Remember me</p>
+            </div>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-xs-6 text-left">
+                  <p class="text-with-link"><a class="text-green" href='/forgot_password'>Forgot Password?</a></p>
+                </div>
+                <div class="col-xs-6 text-right">
+                  <button type="submit" id="loginBtn" class="btn-green-open mg-form-login">log in</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-offset-0 col-sm-9 col-md-offset-1 col-md-7">
+        <div class="text-left">
+          <p class="upper">
+            Copyright © 2016 Qalorie™, Inc. All Rights Reserved.
+          </p>
+          <ul class="breadcrumb ">
+            <li><a href="/terms">Terms of Use</a></li>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-3 col-md-3">
+        <div class="text-right">
+          <p>
+            <a href="/" title="">
+              <img src="/img/qalorie_logo_pixel.svg" height="40" onerror="this.onerror=null; this.src='/img/logo.png'" alt"Qalorie" />
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+{%endblock%}
+
+{%block inline_scripts%}
+  {%parent%}
+{%endblock%}

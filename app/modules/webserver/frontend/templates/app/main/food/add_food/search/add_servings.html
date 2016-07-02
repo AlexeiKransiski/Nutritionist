@@ -1,0 +1,33 @@
+<div class="row">
+
+    <% if(recent){ %>
+        <div class="col-xs-6 col-sm-4 col-md-3 form-inline">
+            <div class="form-group">
+                <%= model.get('servings') %>
+                <p>Servings of </p>
+            </div>
+        </div>
+        <div class="col-xs-6 col-sm-4 col-md-5 pd-left_0 pd-right_0">
+            <%= model.escape('serving_type') %>
+        </div>
+
+    <%}else{%>
+        <div class="col-xs-6 col-sm-4 col-md-3 form-inline">
+            <div class="form-group">
+                <input type="text" class="form-control" id="servings" onkeypress="return isNumberKey(event)">
+                <p>Servings of</p>
+            </div>
+        </div>
+        <div class="col-xs-6 col-sm-4 col-md-5 pd-left_0 pd-right_0">
+            <div class="bfh-selectbox full" id="servingsType" data-name="servings_type" data-value="">
+                <% _.each(model.get('serving_types'), function(serving){ %>
+                    <div data-value="<%= serving.factor %>"><%= serving.name %></div>
+                <% }) %>
+            </div>
+        </div>
+    <%}%>
+    <div class="col-xs-12 col-sm-4 col-md-4 pd-left_0 form-inline">
+        <button class="btn btn-default" data-role=cancel>cancel</button>
+        <button class="btn-blue-open-small mrg-no" data-role="add-cart">update</button>
+    </div>
+</div>

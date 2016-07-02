@@ -1,0 +1,120 @@
+@import 'qalorie';
+@import 'jquery-selectUISlider';
+
+header {
+
+    p {
+        position: absolute;
+        right: 205px;
+        top:20px;
+        .open-normal(13px);
+        font-style: italic;
+        color: @font-menu
+    }
+
+} // header
+
+section {
+    border-top: 1px solid @line-header-bottom;
+    background: @bg-body;
+    margin: 57px 0 0;
+    padding-bottom: 140px
+}
+
+footer {
+    background: @white;
+    min-height: 120px;
+
+    p {
+        color: @font-menu;
+        .open-bold(10px);
+        margin: 36px 0 26px;
+    }
+
+    .breadcrumb {
+        background:@white;
+        .border-radius(0px);
+        margin:0;
+        padding: 0;
+
+        > li > a {
+            color: @font-menu;
+            .open-bold(10px);
+            text-transform: uppercase
+        }
+    }
+
+    .breadcrumb > li + li:before {
+        color: @font-menu;
+        content: "| ";
+        font-size: 11px;
+        padding: 0 5px
+    }
+
+} // footer
+
+//  custom checkboxs
+.icheckbox_minimal-green, .iradio_minimal-green {
+    display: inline-block;
+    *display: inline;
+    background: url("../img/green.png") no-repeat;
+    border: none;
+    cursor: pointer;
+    height: 19px;
+    margin-right: 11px;
+    margin: 0;
+    padding: 0;
+    vertical-align: text-bottom;
+    width: 19px;
+}
+.icheckbox_minimal-green {
+    background-position: 0 0;
+
+    &.hover {
+        background-position: -20px 0
+    }
+    &.checked {
+        background-position: -40px 0;
+
+        &.disabled {
+            background-position: -80px 0
+        }
+    }
+    &.disabled {
+        background-position: -60px 0;
+        cursor: default;
+    }
+}
+// custon radio button
+.icheckbox_polaris, .iradio_polaris {
+    display: inline-block;
+    *display: inline;
+    background: url("../img/polaris.png") no-repeat;
+    border: none;
+    cursor: pointer;
+    height: 24px;
+    margin: 0;
+    padding: 0;
+    vertical-align: text-bottom;
+    width: 24px;
+}
+.icheckbox_polaris {
+    background-position: 0 0;
+
+    &.hover {
+        background-position: -31px 0
+    }
+    &.checked {
+        background-position: -62px 0
+    }
+}
+.iradio_polaris {
+    background-position: -156px 0;
+    
+    &.hover {
+        background-position: -187px 0
+    }
+    &.checked {
+        background-position: -218px 0
+    }
+}

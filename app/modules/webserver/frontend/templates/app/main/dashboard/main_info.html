@@ -1,0 +1,87 @@
+
+<div class="col-sm-4 pd-right_0">
+<% if (app.me.get('photo')) { %>
+<div class="selfie">
+  <img src="<%= app.me.get('photo_src') %>"  alt="<%= model.escape('full_name') %>" data-role="avatar-preview" width="290" height="390">
+  <!-- custom file -->
+    <form class="form avatar-crop" id="avatar-form">
+      <span data-role="upload-avatar">
+        <!-- backboen crop view -->
+      </span>
+    </form>
+</div>
+<% } else { %>
+<div class="noselfie">
+  <div class="cam"><div class="circle"></div></div>
+  <h3 class="text-center">No pictures yet?</h3>
+  <p class="text-center">Take a moment, take a photo of yourself and upload it.</p>
+  <form class="form avatar-crop" id="avatar-form">
+    <span data-role="upload-avatar">
+      <!-- backboen crop view -->
+    </span>
+  </form>
+</div>
+<% } %>
+</div>
+<div class="col-sm-8 pd-left_0">
+  <div class="user-info-box">
+
+      <!-- user info -->
+      <div class="info_user">
+        <h1>I’M <%= Helpers.upper(model.escape('full_name')) %></h1>
+        <h4 class="text-green">AND <% if(model.get('goals') != undefined) { %><%= model.get('goals').text %><% } %>.</h4>
+
+        <h6>This is my motivation:</h6>
+        <p>
+          <% if(model.get('goals') != undefined) { %><%= model.get('goals').motivation %><% } %> <a href="" title="Qalorie change motivation" id="edit_motivation">Edit</a>
+        </p>
+        <!-- este texto debe estar en empty states -->
+        <p class="hidden">
+          You haven’t stablish your motivation yet. Here you can add a message or a goal that will keep you motivated to continue and achive your phisical goals.
+        </p>
+      </div>
+      <!-- edit user info -->
+      <div class="info_user_edit">
+        <a id="close" href=""></a>
+        <h3 class="main_section__subtitle edit">Edit Goals</h3>
+        <form role="form">
+          <div class="form-group">
+            <label class="lb-lato" for="goal">WHAT’S YOUR GOAL</label>
+            <input type="text" class="form-control rounded upper" id="goal" name="text" maxlength="30" value="<% if(model.get('goals') != undefined) { %><%= model.get('goals').text %><% } %>">
+          </div>
+          <div class="form-group">
+            <label class="lb-lato" for="motivation">WHAT’S YOUR MOTIVATION</label>
+            <textarea class="form-control rounded" id="motivation" name="motivation"><% if(model.get('goals') != undefined) { %><%= model.get('goals').motivation %><% } %></textarea>
+            <p><span id="motivationletter">0</span>/200 Character left</p>
+          </div>
+          <div class="line-save">
+            <button type="submit" class="btn-blue-open btn-small-app mrg-no pull-right" data-role="save-goal">save</button>
+            <button class="btn btn-default pull-right" data-role="goal-dismiss">cancel</button>
+          </div>
+        </form>
+      </div>
+
+  </div>
+
+  <!--Verificar los valores-->
+  <!-- info bottom -->
+    <div class="info_bottom">
+
+      <ul class="list-unstyled resumen">
+          <li><div id="consumed" class="resumen-item"></div></li>
+          <li><div id="exercise" class="resumen-item"></div></li>
+          <li><div id="remaining" class="resumen-item"></div></li>
+          <!--span class="green">remaining:</span> 2859 <span>Cal</span-->
+      </ul>
+      <ul class="list-unstyled resumen goal">
+        <li>
+          <div class="resumen-item">
+            <span class="small text-green">goal:</span>
+            <p> <%= app.me.get("calories_recomended")%>
+              <span class="smallest">Cal</span>
+            </p>
+          </div>
+        </li>
+      </ul>
+    </div>
+</div>

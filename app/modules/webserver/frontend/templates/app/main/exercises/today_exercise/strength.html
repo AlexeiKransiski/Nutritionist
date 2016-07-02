@@ -1,0 +1,18 @@
+
+<td>
+    <p class="ratings pull-left">
+      <input tabindex="5" type="checkbox" id="icheckbox_futurico-1" disabled <%= Helpers.checkedIfUserExerciseFavoritesOnTodayList(model, favorites) %>>
+    </p>
+</td>
+<td>
+    <p>
+        <span><%= model.get("name") %></span> - <% if (model.get("description") && model.get("description") != ''){ %><%= model.escape("description") %><% }else{ %>STRENGHT<% } %>
+    </p>
+</td>
+<td><%= model.get("repetitions") %></td>
+<td><%= model.get("sets") %></td>
+<td><%= model.get("weight") %></td>
+<td><%= model.get("calories_burned").toFixed(0) %></td>
+<td>
+    <a href="javascript:void(0);" data-role="remove-exercise-log-strenght" class="icon-delete"></a>
+</td>

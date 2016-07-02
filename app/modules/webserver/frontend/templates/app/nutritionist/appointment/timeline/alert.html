@@ -1,0 +1,48 @@
+<div class="row hide alert-box" data-role="end-no-rating">
+  <div class="col-md-12">
+    <div class="alert">
+      <p>Consultation Ended.<span> <%= model.get('patient').first_name %> </span>didn't provide any rate or review for this consult</p>
+    </div>
+  </div>
+</div>
+
+<div class="row hide alert-box"  data-role="end-and-wating">
+  <div class="col-md-12">
+    <div class="alert">
+      <p>Consultation Ended. Wait until<span> <%= model.get('patient').first_name %> </span>rate and provide feedback to your answers</p>
+    </div>
+  </div>
+</div>
+
+<div class="row hide alert-box" data-role="answered">
+  <div class="col-md-12">
+    <div class="alert">
+      <p>Please wait until<span> <%= model.get('patient').first_name %> </span>close the consultation or reply to your answer</p>
+    </div>
+  </div>
+</div>
+
+
+<div class="row alert-box hide" data-role="end-and-rating">
+  <div class="col-md-12">
+    <div class="rated">
+      <div class="thumbs pull-left"><img src="<%= model.get('avatar_src') %>" alt="<%= model.get('full_name') %>"></div>
+      <div class="comment pull-left">
+        <p class="date"><%= Helpers.dateFormat(model.get('createdAt'), 'DD MMM YYYY') %></p>
+        <ul class="list-unstyled list-inline rate pull-right">
+          <li>Rated as:</li>
+          <% for(var i =0; i< model.get('rating');i++){ %>
+            <li>
+              <div class="icon-under">
+                <div class="icon-rate"></div>
+              </div>
+            </li>
+          <% } %>
+        </ul>
+        <p> <span><%= model.get('full_name') %> feedback: </span><%= model.escape('feedback') %>
+        </p>
+        <p></p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<p><%= console.log(app.me) %></p>
+<div class="boxes-comments foods">
+    <div class="thumbs pull-left">
+        <img src="img/icon-food.png" alt="Qalorie Food">
+    </div>
+    <div class="comment pull-right">
+        <p class="date"><%= moment(model.get("createdAt")).format('D MMM YYYY') %></p>
+        <p><span><%=app.me.get("full_name")%></span> you just <span>Eat</span> <%=model.get("food_detail").name%> - <%= model.get("food_detail").description %> </p>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+<!-- solo tiene opcion a dos preguntas por consulta entonces despues de la 2da respuesta se muestra este form -->
+<div class="comments">
+    <div class="boxes-messages notifications">
+        <div class="comment rating">
+            <div class="row">
+                <div class="col-sm-8">
+                    <h5>Consultation has ended! Please Rate <span><%= model.get('nutritionist_info').full_name || 'Nutritionist' %></span></h5>
+                </div>
+                <div class="col-sm-4">
+                    <div class="starts">
+                      <input type="radio" class="rating-input" id="rating-5" name="rating-1" value="5">
+                      <label for="rating-5" class="rating-star"></label>
+                      <input type="radio" class="rating-input" id="rating-4" name="rating-1" value="4">
+                      <label for="rating-4" class="rating-star"></label>
+                      <input type="radio" class="rating-input" id="rating-3" name="rating-1" value="3">
+                      <label for="rating-3" class="rating-star"></label>
+                      <input type="radio" class="rating-input" id="rating-2" name="rating-1" value="2">
+                      <label for="rating-2" class="rating-star"></label>
+                      <input type="radio" class="rating-input" id="rating-1" name="rating-1" value="1">
+                      <label for="rating-1" class="rating-star"></label>
+                    </div>
+                </div>
+            </div>
+
+            <form class="form-horizontal">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <label id="feedback_error" class="error"></label>
+                        <textarea class="form-control" name="feedback" id="feedback" placeholder="Would you like to give us some feedback?"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-7 col-md-8">
+                        <div class="box">
+                            <p>Your rate is for QA porpouses in order to provide great services.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm- 5 col-md-4 text-right">
+                        <button class="btn btn-default" data-role="cancel">cancel</button>
+                        <button class="btn btn-primary" data-role="send">submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

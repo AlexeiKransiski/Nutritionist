@@ -1,0 +1,61 @@
+<div class="title_sidebar text-left">
+  <h4>FOOD INFORMATION</h4>
+</div>
+
+<div class="food_information">
+  <h5><%= model.escape('name') %></h5>
+  <p>
+    <%= model.escape('description') %>
+  </p>
+  <cite><%= Helpers.foodLogServing(model.get('serving_type'), model.get('serving_per_container'), 1) %></cite>
+</div>
+
+<div class="nutritions">
+  <div class="title_sidebar text-left">
+    <h4 class="title_sidebar-center">NUTRITION FACTS</h4>
+  </div>
+  <ul class="list-unstyled">
+    <li>
+      <p class="text-left">Protein <span><%= Helpers.nutricionalFactPercent(model, 'protein') %>%</span><span class="pull-right"><%= model.escape('protein') %>/<%= model.escape('serving_per_container') %></span></p>
+      <div class="progress">
+        <div class="progress-bar progress-bar-prot" role="progressbar" aria-valuetransitiongoal="<%= Helpers.nutricionalFactPercent(model, 'protein') %>" aria-valuenow="<%= Helpers.nutricionalFactPercent(model, 'protein') %>">
+        </div>
+      </div>
+    </li>
+    <li>
+      <p class="text-left">Carbs <span><%= Helpers.nutricionalFactPercent(model, 'carbs') %>%</span><span class="pull-right"><%= model.escape('carbs') %>/<%= model.escape('serving_per_container') %></span></p>
+      <div class="progress">
+        <div class="progress-bar progress-bar-water" role="progressbar" aria-valuetransitiongoal="<%= Helpers.nutricionalFactPercent(model, 'carbs') %>" aria-valuenow="<%= Helpers.nutricionalFactPercent(model, 'carbs') %>">
+        </div>
+      </div>
+    </li>
+    <li>
+      <p class="text-left">Fat <span><%= Helpers.nutricionalFactPercent(model, 'fat') %>%</span><span class="pull-right"><%= model.escape('fat') %>/<%= model.escape('serving_per_container') %></span></p>
+      <div class="progress">
+        <div class="progress-bar progress-bar-fat" role="progressbar" aria-valuetransitiongoal="<%= Helpers.nutricionalFactPercent(model, 'fat') %>" aria-valuenow="<%= Helpers.nutricionalFactPercent(model, 'fat') %>">
+        </div>
+      </div>
+    </li>
+    <li>
+      <p class="text-left">Cholesterol <span><%= Helpers.nutricionalFactPercent(model, 'cholesterol') %>%</span><span class="pull-right"><%= model.escape('cholesterol') %>/<%= model.escape('serving_per_container') %></span></p>
+      <div class="progress">
+        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuetransitiongoal="<%= Helpers.nutricionalFactPercent(model, 'cholesterol') %>" aria-valuenow="<%= Helpers.nutricionalFactPercent(model, 'cholesterol') %>">
+        </div>
+      </div>
+    </li>
+    <li>
+      <p class="text-left">Sodium <span><%= Helpers.nutricionalFactPercent(model, 'sodium') %>%</span><span class="pull-right"><%= model.escape('sodium') %>/<%= model.escape('serving_per_container') %></span></p>
+      <div class="progress">
+        <div class="progress-bar progress-bar-sod" role="progressbar" aria-valuetransitiongoal="<%= Helpers.nutricionalFactPercent(model, 'sodium') %>" aria-valuenow="<%= Helpers.nutricionalFactPercent(model, 'sodium') %>">
+        </div>
+      </div>
+    </li>
+    <li>
+      <p class="text-left">Potassium <span><%= Helpers.nutricionalFactPercent(model, 'potassium') %>%</span><span class="pull-right"><%= model.escape('potassium') %>/<%= model.escape('serving_per_container') %></span></p>
+      <div class="progress">
+        <div class="progress-bar progress-bar-pot" role="progressbar" aria-valuetransitiongoal="<%= Helpers.nutricionalFactPercent(model, 'potassium') %>" aria-valuenow="<%= Helpers.nutricionalFactPercent(model, 'potassium') %>">
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

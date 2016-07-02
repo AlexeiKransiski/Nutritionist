@@ -1,0 +1,236 @@
+{% extends "base.html" %}
+
+  {%block styles%}
+  <link rel="stylesheet" type="text/css" href="/css/signup.css">
+  {%endblock%}
+
+
+{%block scripts%}
+{% parent %}
+  <script type="text/javascript" src="/js/signup.js"></script>
+{%endblock%}
+
+{% block layout %}
+
+<script>
+
+  function getUrlParameter(sParam)
+  {
+      var sPageURL = window.location.search.substring(1);
+      var sURLVariables = sPageURL.split('&');
+      for (var i = 0; i < sURLVariables.length; i++)
+      {
+          var sParameterName = sURLVariables[i].split('=');
+          if (sParameterName[0] == sParam)
+          {
+              return sParameterName[1];
+          }
+      }
+  }
+
+
+  var accessToken=null;
+  $( document ).ready(function() {
+      $("#name").val(getUrlParameter('name'));
+      $("#lastname").val(getUrlParameter('lastname'));
+      $("#email").val(getUrlParameter('email'));
+      //$("#gender").val(getUrlParameter('gender'));
+      accessToken=getUrlParameter('accesstoken');
+
+      $("#singupFacebook").click(function(event){
+        signupFacebook();
+      });
+
+  });
+
+  function signupFacebook(){
+      $.ajax({
+        url: '/api/v1/auth/facebook/token',
+        type: 'post',
+        data: {
+          access_token:accessToken,
+          name:$("#name").val(),
+          lastname:$("#lastname").val(),
+          email:$("#email").val(),
+          gender:getUrlParameter('gender')
+        },
+        dataType: 'json',
+        success: function(data) {
+          console.log(data.token);
+          $.cookies.set('auth_token', data.token);
+          data.facebook_token=accessToken;
+          $.cookies.set('user_id', data._id);
+          return window.location.href = '/';
+        },
+        error: function(xhr, error) {
+          console.log(xhr.responseJSON.message);
+          $("#signupFaceboookButton").hide();
+          $("#messageContainer").show();
+          $("#messageContainer").empty();
+          $("#messageContainer").append(xhr.responseJSON.message);
+          FB.api('/me', function(response) {
+            console.log('Successful login for: ' + response.name);
+            console.log(response);
+            var userName = response.first_name + response.last_name;
+            $("#username").val(unescape(userName.trim()));
+          });
+        }
+      });
+  }
+
+
+</script>
+
+  <header>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="title-web">
+            <h2>
+              <a href="#" title="Qalorie">Qalorie</a>
+            </h2>
+          </div>
+
+          <div class="pull-right ">
+            <p>Alredy have an account?</p>
+            <a href="/login" class="btn btn-success">login</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section>
+
+    <div class="container-fluid">
+
+      <div class="row">
+
+        <div id="signup">
+
+          <h2>sign up</h2>
+          <h5>Lorem ipsum dolor sit amet,  eros sit amet iaculis sagittis, di, scelerisque.</h5>
+
+          <div id="signupContainer" class="signup" style="heigth:413px;">
+
+            <!--p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque pulvinar felis vel interdum accumsan:</p-->
+
+            <div class="row">
+              <div class="col-md-12">
+                <div id="messageContainer" class="alert alert-error" style="display:none;">
+                </div>
+                <div id="messageContainerError" class="alert alert-error" style="display:none;">
+                </div>
+              </div>
+            </div>
+
+            <!--h6>OR</h6-->
+
+            <form class="text-left" id="signup-form">
+
+              <div class="form-group">
+                <label for="name">NAME</label>
+                <input type="text" id="name" class="form-control" name="name" />
+              </div>
+              <div class="form-group">
+                <label for="lastname">LASTNAME</label>
+                <input type="text" id="lastname" class="form-control" name="lastname" />
+              </div>
+              <div class="form-group">
+                <label for="lastname">EMAIL</label>
+                <input type="text" id="email" class="form-control" name="lastname" />
+              </div>
+              <!--div class="form-group">
+                <label for="lastname">GENDER</label>
+                <select id="gender" class="form-control small">
+                  <option value="">Please select your gender</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                </select>
+              </div-->
+
+
+
+
+
+              <button id="singupFacebook" type="button" class="btn btn-success pull-right">sign up</button>
+
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container-fluid">
+      <div class="row">
+
+        <div class="main_section">
+
+          <div class="pull-left text-left">
+            <p>
+              COPYRIGHT ©2009 - 2013 QALORIE, INC. ALL RIGHT RESERVED. QALORIE IS A ®TRADEMARK OF NEUVANT,INC
+            </p>
+            <ul class="breadcrumb ">
+              <li><a href="">CONDICIONES DE USO</a></li>
+              <li><a href="">PRIVACIDAD</a></li>
+              <li><a href="">POLITICAS Y SEGURIDAD</a></li>
+            </ul>
+          </div>
+
+          <div class="pull-right ">
+
+            <h2><a href="" title="">Qalorie</a></h2>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="myModalLabel">BIENVENIDO A QALORIE</h4>
+        </div>
+        <div class="modal-body">
+
+          <div class="user_section">
+            <div class="pull-left user-image">
+              <img src="img/avatars/yop.jpg" alt="Qalorie" />
+            </div>
+            <div class="pull-left user_name">
+              <p>
+                Elvis Milan
+              </p>
+              <p class="other">
+                No eres tu? <a href="">Inicia sesion con otra cuenta.</a>
+              </p>
+            </div>
+          </div>
+
+          <h6>INVITA A TUS AMIGOS A FORMAR PARTE DE N&F</h6>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque pulvinar felis vel interdum accumsan. Quisque quis nisl in est faucibus adipiscing.
+          </p>
+          <p class="conditions">
+            If you sign up, you agree to the <a href="">Terms and Conditions</a>
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">cancel</button>
+          <button type="button" class="btn btn-success">sign up</button>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock layout %}

@@ -1,0 +1,43 @@
+@import url("variables.less");
+@import url("mixins.less");
+
+.boxes_edit {
+    background: @bg-active;
+    .border-radius(5px);
+    display: none;
+    min-height: 180px;            
+    margin: 0 0 20px 1px;
+    .shadow-box();
+
+    form {
+        padding: 10px;    
+
+        .save {
+            display: block;
+            margin-top: 10px;
+
+            button.btn-default2 {
+                .btn-default(40px, 100px);
+                .align(left);
+                color: @font-new;
+                padding: 6px 0 6px 25px;
+                position: relative;
+                .icon-delete {
+                    height: 19px;
+                    width: 16px;
+                    background-position: -2px -196px;
+                    position: absolute;
+                    left: 2px;
+                    top: 9px;
+                }
+            }
+
+            button.btn-default {
+                .btn-default(40px, 80px);
+            }
+               
+        } // save
+
+    } // form
+
+}

@@ -1,0 +1,8 @@
+<td><%= model.id %></td>
+<td><%= model.get('patient').name %></td>
+<td><%= model.get('notricionist').name %></td>
+
+<td><%= moment(model.get('date')).format('YYYY/MM/DD hh:mm a') %></td>
+<td class="text-right">
+  <button class="btn btn-danger delete"><span class="glyphicon glyphicon-trash"></span></button>
+</td>

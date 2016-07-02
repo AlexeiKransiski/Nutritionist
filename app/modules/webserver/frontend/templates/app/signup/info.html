@@ -1,0 +1,268 @@
+<script>
+
+  $(document).ready(function(){
+
+    $('.bfh-selectbox[data-id=gender]').on('change.bfhselectbox', function () {
+      if ($('.bfh-selectbox[data-id=gender]').val() == "F"){
+        $("#femaleOptions").fadeIn('slow')
+      }else{
+        $("#femaleOptions").fadeOut('slow');
+      }
+    });
+
+  });
+
+</script>
+
+<div id="info">
+
+    <h2 class="title-page text-green">let's get started</h2>
+    <h5 class="subtitle-page"> Help Qalorie to tailor your fitness and nutrition experience</h5>
+
+    <div class="box-centered box-info">
+
+        <h5 class="title-info">Personal Information</h5>
+
+        <div class="row">
+            <div class="col-sm-3">
+                <img src="img/profile.png" class="img-responsive" alt='' />
+            </div>
+            <div class="col-sm-9">
+                <div id="personal-info">
+                    <div class='row'>
+                        <div class="col-xs-6">
+                            <div class="form-group">
+                                <label class="lb-normal" for="firstname1">first name</label>
+                                <input type="text" id="firstname1" class="form-control" name="first_name" value="<%= user.get('first_name') %>" required/>
+                                <label id="firstname_error" class="error pos-bottom"></label>
+                            </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="form-group">
+                                <label class="lb-normal" for="lastname1">last name</label>
+                                <input type="text" id="lastname1" class="form-control" name="last_name" value="<%= user.get('last_name') %>" required/>
+                                <label id="lastname_error" class="error pos-bottom"></label>
+                            </div>
+                        </div>
+                    </div> <!-- /row_one -->
+                    <div class="form-group">
+                        <label class="lb-normal" for="email">email</label>
+                        <input type="text" id="email" class="form-control" name="email" value="<%= user.get('email') %>" required/>
+                        <label id="email_error" class="error pos-botom"></label>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="lb-normal inline">date of birth</label>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div id="days" class="bfh-selectbox full date" data-name="days" data-id="days" name="days" data-value="" required>
+                                    <div data-value="">DD</div>
+                                    <div data-value="1">01</div>
+                                    <div data-value="2">02</div>
+                                    <div data-value="3">03</div>
+                                    <div data-value="4">04</div>
+                                    <div data-value="5">05</div>
+                                    <div data-value="6">06</div>
+                                    <div data-value="7">07</div>
+                                    <div data-value="8">08</div>
+                                    <div data-value="9">09</div>
+                                    <div data-value="10">10</div>
+                                    <div data-value="11">11</div>
+                                    <div data-value="12">12</div>
+                                    <div data-value="13">13</div>
+                                    <div data-value="14">14</div>
+                                    <div data-value="15">15</div>
+                                    <div data-value="16">16</div>
+                                    <div data-value="17">17</div>
+                                    <div data-value="18">18</div>
+                                    <div data-value="19">19</div>
+                                    <div data-value="20">20</div>
+                                    <div data-value="21">21</div>
+                                    <div data-value="22">22</div>
+                                    <div data-value="23">23</div>
+                                    <div data-value="24">24</div>
+                                    <div data-value="25">25</div>
+                                    <div data-value="26">26</div>
+                                    <div data-value="27">27</div>
+                                    <div data-value="28">28</div>
+                                    <div data-value="29">29</div>
+                                    <div data-value="30">30</div>
+                                    <div data-value="31">31</div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div id="month" class="bfh-selectbox full date" data-id="month" data-name="month" data-value="">
+                                    <div data-value="">MM</div>
+                                    <div data-value="0">January</div>
+                                    <div data-value="1">February</div>
+                                    <div data-value="2">March</div>
+                                    <div data-value="3">April</div>
+                                    <div data-value="4">May</div>
+                                    <div data-value="5">June</div>
+                                    <div data-value="6">July</div>
+                                    <div data-value="7">August</div>
+                                    <div data-value="8">September</div>
+                                    <div data-value="9">October</div>
+                                    <div data-value="10">November</div>
+                                    <div data-value="11">December</div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div id="year" class="bfh-selectbox full date" data-id="year" data-name="year" data-value="">
+                                    <div data-value="">YYYY</div>
+                                    <% for (i=70; i>=18; i--) { %>
+                                        <div data-value="<%= moment().subtract(i, 'y').format('YYYY') %>">
+                                            <%= moment().subtract(i, 'y').format('YYYY') %>
+                                        </div>
+                                    <% } %>
+                                </div>
+                            </div>
+                            <label id="birthday_error" class="error pos-bottom"></label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="lb-normal" for="gender">gender</label>
+                        <div class="bfh-selectbox full" data-id="gender" data-value="">
+                            <div data-value="">Select Gender</div>
+                            <div data-value="F">Female</div>
+                            <div data-value="M">Male</div>
+                        </div>
+                        <label id="gender_error" class="error pos-bottom"></label>
+                    </div>
+
+                    <div id="femaleOptions">
+                        <div class="form-group">
+                            <label class="lb-normal">Are you pregnant?</label>
+                            <div class="custom_radio">
+                                <label>
+                                    <input type="radio" name="pregnant" value="No" checked />
+                                    no
+                                </label>
+                                <label>
+                                    <input type="radio" name="pregnant" value="Yes" />
+                                    yes
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="lb-normal">Are you breastfeeding?</label>
+                            <div class="custom_radio">
+                                <label>
+                                    <input type="radio" name="breastfeeding" value="No" checked />
+                                    no
+                                </label>
+                                <label>
+                                    <input type="radio" name="breastfeeding" value="Yes" />
+                                    yes
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <h5 class="title-info">Body Metrics</h5>
+
+        <div class="metrics">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="metrics-head">
+                        <a class="unit-selector active" href='#' data-unit="imperial">
+                            imperial system
+                        </a>
+                        <a class="unit-selector" href="#" data-unit="metric">
+                            metric system
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="metrics-body" id="health-info">
+                    
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div id="imperial" class='box-imperial-metric'>
+                                    <div class="form-group">
+                                        <label for="height" class="lb-normal">height</label>
+                                        <div class="input-group group">
+                                            <input type="text" min="1" max="7" id="height_ft" class="form-control metric" placeholder="0" value=""/>
+                                            <span class="input-group-addon">ft</span>
+                                        </div>
+                                        <div class="input-group">
+                                            <input  type="text" min="0" max="15" id="height_in" class="form-control metric" placeholder="0" value=""/>
+                                            <span class="input-group-addon">in</span>
+                                        </div>
+                                        <label id="height_error" class="error pos-bottom"></label>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="weight" class="lb-normal">weight</label>
+                                        <div class="input-group">
+                                            <input type="text" id="weightImperial"  name="weightImperial" class="form-control metric"  value="" placeholder="0">
+                                            <span class="input-group-addon weight-text">lb</span>
+                                        </div>
+                                        <label id="weight_error" class="error pos-bottom"></label>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="desire" class="lb-normal">desire weight</label>
+                                        <div class="input-group">
+                                            <input type="text" id="desireImperial"  name="desiredImperial" class="form-control metric" value="" placeholder="0">
+                                            <span class="input-group-addon weight-text">lb</span>
+                                        </div>
+                                        <label id="desire_error" class="error pos-bottom"></label>
+                                    </div>
+                                </div>
+
+                                <div id="metric" class='box-imperial-metric'>
+                                    <div class="form-group">
+                                        <label for="height" class="lb-normal">height</label>
+                                        <div class="input-group">
+                                            <input type="text" id="height" name="height" class="form-control metric" value="" placeholder="0">
+                                            <span class="input-group-addon height-text">cm</span>
+                                        </div>
+                                        <label id="height_error" class="error pos-bottom"></label>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="weight" class="lb-normal">weight</label>
+                                        <div class="input-group">
+                                            <input type="text" id="weight"  name="weight" class="form-control metric"  value="" placeholder="0">
+                                            <span class="input-group-addon weight-text">kg</span>
+                                        </div>
+                                        <label id="weight_error" class="error pos-bottom"></label>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="desire" class="lb-normal">desire weight</label>
+                                        <div class="input-group">
+                                            <input type="text" id="desire"  name="desired_weight" class="form-control metric" value="" placeholder="0">
+                                            <span class="input-group-addon weight-text">kg</span>
+                                        </div>
+                                        <label id="desire_error" class="error pos-bottom"></label>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="box-down-foot">
+            <div class="row">
+                <div class="col-sm-12 text-right">
+                    <button type="submit" class="btn-green-open mrg-no" id="next-step">next</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div><!-- /personal information -->

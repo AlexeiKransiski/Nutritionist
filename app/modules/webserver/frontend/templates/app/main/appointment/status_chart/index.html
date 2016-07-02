@@ -1,0 +1,23 @@
+<div class="tab-pane" id="statu">
+    <div class="tab-head">
+        <div class="row">
+            <div class="col-sm-12 text-left">
+                <p>Appointment <%= moment(model.escape('createdAt')).format('MMM.D.YYYY') %></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-body">
+        <div id="charts" data-role="charts">
+
+        </div>
+    </div>
+
+    <div class="tab-foot">
+        <div class="row">
+            <div class="col-sm-12">
+                <p>STATUS: <%= model.escape("status") %></p>
+            </div>
+        </div>
+    </div>
+</div>

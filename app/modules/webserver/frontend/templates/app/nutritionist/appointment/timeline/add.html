@@ -1,0 +1,16 @@
+<div class="send-answer">
+  <form class="form-horizontal">
+    <div class="pull-left avatar"><img src="<%= app.me.get('avatar_src') %>" alt="<%= app.me.get('full_name') %>"></div>
+    <div class="pull-left send">
+      <div class="form-group">
+        <label class="text-left">Answer to your Patient:</label>
+        <p id="messages_error" class="error"></p>
+        <textarea row="3" name="message" id="message" maxlenght="4" class="form-control"></textarea>
+      </div>
+      <div class="form-group">
+        <p><span id="letters">0</span>/600 Characteres</p>
+        <button type="submit" class="btn btn-primary pull-right" data-role="send">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>

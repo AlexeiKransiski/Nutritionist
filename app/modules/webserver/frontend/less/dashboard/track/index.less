@@ -1,0 +1,1312 @@
+	@import "variables.less";
+  	@import "mixins.less";
+
+  	.track {
+        .border-radius(5px);
+        background: @bg-active;
+        margin: 0 0 20px 1px;
+        .shadow-box();
+
+        .title_sidebar {
+
+            ul {
+                border: none;
+                margin-top: 14px;
+
+                li {
+                  	margin-right: 12px;
+
+                  	&:last-child {
+                    	margin-right: 10px;                    
+                  	}
+                  	a {
+                    	.open-bold(11px);
+	                    color: @white;
+	                    margin: 0;
+	                    border: none;
+	                    background: @bg-new;
+	                    .border-radius(3px);
+	                    .tab-transition();
+                  	}
+                  	a.food-tab {
+                    	&:hover, &:focus {
+                      		background: @orange;
+                      		.tab-transition();
+                    	}
+                  	}
+                  	a.exercise-tab {
+                    	&:hover, &:focus {
+                      		background: @blue;
+                      		.tab-transition();
+                    	}
+                  	}
+                  	a.water-tab {
+                    	&:hover, &:focus {
+                      		background: @skyblue;
+                      		.tab-transition();
+                    	}
+                  	}
+                  	a.progress-tab {
+                    	&:hover, &:focus {
+                      		background: @morado;
+                      		.tab-transition();
+                    	}
+                  	}
+                }
+
+                li.active > a.food-tab {
+                  	background: @orange;
+                  	.tab-transition();
+                }
+
+                li.active > a.exercise-tab {
+                  	background: @blue;
+                  	.tab-transition();
+                }
+
+                li.active > a.water-tab {
+                  	background: @skyblue;
+                  	.tab-transition();
+                }
+
+                li.active > a.progress-tab {
+                  	background: @morado;
+                  	.tab-transition();
+                }
+
+            }   // tabs track        
+        
+        }
+
+        .tab-content {
+            border-top: 1px solid @line-new;
+
+            #feeling, #foods, #exercise, #water, #progres, #measu_com {
+
+                form {
+                  	overflow: hidden;
+                  	padding: 18px 9px 10px; 
+                  	margin: 0;
+                  
+                  	.input-group {
+                    
+                    	input {
+	                      	.lato(15px,italic,400);                  
+	                      	.border-radius(0px);
+	                      	border-color: @line-new;
+	                      	box-shadow: none;
+	                      	height: 40px;                  
+                    	}
+                    	input::-moz-placeholder {
+                      		color: @font-input;
+                      		opacity: 1;
+                    	}
+                    	input:-ms-input-placeholder {
+                      		color: @font-input;
+                    	}
+                    	input::-webkit-input-placeholder {
+                      		color: @font-input;
+                    	}
+                    	button.active {
+                      		background:@white;
+                      		box-shadow: none;
+                    	}
+                    	button {
+                      		.border-radius(0px);
+                      		border-color: @line-new;
+                      		box-shadow: none;
+                      		height: 40px;
+                      		width: 40px;
+                      		padding: 0;
+                      		position: relative;
+                      		
+                      		&:hover, &:focus, &:active {
+                        		background:@white;
+                      		}
+                      		
+                      		span.caret {
+		                        color: @gris;
+		                        border-bottom: 7px solid;
+		                        border-left: 7px solid rgba(0, 0, 0, 0);
+		                        border-top: none;
+		                        border-right: none;
+		                        position: absolute;
+		                        right: 1px;
+		                        bottom: 1px;   
+		                        height: 7px;
+		                        width: 7px;                     
+                      		}	
+                      		span {
+		                        height: 24px;
+		                        width: 26px;
+		                        display: inline-block;
+
+		                        &:hover, &:focus, &:active {
+		                          	.zoom-icons()
+		                        }
+                      		}
+
+                      		.icon-great {
+		                        background-position: -69px -120px;
+		                        margin-top: 1px;
+                      		}
+                      		.icon-happy {
+		                        background-position: -96px -120px;
+		                        margin-top: 1px;
+                      		}
+                      		.icon-chill {
+		                        background-position: -123px -120px;
+		                        margin-top: 1px;
+                      		}
+                      		.icon-sick {
+		                        background-position: -151px -120px;
+		                        margin-top: 1px;
+                      		}
+                      		.icon-bad {
+		                        background-position: -179px -120px;
+		                        margin-top: 1px;
+                      		}
+                      		.icon-depress {
+		                        background-position: -208px -120px;
+		                        margin-top: 1px;
+                      		}
+
+                    	}
+
+                  	}
+
+                } // form
+
+            }  // feeling
+              
+            #foods {
+                
+                #select_food {                  
+                  	min-height: 118px;
+                  	padding: 18px 9px 10px;
+                  	
+                  	a.form-control {
+	                    box-shadow: none;
+	                    .border-radius(0px);
+	                    height: 40px;
+	                    border-color: @line-new;
+	                    .lato(15px,italic,400);
+	                    line-height: 25px;
+	                    .align(left);
+	                    color: @font-input;
+	                    margin-bottom: 5px;
+	                    
+	                    .selectbox-caret {
+	                      	margin-right: -10px;
+	                      	margin-top: 11px;
+	                    }
+	                    
+	                    .caret {
+	                      	border-left: 5px solid rgba(0, 0, 0, 0);
+	                      	border-right: 5px solid rgba(0, 0, 0, 0);
+	                      	border-top: 5px solid;
+	                    }
+
+	                    &:hover {
+	                      	color: @font-new;
+	                    }
+
+                  	}
+                  	.bfh-selectbox-options {
+                    	width: 100%;
+                    	text-align: left;
+                    	ul {
+                      		max-width: 100%
+                    	}
+                  	}
+                  	button.btn-default {
+	                    .btn-default(40px,80px);
+	                    .button-transition();
+
+	                    &:hover {
+	                      	color: @font-menu;
+	                    }
+
+                  	}
+                  	a.btn-primary {
+	                    .btn-primary(40px,100px);
+	                    line-height: 27px;
+	                    .button-transition();
+
+	                    &:hover {
+	                      	background: @lightblue;
+	                      	.button-transition();
+	                    }
+
+                  	}                
+
+                } // select_food
+
+            	#search{
+                	display: none;
+
+                  	ul {
+	                    width: 100%;
+	                    margin: 0;   
+	                    border-bottom: none;                 
+
+                    	li {    
+                      
+                      		border-bottom: 1px solid @line-new;          
+                      		margin: 0px;
+                      		width: 25%;
+                      
+	                      	a {                                            
+		                        .slider-effect();
+		                        padding: 0;
+		                        line-height: 30px;
+		                        margin: 0;
+		                        border: none;
+		                        color: @font-new;
+		                        .open-bold(11px); 
+		                        text-transform: uppercase;
+		                        .border-radius(0px);
+		                        .menu-transition();
+	                      	}
+
+	                      	&:hover {
+		                        border-top: none;
+		                        border-bottom: 1px solid @green;
+	                      	}
+
+                    	}
+
+                    	li.active > a, li a:hover, li a:focus {
+                      		border: none;
+                      		background-position: 0 0;
+                      		color: @white;
+                      		margin: 0; 
+                      		.border-radius(0px);
+                      		.menu-transition();
+                    	}
+                                                      
+                    	li.active {
+                      		border-top: none;
+                      		border-bottom: 1px solid @green;
+                    	}
+                  
+                  	} // ul
+
+                  	.tab-content {
+	                    border-top: none;
+
+	                    #searchs, #recently, #favorites, #list {
+
+	                      	form {
+	                        	padding: 18px 0 0 0;
+		                        
+		                        input {
+		                          	.lato(15px,italic,400);                  
+		                          	.border-radius(0px);
+		                          	border-color: @line-new;
+		                          	box-shadow: none;
+		                          	height: 40px;  
+		                          	width: 480px;   
+		                          	margin-right: 10px;                      
+		                        }
+
+		                        input::-moz-placeholder {
+		                          	color: @font-input;
+		                          	opacity: 1;
+		                        }
+		                        input:-ms-input-placeholder {
+		                          	color: @font-input;
+		                        }
+		                        input::-webkit-input-placeholder {
+		                          	color: @font-input;
+		                        }
+
+		                        button.btn-success {
+		                          	.btn-success(40px,100px);
+		                          	margin-right: 10px;
+		                          	.button-transition();
+
+		                          	&:hover {
+		                            	background: @lightgreen;
+		                            	.button-transition();
+		                          	}
+		                        }
+
+	                        	.result {
+		                          	border-top: 1px solid @line-new;                          
+		                          	height: 310px;
+		                          	margin: 20px 0 0;
+		                          	padding-bottom: 20px;
+		                          	position: relative;
+		                          	z-index: 0;
+		                          	
+		                          	.addmore {
+			                            background: @line-table;
+			                            height: 44px;
+			                            position: absolute;
+			                            bottom: 20px;
+			                            left: 15px;
+			                            width: 574px;                          
+		                            	
+		                            	p {
+		                              		.align(center);
+		                              		.open-normal(14px);
+		                              		font-style: italic;
+		                              		line-height: 44px;
+		                              		
+		                              		a {
+				                                color: @green;
+				                                .button-transition();
+
+				                                &:hover {
+				                                  	text-decoration:none;
+				                                  	color: @lightgreen;
+				                                  	.button-transition(); 
+				                                }
+
+		                              		}
+
+		                            	}
+
+		                          	} // addmore
+
+	                          		ul {
+	                            		margin: 0px 0 0  15px;
+	                            		overflow: hidden;
+	                            		width: 574px;
+	                            		border: none;                            
+	                            		
+	                            		li {
+	                              			border-top: none;
+	                              			.open-normal(14px);
+			                              	line-height: 14px;
+			                              	color: @font-new;
+			                              	display: block;
+			                              	width: 100%;
+			                              	min-height: 60px;
+			                              	border-bottom: 1px solid @line-new;
+			                              	padding: 15px 0 0 5px;
+			                              	position: relative;
+			                              	.align(left);
+	                              			
+	                              			.ratings {
+				                                overflow: hidden;
+				                                display: inline-block;
+				                                padding-top: 6px;
+				                                margin-left: 5px;
+				                                margin-right: 15px;
+	                                			
+	                                			input {
+	                                  				width: 17px;
+	                                  				margin: 0;
+	                                  				height: 17px;
+	                                			}                     
+	                              			
+	                              			}                              
+
+			                              
+	                              			span {
+				                                color: @green;
+				                                font-weight: 600;
+	                              			}
+	                              			
+	                              			span.help {
+				                                display: block;
+				                                font-style: italic;
+				                                color: @font-menu;
+				                                line-height: 25px;
+				                                font-weight: 400;
+	                              			}
+
+	                              			a.add {
+				                                .open-normal(12px);
+				                                font-style: italic;
+				                                position: absolute;
+				                                right: 25px;
+				                                top: 15px;
+				                                color: @font-new;
+				                                text-transform: capitalize;
+				                                background: transparent;
+				                                .button-transition();
+
+				                                &:hover {
+				                                  	background:transparent;
+				                                  	text-decoration: none;
+				                                  	color: @font-menu;
+				                                  	.button-transition();
+				                                }
+	                              			}
+
+	                            		}
+
+	                            		li.active {
+	                              			position: relative;
+	                              			.triangle {
+			                                background: @line-table url("../img/new-triangle.png") 0 -12px no-repeat;  
+			                                position: absolute;
+			                                left: 12px;
+			                                width: 23px;
+			                                height: 13px;
+			                                top: -1px;
+	                              		}
+	                              		
+	                              		background: @line-table;
+
+	                              		.form-inline {
+
+	                                		input {
+			                                  	height: 32px;
+			                                  	width: 32px;
+			                                  	.open-normal(12px);                                                    
+			                                  	.border-radius(0px);
+			                                  	border-color: @line-new;
+			                                  	.no-shadow();
+			                                  	padding: 6px 2px;
+			                                  	.align(center);
+			                                  	margin-left: 3px;
+			                                }
+	                                		
+	                                		div.bfh-selectbox {
+			                                  	margin-left: 15px;                
+			                                  	.open-normal(12px);
+			                                  	font-style: italic;
+			                                  	width: 240px;
+			                                  	.border-radius(0px);
+			                                  	border-color: @line-new;
+			                                  	.no-shadow();           
+
+			                                  	a {
+				                                    padding-left: 8px;
+				                                    color: @font-menu;
+				                                    display: block;
+				                                    .border-radius(0px);
+				                                    border:1px solid @line-new;
+				                                    box-shadow: none;
+				                                    height: 32px;
+				                                    line-height: 32px;
+				                                    text-transform: none;
+				                                    background: @white;
+
+				                                    .bfh-selectbox-option {
+				                                      	height: 32px;
+				                                    }
+				                                    span {
+				                                      	color: @font-input;
+				                                    }
+				                                    &:hover, &:focus {
+				                                      	background:@white;
+				                                    }
+				                                    .selectbox-caret {
+				                                      	color: @gris;
+				                                      	margin: -17px 12px 0 0;
+				                                    }
+			                                  	}
+
+	                                  			.bfh-selectbox-options {
+	                                    			.border-radius(0px);
+	                                    
+				                                    ul {
+				                                      	margin: 0px;                                      
+				                                      	width: 238px;
+				                                      	
+				                                      	li{
+					                                        border: none;
+					                                        min-height: 25px;
+					                                        padding: 3px;
+					                                        a {
+					                                          	line-height: 25px;
+					                                          	height: 20px;
+					                                          	border: none;
+					                                          	&:hover {
+					                                            	background:@bg-select-hover;
+					                                          	}
+					                                        }
+				                                      	}
+
+				                                    }
+
+	                                  			}
+
+	                                		}
+
+			                                button.btn-primary {
+			                                  	.btn-primary(34px, 75px);
+			                                  	margin:0 10px 0 0;
+			                                  	.button-transition();
+
+			                                  	&:hover {
+			                                    	background: @lightblue;
+			                                    	.button-transition();
+			                                  	}
+
+			                                }
+
+			                                button.btn-default {
+			                                  	.btn-default(34px, 75px);
+			                                  	.button-transition();
+
+			                                  	&:hover {
+			                                    	color: @font-menu;
+			                                    	.button-transition();
+			                                  	}
+			                                }
+
+			                                p {
+			                                  	display: inline-block;
+			                                  	.open-normal(12px);
+			                                  	font-style: italic;
+			                                }
+
+	                              		}
+
+	                            	} // li.active
+
+	                            	li:last-child {
+	                              		border-bottom: none;
+	                            	}
+
+	                          	}
+	                          
+	                        } // result
+
+	                        .save {
+	                          	z-index: 0;
+	                          	border-top: 1px solid @line-new;
+	                          	min-height: 60px;
+	                          	padding-top: 13px;
+	                          	
+	                          	button.btn-primary {
+	                            	.btn-primary(36px, 75px);
+	                            	margin:0 10px 0 0;
+	                          	}
+	                          	
+	                          	button.btn-default {
+	                            	.btn-default(36px, 75px);
+	                          	}
+
+	                        }
+
+                		} // form
+
+                	} // searchs                    
+
+        		} // tab-content
+
+    		} // search
+                
+        		#comment_food {
+                  	display: none;
+
+                  	.progresss {                    
+	                    margin-bottom: 20px;
+	                    overflow: hidden;
+
+                    	.thumbs {
+                      		width: 84px;
+                      		display: inline-block;
+                      		position: relative;
+                      		
+                      		img {
+                        		margin-top: 17px;
+                      		}                          
+                    	} // thumbs
+
+	                    .comment {
+	                      	margin-top: 17px;
+	                      	display: inline-block;
+	                      	width: 535px;
+
+	                      	p.date {
+	                        	.open-normal(12px);
+		                        color: @orange;
+		                        .align(left);                
+		                        line-height: 10px;
+	                      	}
+	                      	p {
+		                        .open-light(14px);
+		                        .align(left);
+		                        span {
+		                          	.open-bold(14px);
+		                          	color: @orange;
+		                        }
+	                      	}                      
+
+	                    }  // comment
+
+                  	} // progress
+
+                  	form {
+	                    border-top: 1px solid @line-new;
+	                    padding: 28px 9px 10px;
+	                    
+	                    input {
+	                      width: 100%;
+	                    }
+                  	}
+
+                } //comment_food
+
+            } // foods
+
+            #exercise {
+
+                #select_exercise {                  
+	                min-height: 118px;
+	                padding: 18px 9px 10px;
+
+                  	a.form-control {
+	                    box-shadow: none;
+	                    .border-radius(0px);
+	                    height: 40px;
+	                    border-color: @line-new;
+	                    .lato(15px, italic, 400);
+	                    line-height: 25px;
+	                    .align(left);
+	                    color: @font-menu;
+	                    margin-bottom: 5px;
+
+	                    .selectbox-caret {
+	                      	margin-right: -10px;
+	                      	margin-top: 11px;
+	                    }
+
+	                    .caret {
+	                      	border-left: 5px solid rgba(0, 0, 0, 0);
+	                      	border-right: 5px solid rgba(0, 0, 0, 0);
+	                      	border-top: 5px solid;
+	                    }
+                  	}
+
+	                .bfh-selectbox-options {
+	                    width: 100%;
+	                    text-align: left;
+	                    ul {
+	                      	max-width: 100%;
+	                    }
+	                }
+
+	                button.btn-default {
+	                    .btn-default(40px,80px);
+	                }
+
+	                a.btn-primary {
+	                    .btn-primary(40px,100px);
+	                    line-height: 27px;
+	                }                
+
+                }  // select_exercise
+                
+                #searchex {
+                  	display: none;
+
+                  	ul {
+	                    width: 100%;
+	                    margin: 0;
+	                    border-bottom: none;
+
+	                    li {    
+                      
+                      		border-bottom: 1px solid @line-new;          
+                      		margin: 0px;
+                      		width: 25%;
+                      		a {
+		                        padding: 0;
+		                        line-height: 30px;
+		                        margin: 0;
+		                        border-top: none;
+		                        color: @font-new;
+		                        .open-bold(11px); 
+		                        text-transform: uppercase;
+                      		}
+
+		                    &:hover {
+		                        border-top: 1px solid @green;
+		                        border-bottom: 1px solid @green;
+		                    }
+
+                    	}
+
+	                    li.active > a, li a:hover, li a:focus {
+	                      	border: none;
+	                      	background: @green;
+	                      	color: @white;
+	                      	margin: 0; 
+	                      	.border-radius(0px);
+	                    }
+                                                      
+                    	li.active {
+                      		border-top: 1px solid @green;
+                      		border-bottom: 1px solid @green;
+                    	}
+
+                  	} // ul
+
+                  	.tab-content {                    
+                    	border-top: none;
+
+                    	#searchsex, #recentlyex, #favoritesex, #listex {
+
+                      		form {
+                        		padding: 18px 0 0 0;
+                        		
+                        		input {
+		                          	.lato(15px,italic,400);                  
+		                          	.border-radius(0px);
+		                          	border-color: @line-new;
+		                          	box-shadow: none;
+		                          	height: 40px;  
+		                          	width: 480px;   
+		                          	margin-right: 10px;                      
+                        		}
+		                        input::-moz-placeholder {
+		                          	color: @font-input;
+		                          	opacity: 1;
+		                        }
+		                        input:-ms-input-placeholder {
+		                          	color: @font-input;
+		                        }
+		                        input::-webkit-input-placeholder {
+		                          	color: @font-input;
+		                        }
+		                        button.btn-success {
+		                          	.btn-success(40px,100px);
+		                          	margin-right: 10px;
+		                        }
+
+                        		.result {
+		                          	border-top: 1px solid @line-new;                          
+		                          	height: 310px;
+		                          	margin: 20px 0 0;
+		                          	padding-bottom: 20px;
+		                          	position: relative;
+		                          	z-index: 0;
+
+			                        .addmore {
+			                            background: @line-table;
+			                            height: 44px;
+			                            position: absolute;
+			                            bottom: 20px;
+			                            left: 15px;
+			                            width: 574px;  
+
+			                            p {
+			                              	.align(center);
+			                              	.open-normal(14px);
+			                           		font-style: italic;
+			                              	line-height: 44px;
+			                              	margin: 0;
+			                              	a {
+				                                color: @green;
+				                                &:hover {
+				                                  	text-decoration:none;
+				                                }
+			                              	}
+
+			                            }
+
+			                        } // addmore
+
+                          			ul {
+			                            margin: 0px 0 0  15px;
+			                            overflow: hidden;
+			                            width: 574px;
+			                            border: none; 
+
+			                            li {
+			                              	.ratings {
+				                                overflow: hidden;
+				                                display: inline-block;
+				                                padding-top: 6px;
+				                                margin-left: 5px;
+				                                margin-right: 15px;
+				                                input {
+				                                  	width: 17px;
+				                                  	margin: 0;
+				                                  	height: 17px;
+				                                }                             
+			                              	}
+			                              
+			                              	.open-normal(14px);
+			                              	line-height: 14px;
+			                              	color: @font-sub;
+			                              	display: block;
+			                              	width: 100%;
+			                              	min-height: 60px;
+			                              	border-bottom: 1px solid @line-new;
+			                              	padding: 15px 0 0 5px;
+			                              	position: relative;
+			                              	.align(left);
+			                              	
+			                              	span {
+				                                color: @green;
+				                                font-weight: 600;
+			                              	}
+
+			                              	span.help {
+				                                display: block;
+				                                font-style: italic;
+				                                color: @font-menu;
+				                                line-height: 25px;
+				                                font-weight: 400;
+			                              	}
+
+			                              	a.add {
+				                                .open-normal(12px);
+				                                font-style: italic;
+				                                position: absolute;
+				                                right: 25px;
+				                                top: 15px;
+				                                color: @font-new;
+				                                text-transform: capitalize;
+				                                &:hover {
+				                                  	background:transparent;
+				                                  	text-decoration: none;
+
+				                                }
+
+			                              	}
+
+			                              	&:hover {
+			                                	border-top: none;
+			                              	}
+
+			                            }
+
+                            			li.active {
+			                              	border-top: none;
+			                              	background: @line-table;
+			                              	position: relative;
+
+			                              	.triangle {
+				                                background: @bg-select-hover url("../img/new-triangle.png") 0 -12px no-repeat;  
+				                                position: absolute;
+				                                left: 12px;
+				                                width: 23px;
+				                                height: 13px;
+				                                top: -1px;
+			                              	}
+
+			                              	.form-inline {
+
+				                                input {
+				                                  	height: 32px;
+				                                  	width: 32px;
+				                                  	.open-normal(12px);                                                    
+				                                  	.border-radius(0px);
+				                                  	border-color: @line-new;
+				                                  	box-shadow: none;
+				                                  	padding: 6px 2px;
+				                                  	.align(center);
+				                                  	margin-left: 3px;
+				                                }
+
+			                                	div.bfh-selectbox {
+			                                  		margin-left: 15px;
+				                                  	.open-normal(12px);
+				                                  	font-style: italic;
+				                                  	width: 240px;
+				                                  	.border-radius(0px);
+				                                  	border-color: @line-new;
+				                                  	box-shadow: none;                                  
+					                                
+					                                a {
+					                                    padding-left: 8px;
+					                                    color: @font-menu;
+					                                    display: block;
+					                                    .border-radius(0px);
+					                                    border:1px solid @line-new;
+					                                    box-shadow: none;
+					                                    height: 32px;
+					                                    line-height: 32px;
+					                                    text-transform: none;
+
+					                                    .bfh-selectbox-option {
+					                                      	height: 32px;
+					                                    }
+
+					                                    span {
+					                                      	color: @font-input;
+					                                    }
+
+					                                    &:hover, &:focus {
+					                                      	background:@white;
+					                                    }
+
+					                                    .selectbox-caret {
+					                                      	color: @gris;
+					                                      	margin: -17px 12px 0 0;
+					                                    }
+
+					                                }
+				                                  	.bfh-selectbox-options {
+				                                    	.border-radius(0px);                                                                    
+					                                    ul {
+					                                      	margin: 0px;                                      
+					                                      	width: 238px;
+					                                      	li{
+						                                        border: none;
+						                                        min-height: 25px;
+						                                        padding: 3px;
+						                                        a {
+						                                          	line-height: 25px;
+						                                          	height: 20px;
+						                                          	border: none;
+						                                          	&:hover {
+						                                            	background:@bg-select-hover;
+						                                          	}
+
+						                                        }
+
+					                                      	}
+
+					                                    }
+
+				                                  	}
+
+			                                	}
+
+				                                button.btn-primary {
+				                                  	.btn-primary(34px, 75px);
+				                                  	margin:0 10px 0 0;
+				                                }
+
+				                                button.btn-default {
+				                                  	.btn-default(34px, 75px);
+				                                }
+
+				                                p {
+				                                  	display: inline-block;
+				                                  	.open-normal(12px);
+				                                  	font-style: italic;
+				                                }
+
+			                              	}
+
+			                            } // li.active
+
+			                            li:last-child {
+			                              	border-bottom: none;
+			                            }
+
+                          			}
+                          
+                       		 	} // result
+
+		                        .save {
+		                          	z-index: 0;
+		                          	border-top: 1px solid @line-new;
+		                          	min-height: 60px;
+		                          	padding-top: 13px;
+		                          	
+		                          	button.btn-primary {
+			                            .btn-primary(36px, 75px);
+			                            margin:0 10px 0 0;
+		                          	}
+		                          	
+		                          	button.btn-default {
+		                            	.btn-default(36px, 75px);
+		                          	}
+
+                        		}
+
+                      		} // form
+
+                    	} // searchsex
+
+                  	} // tab-content
+
+                } // searchex
+
+                #comment_exercise {
+                  display: none;
+
+                  	.progresss {                    
+	                    margin-bottom: 20px;
+	                    overflow: hidden;
+	                    
+	                    .thumbs {
+	                      	width: 84px;
+	                      	display: inline-block;
+	                      	position: relative;
+	                      	
+	                      	img {
+	                        	margin-top: 17px;
+	                      	}
+
+	                    } // thumbs
+
+                    	.comment {
+	                      	margin-top: 17px;
+	                      	display: inline-block;
+	                      	width: 535px;
+                      
+                      		p.date {
+		                        .open-normal(12px);
+		                        color: @blue;
+		                        .align(left);                
+		                        line-height: 10px;
+                      		}
+	                      	
+	                      	p {
+		                        .open-light(14px);
+		                        color: @font-new;
+		                        .align(left);
+		                        
+		                        span {
+		                          	.open-bold(14px);
+		                          	color: @blue;
+		                        }
+
+                      		}                      
+
+                    	}  // comment 
+
+                  	} // progress
+
+                  	form {
+                    	border-top: 1px solid @line-new;
+                    	padding: 28px 9px 10px;
+                    	
+                    	input {
+                      		width: 100%;
+                    	}
+
+                  	}
+
+                } //comment_exercise
+
+            }   // exercise
+              
+            #water {
+
+                .glasses {                  
+                  	.border-radius(0px);
+                  	background: transparent;
+                  	border-bottom: 1px solid @line-new;
+                  	margin-bottom: 11px;
+                  	min-height: 110px;
+                  
+                  	.thumbs {
+	                    width: 84px;
+	                    display: inline-block;
+	                    position: relative;
+
+	                    img {
+	                     	margin-top: 17px;
+	                    }                            
+
+                  	}
+
+                  	.comment {
+                    	margin-top: 20px;
+	                    
+	                    p.date {
+	                      	margin-bottom: 7px;
+	                    }
+	                    
+	                    p.text_water {
+	                      	padding-left: 5px;
+	                    }
+
+	                    .rating {
+	                      	overflow: hidden;
+	                      	display: inline-block;
+	                      	font-size: 0;
+	                      	position: relative;
+	                      	padding-top: 6px;
+	                      	margin-left: 52px;
+	                      	.icon-more {
+		                        background-position: -1px -178px;
+		                        height: 14px;
+		                        width: 14px;
+		                        float: right;
+		                        margin-top: -3px;
+		                        &:hover {
+		                          background-position: -19px -178px;
+		                        }
+	                      	}
+	                    }
+	                    .rating-input {
+	                      	float: right;
+	                      	width: 9px;
+	                      	height: 9px;
+	                      	padding: 0;
+	                      	margin: 0 0 0 -2px;
+	                      	opacity: 0;
+	                    }
+
+	                    .rating:hover .rating-star:hover,
+	                    .rating:hover .rating-star:hover ~ .rating-star,
+	                    .rating-input:checked ~ .rating-star {
+	                      	background: @skyblue;
+	                    }
+	                    .rating-star,
+	                    .rating:hover .rating-star {
+	                      	.border-radius(4.5px);
+	                      	position: relative;
+	                      	float: right;
+	                      	display: block;
+	                      	width: 9px;
+	                      	height: 9px;
+	                      	background: @bg-new;
+	                      	cursor: pointer;
+	                    }                    
+
+                  	} // comment
+
+                } // glasses
+
+            } // water
+              
+            #progres {
+
+                #measurements {
+
+                  	form {
+                    	padding:12px 0 0;
+                    	
+                    	.form-group {
+                      		width: 100%;
+                      		margin-bottom: 16px;
+                      		.pull-left label {
+                        		margin-left: 29px
+                      		}
+                      		.pull-right input {
+                        		margin-right: 33px
+                      		}
+                      		
+                      		label {
+		                        .lato(15px,italic,700);
+		                        color: @font-new;
+		                        width: 110px;
+		                        .align(left);
+                      		}
+                      		
+                      		input {
+		                        .lato(12px,italic,700);
+		                        color: @font-new;
+		                        .border-radius(0px);
+		                        border-color: @line-new;
+		                        box-shadow: none;
+		                        height: 32px;  
+		                        width: 110px;    
+		                        .align(center);
+		                        margin-left: 16px;
+                      		}
+                    	}
+
+	                    .save {
+	                      	border-top: 1px solid @line-new;
+	                      	min-height: 60px;
+	                      	padding-top: 13px;
+	                      	
+	                      	button.btn-primary {
+		                        .btn-primary(36px, 75px);
+		                        margin-right: 10px;
+		                        margin-top: 0px;
+	                      	}
+	                      	button.btn-default {
+	                        	.btn-default(36px, 75px);
+	                      	}
+
+	                    }
+
+                  	}
+
+                } // measurements
+
+                #measu_com {
+                  	display: none;
+
+                  	.progresss {                    
+                    	margin-bottom: 20px;
+                    	overflow: hidden;
+
+                    	.thumbs {
+                      		width: 84px;
+                      		display: inline-block;
+                      		position: relative;
+
+                      		img {
+                        		margin-top: 17px;
+                      		}
+                            
+                    	} // thumbs
+
+                    	.comment {
+                      		margin-top: 17px;
+                      		display: inline-block;
+                      		width: 535px;
+
+                      		p.date {
+                        		.open-normal(12px);
+                        		color: @morado;
+                        		.align(left);                
+                        		line-height: 10px;
+                      		}
+
+                      		p {
+                        		.open-light(14px);
+                        		.align(left);
+                        		span {
+                          			.open-bold(14px);
+                          			color: @morado;
+                        		}
+                      		}
+
+	                      	.table {
+		                        background: @white;
+		                        margin-bottom: 0px;
+		                        width: 528px;
+		                        height: 130px;
+		                        border: 1px solid @line-new;
+		                        position: relative;
+
+		                        td {
+		                          	padding: 0;
+		                          	border: 1px solid @line-new;
+		                          	width: 88px;
+		                          	height: 65px;
+		                          	.box {
+			                            width: 100%;
+			                            height: 100%;
+			                            .align(left);
+			                            position: relative;
+			                            .open-normal(12px);
+			                            line-height: 15px;
+			                            font-style: italic;
+			                            color: @font-new;
+			                            padding: 1px 0 0 5px;
+			                            
+			                            span {
+			                              	position: absolute;
+			                              	bottom: 8px;
+			                              	right: 5px;
+			                              	.open-normal(14px);
+			                              	line-height: 14px;                            
+			                              	color: @morado;
+			                              	font-style: normal;
+			                            }
+
+		                          	}                          
+                          
+                        		} // td
+
+                      		} // table
+
+                    	}  // comment                
+
+                  	} // progress
+
+                  	form {
+                    	border-top: 1px solid @line-new;
+                    	padding-top: 28px;
+                  	}
+
+                } //#measu_com
+
+            } // #progres
+
+        }
+
+	} // box_track

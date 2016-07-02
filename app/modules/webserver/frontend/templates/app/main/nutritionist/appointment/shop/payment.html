@@ -1,0 +1,36 @@
+<!-- accepted payment-->
+<div id="payment">
+    <div class="panel-header text-left">
+        <h4>transaction accepted!</h4>
+    </div>
+
+    <div id="accepted">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h3 class="green">payment completed!</h3>
+                </div>
+            </div>
+            <div class="box">
+                <div class="okay">
+                    <span class="icon-ok"></span>
+                </div>
+                <p>
+                    The total amount of $<%= Helpers.centsToDollar(context.amount) %> USD have been succesfully charged to the credit card ending <%= context.last4 %>. You will be receiving a confirmation email for this transaction shortly.
+                </p>
+            </div>
+        </div>
+
+        <div class="panel-footer">
+            <div class="row">
+                <div class="col-sm-6 col-md-9 text-right">
+                    <button type="button" class="btn btn-default" data-role="cancel">back to nutritionist</button>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <button type="button" class="btn-blue-open btn-full mrg-top-4" data-role="new">create new consultation</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div> <!-- payment -->

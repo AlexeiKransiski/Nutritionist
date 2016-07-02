@@ -1,0 +1,9 @@
+<div class="col-md-12">
+  <div class="<%= comment_type %>">
+    <div class="thumbs pull-left"><img src="<%= model.get('sender_avatar') %>" alt="<%= model.get('sender_name') %>"></div>
+    <div class="comment pull-left">
+      <p class="date"><%= Helpers.dateFormat(model.get('createdAt'), 'DD MMM YYYY') %></p>
+      <p> <span><%= sender %> <%= comment_type_label %>: </span><%= model.get('message') %></p>
+    </div>
+  </div>
+</div>

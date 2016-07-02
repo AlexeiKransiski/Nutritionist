@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col-md-6">
+    <button type="submit" class="btn btn-primary pull-left back">back</button>
+  </div>
+  <div class="col-md-6 status text-right">
+    <p>STATUS: <span class="text-info"><%= Helpers.getAppointmentStatusMessage(model.get('status')) %></span></p>
+  </div>
+</div>
+<div class="row tab-head">
+  <div class="col-md-12">
+    <div class="head-tad">
+      <p class="pull-left">consulta 1 - <%= Helpers.dateFormat(model.get('createdAt'), 'DD/MM/YYYY') %></p>
+      <ul class="nav nav-tabs pull-right">
+        <li class="active"><a href="#profile" data-toggle="tab">patient profile</a></li>
+        <li><a href="#status" data-toggle="tab">status chart    </a></li>
+        <li><a href="#preferences" data-toggle="tab">preferences</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="reason text-left">
+      <h4 class="title-reason">razon de la consulta</h4>
+      <p><%= Helpers.getAppointmentReason(model) %></p>
+    </div>
+  </div>
+</div>

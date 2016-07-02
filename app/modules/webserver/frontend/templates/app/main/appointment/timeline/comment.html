@@ -1,0 +1,24 @@
+<div class="boxes-messages">
+    <div class="row">
+        <div class="col-xs-4 col-sm-2 col-md-1">
+            <div class="thumbs">
+              <img src="<%= model.get('sender_avatar') %>" alt="<%= model.escape('sender_name') %>" class="box_image_user" />
+              <% if (comment_type != 'nutritionist') { %>
+                <% if (model.escape('sender_status') != "") { %>
+                  <div class="status_small_icon">
+                    <span class="icon-<%= model.escape('sender_status').toLowerCase() %>"></span>
+                  </div>
+                <% } %>  
+              <% } %>
+            </div>
+        </div>
+        <div class="col-xs-8 col-sm-10 col-md-11">
+            <div class="comment <%= comment_type %>">
+              <p class="date"><%= moment(model.get('createdAt')).format('D MMM YYYY') %></p>
+              <p><span><%= model.get('sender_name') %> <% if (comment_type == 'nutritionist'){ %>answer<% } %>:</span>
+                <%= model.escape('message') %>
+              </p>
+            </div>
+        </div>
+    </div>
+</div>

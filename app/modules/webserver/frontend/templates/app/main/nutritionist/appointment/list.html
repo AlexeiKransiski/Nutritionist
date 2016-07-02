@@ -1,0 +1,48 @@
+<h2 class="main_section__subtitle">My Appointments</h2>
+
+<div class="filter">
+    <div class="filter-top">
+        <div class="row">
+            <div class="col-sm-12 col-md-6 text-left">
+                <div class="filter-options">
+                    <p>FILTER BY:</p>
+                    <ul id="filters">
+                        <li><span class="filter btn btn-default" data-filter="all">All</span></li>
+                        <li><span class="filter btn btn-default" data-filter="open">open</span></li>
+                        <li><span class="filter btn btn-default" data-filter="answered">answered</span></li>
+                        <li><span class="filter btn btn-default" data-filter="completed">completed</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <div class="search-inbox">
+                    <form class="row" id="search-appointment">
+                        <div class="col-xs-2 col-sm-2 col-md-2 hidden-xs text-left">
+                            <label class="text-green">Search:</label>
+                        </div>
+                        <div class="col-xs-8 col-sm-8 col-md-7 pd-left_0">
+                            <input type="text" name="inbox" class="form-control" value="<%= qSearch %>" placeholder="Search..." />
+                        </div>
+                        <div class="col-xs-4 col-sm-2 col-md-3 pd-left_0 text-right">
+                            <button class="btn-green-open btn-normal-app mrg-no" type="submit">search</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div><!-- /filter-top -->
+
+    <div class="filter-head">
+        <div class="date pull-left">Date</div>
+        <div class="image-nutri pull-left">Nutritionist</div>
+        <div class="consult pull-left text-left">Consult</div>
+        <div class="replies pull-left">Replies</div>
+        <div class="case pull-right">Case No.</div>
+    </div><!-- /filter-head -->
+
+    <div class="filter-list" data-role="results">
+    <!-- Item. It's selected by Magnet via magnet-item class -->
+
+    </div><!-- /filter-list -->
+   
+</div><!-- /filter -->

@@ -1,0 +1,209 @@
+<div class="panel panel-default center-block" data-hasperm="User:create">
+  <div class="panel-heading"></div>
+  <div class="panel-body">
+
+    <div id="formWizard-newUser" class="wizard-type1">
+      <!-- TAB NAVIGATION -->
+      <ul class="steps nav nav-pills">
+        <li class="active"><a href="form-wizard.html#tabInitial" data-toggle="tab">Create User</a></li>
+        <li class=""><a href="form-wizard.html#tabBasic" data-toggle="tab">Basic Info</a></li>
+      </ul>
+      <div class="progress thin">
+        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 25%;">
+        </div>
+      </div>
+      <!-- END TAB NAVIGATION -->
+      <!-- TAB CONTENT -->
+      <form class="signup-form form-horizontal" role="form" data-role="signup-form">
+        <div class="tab-content">
+          <!-- PANE 1 - INITIATE USER -->
+          <div class="tab-pane active" id="tabInitial">
+            <div class="row"><h2 class="sub-header col-md-12">Create New User</h2></div>
+              <div class="row">
+                <div class="form-group col-md-4" data-authorization="type">
+                  <label class="control-label sr-only" for="type">User type</label>
+                  <select class="form-control" name="type" id="type">
+                    <option value="" disabled selected>Select Type</option>
+                    <option value="internal">Internal</option>
+                    <option value="customer">Customer</option>
+                  </select>
+                </div>
+                <div class="form-group col-sm-4" data-authorization="role">
+                  <label class="control-label sr-only" for="role">Role</label>
+                  <select class="form-control" name="role" id="role">
+                    <option value="" disabled selected>Select Role</option>
+                    <option value="admin">Admin</option>
+                    <option value="member">Member</option>
+                  </select>
+                </div>
+                <div class="form-group col-sm-4" data-authorization="customer">
+                  <label class="control-label sr-only" for="customer">Customer</label>
+                  <select class="form-control" name="customer" id="customer">
+                    <option value="" disabled selected>Select Customer</option>
+                    <!-- bacbone view -->
+                  </select>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-md-4">
+                  <label class="control-label sr-only" for="name-username">Email</label>
+                  <input id="email" name="email" type="email" class="form-control" placeholder="Email" autocomplete="off">
+                </div>
+                <div class="form-group col-md-4">
+                  <label class="control-label sr-only" for="name-username">Username</label>
+                  <input id="username" name="username" type="text" class="form-control" placeholder="Username" autocomplete="off">
+                </div>
+                <div class="form-group col-md-4">
+                    <label class="control-label sr-only" for="password">Password</label>
+                    <!-- addiing 2 passwrds field to avoid prepopulation with password store from borwser
+                         easy way that works: http://stackoverflow.com/questions/8379091/how-can-i-avoid-browser-prepopulating-fields-in-my-registration-form -->
+                    <input type="password" class="hide">
+                    <input type="password" class="hide">
+                    <input type="password" id="password" name="password" class="form-control" placeholder="Password" autocomplete="off">
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-sm-4" data-authorization="prefix_name">
+                  <label class="control-label sr-only" for="name-prefix">Prefix</label>
+                  <select class="form-control" name="prefix_name" id="prefix_name">
+                    <option value="" disabled selected>Select Prefix</option>
+                    <option value="Dr">Dr</option>
+                    <option value="Rn">Rn</option>
+                    <option value="Prof">Prof</option>
+                    <option value="Mr">Mr</option>
+                    <option value="Ms">Ms</option>
+                    <option value="Mrs">Mrs</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-4" data-authorization="first_name">
+                  <label class="control-label sr-only" for="first_name" >First Name</label>
+                  <input id="first_name" name="first_name" type="text" class="form-control" placeholder="First name" autocomplete="off">
+                </div>
+                <div class="form-group col-md-4" data-authorization="last_name">
+                  <label class="control-label sr-only" for="last_name">Last Name</label>
+                  <input id="last_name" name="last_name"  type="text" class="form-control" placeholder="Last name" autocomplete="off">
+                </div>
+              </div>
+
+          </div>
+          <!-- END PANE 1 -->
+          <!-- PANE 2 - Basic Info -->
+          <div class="tab-pane" id="tabBasic">
+            <div class="row"><h2 class="sub-header col-md-12">&nbsp;</h2></div>
+            <div class="row">
+              <div class="form-group col-md-6">
+                <label class="control-label sr-only" for="info-SSN">Social Security Number</label>
+                <input type="text" class="form-control" id="info-SSN" placeholder="Enter user's ssn">
+              </div>
+              <div class="form-group col-md-6">
+                <label class="control-label sr-only" for="info-role">Field</label>
+                <select class="form-control" id="info-role">
+                  <option value="" disabled selected>Select Field</option>
+                  <option value="trama surgeon">Trauma Surgeon</option>
+                  <option value="emergency responder">Emergency Responder</option>
+                  <option value="physician">Physician</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group col-md-6">
+                <label class="control-label sr-only" for="cellphone">Cellphone</label>
+                <input type="text" class="form-control" id="cellphone" placeholder="Enter cellphone number" autocomplete="off">
+              </div>
+              <div class="form-group col-md-6">
+                <label class="control-label sr-only" for="office_phone">Office Phone</label>
+                <input type="text" class="form-control" id="office_phone" placeholder="Enter office phone number" autocomplete="off">
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group col-md-6">
+                <label class="control-label sr-only" for="work_email">Professional Email</label>
+                <input type="email" id="work_email" name="work_email" class="form-control" placeholder="Enter user's professional email" autocomplete="off">
+              </div>
+              <div class="form-group col-md-6">
+                <label class="control-label sr-only" for="personal_email">Personal Email</label>
+                <input type="email" id="personal_email" name="personal_email" class="form-control" placeholder="Enter user's personal email" autocomplete="off">
+              </div>
+            </div>
+          </div>
+
+          <input type="button" class="btn btn-default button-previous disabled" name="prev" value="Prev">
+          <input type="button" class="btn btn-info button-next" name="next" value="Next" style="display: inline-block;">
+          <input type="submit" class="btn btn-primary button-finish" name="finish" value="Create" style="display: none;">
+        </div>
+      </form>
+      <!-- END TAB CONTENT -->
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- <div class="panel panel-default">
+  <div class="panel-heading">Create</div>
+  <div class="panel-body">
+    <form role="form" class="signup-form">
+
+      <div class="form-group">
+        <label for="exampleInputEmail1">Prefix name</label>
+        <select class="form-control" id="prefix_name" placeholder="Enter prefix name" required>
+          <option value=""></option>
+          <option value="Dr">Dr</option>
+          <option value="Mr">Mr</option>
+          <option value="Mss">Mss</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">First name</label>
+        <input type="text" class="form-control" id="first_name" placeholder="Enter first name" required>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Last name</label>
+        <input type="text" class="form-control" id="last_name" placeholder="Enter last name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="exampleInputEmail1">Username</label>
+        <input type="text" class="form-control" id="username" placeholder="Enter username" required>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="password" placeholder="Password" required>
+      </div>
+
+      <div class="form-group">
+        <label for="exampleInputEmail1">SSN</label>
+        <input type="text" class="form-control" id="ssn" placeholder="Enter ssn" required>
+      </div>
+
+      <div class="form-group">
+        <label for="exampleInputEmail1">Role</label>
+        <select class="form-control" id="role" placeholder="Enter prefix name" required>
+          <option value=""></option>
+          <option value="role1">role1</option>
+          <option value="role2">role2</option>
+          <option value="role3">role3</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Cellphone</label>
+        <input type="text" class="form-control" id="cellphone" placeholder="Enter cellphone" required>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Office phone</label>
+        <input type="text" class="form-control" id="office_phone" placeholder="Enter office phone" required>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Work Email</label>
+        <input type="email" class="form-control" id="work_email" placeholder="Enter work email" required>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Personal Email</label>
+        <input type="email" class="form-control" id="personal_email" placeholder="Enter personal email" required>
+      </div>
+
+      <button type="submit" class="btn btn-default save">Submit</button>
+    </form>
+  </div>
+</div> -->

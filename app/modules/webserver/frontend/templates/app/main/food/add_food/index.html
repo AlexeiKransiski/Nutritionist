@@ -1,0 +1,54 @@
+<div class="box_down row">
+    <div class="content col-sm-8">
+        <div class="first-cont" data-role="search">
+            <div class="title_sidebar">
+                <div class="back">
+                  <a href="#" id="backButton" class="back">BACK</a>
+                </div>
+                <h4 class="title_sidebar-center"><%= Helpers.mealTypeUpper(meal_type) %></h4>
+                <p class="pull-right date-change">
+                  <input id="todayListDates" disabled="disabled" type="text" type="text" />
+                </p>
+            </div>
+            <!-- backbone view search_food -->
+        </div>
+        <div class="sec-cont" data-role="new-food-info">
+            <!-- backbone view new_food -->
+        </div>
+    </div>
+
+    <div class="col-sm-4 pd-left_0">
+        <div class="sidebar-right" data-role="cart">
+            <!-- backbone view cart or new-food nutricional facts -->
+        </div>
+    </div>
+</div>
+
+<div class="totalcal">
+    <div class="row">
+        <div class="col-sm-8">
+            <p>
+                <%= Helpers.mealTypeUpper(meal_type) %> total calories<br>
+                <span data-role="meal-total-kcal">0</span> <span>kcal</span>
+            </p>
+        </div>
+        <div class="col-sm-4 text-right">
+            <button class="btn btn-default" data-role="cancel">cancel</button>
+            <button class="btn-blue-open mrgtop-16" data-role="send-food-log">submit</button>
+        </div>
+    </div>
+</div>
+
+<h2 class="main_section__subtitle"><span id="todayListTitle">Today’s</span> <%= Helpers.mealTypeLower(meal_type) %> Information</h2>
+
+<div id="accordion">
+    <h3 class="first ui-accordion-header-active single"><span class="icon-small-<%= meal_type %>"></span><%= Helpers.mealTypeUpper(meal_type) %> <p class="pull-right" data-role="meal-kcals">0 kcal</p> </h3>
+    <div id="tableList" class="table-responsive" data-role="food_log-table">
+    </div>
+</div>
+
+<div id="totalCaloriesAddFood" class="foot-accordion">
+    <p class="pull-right">
+        <span>TOTAL </span>+<span data-role="meal-kcals-footer">0</span><span class="small">Cal</span>
+    </p>
+</div>

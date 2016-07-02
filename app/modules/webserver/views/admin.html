@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% block styles %}
+	{% parent %}
+  <link rel="stylesheet" type="text/css" href="/css/test_api.css">
+{% endblock %}
+{%block bodyStyles%}
+  {% parent %}
+  adminLayout
+{%endblock%}
+{% block scripts %}
+	{% parent %}
+	<script src="/socket.io/socket.io.js" type="text/javascript"></script>
+{% endblock %}
+
+{% block main %}
+<!-- =========================================== navbar begins =========================================== -->
+<div class="navbar" role="navigation">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="/" data-role="route"><img src="/favicon.ico" style="margin-top: -8px;"> <span>Qalorie</span></a>
+  </div>
+  <ul class="nav navbar-nav navbar-actions navbar-left">
+    <li class="visible-md visible-lg">
+      <a id="main-menu-toggle">
+        <i class="fa fa-bars"></i><span class="sr-only">Toggle navigation</span>
+      </a>
+    </li>
+  </ul>
+  <div class="nav navbar-nav navbar-left breadcrum" data-role="breadcrum">
+    <!-- Backbone router populate this -->
+  </div>
+  <ul class="nav navbar-nav navbar-right visible-md visible-lg">
+    <li class="dropdown visible-md visible-lg">
+      <a href="index.html#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-settings"></i></a>
+      <ul class="dropdown-menu">
+        <li class="dropdown-menu-header text-center">
+          <strong>Account</strong>
+        </li>
+        <li class="divider"></li>
+        <li class=""><a href="/logout" class="route" data-role="route"><i class="fa fa-lock"></i> Logout</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<!-- =========================================== navbar end =========================================== -->
+<!-- =========================================== sidebar end =========================================== -->
+<div class="sidebar">
+  <div class="sidebar-collapse">
+    <div class="sidebar-menu">
+      <ul class="nav nav-sidebar">
+        <li data-href=""><a href="/" data-role="route">Users</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- =========================================== sidebar ends =========================================== -->
+<!-- =========================================== main begins =========================================== -->
+<div class="main" id="main" data-role="main">
+  <!-- backbone views -->
+</div>
+<!-- =========================================== main end =========================================== -->
+<footer>
+  <div class="row">
+    <div class="col-sm-5">
+      © 2016 Qalorie.
+    </div>
+  </div>
+</footer>
+
+<div data-role="modal-container">
+
+</div>
+
+{% endblock %}
+
+{% block inline_scripts %}
+{% parent %}
+
+{% endblock %}

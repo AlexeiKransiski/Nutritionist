@@ -1,0 +1,316 @@
+<script>
+    $( document ).ready(function() {
+
+        $('#todayListDate').datepicker({
+            dateFormat: "M d, yy",
+            showOn: "button",
+            buttonImage: "img/new-big_calendar.png",
+            numberOfMonths: 1,
+            dayNamesMin: ['S', 'M', 'T', 'W', 'T', 'F', 'S','S'],
+            maxDate: +0
+        });
+
+        $('#todayListDate').datepicker('setDate', 'today');
+
+        function isNumberKey(evt)
+        {
+            var charCode = (evt.which) ? evt.which : evt.keyCode;
+            if (charCode != 46 && charCode > 31
+                && (charCode < 48 || charCode > 57))
+                    return false;
+
+            return true;
+        }
+
+    });
+</script>
+
+<div class="first-cont">
+    <div class="title_sidebar">
+        <h4 class="title_sidebar-center">EXERCISES</h4>
+        <p class="pull-right date-change">
+            <input id="todayListDate" disabled="disabled" type="text" type="text" class="datepicker form-control" />
+        </p>
+    </div>
+
+    <!-- box_search -->
+    <div class="box_search">
+        <ul class="nav tabs foodsearch">
+            <li class="active">
+                <a href="#bf-searchs" data-toggle="tab" data-role="fb-searchs">search</a>
+            </li>
+            <li>
+                <a href="#bf-recently" data-toggle="tab" data-role="fb-recently">recently added</a>
+            </li>
+            <li>
+                <a href="#bf-favorites" data-toggle="tab" data-role="fb-favorites">my favorites</a>
+            </li>
+            <li>
+                <a href="#bf-list" data-toggle="tab" data-role="fb-list">my list</a>
+            </li>
+            <!-- <li><a href="#bf-recipes" data-toggle="tab">my workouts</a></li> -->
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane fade in active" id="bf-searchs">
+                <form class="search-form">
+                    <div class="row box-search">
+                        <div class="col-xs-8 col-sm-9 col-md-10 pd-right_0">
+                            <input class="form-control search-input" type="text" placeholder="Search...">
+                        </div>
+                        <div class="col-xs-4 col-sm-3 col-md-2">
+                            <button id="search" class="btn-green-open btn-full mrg-no" type="submit" data-role="search">search</button>
+                        </div>
+                    </div>
+                    <div class="result">
+                        <div class="empty fb-searchs">
+                            <p>YOU CAN START BY SEARCHING YOUR EXERCISES</p>
+                        </div>
+                        <ul class="list-unstyled fb-searchs toggle hide" data-role="search-results">
+
+                        </ul>
+                    </div>
+
+                    <div class="addmore">
+                        <p>Couldn’t find your Exercise...&nbsp;<a href="" >Add Manually</a></p>
+                    </div>
+                </form>
+            </div>
+
+            <div class="tab-pane fade" id="bf-recently">
+                <form class="search-form">
+                    <div class="row box-search">
+                        <div class="col-xs-8 col-sm-9 col-md-10 pd-right_0">
+                            <input type="text" class="form-control search-input" placeholder="Search..." />
+                        </div>
+                        <div class="col-xs-4 col-sm-3 col-md-2">
+                            <button type="submit" class="btn-green-open btn-full mrg-no">search</button>
+                        </div>
+                    </div>
+                    <div class="result">
+                        <div class="empty fb-recently">
+                            <p>NOTHING ADDED YET</p>
+                        </div>
+                        <ul class="list-unstyled fb-recently toggle hide" data-role="recent-results">
+
+                        </ul>
+                    </div>
+                    <div class="addmore">
+                        <p>Couldn’t find your Exercise...&nbsp;<a href="">Add Manually</a></p>
+                    </div>
+                </form>
+            </div>
+
+            <div class="tab-pane fade" id="bf-favorites">
+                <form class="search-form">
+                    <div class="row box-search">
+                        <div class="col-xs-8 col-sm-9 col-md-10 pd-right_0">
+                            <input type="text" class="form-control search-input" placeholder="Search...">
+                        </div>
+                        <div class="col-xs-4 col-sm-3 col-md-2">
+                            <button type="submit" class="btn-green-open btn-full mrg-no">search</button>
+                        </div>
+                    </div>
+                    <div class="result">
+                        <div class="empty fb-favorites">
+                            <p>YOU DON'T HAVE FAVORITES</p>
+                        </div>
+                        <ul class="list-unstyled fb-favorites toggle hide" data-role="favorites-results">
+
+                        </ul>
+                    </div>
+                    <div class="addmore">
+                        <p>Couldn't find your Exercise...&nbsp;<a href="" >Add Manually</a></p>
+                    </div>
+                </form>
+            </div>
+
+            <div class="tab-pane fade" id="bf-list">
+                <form class="search-form">
+                    <div class="row box-search">
+                        <div class="col-xs-8 col-sm-9 col-md-10 pd-right_0">
+                            <input type="text" class="form-control search-input" placeholder="Search...">
+                        </div>
+                        <div class="col-xs-4 col-sm-3 col-md-2">
+                            <button type="submit" class="btn-green-open btn-full mrg-no">search</button>
+                        </div>
+                    </div>
+                    <div class="result">
+                        <div class="empty fb-list">
+                            <p>YOU DON'T HAVE ANY LIST</p>
+                        </div>
+                        <ul class="list-unstyled fb-list toggle hide" data-role="list-results">
+
+                        </ul>
+                    </div>
+                    <div class="addmore">
+                        <p>Couldn't find your Exercise...&nbsp;<a href="" >Add Manually</a></p>
+                    </div>
+                </form>
+            </div>
+
+            <div class="tab-pane fade" id="bf-recipes">
+                <form class="search-form">
+                    <div class="row box-search">
+                        <div class="col-xs-8 col-sm-9 col-md-10 pd-right_0">
+                            <input type="text" class="form-control search-input" placeholder="Search...">
+                        </div>
+                        <div class="col-xs-4 col-sm-3 col-md-2">
+                            <button type="submit" class="btn-green-open btn-full mrg-no">search</button>
+                        </div>
+                    </div>
+                    <div class="result">
+                        <ul class="list-unstyled">
+                            <li class="space">
+                                <span>List Name</span> - With 8 Exercises items.
+                                <span class="help">Approx 470 Cal Burns</span>
+                                <a href='' class="view">View</a>
+                                <a href='' class="delete"></a>
+                            </li>
+                            <li class="space">
+                                <span>List Name</span> - With 8 Exercises items.
+                                <span class="help">Approx 470 Cal Burns</span>
+                                <a href='' class="view">View</a>
+                                <a href='' class="delete"></a>
+                            </li>
+                            <li class="space">
+                                <span>List Name</span> - With 8 Exercises items.
+                                <span class="help">Approx 470 Cal Burns</span>
+                                <a href='' class="view">View</a>
+                                <a href='' class="delete"></a>
+                            </li>
+                            <li class="space">
+                                <span>List Name</span> - With 8 Exercises items.
+                                <span class="help">Approx 470 Cal Burns</span>
+                                <a href='' class="view">View</a>
+                                <a href='' class="delete"></a>
+                            </li>
+                            <li class="space">
+                                <span>List Name</span> - With 8 Exercises items.
+                                <span class="help">Approx 470 Cal Burns</span>
+                                <a href='' class="view">View</a>
+                                <a href='' class="delete"></a>
+                            </li>
+                            <li class="space">
+                                <span>List Name</span> - With 8 Exercises items.
+                                <span class="help">Approx 470 Cal Burns</span>
+                                <a href='' class="view">View</a>
+                                <a href='' class="delete"></a>
+                            </li>
+                            <li class="space">
+                                <span>List Name</span> - With 8 Exercises items.
+                                <span class="help">Approx 470 Cal Burns</span>
+                                <a href='' class="view">View</a>
+                                <a href='' class="delete"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="addmore">
+                        <p><a href="">Create New Recipe...</a></p>
+                    </div>
+                </form>
+            </div>
+        </div><!-- tab-content -->
+
+    </div><!-- box_search -->
+
+</div><!-- firs-cont -->
+
+<div class="sec-cont">
+    <div class="title_sidebar">
+        <h4 class="title_sidebar-center">SUBMIT NEW EXERCISE</h4>
+    </div>
+    <!-- box_search -->
+    <div class="box_search">
+        <form action="" data-role="new-exercise-form">
+            <div class="box text-left" id="new-exercise">
+                <div class="form-group">
+                    <label for="title">EXERCISE NAME</label>
+                    <input type="text" id="name" class="form-control" placeholder="Jumping Jacks..." name='name' />
+                    <p id="name_exercise_error" class="error"></p>
+                </div>
+
+                <div class="form-group">
+                    <label for="type" class="types">EXERCISE TYPE</label>
+                    <div class="custom_radio">
+                        <label>
+                            <input type="radio" name="exercise_type" value="1" checked />
+                            Cardio
+                        </label>
+                        <label>
+                            <input type="radio" name="exercise_type" value="2" />
+                            Strenght
+                        </label>
+                    </div>
+                </div>
+
+                <div id="cardio">
+                    <div class="form-group title">
+                        <label><span class="icon-cardio"></span> cardiovascular</label>
+                    </div>
+                    <div class="form-group inline">
+                        <label>time</label>
+                        <input type="text" class="form-control small" name="cardio_minutes" id="cardio_minutes" />
+                        <p>mins</p>
+                    </div>
+                    <div class="form-group inline">
+                        <label>distance</label>
+                        <input type="text" class="form-control small" name="distance" id="distance" />
+                        <p>miles</p>
+                    </div>
+                    <div class="form-group inline">
+                        <label>calories burned</label>
+                        <input type="text" class="form-control small" name="cardio_cal" id="cardio_cal" />
+                        <p>cal</p>
+                    </div>
+                </div>
+                <div id="strengh">
+                    <div class="form-group title">
+                        <label><span class="icon-strenght"></span> strenght</label>
+                    </div>
+                    <div class="form-group inline">
+                        <label>time</label>
+                        <input type="text" class="form-control small" name="strenght_minutes" id="strenght_minutes"/>
+                        <p>mins</p>
+                    </div>
+                    <div class="form-group inline">
+                        <label>sets</label>
+                        <input type="text" class="form-control small" name="sets" id="sets" />
+                    </div>
+                    <div class="form-group inline">
+                        <label>reps</label>
+                        <input type="text" class="form-control small" name="repetitions" id="repetitions" />
+                    </div>
+                    <div class="form-group inline">
+                        <label>weight</label>
+                        <input type="text" class="form-control small" name="weight" id="weight" />
+                        <p>kg</p>
+                    </div>
+                    <div class="form-group inline">
+                        <label>calories burned</label>
+                        <input type="text" class="form-control" name="strenght_cal" id="strenght_cal" />
+                        <p>cal</p>
+                    </div>
+                </div>
+
+                <div class="form-group last">
+
+        			<label>WOULD YOU LIKE TO ADD THIS EXERCISE TO YOUR DAY LIST?</label>
+
+        			<div class="custom_radio">
+        				<label>
+                            <input type="radio" name="add_log" value="1" checked />
+                            Yes
+                        </label>
+                        <label class="last">
+                            <input type="radio" name="add_log" value="0" />
+                            No, skip this for the time being
+                        </label>
+        			</div>
+        		</div>
+            </form>
+        </div>
+
+        <div class="addmore"> </div>
+    </div>
+</div>

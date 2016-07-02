@@ -1,0 +1,113 @@
+@import 'variables.less';
+@import 'mixins.less';
+
+.opacity(@opacity: 0.5) {
+    -moz-opacity: @opacity;
+    -khtml-opacity: @opacity;
+    -webkit-opacity: @opacity;
+    opacity: @opacity;
+    @opperc: @opacity * 100;
+    -ms-filter: ~"progid:DXImageTransform.Microsoft.Alpha(opacity=@{opperc})";
+    filter: ~"alpha(opacity=@{opperc})";
+}
+
+.transition(@transition) {
+    -webkit-transition: @transition;
+    -moz-transition: @transition;
+    -o-transition: @transition;
+    transition: @transition;
+}
+
+.transition-d(@duration:0.2s, @ease:ease-out) {
+    -webkit-transition: all @duration @ease;
+    -moz-transition: all @duration @ease;
+    -o-transition: all @duration @ease;
+    transition: all @duration @ease;
+}
+
+.tab-transition() {
+    transition:All 0.3s linear;
+    -webkit-transition:All 0.3s linear;
+    -moz-transition:All 0.3s linear;
+    -o-transition:All 0.3s linear; 
+}
+
+.menu-transition() {
+    transition:All 0.5026s ease;
+    -webkit-transition:All 0.5026s ease;
+    -moz-transition:All 0.5026s ease;
+    -o-transition:All 0.5026s ease;
+}
+
+.button-transition() {
+    -webkit-transition:All 0.4s linear;
+    -moz-transition:All 0.4s linear;
+    -o-transition:All 0.4s linear;
+    transition:All 0.4s linear;
+}
+
+.background-transition() {
+    transition:All 2s ease;
+    -webkit-transition:All 2s ease;
+    -moz-transition:All 2s ease;
+    -o-transition:All 2s ease;
+}
+
+.zoom-play() {
+  -webkit-transform: scale(1.4) translateZ(0);
+  transform: scale(1.4) translateZ(0);
+}
+
+.zoom-icons () {
+    -webkit-transform: scale(1.2) translateZ(0);
+    transform: scale(1.2) translateZ(0);
+}
+
+.slider-effect () {
+    background: -webkit-linear-gradient(left, @green,  @green 50%, transparent 50%, transparent); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, @green,  @green 50%, transparent 50%, transparent); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, @green,  @green 50%, transparent 50%, transparent); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, @green,  @green 50%, transparent 50%, transparent);
+    background-position: 100% 0;
+    background-size: 200% 100%;
+}
+
+.animated () {
+    -webkit-animation-duration: 5s;
+    animation-duration: 5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeindown {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+@keyframes fadeindown {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+.fadeindown {
+  -webkit-animation-name: fadeindown;
+  animation-name: fadeindown;
+}

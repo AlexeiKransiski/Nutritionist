@@ -1,0 +1,14 @@
+<span class="triangle"></span> 
+<div class="form-inline">
+  <div class="form-group">
+    <input type="text" class="form-control" id="minutes">
+    <p>Minutes</p>
+  </div>
+  <div class="form-group">
+    <div class="bfh-selectbox" data-name="servings_type" data-value="">
+      <div data-value="1"><%= model.escape('serving_per_container') %> <%= model.escape('serving_type') %></div>
+    </div>
+  </div>
+  <button class="btn-blue-open-small pull-right" data-role="add-cart">update</button>
+  <button class="btn btn-default pull-right" data-role=cancel>cancel</button>
+</div>

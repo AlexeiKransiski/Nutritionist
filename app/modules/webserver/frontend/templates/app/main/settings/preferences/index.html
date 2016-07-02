@@ -1,0 +1,279 @@
+<script type="text/javascript">
+
+    function removeElem(id,listType){
+        $("#text_" + id).remove()
+    }
+
+    function removeSavedElem(id,listType){
+        $("#textSaved_" + id).remove()
+    }
+
+    function onEnterSaved(id,elem,event,listType){
+        if (event.keyCode == 13)  {
+           $("#textLblSaved_" + id).empty();
+           $("#textLblSaved_" + id).append(elem.value);
+           $("#textLblSaved_" + id).show();
+           $("#textInputSaved_" + id).hide();
+        }
+    }
+
+    function onEnter(id,elem,event,listType){
+        if (event.keyCode == 13)  {
+           console.log("Entro aca adentro")
+           $("#textLbl_" + id).empty();
+           $("#textLbl_" + id).append(elem.value);
+           $("#textLbl_" + id).show();
+           $("#textInput_" + id).hide();
+        }
+    }
+
+    function showTextSaved(id,elem,listType){
+      $("#textInputSaved_" + id).append(elem.textContent);
+      $("#textInputSaved_" + id).show();
+      $("#textLblSaved_" + id).hide();
+    }
+
+    function showText(id,elem,listType){
+      $("#textInput_" + id).append(elem.textContent);
+      $("#textInput_" + id).show();
+      $("#textLbl_" + id).hide();
+    }
+
+</script>
+<div class="tab-head">
+    <div class="row">
+        <div class="col-sm-12 text-left">
+            <h5>application preferences</h5>
+        </div>
+    </div>
+</div>
+
+<div class="tab-body">
+
+    <div class="row">
+        
+        <div class="col-sm-6">
+            <div class="boxdoble" data-role="limitations">
+
+                <h5 class="title_box text-left text-green">
+                    <span class="icon-limitations"></span>
+                    physical limitations
+                </h5>
+
+                <div class="box-body">
+                    <div class="ok">
+                        <span class="icon-ok"></span>
+                        <p>Thank you!</p>
+                    </div>
+                    <div class="add">
+                        <button class="btn btn-default">add physical limitations</button>
+                    </div>
+                    <ul id="physicalList" class="list-unstyled">
+                      <% _.each(patientPreferences.get('limitations'), function( item, index ){ %>
+                        <li>
+                          <input tabindex="<%=index%>" type="checkbox" class="physical" value="<%=item%>" checked="checked">
+                          <label><%=item%></label>
+                        </li>
+                      <% }); %>
+                        <% if (physicalLimitation.length > 0) { %>
+                            <% _.each(physicalLimitation.models, function( limit, index ){ %>
+                                <li>
+                                    <input tabindex="<%=index%>" type="checkbox" class="physical" id="<%=limit.id%>" <%=Helpers.isLimitationSelect(limit.id,patientPreferences.get("limitations"))%>>
+                                    <label><%=limit.get("name")%></label>
+                                </li>
+                            <% }); %>
+                        <%}%>
+
+                    </ul>
+
+                    <div class="box-foot text-left">
+                        <div class="more">
+                            <button class="btn btn-default add-more">
+                                <span class="icon-more"></span>
+                                add more
+                            </button>
+                        </div>
+                        <div class="terms">
+                            <label for="limitations">
+                                <input type="checkbox" name="limitations" id="limitations" />
+                                Check if you don't have Physical Limitations
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+            </div> <!-- physical limitations -->
+        </div>
+        <div class="col-sm-6">
+            <div class="boxdoble" data-role="food">
+
+                <h5 class="title_box text-green text-left">
+                    <span class="icon-preferences"></span>
+                    food preferences
+                </h5>
+
+                <div class="box-body">
+                    <div class="ok">
+                        <span class="icon-ok"></span>
+                        <p>Thank you!</p>
+                    </div>
+                    <div class="add">
+                        <button class="btn btn-default">add food</button>
+                    </div>
+                    <ul id="foodList" class="list-unstyled">
+                      <% _.each(patientPreferences.get('foods'), function( item, index ){ %>
+                        <li>
+                            <input tabindex="<%=index%>" type="checkbox" class="foods" value="<%=item%>" checked="checked">
+                            <label><%=item%></label>
+                        </li>
+                      <% }); %>
+
+                        <% if (foods.length > 0) { %>
+                            <% _.each(foods.models, function( limit, index ){ %>
+                                <li>
+                                    <input tabindex="<%=index%>" type="checkbox" class="foods" id="<%=limit.id%>" value="<%=limit.get("name")%>" <%=Helpers.isLimitationSelect(limit.id,patientPreferences.get("foods"))%> >
+                                    <label><%=limit.get("name")%></label>
+                                </li>
+                            <% }); %>
+                        <%}%>
+
+                    </ul>
+
+                    <div class="box-foot text-left">
+                        <div class="more">
+                            <button class="btn btn-default add-more">
+                                <span class="icon-more"></span>
+                                add more
+                            </button>
+                        </div>
+                        <div class="terms">
+                            <label for="limitations">
+                                <input type="checkbox" name="limitations" id="limitations" />
+                                Check if you don't have Physical Limitations
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div> <!-- food preferences -->
+        </div>
+    </div>    
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="boxdoble" data-role="medicines">
+
+                <h5 class="title_box text-green text-left">
+                    <span class="icon-medicines"></span>
+                    medicines
+                </h5>
+
+                <div class="box-body">
+                    <div class="ok">
+                        <span class="icon-ok"></span>
+                        <p>Thank you!</p>
+                    </div>
+                    <div class="add">
+                        <button class="btn btn-default">add medicines</button>
+                    </div>
+
+                    <ul id="medicineList" class="list-unstyled">
+                      <% _.each(patientPreferences.get('medicines'), function( item, index ){ %>
+                        <li>
+                            <input tabindex="<%=index%>" type="checkbox" class="medicines" value="<%=item%>" checked="checked">
+                            <label><%=item%></label>
+                        </li>
+                      <% }); %>
+                        <% if (medicines.length > 0) { %>
+                            <% _.each(medicines.models, function( limit, index ){ %>
+                                <li>
+                                    <input tabindex="<%=index%>" type="checkbox" class="medicines" id="<%=limit.id%>" <%=Helpers.isLimitationSelect(limit.id,patientPreferences.get("medicines"))%>>
+                                    <label><%=limit.get("name")%></label>
+                                </li>
+                            <% }); %>
+                        <%}%>
+
+                    </ul>
+                    <div class="box-foot text-left">
+                        <div class="more">
+                            <button class="btn btn-default add-more">
+                                <span class="icon-more"></span>
+                                add more
+                            </button>
+                        </div>
+                        <div class="terms">
+                            <label for="limitations">
+                                <input type="checkbox" name="limitations" id="limitations" />
+                                Check if you don't have Physical Limitations
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+            </div> <!-- mediciones -->
+        </div>
+        <div class="col-sm-6">
+            <div class="boxdoble" data-role="vitamins">
+
+                <h5 class="title_box text-green text-left">
+                    <span class="icon-vitamins"></span>
+                    vitamins & suplements
+                </h5>
+
+                <div class="box-body">
+                    <div class="ok">
+                        <span class="icon-ok"></span>
+                        <p>Thank you!</p>
+                    </div>
+                    <div class="add">
+                        <button class="btn btn-default">add vitamins & suplements</button>
+                    </div>
+                    <ul id="diseaseList" class="list-unstyled">
+                      <% _.each(patientPreferences.get('vitamins'), function( item, index ){ %>
+                        <li>
+                            <input tabindex="<%=index%>" type="checkbox" class="suplements" value="<%=item%>" checked="checked">
+                            <label><%=item%></label>
+                        </li>
+                      <% }); %>
+
+                        <% if (suplements.length > 0) { %>
+                            <% _.each(suplements.models, function( limit, index ){ %>
+                                <li>
+                                    <input tabindex="<%=index%>" type="checkbox" class="suplements" id="<%=limit.id%>" <%=Helpers.isLimitationSelect(limit.id,patientPreferences.get("diseases"))%>>
+                                    <label><%=limit.get("name")%></label>
+                                </li>
+                            <% }); %>
+                        <%}%>
+                    </ul>
+                    <div class="box-foot text-left">
+                        <div class="more">
+                            <button class="btn btn-default add-more">
+                                <span class="icon-more"></span>
+                                add more
+                            </button>
+                        </div>
+                        <div class="terms">
+                            <label for="limitations">
+                                <input type="checkbox" name="limitations" id="limitations" />
+                                Check if you don't have Physical Limitations
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- vitamins & suplements -->
+        </div>
+
+    </div>
+</div>
+
+<div class="tab-foot">
+    <div class="row">
+        <div class="col-sm-12 text-right">
+            <button id="savePreference" type="button" class="btn btn-primary">save</button>
+        </div>
+    </div>
+</div>
+
+<div data-role="notifications">
+
+</div>

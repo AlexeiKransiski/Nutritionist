@@ -1,0 +1,13 @@
+<div class="row">
+	<div class="col-xs-10 col-sm-10 col-md-11">
+		<div class="description-list">
+			<p class="ratings pull-left">
+			  	<input tabindex="5" type="checkbox" id="icheckbox_futurico-1" <%= Helpers.checkedIfUserExerciseFavorites(model, favorites) %>/>
+			</p>
+			<span><%= model.get('name') %></span>&nbsp;- <%= Helpers.getExerciseTypeLabel(model.get('exercise_type')) %>
+		</div>
+	</div>
+	<div class="col-xs-2 col-sm-2 col-md-1">
+		<a href='javascript:void(0);' class="adds" data-role="add-exercise">add</a>
+	</div>
+</div>

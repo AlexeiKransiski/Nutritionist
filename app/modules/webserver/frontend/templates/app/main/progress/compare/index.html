@@ -1,0 +1,36 @@
+<div class="tab-head">
+  <p class="pull-left">PHOTO COMPARISON <!--a href="" class="icon-help"></a--></p>
+</div>
+<div class="tab-body">
+  <div class="left">
+    <h3>How to compare your photo progress</h3>
+    <p>
+      It's very simple ! Upload full body pictures with given dates. After some uploaded pictures, you can easily compare your progress.
+    </p>
+
+    <form>
+      <div class="form-group">
+        <label for="before">Before:</label>
+        <input type="text" placeholder="Select date" id="before" class="form-control" name="before" value="<%= oldImage && oldImage.get('date')? moment(oldImage.get('date')).format('DD/MM/YYYY') : '' %>" />
+      </div>
+      <div class="form-group">
+        <label for="current">Current:</label>
+        <input type="text" placeholder="Select date" id="current" class="form-control" name="current" value="<%= actualImage && actualImage.get('date')? moment(actualImage.get('date')).format('DD/MM/YYYY') : '' %>"/>
+      </div>
+    </form>
+  </div>
+
+  <div class="right" data-role="images">
+    <!-- backbone images view -->
+  </div>
+
+</div>
+
+<div class="tab-aside3" data-role="images-data">
+  <!-- backbone images_data view -->
+</div>
+
+<div class="tab-foot" data-role="footer">
+  <p class="pull-left">We recommend you to track your progrees within the next 7 days.</p>
+  <button type="submit" class="btn-blue-open mrgtop-16 pull-right" data-role="new-entry">new entry</button>
+</div>

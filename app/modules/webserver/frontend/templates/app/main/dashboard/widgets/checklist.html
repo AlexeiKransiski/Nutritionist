@@ -1,0 +1,49 @@
+    <div class="title_sidebar">
+        <h4 class="title_sidebar-center">your checklist</h4>
+    </div>
+    <ul class="nav tabs small" id="mychecklist">
+        <li class="active"><a id="dailyTab" href="#daily" data-toggle="tab">to-do's</a></li>
+        <li class=""><a id="weekTab" href="#weekly" data-toggle="tab">weekly past due</a></li>
+    </ul>
+
+    <div class="tab-content content_sidebar checklist">
+        <div class="tab-pane active" id="daily">
+
+          <form data-role="new-item-form">
+            <div class="input-group">
+                <input type="text" class="form-control" id="newchecklistitem" name="newchecklistitem" placeholder="add here..">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" id="add_new" type="button">
+                        <span class="icon-morecheck"></span>
+                    </button>
+                </span>
+            </div>
+          </form>
+            <div class="today todos-list">
+                <ul id="dailyChecklist" class="list-unstyled list-checklist" >
+
+
+                </ul>
+                <p class="empty">
+                    Add all the tasks that might help you
+                    to achieve your health and physical goals
+                </p>
+            </div>
+
+
+        </div>
+        <div class="tab-pane" id="weekly">
+
+            <div class="weeks todos-list">
+                <ul id="weeklyChecklist" class="list-unstyled list-checklist">
+
+
+                </ul>
+                <p class="empty">
+                    Add all the tasks that might help you
+                    to achieve your health and physical goals
+                </p>
+            </div>
+
+        </div>
+    </div>

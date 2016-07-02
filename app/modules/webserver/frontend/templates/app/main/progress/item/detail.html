@@ -1,0 +1,101 @@
+<div data-role="item-detail-view">
+
+  <div class="progress_timeline">
+    <div class="picture pull-left">
+      <div class="date"><%= moment(model.escape('date')).format('D') %><br><span><%= moment(model.escape('date')).format('MMM') %></span></div>
+      <img src="<%= model.get('photo_src') %>" alt="<%= app.me.escape('full_name') %>" />
+    </div>
+
+    <div class="details_body pull-left">
+      <ul class="list-unstyled">
+        <li>
+          Neck
+          <span><%= Helpers.getValuesPerMeassurement(model.get('neck'), "longitud", app.me.get("widgets").meassure) %> </span>
+        </li>
+        <li>
+          Upper<br>Arm Left
+          <span><%=Helpers.getValuesPerMeassurement(model.get('upperArmLeft'), "longitud", app.me.get("widgets").meassure)  %> </span>
+        </li>
+        <li>
+          Waist
+          <span><%=Helpers.getValuesPerMeassurement(model.get('waist'), "longitud", app.me.get("widgets").meassure)  %> </span>
+        </li>
+        <li>
+          Forearm<br>Left
+          <span><%=Helpers.getValuesPerMeassurement(model.get('forearmLeft'), "longitud", app.me.get("widgets").meassure)  %> </span>
+        </li>
+        <li>
+          Thigh<br>Left
+          <span><%=Helpers.getValuesPerMeassurement(model.get('thighLeft'), "longitud", app.me.get("widgets").meassure)  %> </span>
+        </li>
+        <li>
+          Calf<br>Left
+          <span><%=Helpers.getValuesPerMeassurement(model.get('calfLeft'), "longitud", app.me.get("widgets").meassure)  %> </span>
+        </li>
+      </ul>
+      <ul class="list-unstyled">
+        <li>
+          Chest
+          <span><%=Helpers.getValuesPerMeassurement(model.get('chest'), "longitud", app.me.get("widgets").meassure)  %> </span>
+        </li>
+        <li>
+          Upper<br>Arm Right
+          <span><%=Helpers.getValuesPerMeassurement(model.get('upperArmRight'), "longitud", app.me.get("widgets").meassure)  %> </span>
+        </li>
+        <li>
+          Hips
+          <span><%=Helpers.getValuesPerMeassurement(model.get('hips'), "longitud", app.me.get("widgets").meassure)  %> </span>
+        </li>
+        <li>
+          Forearm<br>Right
+          <span><%=Helpers.getValuesPerMeassurement(model.get('forearmRight'), "longitud", app.me.get("widgets").meassure)  %> </span>
+        </li>
+        <li>
+          Thigh<br>Right
+          <span><%=Helpers.getValuesPerMeassurement(model.get('thighRight'), "longitud", app.me.get("widgets").meassure)  %> </span>
+        </li>
+        <li>
+          Calf<br>Right
+          <span><%=Helpers.getValuesPerMeassurement(model.get('calfRight'), "longitud", app.me.get("widgets").meassure) %> </span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="observations pull-right">
+      <a href="#" id="edit_user" class="edit_user_progress" data-role="edit" data-cid="<%= model.cid %>"></a>
+      <h6>Title:</h6>
+      <p>
+        <%= model.get('title') %>
+      </p>
+      <h6>Observations:</h6>
+      <p>
+        <%= model.get('observations') %>
+      </p>
+      <div class="medidas">
+        <ul class="list-unstyled">
+          <li>
+            <p><%= Helpers.getValuesPerMeassurement(model.get('height'), "height", app.me.get("widgets").meassure) %> <span><%=Helpers.getUnitsPerMeassurement("longitud", app.me.get("widgets").meassure)%></span></p>
+            HEIGHT
+          </li>
+          <li>
+            <p><%= Helpers.getValuesPerMeassurement(model.get('weight'), "mass", app.me.get("widgets").meassure) %> <span><%=Helpers.getUnitsPerMeassurement("mass", app.me.get("widgets").meassure)%></span></p>
+            WEIGHT
+          </li>
+          <li>
+            <p class="bmi"><%= model.get('bmi') %></p>
+            BMI
+          </li>
+        </ul>
+      </div><!-- /medidas -->
+    </div><!-- /observations -->
+  </div><!-- /progress timeline -->
+</div>
+
+<div class="tab-content inline-progress-edit" data-role="item-edit-view">
+  <div class="tab-body">
+    <div data-role="edit-content">
+      <!-- Backbone edit view -->
+    </div>
+  </div>
+</div>
+<div class="secuence-line"></div>

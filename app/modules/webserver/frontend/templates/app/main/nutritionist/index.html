@@ -1,0 +1,110 @@
+<script type="text/javascript">
+    $('#messages').keyup(function(){
+      var max = 400;
+      var len = $(this).val().length;
+          if (len >= max) {
+            $(this).val($(this).val().substr(0, max));
+            $('#letters').text('0');
+          } else {
+            var char = max - len;
+            $('#letters').text(char);
+        }
+    });
+</script>
+
+<div id="page-nutritionist" class="main_section">
+  <h1 class="main_section__title">nutritionist</h1>
+
+  <!-- active account -->
+  <div id="active-account-2" data-role="wapper">
+
+      <div data-role="appointments-views">
+        <!-- backbone views -->
+      </div>
+      
+      <div class="account_down" data-role="list">
+        <!-- Backbone view of appointments list -->
+        <h2 class="main_section__subtitle">how consults works</h2>
+
+        <div class="empty_state">
+
+          <div class="box">
+
+            <div class="thumbs">
+              <span class="icon-you"></span>
+            </div>
+            <div class="comment">
+              <p>
+                <span>you:</span>
+                Leave your consultation to our registered Nutritionist. Be as much specific as you can on what is the reason of your consult. In this way, the Nutritionist will be able to answer your queries accurately.
+              </p>
+            </div>
+
+          </div> <!-- /box -->
+
+          <div class="box">
+
+            <div class="thumbs">
+              <span class="icon-nutri"></span>
+            </div>
+            <div class="comment">
+              <p>
+                <span>nutritionist answer:</span>
+                Your designated Nutritionist will answer your questions in a substantial manner. Besides, you will receive around-the-clock motivation and support from your Nutritionist. After this, your consultation will be stated as ‘Finished’. You can either rate your Nutritionist or you can reply just in case you have more doubts on that consultation.
+              </p>
+            </div>
+
+          </div> <!-- /box -->
+
+          <div class="box">
+
+            <div class="thumbs">
+              <span class="icon-you"></span>
+            </div>
+            <div class="comment">
+              <p>
+                <span>you:</span>
+                Qalorie always remains with its users. There may be some cases where the answers are not clear enough. In that case, you will have the luxury to ask more questions in order to clear any doubts that weren’t clarified at the initial consultation. 
+              </p>
+            </div>
+
+          </div> <!-- /box -->
+
+          <div class="box">
+
+            <div class="thumbs">
+              <span class="icon-nutri"></span>
+            </div>
+            <div class="comment">
+              <p>
+                <span>nutritionist answer:</span>
+                Your Nutritionist will take care of your final questions. After this the consultation session will be considered finished and then you will be able to Rate this consultation. 
+              </p>
+            </div>
+
+          </div> <!-- /box -->
+
+        </div> <!-- empty state -->
+      </div><!-- /account_down-->
+
+    </div><!-- /active-account -->
+</div><!-- /main_section -->
+
+
+
+<div class="modal fade cvv2" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title text-left" id="myModalLabel">WHAT IS A CARD SECURITY CODE?</h4>
+            </div>
+            <div class="modal-body text-center">
+                <p>
+                    A three- or four-digit code on your credit card, separate from the 16-digit card number. The location varies slightly depending on your type of card:
+                </p>
+                <img src="img/svv2.png" alt="Qalorie" />
+            </div>
+        </div>
+    </div>
+</div>

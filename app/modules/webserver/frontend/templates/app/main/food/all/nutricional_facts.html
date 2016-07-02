@@ -1,0 +1,11 @@
+<div class="nutritions">
+  <div class="title_sidebar">
+    <h4 class="title_sidebar-center">NUTRITION FACTS</h4>
+  </div>
+  <ul class="list-unstyled">
+
+  <% if (patientPreferences.get("widgets_settings") != undefined) { %>
+    <%= Helpers.renderNutrientsPercentajes(patientPreferences, facts) %>
+  <% } %>
+  </ul>
+</div>

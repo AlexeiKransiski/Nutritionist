@@ -1,0 +1,13 @@
+  <thead>
+    <tr>
+      <th class="left" colspan="2">Food Description</th>
+      <th>Cal.</th>
+      <% if (patientPreferences.get("widgets_settings") != undefined) { %>
+        <%= Helpers.getColumns(patientPreferences.get("widgets_settings")) %>
+      <% } %>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody id="bodyTableList">
+    <!-- backbone view food.row -->
+  </tbody>

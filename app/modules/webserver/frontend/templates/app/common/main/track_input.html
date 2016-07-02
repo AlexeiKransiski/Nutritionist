@@ -1,0 +1,285 @@
+<script>
+    // emoticons
+    $('.emo').click(function(){
+        //$e(this).parent().parent().parent().find('.emoticons').slideDown('slow');
+        if ($(this).parent().parent().parent().find('.emoticons').css('display') === 'none')
+        {
+            $(this).parent().parent().parent().find('.emoticons').slideDown('slow');
+            $(this).find('.caret').hide('fast');
+            $(this).addClass('active');
+        }
+        else{
+            $(this).parent().parent().parent().find('.emoticons').slideUp('slow');
+            $(this).find('.caret').show('fast');
+            $(this).removeClass('active');
+        }
+    });
+    $('.emoticons label').click(function(){
+        var icon = $(this).find('i').attr('class');
+        $(this).parent().parent().parent().find('.emoticons').slideUp('slow');
+        $(this).parent().parent().parent().find("button span[class*='icon-']").attr('class',icon);
+        $(this).parent().parent().parent().find('.caret').show('fast');
+        $(this).parent().parent().parent().find('.emo').removeClass('active');
+    });
+
+    $(".box_status").hover(function() {
+        $(this).find("a").fadeIn('slow');
+        }, function(){
+        $(this).find("a").fadeOut('slow');
+    });
+
+    $('.edit_comment').click(function(){
+        var id = $(this).attr('href');
+        $("#box_" + id).slideUp('slow', function(){
+            $('#' + id).slideDown('5000');
+        });
+
+        return false;
+    });
+
+</script>
+<div class="track">
+  <div id="titleTracker" class="title_sidebar">
+    <h4 class="title_sidebar-center left">How are you feeling today?</h4>
+    <!--ul class="nav nav-tabs pull-right" id="mytrack">
+      <li><a id="foodFilter" href="#foods" data-toggle="tab" class="food-tab">FOOD</a></li>
+      <li><a href="#exercise" data-toggle="tab" class="exercise-tab">EXERCISE</a></li>
+      <li><a href="#water" data-toggle="tab" class="water-tab">WATER</a></li>
+      <li><a href="#progress" data-toggle="tab" class="progress-tab">PROGRESS</a></li>
+    </ul-->
+  </div>
+  <div class="tab-content">
+    <div class="tab-pane active" id="feeling">
+      <form>
+        <div class="input-group">
+          <input id="statusMessage" type="text" class="form-control" placeholder="I’m really Happy, I’ve achieved my goals for the day...">
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle emo" data-toggle="dropdown">
+              <span class="icon-great"></span>
+              <span class="caret"></span>
+            </button>
+          </div><!-- /btn-group -->
+        </div><!-- /input-group -->
+        <div class="emoticons">
+          <div class="btn-group btn-group-justified" data-toggle="buttons">
+            <label class="btn btn-primary active">
+                <i class="icon-great"></i>
+                <span class="text-center">Great</span>
+                <input type="radio" name="options" id="option1" value="Great" checked /> 
+            </label>
+            <label class="btn btn-primary">
+                <i class="icon-happy"></i>
+                <span class="text-center">Happy</span>
+                <input type="radio" name="options" id="option2" value="Happy" /> 
+            </label>
+            <label class="btn btn-primary">
+                <i class="icon-chill"></i>
+                <span class="text-center">Chill</span>
+                <input type="radio" name="options" id="option3" value="Chill" /> 
+            </label>
+            <label class="btn btn-primary">
+                <i class="icon-sick"></i>
+                <span class="text-center">Sick</span>
+                <input type="radio" name="options" id="option4" value="Sick" /> 
+            </label>
+            <label class="btn btn-primary">
+                <i class="icon-bad"></i>
+                <span class="text-center">Bad</span>
+                <input type="radio" name="options" id="option5" value="Bad" /> 
+            </label>
+            <label class="btn btn-primary">
+                <i class="icon-depress"></i>
+                <span class="text-center">Depress</span>
+                <input type="radio" name="options" id="option6" value="Depress" /> 
+            </label>
+          </div>
+        </div> <!-- /emoticos -->
+        <button id="saveStatus" type="button" class="btn-blue-open mgtop pull-right">Submit</button>
+      </form><!-- /form-->
+
+    </div>
+    <div class="tab-pane" id="foods">
+      food
+    </div>
+    <div class="tab-pane" id="exercise">
+      exercise
+    </div>
+    <div class="tab-pane" id="water">
+      water
+    </div>
+    <div class="tab-pane" id="progress">
+      progress
+    </div>
+    <!-- /tab-pane -->
+  </div><!-- /tab-content -->
+</div><!-- /track -->
+    <div id="statusStream">
+
+      <% if (collection.length > 0) { %>
+        <% collection.forEach(function(model) { %>
+           <% if (model.collection instanceof App.Collections.Status) { %>
+
+              <div id="box_<%= model.id %>" class="boxes-notifications box_status">
+                  <a href="<%= model.id %>" title="" class="edit_comment"></a>
+                  <div class="notification-circle avatar-user">
+                      <% if (app.me.get('avatar_thumb')) { %>
+                        <img src="<%= app.me.get('avatar_thumb') %>" alt="<%= model.escape('full_name') %>" class="box_image_user">
+                      <% }else{ %>
+                        <img src="/img/profile.png" alt="<%= model.escape('full_name') %>" class="box_image_user" />
+                      <% } %>
+                      <div class="status_small_icon">
+                          <span class="icon-<%= model.escape('status').toLowerCase() %>"></span>
+                      </div>
+                  </div>
+
+                  <div class="notification-box-comments">
+                      <h6 class="notification-date <%= model.escape('status').toLowerCase() %>"><%= moment(model.get("created")).format('D MMM YYYY') %></h6>
+                      <p class="notification-comment"><span class="<%= model.escape('status').toLowerCase() %>"><%= app.me.get("full_name") %></span> you are feeling <span class="<%= model.escape('status').toLowerCase() %>"><%= model.get("status")%></span> today: <%= model.get("message")%></p>
+                  </div>
+              </div>
+
+              <div class="boxes_edit" id="<%= model.id %>">
+                <form class="">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <textarea id="message_<%= model.id %>" class="form-control comment-edit"><%= model.get("message")%></textarea>                    
+
+                            <div class="btn-group btn-group-justified" data-toggle="buttons">
+                                <label class="btn btn-primary active">
+                                    <i class="icon-great"></i>
+                                    <span class="text-center">Great</span>
+                                    <input type="radio" name="options" id="option1" value="Great" />
+                                </label>
+                                <label class="btn btn-primary">
+                                    <i class="icon-happy"></i>
+                                    <span class="text-center">Great</span>
+                                    <input type="radio" name="options" id="option2" value="Happy" /> 
+                                </label>
+                                <label class="btn btn-primary">
+                                    <i class="icon-chill"></i>
+                                    <span class="text-center">Chill</span>
+                                    <input type="radio" name="options" id="option3" value="Chill" />
+                                </label>
+                                <label class="btn btn-primary">
+                                    <i class="icon-sick"></i>
+                                    <span class="text-center">Sick</span>
+                                    <input type="radio" name="options" id="option4" value="Sick" /> 
+                                </label>
+                                <label class="btn btn-primary">
+                                    <i class="icon-bad"></i>
+                                    <span class="text-center">Bad</span>
+                                    <input type="radio" name="options" id="option5" value="Bad" /> 
+                                </label>
+                                <label class="btn btn-primary">
+                                    <i class="icon-depress"></i>
+                                    <span class="text-center">Depress</span>
+                                    <input type="radio" name="options" id="option6" value="Depress" /> 
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="save">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <button id='delete_<%= model.id %>' type="button" class="deletePost btn btn-default2 pull-left"><span class="icon-delete"></span>delete post</button>
+                                <button id='save_<%= model.id %>' type="button" class="savePost btn-blue-open-small-two pull-right">save</button>
+                                <button id='cancel_<%= model.id %>' type="reset" class="cancel btn btn-default pull-right">cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+
+            <% } %>
+
+            <% if (model.collection instanceof App.Collections.AppointmentsLogs) { %>
+              <div class="boxes-notifications">
+                  <div class="notification-circle nutri">
+                    <span class="icon-notifications-nutri"></span>
+                  </div>
+                  <div class="notification-box-comments">
+                      <h6 class="notification-date"><%= moment(model.get("created")).format('D MMM YYYY') %></h6>
+                      <p class="notification-comment"><span><%= app.me.escape('full_name') %></span>
+                        <% if (model.get('event') == 'new') { %>
+                          you just initiated a consultation with your Nutritionist.
+                        <% }else if (model.get('event') == 'answered') {  %>
+                          your Nutritionist just responded to your last question.
+                        <% }else if (model.get('event') == 'waiting') {  %>
+                          you just replied on your consultation.
+                        <% }else if (model.get('event') == 'completed') {  %>
+                          <% if (model.get('appointment_data').rating) {  %>
+                            your consultation just ended and provided a <%= model.get('appointment_data').rating %> star feedback.
+                          <% }else{ %>
+                            your consultation just ended.
+                          <% } %>
+                        <% } %>
+                      </p>
+                  </div>
+              </div>
+            <% } %>
+
+
+           <% if (model.collection instanceof App.Collections.WaterLogs && model.get("glasses") > 0) { %>
+              <div class="boxes-notifications">
+                  <div class="notification-circle glass">
+                      <span class="icon-notifications-glass"></span>
+                  </div>
+                  <div class="notification-box-comments">
+                      <h6 class="notification-date text-skyblue"><%= moment(model.get("created")).format('D MMM YYYY') %></h6>
+                      <p class="notification-comment">Congratulations <span class="glass"><%= app.me.escape('full_name') %></span> you just <span class="glass">Drink</span>  <%=Helpers.convertGlassesToOunces(model.get("glasses"))%>oz of water!</p>
+                  </div>
+              </div>
+           <% } %>
+
+           <% if (model.get('context') && model.get('context') == 'food' && model.get("calories") > 0) { %>
+              <div class="boxes-notifications">
+                  <div class="notification-circle food">
+                      <span class="icon-notifications-food"></span>
+                  </div>
+                  <div class="notification-box-comments">
+                      <h6 class="notification-date text-orange"><%= moment(model.get("created")).format('D MMM YYYY') %></h6>
+                      <p class="notification-comment"><span class="happy"><%= app.me.escape('full_name') %></span> You've <span class="happy">consumed</span> a total of <%= Helpers.toFixed(model.get("calories"), 1) %> calories. </p>
+                  </div>
+              </div> <!-- /box food -->
+           <% } %>
+
+           <% if (model.get('context') && model.get('context') == 'exercise' && model.get("calories_burned") > 0) { %>
+                <div class="boxes-notifications">
+                      <div class="notification-circle workout">
+                          <span class="icon-notifications-workout"></span>
+                      </div>
+                    <div class="notification-box-comments">
+                        <h6 class="notification-date text-blue"><%= moment(model.get("created")).format('D MMM YYYY') %></h6>
+                        <p class="notification-comment"><span class="chill"><%= app.me.escape('full_name') %></span> you just did your <span class="chill">Workout</span> and  <span class="chill">Burned</span> a total of <%=Helpers.toFixed(model.get("calories_burned"), 1) %> calories! </p>
+                    </div>
+                </div>
+           <% } %>
+           <% if (model.collection instanceof App.Collections.Progress) { %>
+                <div class="boxes-notifications">
+                      <div class="notification-circle progresss">
+                          <span class="icon-notifications-progress"></span>
+                      </div>
+                    <div class="notification-box-comments">
+                        <h6 class="notification-date text-morado"><%= moment(model.get("date")).format('D MMM YYYY') %></h6>
+                        <p class="notification-comment"><span class="sick"><%= app.me.escape('full_name') %></span> you just updated your <span class="sick">Progress</span> - don't forget to track your progress regularly!</p>
+                    </div>
+                </div>
+           <% } %>
+        <% }); %>
+      <% } else { %>
+
+        <div class="boxes-notifications">
+            <div class="notification-circle empty">
+              <span class="icon-you"></span>
+            </div>
+            <div class="notification-box-comments">
+                <h6 class="notification-date"><%= moment().format('D MMM YYYY') %></h6>
+                <p class="notification-comment"><span><%= app.me.escape('full_name') %></span> You will always be able to tell us how are you feeling everyday. You can always see your mood progress in here!</p>
+            </div>
+        </div>
+
+      <% } %>
+
+
+    </div>

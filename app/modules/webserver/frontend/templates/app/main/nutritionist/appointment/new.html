@@ -1,0 +1,359 @@
+<script type="text/javascript">
+    $('.emoticons label').click(function(){
+        var icon = $(this).find('i').attr('class');
+        $(this).parent().parent().parent().find('.emoticons').slideUp('slow');
+        $(this).parent().parent().parent().find("button span[class*='icon-']").attr('class',icon);
+        $(this).parent().parent().parent().find('.caret').show('fast');
+        $(this).parent().parent().parent().find('.emo').removeClass('active');
+    });
+</script>
+<div id="appointments">
+
+    <div class="panel-header text-left">
+        <h4>new consult</h4>
+        <div class="back">
+            <a href="#" class="back">X</a>
+        </div>
+    </div>
+
+    <div id="appointment_part_1" data-role="part-1">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h3>Tell us about your lifestyle and current goals</h3>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="left">
+                        <label for="question1" class="lp-open-appoitment text-green">lifestyle:</label>
+                        <textarea rows="7" id="question1" name="question1"><%= Helpers.getLifeStyle() %></textarea>
+                        <label id="question1_error" class="error pos-right top"></label>
+                        <div class="down">
+                          <p><span id="letterlifestyle">0</span>/200 Character left</p>
+                          <button class="btn-green-open btn-large mrg-no pull-right hide" data-role="save-lifestyle">save</button>
+                          <button class="btn-green-open btn-large mrg-no pull-right hide" data-role="change-lifestyle">change</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="right">
+                        <label for="question2" class="lp-open-appoitment text-green">objetives:</label>
+                        <textarea rows="7" id="question2" name="question2"><%= Helpers.getGoal() %></textarea>
+                        <label id="question2_error" class="error pos-right top"></label>
+                        <div class="down">
+                          <p><span id="lettergoal">0</span>/200 Character left</p>
+                          <button class="btn-green-open btn-large mrg-no pull-right hide" data-role="save-goal">save</button>
+                          <button class="btn-green-open btn-large mrg-no pull-right hide" data-role="change-goal">change</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="panel-footer text-right">
+            <div class="row">
+                <div class="col-sm-12">
+                    <button type="button" class="btn btn-default" data-role="cancel">cancel</button>
+                    <button type="button" class="btn-blue-open btn-normal-app mrg-top-4" data-goto="2" data-role="goto">next</button>
+                </div>
+            </div>
+        </div>
+    </div><!-- first part of new consult -->
+
+    <div id="appointment_part_2a" data-role="part-2">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h3>What is the reason of your consultation?</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="reason">
+                        <label id="messages_error" class="error pos-left bottom_5"></label>
+                        <textarea id="messages" class="form-control" maxlengthw="400"></textarea>
+                        <div class="input-group">
+                            <p class="form-control"><span id="letters">0</span>/400 Character left</p>
+                            <div class="input-group-btn" data-role="emo-dropdwon">
+                                <button type="button" class="btn btn-default dropdown-toggle emo" data-toggle="dropdown">
+                                  <span class="icon-great"></span>
+                                  <span class="caret"></span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="emoticons">
+                            <div class="btn-group btn-group-justified" data-toggle="buttons">
+                                <label class="btn btn-primary active">
+                                    <i class="icon-great"></i>
+                                    <span>Great</span>
+                                    <input type="radio" name="options" id="option1" value="Great" checked /> 
+                                </label>
+                                <label class="btn btn-primary">
+                                    <i class="icon-happy"></i>
+                                    <span>Happy</span>
+                                    <input type="radio" name="options" id="option2" value="Happy" /> 
+                                </label>
+                                <label class="btn btn-primary">
+                                    <i class="icon-chill"></i>
+                                    <span>Chill</span>
+                                    <input type="radio" name="options" id="option3" value="Chill" /> 
+                                </label>
+                                <label class="btn btn-primary">
+                                    <i class="icon-sick"></i>
+                                    <span>Sick</span>
+                                    <input type="radio" name="options" id="option4" value="Sick" /> 
+                                </label>
+                                <label class="btn btn-primary">
+                                    <i class="icon-bad"></i>
+                                    <span>Bad</span>
+                                    <input type="radio" name="options" id="option5" value="Bad" /> 
+                                </label>
+                                <label class="btn btn-primary">
+                                    <i class="icon-depress"></i>
+                                    <span>Depress</span>
+                                    <input type="radio" name="options" id="option6" value="Depress" /> 
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel-footer text-left">
+            <div class="row">
+                <div class="col-sm-12 col-md-8">
+                    <p>Stress level being 10 the highest, you are in?</p>
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-primary">
+                          <input type="radio" name="question3" value="1" /> 1
+                        </label>
+                        <label class="btn btn-primary">
+                          <input type="radio" name="question3" value="2" /> 2
+                        </label>
+                        <label class="btn btn-primary">
+                          <input type="radio" name="question3" value="3" /> 3
+                        </label>
+                        <label class="btn btn-primary">
+                          <input type="radio" name="question3" value="4" /> 4
+                        </label>
+                        <label class="btn btn-primary">
+                          <input type="radio" name="question3" value="5" /> 5
+                        </label>
+                        <label class="btn btn-primary">
+                          <input type="radio" name="question3" value="6" /> 6
+                        </label>
+                        <label class="btn btn-primary">
+                          <input type="radio" name="question3" value="7" /> 7
+                        </label>
+                        <label class="btn btn-primary">
+                          <input type="radio" name="question3" value="8" /> 8
+                        </label>
+                        <label class="btn btn-primary">
+                          <input type="radio" name="question3" value="9" /> 9
+                        </label>
+                        <label class="btn btn-primary">
+                          <input type="radio" name="question3" value="10" /> 10
+                        </label>
+                    </div>
+                    <label id="question3_error" class="error pos-left bottom_5_less"></label>
+                </div>
+                <div class="col-sm-offset-3 col-sm-6 col-md-offset-0 col-md-4 text-right">
+                    <button type="button" class="btn btn-default" data-goto="1" data-role="goto">back</button>
+                    <button type="button" class="btn-blue-open btn-normal-app mrg-top-4" data-goto="3" data-role="goto">create</button>
+                </div>
+            </div>
+        </div>
+    </div><!-- second part of new consult -->
+
+    <div id="appointment_part_3" data-role="part-3">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-sm-6 text-left">
+                    <h6 class="upper">
+                        <img src="img/Q-icon.svg" alt="" height="70" />
+                        upgrate for just $29.95/mo
+                        </h6>
+
+                    <p>
+                        Qalorie's monthly plan will allow you to consult with our online nutritionist about any concern you may have regarding health & wellness.
+                    </p>
+                    <p>
+                        You will get advice about food intake and exercises plans. Moreover, you can get consultations every month from anywhere and anytime through our website!
+                    </p>
+                </div>
+                <div class="col-sm-6">
+                    <div class="box-help">
+                        <!-- if result is approved or reject add fadeOut effect to form -->
+                        <form id="card-form" action="" method="POST" name="">
+                            <div class="form-group">
+                                <label for="firstname" class="lb-normal upper">first name</label>
+                                <input type="text" id="firstname" class="form-control" name="firstname" />
+                                <label id="firstname_error" class="error bottom"></label>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastname" class="lb-normal upper">last name</label>
+                                <input type="text" id="lastname" class="form-control" name="lastname" />
+                                <label id="lastname_error" class="error bottom"></label>
+                            </div>
+                            <div class="form-group">
+                                <label for="creditcard" class="lb-normal inline-card upper">credit card number</label>
+                                <span class="pull-right cards">
+                                    <img src="img/discover-icon.png" alt="Qalorie" class="" />
+                                </span>
+                                <span class="pull-right cards">
+                                    <img src="img/amex-icon.png" alt="Qalorie" class="" />
+                                </span>
+                                <span class="pull-right cards">
+                                    <img src="img/mc-icon.png" alt="Qalorie" class="" />
+                                </span>
+                                <span class="pull-right cards">
+                                    <img src="img/visa-icon.png" alt="Qalorie" class="" />
+                                </span>
+                                <input type="text" id="creditcard" class="form-control" name="creditcard" data-stripe="number" />
+                                <label id="creditcard_error" class="error bottom"></label>
+                                <label class="payment-errors error bottom"></label>
+                            </div>
+                        
+                            <div class="row">
+                                <div class="col-sm-5 col-md-6">
+                                    <div class="form-group">
+                                        <label for="cvv2" class="lb-normal inline-card upper">cvv2</label>
+                                        <a href="#" class="icon-help" data-toggle="modal" data-target="#myModal"></a>
+                                        <input type="text" id="cvv2" class="form-control" name="cvv2" data-stripe="cvc" />
+                                        <label id="cvv2_error" class="error bottom"></label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-7 col-md-6">
+                                    <div class="form-group">
+                                        <div class="row">    
+                                            <div class="col-sm-12 pd-left_0">
+                                                <label class="lb-normal upper">expiration date</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-6 pd-left_0">
+                                                <div id="monthExp" class="bfh-selectbox full" data-name="month" data-value="">
+                                                    <div data-value="">MM</div>
+                                                    <div data-value="1">Jan</div>
+                                                    <div data-value="2">Feb</div>
+                                                    <div data-value="3">Mar</div>
+                                                    <div data-value="4">Apr</div>
+                                                    <div data-value="5">May</div>
+                                                    <div data-value="6">Jun</div>
+                                                    <div data-value="7">Jul</div>
+                                                    <div data-value="8">Aug</div>
+                                                    <div data-value="9">Sept</div>
+                                                    <div data-value="10">Oct</div>
+                                                    <div data-value="11">Nov</div>
+                                                    <div data-value="12">Dec</div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-6 pd-left_0">
+                                                <div id="yearExp" class="bfh-selectbox full" data-name="year" data-value="" >
+                                                    <div data-value="">YYYY</div>
+                                                    <div data-value="2016">2016</div>
+                                                    <div data-value="2017">2017</div>
+                                                    <div data-value="2018">2018</div>
+                                                    <div data-value="2019">2019</div>
+                                                    <div data-value="2020">2020</div>
+                                                    <div data-value="2021">2021</div>
+                                                    <div data-value="2022">2022</div>
+                                                    <div data-value="2023">2023</div>
+                                                    <div data-value="2024">2024</div>
+                                                    <div data-value="2025">2025</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <label id="expiration_error" class="error bottom expiration"></label>
+                                        <input type="hidden" data-stripe="exp-year">
+                                        <input type="hidden" data-stripe="exp-month">
+                                        <input type="hidden" data-stripe="name">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <!-- if result is ok add effect fadeIn here -->
+                        <div class="payment-ok">
+                            <div class="row">
+                                <div class="col-sm-12 text-center">
+                                    <h3 class="text-green">payment completed!</h3>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="box">
+                                        <div class="okay">
+                                            <span class="icon-ok"></span>
+                                        </div>
+                                        <p>
+                                            The total amount of $<span id="plan-price"></span> USD have been succesfully charged to the credit card ending <span id="cc-last4"></span>. You will be receiving a confirmation email for this transaction shortly.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- if payment is declined show it with fadeIn effect -->
+                        <div class="payment-declined">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="box">
+                                        <div class="declined">
+                                            <span class="icon-no"></span>
+                                        </div>
+                                        <p class="text-blue text-center">
+                                            Payment delined
+                                            <a class="text-red">Try again</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="panel-footer">
+            <div class="row">
+                <div class="col-sm-5">
+                    <div class="row">
+                        <div class="col-xs-7 col-sm-7 col-md-5 text-left">
+                            <p>Enter Promo-Code:</p>
+                        </div>
+                        <div class="col-xs-5 col-sm-5 col-md-5 text-right pd-left_0">
+                            <input type="text" class="form-control" id="promo-code" name="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-7 text-right">
+                    <button type="button" class="btn btn-default" data-goto="4" data-role="goto">back</button>
+                    <!-- When payment is in progress you need to clean html of payment button and remove hidden class from span tag -->
+                    <!-- When result of the payment you need to change the html of the button to try again -->
+                    <!-- This action is going to back to form card -->
+                    <button type="button" id="btn-last-step" class="btn-blue-open btn-large mrg-top-4" data-role="stripe">
+                        <span class="btn-text">confirm payment</span>
+                        <span class="loader hidden"></span>
+                    </button>
+                    <button type="button" id="btn-try-again" class="btn-blue-open btn-large mrg-top-4">
+                        try again
+                    </button>
+                    <button type="button" id="btn-consult-continue" class="btn-blue-open btn-large mrg-top-4" data-role="new">
+                        continue
+                        <span class="loader hidden"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div><!-- third part of new consult -->
+
+</div>
+

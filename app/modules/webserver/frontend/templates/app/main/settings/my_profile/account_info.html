@@ -1,0 +1,26 @@
+<div class="tab-head">
+    <div class="row">
+        <div class="col-sm-12 text-left">
+            <h5>account information</h5>
+        </div>
+    </div>
+</div>
+<div class="tab-body text-left">
+    <form role="form" class="account_infor" data-role="account-info-form">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="email" class="lb-normal unupper">Email</label>
+                    <input type="text" id="email" class="form-control" name="email" value="<%= model.escape('email') %>">
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="tab-foot">
+    <div class="row">
+        <div class="col-sm-12 text-right">    
+            <button type="button" id="newprogress" class="btn btn-primary" data-role="update-account">update</button>
+        </div>
+    </div>
+</div>

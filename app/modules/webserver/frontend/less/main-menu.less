@@ -1,0 +1,336 @@
+.menu {    
+    position: fixed;
+    top: 58px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 0px;
+    overflow-x: hidden;
+    overflow-y: auto; 
+    background-color: @bg-menu;
+    border-right: 1px solid @white;
+    width: 80px;
+
+    li {
+        display: inline-block;      
+        width: 100%;
+        border-bottom: 1px solid @line-menu;
+        .align(center);
+
+        a {
+            .open-bold(10px);        
+            text-transform: uppercase;                
+            color: @font-menu;
+            padding:0 0 15px;
+            line-height: 10px;        
+            .transition-d(0.4s);
+
+            &:hover, &:focus, &:active {
+                background: transparent;
+                box-shadow: none;
+            }
+
+            span {
+                display: block;
+                width: 100%;
+                margin: 17px auto 15px;  
+                .transition-d(0.4s, ease-in-out);
+
+                &:before, &:after {
+                    content: '';
+                    background-image: url("../img/sprite.png");
+                    background-repeat: no-repeat;
+                    height: 100%;
+                    position: absolute;
+                    left: 0;
+                    width: 100%;
+                    .transition-d(0.4s, ease-in-out);
+                }
+            
+                &.icon-dashboard {
+                    background-image: none;
+                    height: 24px;            
+                    width: 26px;
+                    
+                    &:before {
+                        background-position: 0 0;
+                        .opacity(0);
+                        
+                    } 
+
+                    &:after {
+                        background-position: -29px 0;
+                    }
+
+                }
+
+                &.icon-status {
+                    background-image: none;
+                    height: 24px;            
+                    width: 26px;  
+                    
+                    &:before {
+                        background-position: 0px -28px;
+                        .opacity(0);
+                    } 
+
+                    &:after {
+                        background-position: -28px -28px;
+                    }
+
+                }
+
+                &.icon-progress {
+                    background-image: none;
+                    height: 25px;            
+                    width: 26px;   
+                    
+                    &:before {
+                        background-position: -1px -56px;
+                        .opacity(0);
+                    } 
+
+                    &:after {
+                        background-position: -28px -56px;
+                    }
+
+                }
+
+                &.icon-food {
+                    background-image: none;
+                    height: 26px;            
+                    width: 28px;  
+
+                    &:before {
+                        background-position: 0px -82px;
+                        .opacity(0);
+                    } 
+
+                    &:after {
+                        background-position: -28px -82px;
+                    }
+
+                }
+
+                &.icon-exercises {
+                    background-image: none;
+                    height: 30px;            
+                    width: 26px; 
+
+                    &:before {
+                        background-position: 0px -114px;
+                        .opacity(0);
+                    }  
+
+                    &:after {
+                        background-position: -28px -114px;
+                    }
+
+                }
+
+                &.icon-nutrisionist {
+                    background-image: none;
+                    height: 26px;            
+                    width: 26px;  
+
+                    &:before {
+                        background-position: 0px -147px;
+                        .opacity(0);
+                    }  
+
+                    &:after {
+                        background-position: -28px -147px;
+                    }
+
+                }
+
+            }
+        
+        }
+
+        a#dashboard {
+            &:hover {
+                color: @green;
+                .transition-d(0.4s);
+
+                .icon-dashboard {
+                    &:before {
+                        .opacity(1);
+                    }
+                    &:after {
+                        .opacity(0);
+                    }
+                }
+            }
+        }
+        
+        a#status {
+            &:hover {
+                color: @red;
+                .transition-d(0.4s);
+
+                .icon-status {
+                    &:before {
+                        .opacity(1);
+                    }
+                    &:after {
+                        .opacity(0);
+                    }
+                }
+            }
+        }
+
+        a#progress {
+            &:hover {
+                color: @morado;
+                .transition-d(0.4s);
+
+                .icon-progress {
+                    &:before {
+                        .opacity(1);
+                    }
+                    &:after {
+                        .opacity(0);
+                    }
+                }
+            }
+        }
+
+        a#food {
+            &:hover {
+                color: @orange;
+                .transition-d(0.4s);
+
+                .icon-food {
+                    &:before {
+                        .opacity(1);
+                    }
+                    &:after {
+                        .opacity(0);
+                    }
+                }
+            }
+        }
+        
+        a#exercises {
+            &:hover {
+                color: @blue;
+                .transition-d(0.4s);
+
+                .icon-exercises {
+                    &:before {
+                        .opacity(1);
+                    }
+                    &:after {
+                        .opacity(0);
+                    }
+                }
+            }
+        }
+
+        a#nutritionist {
+            &:hover {
+                color: @skyblue;
+                .transition-d(0.3s);
+
+                .icon-nutrisionist {
+                    &:before {
+                        .opacity(1);
+                    }
+                    &:after {
+                        .opacity(0);
+                    }
+                }
+            }
+        }
+
+    } // li
+    
+    li.active > a#dashboard {               
+        color: @green;
+        .icon-dashboard {
+            &:before {
+                .opacity(1);
+            }
+            &:after {
+                .opacity(0);
+            }        
+        }             
+    }
+    
+    li.active > a#status {               
+        color: @red;  
+        .icon-status {
+            &:before {
+                .opacity(1);
+            }
+            &:after {
+                .opacity(0);
+            }
+        }         
+    }
+    
+    li.active > a#progress {               
+        color: @morado;
+        .icon-progress {
+            &:before {
+                .opacity(1);
+            }
+            &:after {
+                .opacity(0);
+            }        
+        }             
+    }
+    li.active > a#food {               
+        color: @orange;
+        .icon-food {
+            &:before {
+                .opacity(1);
+            }
+            &:after {
+                .opacity(0);
+            }
+        }             
+    }
+    li.active > a#exercises {               
+        color: @blue;
+        .icon-exercises {
+            &:before {
+                .opacity(1);
+            }
+            &:after {
+                .opacity(0);
+            }  
+        }             
+    }
+    li.active > a#nutritionist {               
+        color: @skyblue;
+        .icon-nutrisionist {
+            &:before {
+                .opacity(1);
+            }
+            &:after {
+                .opacity(0);
+            } 
+        }              
+    }
+    
+}
+
+.menu-mobile {
+    background-color: @bg-menu;
+    padding: 0;
+    margin: 0;
+
+    li {
+        border-bottom: 1px solid @line-menu;
+        padding-left: 20px;
+        a {
+            color: @font-menu;
+            .open-bold(12px);    
+            line-height: 45px;
+            text-transform: capitalize;                
+        }
+    }    
+}

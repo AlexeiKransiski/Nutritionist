@@ -1,0 +1,221 @@
+<script>
+
+ $( document ).ready(function() {
+    
+    // begin first slider
+    if ($('.box_left .chart').length > 0) {
+
+        $('.box_left .flexslider').flexslider({
+            animation: "slide",
+            animationLoop: false,
+            slideshow: false,
+            controlNav: false,
+            customDirectionNav: $(".custom-navigation a")
+        });
+    }
+
+    // second slider
+    if ($('.box_right .flexslider').length > 0) {
+
+        $('.box_right .flexslider').flexslider({
+            animation: "slide",
+            animationLoop: false,
+            slideshow: false,
+            controlNav: false,
+            customDirectionNav: $(".custom-navigations a")
+        });
+    }
+
+    $("#preferences").show();
+    
+    months = parseInt(moment().diff(app.me.get("created"), 'months', true));
+    if(months == 0){
+      $("#selectFilter").append('<option value="week">Week</option>')
+    }else if(months>0 && months<12){
+      $("#selectFilter").append('<option value="week">Week</option>')
+      $("#selectFilter").append('<option value="month">Month</option>')
+    }else{
+      $("#selectFilter").append('<option value="week">Week</option>')
+      $("#selectFilter").append('<option value="month">Month</option>')
+      $("#selectFilter").append('<option value="year">Year</option>')
+    }
+
+    $('.checkbox input[type=checkbox]').iCheck({
+        checkboxClass: 'icheckbox_square'
+    });
+
+    $('.body_items li input[type=checkbox], .nut_items li input[type=checkbox]').iCheck({
+        checkboxClass: 'icheckbox_square'
+    });
+ 
+ });
+</script>
+
+<div class="box_left pull-left">
+
+    <div class="head">
+        <h3>Compare Status</h3>
+        <select id="selectFilter">
+        </select>
+    </div>
+
+    <div class="body">
+        <!-- Progress status by year elements -->
+        <div class="legend status_by_year">
+            <h6>legend</h6>
+            <ul class="list-unstyled">
+              <li id="currentLabel"><span class="indicator indicator_2015"></span> 2015</li>
+              <li id="lastLabel"><span class="indicator indicator_2014"></span> 2014</li>
+            </ul>
+        </div>
+        <div class="chart flexslider">
+            <ul class="slides">
+              <li id="exerciseCompareSlide">
+                <div id="compareStatus"></div>
+              </li>
+              <li id="nutritionCompareSlide">
+                second slider
+              </li>
+            </ul>
+        </div>
+        <div class="foot custom-navigation">
+            <a id="custom_prev" href="#" class="icon-prev"></a>
+            <a id="custom_next" href="#" class="icon-next"></a>
+            <p>exercises</p>
+        </div>
+    </div>
+
+</div><!-- box left -->
+
+<div class="box_right">
+
+    <div class="head">
+        <h3>Progress Tracker</h3>
+    </div>
+
+    <div class="body">
+      <div id="body" class="row">
+        <div id="preferences" class="col-xs-3">
+          <!-- Progress tracker chart generator elements -->
+          <form id="formChecks" class="progress_tracker_chart_stats text-left"> 
+
+            <div class="checkbox neck">
+              <label>
+                <span class="indicator"></span>
+                <input id="testt" class="progress_tracker_stat" type="checkbox" value="0" checked="checked"> Neck
+              </label> 
+            </div>
+
+            <div class="checkbox formarm_left">
+              <label>
+                <span class="indicator"></span>
+                <input class="progress_tracker_stat" type="checkbox" value="3" checked="checked"> Forearm Left
+              </label> 
+            </div>
+
+            <div class="checkbox thigh_left">
+              <label>
+                <span class="indicator"></span>
+                <input class="progress_tracker_stat" type="checkbox" value="4" checked="checked"> Thigh Left
+              </label> 
+            </div>
+
+            <div class="checkbox waist">
+              <label>
+                <span class="indicator"></span>
+                <input class="progress_tracker_stat" type="checkbox" value="2" checked="checked"> Waist
+              </label> 
+            </div>
+
+            <div class="checkbox calf_left">
+              <label>
+                <span class="indicator"></span>
+                <input class="progress_tracker_stat" type="checkbox" value="5" checked="checked"> Calf Left
+              </label> 
+            </div>
+
+            <div class="checkbox upper_left_arm">
+              <label>
+                <span class="indicator"></span>
+                <input class="progress_tracker_stat" type="checkbox" value="1" checked="checked"> Upper Arm Left
+              </label> 
+            </div>
+
+            <div class="checkbox chest">
+              <label>
+                <span class="indicator"></span>
+                <input class="progress_tracker_stat" type="checkbox" value="6" checked="checked"> Chest
+              </label> 
+            </div>
+
+            <div class="checkbox upper_arm_right">
+              <label>
+                <span class="indicator"></span>
+                <input class="progress_tracker_stat" type="checkbox" value="7" checked="checked"> Upper Arm Right
+              </label> 
+            </div>
+
+            <div class="checkbox hips">
+              <label>
+                <span class="indicator"></span>
+                <input class="progress_tracker_stat" type="checkbox" value="8" checked="checked"> Hips
+              </label> 
+            </div>
+
+            <div class="checkbox forearm_right">
+              <label>
+                <span class="indicator"></span>
+                <input class="progress_tracker_stat" type="checkbox" value="9" checked="checked"> Forearm Right
+              </label> 
+            </div>
+
+            <div class="checkbox thigh_right">
+              <label>
+                <span class="indicator"></span>
+                <input class="progress_tracker_stat" type="checkbox" value="10" checked="checked"> Thigh Right
+              </label> 
+            </div>
+            
+            <div class="checkbox calf_right">
+              <label>
+                <span class="indicator"></span>
+                <input class="progress_tracker_stat" type="checkbox" value="11" checked="checked"> Calf Right
+              </label> 
+            </div>
+                                                
+          </form>
+
+          <form id="formChecks2" class="nutrition_tracker_chart_stats text-left" style="display:none;"> 
+            <%console.log("patientPreferences en status charts")%>
+            <%console.log(patientPreferences)%>
+            <%if(patientPreferences.get("widgets_settings")!=undefined){%>
+              <%=Helpers.renderNutrientsCharts(patientPreferences.get("widgets_settings"))%>
+            <%}%>
+                                                
+          </form>
+
+        </div> 
+        
+        <div class="col-xs-9 flexslider">
+            <ul class="slides">
+                <li id="bodySlide">
+                    <div id="rightChartContainer"></div>
+                </li>
+                <li id="nutritionSlide">
+                  second slider
+                </li>
+            </ul>
+        </div>
+        <div class="foot custom-navigations">
+            <a href="#" class="icon-prev" id="custom_prev"></a>
+            <a href="#" class="icon-next" id="custom_next"></a>
+            <p>body meassurements</p>
+        </div>
+
+      </div>
+
+
+    </div><!-- /body -->
+
+
+</div><!-- box right -->

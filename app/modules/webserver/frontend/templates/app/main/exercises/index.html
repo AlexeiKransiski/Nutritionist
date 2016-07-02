@@ -1,0 +1,43 @@
+<script>
+    function isNumberKey(evt)
+    {
+        var charCode = (evt.which) ? evt.which : evt.keyCode;
+        if (charCode != 46 && charCode > 31
+            && (charCode < 48 || charCode > 57))
+                return false;
+
+        return true;
+    }
+</script>
+
+<div id="page-exercise" class="main_section">
+    <h1 class="main_section__title">exercise tracker</h1>
+
+    <div class="box_down row">
+        <div class="content col-sm-8" data-role="search">
+
+        </div>
+        <div class="col-sm-4 pd-left_0">
+            <div class="sidebar-right " data-role="cart">
+                <!-- backbone view cart or new-exercise information -->
+            </div>
+        </div>
+    </div>
+    
+    <div class="totalcal">
+        <div class="row">
+            <div class="col-sm-8">
+                <p>exercises total calorie loss<br><span id="totalCalories">0 kcal</span></p>
+            </div>
+            <div class="col-sm-4 text-right">
+                <button class="btn btn-default" id="cancel-button">cancel</button>
+                <button class="btn-blue-open mrgtop-16" id="submit-button">submit</button>
+            </div>
+        </div>
+    </div>
+
+    <div data-role="todays-info">
+
+    </div>
+
+</div>

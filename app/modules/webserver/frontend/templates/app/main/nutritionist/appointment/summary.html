@@ -1,0 +1,62 @@
+<div class="box_down row" data-role="sumary-view">
+  <!-- left sidebar -->
+  <div class="col-sm-8">
+    <div class="content">
+      <!-- user info -->
+      <div class="info_user">
+        <h1>HI <%= app.me.get('full_name') %></h1>
+        <h4>WELCOME TO QALORIE NUTRITIONIST SECTION.</h4>
+        <ul class="list-unstyled">
+          <li>Age: <%= moment().diff(app.me.get('dob'), 'years') %> yrs</li>
+          <li>Weight: <%=Helpers.getValuesPerMeassurement(app.me.get('weight').value, "mass", app.me.get("widgets").meassure)%> <%=Helpers.getUnitsPerMeassurement("mass", app.me.get("widgets").meassure)%></li>
+          <li>Height: <%= Helpers.getValuesPerMeassurement(app.me.get('height').value, "height", app.me.get("widgets").meassure)%> <%=Helpers.getUnitsPerMeassurement("longitud", app.me.get("widgets").meassure)%></li>
+        </ul>
+
+        <div data-role="last-appointment-brief">
+          <% if (lastAppointment) { %>
+          <h6>Your last appointment was...</h6>
+          <p>
+            <%= Helpers.getAppointmentReason(lastAppointment) %>
+          </p>
+          <% } else {  %>
+          <!-- Esto deberia cargar si no hay consultas -->
+            <h6>Reach your goals with the help of an expert</h6>
+            <p>
+              After you initiated a consultation it will be directed to our elite pool of Nutritionists. Our Nutritionists are extremely knowledgeable and highly qualified. They will create a custom made health & fitness plan for you. We encourage you to make your first consultation. We're waiting !
+            </p>
+          <% } %>
+        </div>
+      </div>
+
+      <div class="addmore">
+        <p>
+          STATUS: <span data-role="last-appointment-status"></span>
+        </p>
+        <% if (lastAppointment) { %>
+          <a href="/#appointment/<%= lastAppointment.get('_id') %>" >
+            <button type="button" class="btn btn-default pull-right">go to last appointment</button>
+          </a>
+        <% } %>
+
+      </div>
+    </div>
+  </div>
+
+    <!-- right sidebar -->
+    <div class="col-sm-4 pd-left_0">
+      <div class="sidebar-right">
+        <div class="title_sidebar">
+          <h4 class="title_sidebar-center">Appointments Calendar</h4>
+        </div>
+        <div class="calendar">
+
+          <div class="calendario"></div>
+
+          <div class="addmore">
+            <button type="button" class="btn-blue-open btn-large mrg-top-15 pull-right" data-role="appointment-action">new appointment</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>  <!-- /box_down -->

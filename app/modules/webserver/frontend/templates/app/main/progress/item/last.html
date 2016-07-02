@@ -1,0 +1,100 @@
+<div data-role="detail-view">
+  <div id="body-show">
+    <div class="tab-head">
+      <p class="pull-left">BODY PROGRESS <!--a href="" class="icon-help"></a--></p>
+      <p class="pull-right date-change">
+        <input disabled="disabled" id="date_change" value="<%= moment(model.escape('date')).format('MMM D, YYYY') %>" />
+      </p>
+    </div>
+    <div class="tab-body">
+      <div class="picture pull-left">
+
+        <img src="<%= model.get('photo_src') %>" alt="<%= app.me.escape('full_name') %>" />
+
+      </div> <!-- /picture -->
+      <div class="details_body pull-left">
+        <ul class="list-unstyled">
+          <li>
+            Neck
+            <span><%= parseFloat(Helpers.getValuesPerMeassurement(model.get('neck'), "longitud", app.me.get("widgets").meassure)).toFixed(2) %></span>
+          </li>
+          <li>
+            Upper<br>Arm Left
+            <span><%= parseFloat(Helpers.getValuesPerMeassurement(model.get('upperArmLeft') , "longitud", app.me.get("widgets").meassure)).toFixed(2) %></span>
+          </li>
+          <li>
+            Waist
+            <span><%= parseFloat(Helpers.getValuesPerMeassurement(model.get('waist'), "longitud", app.me.get("widgets").meassure)).toFixed(2) %></span>
+          </li>
+          <li>
+            Forearm<br>Left
+            <span><%= parseFloat(Helpers.getValuesPerMeassurement(model.get('forearmLeft'), "longitud", app.me.get("widgets").meassure)).toFixed(2)  %></span>
+          </li>
+          <li>
+            Thigh<br>Left
+            <span><%= parseFloat(Helpers.getValuesPerMeassurement(model.get('thighLeft'), "longitud", app.me.get("widgets").meassure)).toFixed(2)  %></span>
+          </li>
+          <li>
+            Calf<br>Left
+            <span><%= parseFloat(Helpers.getValuesPerMeassurement(model.get('calfLeft'), "longitud", app.me.get("widgets").meassure)).toFixed(2)  %></span>
+          </li>
+        </ul>
+        <ul class="list-unstyled">
+          <li>
+            Chests
+            <span><%= parseFloat(Helpers.getValuesPerMeassurement(model.get('chest'), "longitud", app.me.get("widgets").meassure)).toFixed(2)  %></span>
+          </li>
+          <li>
+            Upper<br>Arm Right
+            <span><%= parseFloat(Helpers.getValuesPerMeassurement(model.get('upperArmRight'), "longitud", app.me.get("widgets").meassure)).toFixed(2)  %></span>
+          </li>
+          <li>
+            Hips
+            <span><%= parseFloat(Helpers.getValuesPerMeassurement(model.get('hips'), "longitud", app.me.get("widgets").meassure)).toFixed(2) %></span>
+          </li>
+          <li>
+            Forearm<br>Right
+            <span><%= parseFloat(Helpers.getValuesPerMeassurement(model.get('forearmRight'), "longitud", app.me.get("widgets").meassure)).toFixed(2) %></span>
+          </li>
+          <li>
+            Thigh<br>Right
+            <span><%= parseFloat(Helpers.getValuesPerMeassurement(model.get('thighRight'), "longitud", app.me.get("widgets").meassure)).toFixed(2)  %></span>
+          </li>
+          <li>
+            Calf<br>Right
+            <span><%= parseFloat(Helpers.getValuesPerMeassurement(model.get('calfRight'), "longitud", app.me.get("widgets").meassure)).toFixed(2)  %></span>
+          </li>
+        </ul>
+      </div><!-- /details_body -->
+      <div class="observations pull-right">
+        <a href="#" id="edit_user" class="edit_user_progress" data-role="edit" data-cid="<%= model.cid %>"></a>
+        <p class="date"><%= moment(model.escape('date')).format('MMM D YYYY') %></p>
+        <h6>Title:</h6>
+        <p><%= model.get('title') %></p>
+        <h6>Observations:</h6>
+        <p><%= model.get('observations') %></p>
+      </div><!-- /observations -->
+    </div><!-- /tab-body -->
+  </div><!-- /body-show -->
+
+
+  <div class="tab-aside">
+    <ul class="list-unstyled">
+      <li>
+        HEIGHT
+        <p class="pull-right"> <%= Helpers.getValuesPerMeassurement(model.get('height'), "height", app.me.get("widgets").meassure) %>  <span><%=Helpers.getUnitsPerMeassurement("longitud", app.me.get("widgets").meassure)%></span></p>
+      </li>
+      <li>
+        WEIGHT
+        <p class="pull-right"><%= Helpers.getValuesPerMeassurement(model.get('weight'), "mass", app.me.get("widgets").meassure)  %> <span><%=Helpers.getUnitsPerMeassurement("mass", app.me.get("widgets").meassure)%></span></p>
+      </li>
+      <li>
+        BMI
+        <p class="pull-right bmi"><%= model.get('bmi') %></p>
+      </li>
+    </ul>
+  </div>
+</div>
+<div data-role="edit-view">
+  <!-- Backbone edit view -->
+</div>

@@ -1,0 +1,63 @@
+<div class="row">
+<% if (model.get('exercise_type') == 1) { %>
+    <!--Cardio-->
+    <div class="col-xs-12 col-sm-12 col-md-9 pd-right_0 cardio">
+        <div class="form-inline">
+            <div class="form-group">
+                <input type="text" class="form-control" id="time" onkeypress="return isNumberKey(event)">
+                <p>Time(Minutes)</p>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="distance" onkeypress="return isNumberKey(event)">
+                <p>Distance(Milles)</p>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="calories" onkeypress="return isNumberKey(event)">
+                <p>Calories(Optional)</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-offset-2 col-xs-8 col-sm-offset-4 col-sm-4 col-md-offset-0 col-md-3 pd-left_0">
+        <div class="form-inline">
+            <button class="btn btn-default" data-role="cancel">cancel</button>
+            <button class="btn-blue-open-small mrg-no" data-role="add-cart">update</button>
+        </div>
+    </div>
+
+<% } %>
+
+<% if (model.get('exercise_type') == 2) { %>
+    <!--Strength-->
+    <div class="col-xs-12 col-sm-12 col-md-9 pd-right_0 strenght">
+        <div class="form-inline">
+            <div class="form-group">
+                <input type="text" class="form-control" id="time" onkeypress="return isNumberKey(event)">
+                <p>Time(Minutes)</p>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="reps" onkeypress="return isNumberKey(event)">
+                <p>Reps</p>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="sets" onkeypress="return isNumberKey(event)">
+                <p>Sets</p>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="weigth" onkeypress="return isNumberKey(event)">
+                <p>Weigth(Lbs)</p>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="calories" onkeypress="return isNumberKey(event)">
+                <p>Cal(Opt)</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-offset-2 col-xs-8 col-sm-offset-4 col-sm-4 col-md-offset-0 col-md-3 pd-left_0">
+        <div class="form-inline">
+            <button class="btn btn-default" data-role="cancel">cancel</button>
+            <button class="btn-blue-open-small mrg-no" data-role="add-cart">update</button>
+        </div>
+    </div>
+
+<% } %>
+</div>

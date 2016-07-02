@@ -1,0 +1,324 @@
+@import url("variables.less");
+@import url("mixins.less");
+
+h1,h2,h3,h4,h5,h6 {
+	color: @font-new;
+	font-family: @lato;
+	font-style: normal;
+	font-weight: 300;
+	margin: 0;
+}
+
+h1 {
+	font-size: 48px;
+}
+
+h2 {
+	font-size: @txt-h2;
+}
+
+h3 {
+	font-size: 32px;
+}
+
+h4 {
+	font-size: 26px;
+}
+
+h5 {
+	font-size: @txt-h5;
+}
+
+h6 {
+	font-size: @txt-h6;
+}
+
+p {
+	color: @font-new;
+	font-family: @lato;
+	font-style: normal;
+	font-weight: 300;
+	font-size: @txt-base;
+	margin: 0;
+	
+	&.shadow {
+		text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.7);
+	}
+}
+
+.text-with-link {
+	color: @font-menu;
+    display: inline-block;
+    font-family: @opensans;
+    font-style: italic;
+    font-weight: 400;
+
+    a {
+        line-height: 40px;
+
+        &:hover, &:active, &:focus {
+            color: @green
+        }
+    }  
+}
+
+.trial-text {
+	color: @white;
+	.lato(30px,normal,600);
+	line-height: 35px;
+}
+
+.title-web {
+	color: @white;
+	font-weight: 600;
+	.font-size(@type-size-big);
+  	line-height: 60px;
+  	text-transform: uppercase;
+}
+
+.subtitle-web {
+	font-style: italic;
+	font-weight: 100;
+    color: @white;
+    line-height: 45px;
+}
+
+.title-section {
+    margin: 62px 0 55px;
+    line-height: 48px;
+    .align(center);
+}
+
+.title-subsection {
+	border-bottom: 3px solid @green;
+	.font-size(@txt-h5 - 2);
+	font-weight: 400;
+    padding-bottom: 20px;
+}
+
+.title-info {
+	color: @green;
+    .align(left);
+    margin-bottom: 25px;
+    line-height: @txt-h5;
+}
+
+.title-personal {
+    color: @green;
+    .align(left);
+    margin:0 30px 25px;
+    padding-top: 27px;
+    line-height: @txt-h5;
+}
+
+.title-terms {
+	color: @font-subtitle-web;
+	font-weight: 600;
+    padding: 0 0 25px 10px;
+    .align(left);
+
+    &.title-privacy {
+		
+		margin: 25px;
+		padding: 0;
+
+    	&:first-child {
+    		padding-top: 40px;
+    	}
+    }
+}
+
+.description-terms {
+	.font-size(@txt-description - 2);
+	font-weight: 400;
+	line-height: 20px;
+	padding: 25px 20px 25px 26px;
+	margin-bottom: 20px;
+}
+
+.privacy {
+	margin: 0 25px 0 15px;
+
+	li {
+		color: @font-new;
+		font-family: @lato;
+		font-style: normal;
+		line-height: 23px;
+		margin-bottom: 25px;
+
+		&:last-child {
+			margin: 0
+		}
+	}
+}
+
+.level {
+	list-style-type: none;
+	counter-reset: item;
+	margin : 0 25px;
+	padding: 40px 0 0;
+
+	li {
+		counter-increment: item;
+		color: @font-new;
+		display: table;
+		font-family: @lato;
+		font-style: normal;
+		line-height: 20px;
+
+  		&:before {
+		    content: counters(item, ".") ". ";
+		    display: table-cell;
+		    color: @font-subtitle-web;
+			font-weight: 600;  
+		}
+
+		ol {
+			margin: 0;
+			padding: 0;
+
+			li {
+				margin-bottom: 25px;
+				padding-left: 10px;
+
+				&:before {
+			    	content: counters(item, ".") " "; 
+			    	font-weight: 400;
+			    	padding-right: 10px;
+				}	
+
+			}
+
+		}
+	}
+
+	&.second {
+		padding-top: 25px;
+
+		li {
+			padding-left: 0;
+			
+			&:last-child {
+				margin-bottom: 0
+			}
+		}
+
+	}
+
+}
+
+.description-subsection {
+    .font-size(@txt-description);
+    font-weight: 400;
+    line-height: 25px;
+    margin: 10px 0 30px;
+}
+
+.qualities {
+	color: @white;
+	.font-size(@txt-description);
+	font-weight: 400;
+}
+
+.title-page {
+	font-size: @type-size-30;
+	line-height: @type-size-30;
+	margin:66px 0 17px;
+	text-transform: uppercase;
+	.align(center);
+}
+
+.subtitle-page {
+    line-height: 35px;
+    margin: 0 0 60px;
+    .align(center);
+}
+
+.description-box {
+	.font-size(@txt-description);
+    line-height: 23px;
+    margin: 0 0 20px;
+    padding: 25px 20px 0 26px;
+    .align(left);
+}
+
+.confirmation-box {
+	padding-top: 33px;
+    font-weight: 400;
+	
+	&:first-of-type {
+		margin-bottom: 0px;
+	}
+
+	&:last-of-type {
+		margin-bottom: 35px;
+	}
+}
+
+.link {
+	color: @green;
+	font-family: @opensans;
+	font-style: italic;
+	.font-size(@txt-description);
+	padding: 0 0 25px 26px;
+	text-decoration: none;
+
+	&:hover, &:active, &:focus {
+		color: @green;
+	}
+}
+
+.other {
+	margin: 10px 0 20px;
+	font-weight: 600;
+	&:before {
+        .line(150px,0 22px 5px 0);
+    }
+    &:after {
+      .line(150px, 0 0 5px 22px);
+    }
+}
+
+.block {
+	display: block;
+}
+
+.upper {
+	text-transform: uppercase
+}
+
+.capitalize {
+	text-transform: capitalize
+}
+
+.text-red {
+	color: @error
+}
+
+.text-blue {
+	color: @blue
+}
+
+.text-green {
+	color: @green
+}
+
+.text-orange {
+	color: @orange
+}
+
+.text-white {
+	color: @white
+}
+
+.text-morado {
+	color: @morado
+}
+
+.text-skyblue {
+	color: @skyblue
+}
+
+#monthly, #yearly {
+	display: none;
+}

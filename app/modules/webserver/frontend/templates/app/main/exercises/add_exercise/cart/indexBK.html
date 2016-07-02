@@ -1,0 +1,113 @@
+
+<div class="exercise-cart" data-role="exercise-cart">  
+  <div class="title_sidebar">
+    <h4>EXERCISES LIST</h4>
+    <button type="submit" class="btn btn-success pull-right actions hide" data-role="save-list">save list</button>
+  </div>
+  <div class="result_list">
+    <div class="empty cart">
+      <p>NO ITEMS ADDED YET</p>
+      <p>Please Select Meals</p>
+    </div>
+    <ul class="list-unstyled cart hide" data-role="cart-items">
+
+    </ul>
+  </div>
+  <div class="addmore actions hide">
+    <button type="button" class="btn btn-success pull-right" data-role="save-list">save list</button>
+  </div>
+</div>
+
+<!-- my saved list -->
+<div class="saved-list" style="display:none;" data-role="list-viewer">
+  <div class="title_sidebar text-left">
+    <h4>EXERCISES LIST</h4>
+    <a href="#" class="actions edit_list"></a>
+  </div>
+  <div class="result_list">
+    <div class="empty list">
+      <p>NO ITEMS ADDED YET</p>
+      <p>Please Select Meals</p>
+    </div>
+    <ul class="list-unstyled list hide" data-role="list-items">
+      <!-- backbone view item -->
+    </ul>
+  </div>
+  <div class="addmore">
+    <button type="button" class="btn btn-success pull-right" data-role="use-list">use list</button>
+  </div>
+</div><!-- my saved list -->
+
+<!-- save list -->
+<div class="save-list" style="display:none;" data-role="create-list">
+  <div class="title_sidebar text-left">
+    <h4>EXERCISES LIST</h4>
+  </div>
+  <div class="result_list">
+    <form role="form" data-role="new-list-form">
+      <div class="form-group">
+        <label for="name">List name</label>
+        <input type="text" class="form-control" id="name" required/>
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea class="form-control" id="description"></textarea>
+      </div>
+      <button type="submit" class="btn btn-success pull-right save" data-role="send-list">save</button>
+      <button type="reset" class="btn btn-default pull-right cancel" data-role="cancel-send">cancel</button>
+    </form>
+  </div>
+  <div class="addmore"></div>
+</div><!-- save list -->
+
+<!-- food info list -->
+<div class="foodinfo-list" style="display:none;" data-role="food-info">
+  <!-- backbone view foo_info -->
+</div><!-- food-info-list -->
+
+
+<!-- new exercise -->
+<!--div class='newexer-list'> 
+  <div class="title_sidebar text-left">
+    <h4>EXERCISES INFORMATION</h4>
+  </div>
+  <div class="result_list">
+    <form role="form">
+      <div class="form-group">
+        <label for="title">Time</label>
+        <input type="number" class="form-control" name="time"/>
+      </div>
+      <div class="form-group">
+        <label for="observations">Calories Burned</label>
+        <input type="number" class="form-control" name="calories_burned" />
+      </div>
+      <div class="form-group">
+        <label for="observations">Sets</label>
+        <input type="number" class="form-control" name="sets" />
+      </div>
+      <div class="form-group">
+        <label for="observations">Reps</label>
+        <input type="number" class="form-control" name="repetitions" />
+      </div>
+      <div class="form-group">
+        <label for="observations">Weight</label>
+        <input type="number" class="form-control" name="weight" />
+      </div>
+    </form>
+  </div>
+  <div class="addmore"></div>
+</div-->
+
+<!--div class='newexer-list'> 
+  <div class="title_sidebar text-left">
+    <h4>EXERCISES INFORMATION</h4>
+  </div>
+  <div class="result_list">
+    <div class="empty cart">
+      <p>INSTRUCTIONS</p>
+    </div>
+  </div>
+  <div class="addmore"></div>
+</div-->
+
+

@@ -1,0 +1,26 @@
+<ul class="list-unstyled">
+  <li>
+    <h3>&nbsp;</h3>
+    <span>&nbsp;</span>
+  </li>
+  <li>
+    <h3>BEFORE</h3>
+    <% if (oldImage) { %>
+    <span id="before-image-progress-date">
+      <%= moment(oldImage.get('date')).format('MMM D, YYYY') %>
+    </span>
+    <% } else { %>
+    <span>You haven’t upload photos yet</span>
+    <% } %>
+  </li>
+  <li>
+    <h3>RECENT</h3>
+    <% if (actualImage) { %>
+    <span id="current-image-progress-date">
+      <%= moment(actualImage.get('date')).format('MMM D, YYYY') %>
+    </span>
+    <% } else { %>
+    <span>You haven’t upload photos yet</span>
+    <% } %>
+  </li>
+</ul>

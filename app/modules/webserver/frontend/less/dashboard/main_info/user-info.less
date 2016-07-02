@@ -1,0 +1,159 @@
+	@import "../../variables";
+  	@import "../../mixins";
+
+        
+    .user-info-box {
+        background: @white;          
+        border-top-right-radius:5px;
+        border-bottom-right-radius:5px;
+        min-height: 418px;
+        padding-top: 25px;
+        position: relative;
+
+        a#edit_user {
+          	background: url("../img/new-edit.png") 0 0 no-repeat;
+          	display: none;
+          	height: 35px;
+          	width: 35px;
+          	position: absolute;
+          	right: 10px;
+          	top: 10px;
+        }
+
+        .info_user {
+          	display: block;              
+          	margin: 0 0 0 30px;
+          	.align(left);
+
+          	h1 {
+          		font-size: 30px;
+          		font-style: italic;
+          		font-weight: 700;               
+            	margin-bottom: 13px;              
+          	}
+
+          	h4 {            
+          		font-size: 15px;
+          		font-style: italic;
+          		font-weight: 700;        
+            	margin-bottom: 25px;                
+          	}   
+
+          	h6 {
+            	font-size: 15px;
+          		font-style: italic;
+          		font-weight: 700;                
+            	margin: 110px 0 5px;           
+          	}
+
+          	p {
+          		font-size: 15px;
+          		font-weight: 400;              
+                padding-right: 60px;
+
+                a {
+                  	color: @green;
+                  	text-decoration: underline;
+                }
+
+          	}
+
+        } // info_user            
+
+    } // info_center        
+
+    .info_user_edit {
+        display: none;
+        .align(left);            
+        position: relative;
+
+        #close {
+          	height: 13px;
+          	width: 13px;
+          	background: url("../img/delete.png")0 0 no-repeat;
+          	position: absolute;
+          	top: 8px;
+          	right: 25px;
+        }
+
+        form {
+          	margin-top: 80px;
+          	height: 284px;
+
+          	.form-group {
+            	margin: 0 25px 20px;
+          	}
+          	
+            .line-save {
+                border-top: 1px solid @line-new;
+                padding: 12px 23px 0 0;
+                position: absolute;
+                bottom: 0;
+                height: 60px;
+                left: 0;
+                right: 0;
+          	}
+
+            p {
+              font-size: 11px;
+              font-weight: 400;
+            }
+
+          	button.btn-default {
+                .btn-default(36px, 75px);
+                
+                &:hover {
+                	box-shadow: none;
+                }
+          	}
+
+        }
+
+    } // info_user_edit
+
+    .info_bottom {
+    	border-top: 1px solid @line-new;
+        position: absolute;
+        bottom: 0;
+        left: 10px;
+        right: 25px;
+        height: 60px;
+
+    }
+
+    .resumen {
+        margin: 0;
+        float: left;
+
+        &.goal {
+            float: right;
+            margin-right: 25px;
+        }
+
+        li {
+            display: inline-block;
+            margin-left: 20px;
+        }
+
+    }
+
+    .resumen-item {
+        line-height: 55px;
+        
+        .small {
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-right: 5px;
+            font-size: 10px;
+        }
+        
+        p {
+            display: inline;
+            .lato(16px, italic, 900);  
+
+            .smallest {
+                font-size: 12px;
+            }
+        }
+        
+    }

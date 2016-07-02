@@ -1,0 +1,55 @@
+<script type="text/javascript">
+
+    $('.custom_radio input[type=radio]').iCheck({
+        radioClass: 'iradio_polaris'
+    });
+
+</script>
+
+<div class="tab-head">
+    <div class="row">
+        <div class="col-sm-12 text-left">
+            <h5>credit card information</h5>
+        </div>
+    </div>
+</div>
+
+<div class="tab-body text-left">
+
+    <h5>At present you are using your primary card:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <%= Helpers.getDefaultCreditCard('<brand> **** **** **** <last4>', 'NO CARD ON FILE CUSTOM MSG') %>
+    <p>
+        After adding a card by default it will be your primary payment method. All charges & fees will be deducted from this card.
+    </p>
+
+    <div class="table-responsive">
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Default Card</th>
+                    <th class="left">Type</th>
+                    <th class="left">Name on card</th>
+                    <th class="left">CC No.</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="tableCards">
+
+            </tbody>
+        </table>
+
+    </div>
+
+</div>
+
+<div class="tab-foot">
+    <div class="row">
+        <div class="col-sm-12 text-right">
+            <button type="button" id="add_new_creditcard" class="btn btn-primary">add new</button>
+            <div class="buttons_newcard">
+                <button type="button" class="btn btn-default">cancel</button>
+                <button id="save_card" type="button" class="btn btn-primary">save card</button>
+            </div>
+        </div>
+    </div>
+</div>

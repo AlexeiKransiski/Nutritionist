@@ -1,0 +1,231 @@
+@import url("variables.less");
+@import url("mixins.less");
+
+.form-login {
+	padding:10px 30px;
+	text-align: left;
+
+	.icheckbox_minimal-green {
+        height: 18px
+    }
+}
+
+label {
+	
+	&.lb-lato {
+		.lato(15px, italic, 600);
+    	color: @font-new;
+    	line-height: 15px;
+    	margin: 0 0 11px 0;  
+	}
+
+	&.lp-open-appoitment {
+		.open-normal(15px);
+        margin-bottom: 15px;
+        text-transform: capitalize;
+	}
+
+	&.lb-open {
+		color: @font-new;
+		display: block;
+		font-family: @opensans;
+		font-size: @txt-base;
+		font-weight: 600;
+		font-style: italic;
+	}
+
+	&.lb-normal {
+		color: @font-new;
+		.lato(14px, normal, 600);
+	  	line-height: 14px;
+	  	margin: 0 0 7px;
+	  	text-transform: uppercase;
+
+	  	&.inline {
+	  		display: block
+	  	}
+
+	  	&.inline-card {
+	  		display: inline-block
+	  	}
+		
+		&.unupper {
+			font-style: italic;
+			text-transform: inherit;
+		}
+
+	}
+
+	&.error {
+		color: @error;
+        .lato(12px,normal,400);
+        position: absolute;
+        right: 0;
+        top: 0;
+        text-transform: inherit;
+
+        &.widget {
+        	position: inherit;
+        	display: none;
+        	
+        }
+
+        &.pos-left {
+			left: 15px;
+
+			&.bottom_5 {
+				top: inherit;
+				bottom: 5px;
+			}
+
+			&.bottom_5_less {
+				top: inherit;
+				bottom: -5px;
+			}
+        }
+
+        &.pos-right {
+        	right: 21px;
+
+        	&.top {
+				top: 35px;
+                bottom: inherit;
+        	}
+        }
+
+        &.pos-bottom {
+        	bottom: -23px;
+        	left: 0;
+        	top: inherit
+        }
+
+        &.conditions {
+        	top: 30px
+        }
+
+        &.different {
+        	top: 75px
+        }
+
+        &.bottom {
+        	bottom: -25px;
+        	top: inherit;
+
+        	&.expiration {
+        		bottom: -21px
+        	}
+        }
+
+	}
+
+}
+
+input {
+
+	&.form-control {
+		color: @font-input;
+		border-color: @line-new;
+	    .lato(15px,italic,400);
+	    height: 34px;
+	    .no-shadow();
+	    .border-radius(0px);
+
+	    &:focus, &:active {
+        	.no-shadow();
+    	}
+		
+		&.rounded {
+            .border-radius(3px);
+            height: 40px;
+		}
+
+		&.br-none {
+			border-right: none
+		}
+
+	}
+
+	&.metric {
+		width: 165px;
+        border-right: none;
+
+        &:focus, &:active {
+        	.no-shadow();
+        	border-color: @line-new;
+    	}
+
+	}
+
+	&.error {
+        border-color: @error;
+        color: @error;
+
+        &:focus, &:active {
+        	border-color: @error;
+    	}
+
+    }
+
+}
+
+textarea {
+	resize:none;
+
+	&.form-control {
+		color: @font-input;
+		border-color: @line-new;
+	    .lato(15px,italic,400);
+	    .no-shadow();
+	    .border-radius(0px);
+
+	    &:focus, &:active {
+        	.no-shadow();
+    	}
+
+	}
+
+	&.rounded {
+        .border-radius(3px);
+        height: 80px;
+	}
+
+	&.comment-edit {
+		color: @font-new;
+        .open-normal(14px);
+        height: 70px;
+        margin: 0 auto -1px;
+        width: 100%;
+
+        &:focus, &:active {
+        	border-color: @line-new
+    	}
+	}
+
+}
+
+.form-group {
+	margin-bottom: 20px;
+	position: relative;
+}
+
+.input-group {
+
+	&.group {
+		margin-bottom: 5px;
+	}
+
+	.input-group-addon {
+		background: transparent;
+        .border-radius(0px);
+        height: 34px;
+        border-color: @line-new;
+        color: @font-s;
+        .lato(14px,normal,400);
+
+        &.error{
+        	border-color: @error;
+        }
+
+	}
+
+}

@@ -1,0 +1,424 @@
+   @import url("variables.less");
+   @import url("mixins.less");
+
+   // status pages
+
+    #page-status.main_section {
+
+      .main_info {
+
+        .box_left, .box_right {
+          min-height: 418px;
+          .border-radius(5px);
+          background: @white;
+          display: inline-block;
+          .shadow-box(); 
+
+          .head {
+            height: 60px;
+            border-bottom: 1px solid @line-new;
+            .align(left);
+
+            h3 {
+              color: @green;
+              .open-normal(15px);
+              margin:0 0 0 30px;
+              line-height: 60px;
+              display: inline-block;
+            }
+
+            .bfh-selectbox {
+              width: 120px;                         
+              .open-normal(12px);
+              font-style: italic;                
+              .border-radius(0px);
+              border-color: @line-new;
+              box-shadow: none;      
+              margin: 12px 12px 0 0;                            
+              a {
+                padding:0 0 0 8px;
+                .lato(14px,italic,600); 
+                color: @font-menu;
+                display: block;
+                .border-radius(0px);
+                border:1px solid @line-new;
+                box-shadow: none;
+                height: 34px;
+                line-height: 32px;
+                text-transform: none;
+                .bfh-selectbox-option {
+                  height: 34px;
+                }
+                span {
+                  color: @font-input;
+                }
+                &:hover, &:focus {
+                  background:@white;
+                }
+                .selectbox-caret {
+                  border-left: 5px solid rgba(0, 0, 0, 0);
+                  border-right: 5px solid rgba(0, 0, 0, 0);
+                  border-top: 5px solid;
+                  color: @gris;
+                  margin: -19px 10px 0 0;
+                }
+              }
+              .bfh-selectbox-options {
+                .border-radius(0px);
+                z-index: 9999;
+                padding: 2px 0;
+                box-shadow: none;
+
+                ul {
+                  margin: 0px;                                      
+                  width: 118px;
+                  li{
+                    border: none;
+                    min-height: 20px;
+                    padding: 0 3px;
+                    background: transparent;
+                    margin: 0;
+                    a {
+                      line-height: 24px;
+                      height: 18px;
+                      border: none;
+                      font-size: 12px;
+                      &:hover {
+                        background:@bg-select-hover;
+                      }
+                    }
+                  }
+                }
+              } // bfh-selectbox-options
+
+            } // bfh-selectbox
+
+
+          } // head
+
+          .body {
+            height: 298px;
+            position: relative;          
+
+          } // body
+
+          .foot {
+            height: 60px;
+            border-top: 1px solid @line-new;
+            .align(center);
+            position: relative;
+            
+            .icon-prev, .icon-next {
+              position: absolute;
+              width: 10px;
+              height: 10px;
+              display: block;
+              top: 24px;
+            }
+
+            .icon-prev {
+              background-position: -26px -285px;
+              left: 20px;
+            }
+
+            .icon-next {
+              background-position: -41px -285px;
+              right: 20px;
+            }
+
+            p {
+              .lato(10px,normal,600);
+              color: @font-new;
+              margin: 0;
+              line-height: 60px;
+              display: inline-block;
+              text-transform: uppercase;
+            }
+
+          }
+
+        } // box-left, box-right
+
+        .box_left {
+          width: 100%;       
+          margin:0 0 1px 1px;
+          
+          .body {
+
+            .legend {
+              height: 60px;
+              border-bottom: 1px solid @line-new;
+              .align(left);
+
+              h6 {
+                .lato(10px,normal,500);
+                margin: 0 0 0 20px;
+                line-height: 30px;
+                color: @font-new;
+                text-transform: uppercase;
+              }
+
+              ul {
+                margin: 0 0 0 20px;
+                li {
+                  padding-right: 30px;
+                  .lato(10px,normal,500);
+                  color: @font-new;
+                  &:last-child {
+                    padding-right: 0;
+                  }
+
+                  span {
+                    height: 8px;
+                    width: 8px;
+                    .border-radius(4px);
+                    vertical-align: initial;
+                    margin-right: 10px;
+                  }
+
+                }
+
+              }
+            
+            } // legend
+
+            .chart {
+              background: @bg-active;
+              min-height: 238px;
+
+              #canvas {
+                height: 238px;
+                display: block;
+
+              }
+
+            } // chart            
+
+            .flexslider {
+              margin: 0;
+              border: none;
+            }
+
+          } // body
+
+        } // box_left
+
+        .box_right {
+          width: 100%;
+          margin-right: 1px;
+
+          .body {
+            position: relative;
+            min-height: 360px;
+
+            .row {
+              margin: 0;
+
+              .legends {
+                padding: 10px 0;
+                height: 300px;
+                background: @white;
+                
+                .mCSB_scrollTools .mCSB_draggerContainer {
+                  right: 5px;
+                }
+                
+                form {
+                  margin: -10px 0;
+                }
+
+                .checkbox {
+                  padding: 0 0 0 13px;
+                  line-height: 16px;
+                  min-height: 16px;
+                  margin-bottom: 15px;
+
+                  label {
+                    margin: 0;
+                    .lato(12px,normal,500);
+                    color: @font-new;
+                    
+                    .icheckbox_square {
+                      float: right;
+                      margin-right: 0;
+                    }
+
+                    span {
+                      margin-right: 8px;
+                      height: 8px;
+                      width: 8px;
+                      .border-radius(4px);
+                      vertical-align: inherit;
+
+                    }
+
+                    input {
+                      float: right;
+                    }
+
+                  } //  label
+
+                } // checkbox
+
+              }
+
+            } // row
+
+            .flexslider {
+              margin: 0;
+              border: none;
+              background: @bg-active;
+              height: 300px;
+              width: 100%;
+              .border-radius(0px);
+
+            } // flexslider
+
+            .foot {
+              position: absolute;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              .icon-prev {
+                background-position: -26px -285px;
+                left: 180px;
+
+                &:focus, &:hover {
+                  text-decoration: none;
+                }
+
+              }
+
+              .icon-next {
+                background-position: -41px -285px;
+                right: 180px;
+
+                &:focus, &:hover {
+                  text-decoration: none;
+                }
+
+              }
+
+            } //foot
+
+          } // body       
+
+        } // box_right
+
+      } // main_info
+      
+    }
+
+.status_by_year ul li {
+  display: inline-block;
+}
+
+.status_by_year span.indicator {
+  display: inline-block;
+  border-radius: 10px;
+  background: #888888;
+  width: 10px;
+  height: 10px;
+  vertical-align: middle;
+}
+
+.status_by_year span.indicator_2015 {
+  background: #73A4D8;
+}
+
+.status_by_year span.indicator_2014 {
+  background: #B7C8DB;
+}
+
+/* Progress tracker */
+.progress_tracker_chart_stats label span.indicator {
+  display: inline-block;
+  border-radius: 10px;
+  background: #888888;
+  width: 10px;
+  height: 10px;
+  vertical-align: middle;
+}
+
+.progress_tracker_chart_stats .neck span.indicator {
+  background: #FFA700;
+}
+
+.progress_tracker_chart_stats .chest span.indicator {
+  background: #5b3dfb;
+}
+
+.progress_tracker_chart_stats .upper_left_arm span.indicator {
+  background: #34f580;
+}
+
+.progress_tracker_chart_stats .waist span.indicator {
+  background: #42d54a;
+}
+
+.progress_tracker_chart_stats .formarm_left span.indicator {
+  background: #00a559;
+}
+
+.progress_tracker_chart_stats .thigh_left span.indicator {
+  background: #4cc3d6;
+}
+
+.progress_tracker_chart_stats .calf_left span.indicator {
+  background: #3e96ef;
+}
+
+.progress_tracker_chart_stats .upper_arm_right span.indicator {
+  background: #793eef;
+}
+
+.progress_tracker_chart_stats .hips span.indicator {
+  background: #ff1ba8;
+}
+
+.progress_tracker_chart_stats .forearm_right span.indicator {
+  background: #ff0040;
+}
+
+.progress_tracker_chart_stats .thigh_right span.indicator {
+  background: #df0101;
+}
+
+.progress_tracker_chart_stats .calf_right span.indicator {
+  background: #efff00;
+}
+
+/*Nutrition indicators*/
+
+.nutrition_tracker_chart_stats label span.indicator2 {
+  display: inline-block;
+  border-radius: 10px;
+  background: #888888;
+  width: 10px;
+  height: 10px;
+  vertical-align: middle;
+}
+
+.nutrition_tracker_chart_stats .carb span.indicator2 {
+  background: #FFA700;
+}
+
+.nutrition_tracker_chart_stats .fat span.indicator2 {
+  background: #34f580;
+}
+
+.nutrition_tracker_chart_stats .chol span.indicator2 {
+  background: #42d54a;
+}
+
+.nutrition_tracker_chart_stats .sod span.indicator2 {
+  background: #00a559;
+}
+
+.nutrition_tracker_chart_stats .pot span.indicator2 {
+  background: #4cc3d6;
+}
+
+.nutrition_tracker_chart_stats .cal span.indicator2 {
+  background: #3e96ef;
+}  

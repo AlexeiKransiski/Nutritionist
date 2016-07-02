@@ -1,0 +1,25 @@
+<!-- si la respuesta es no se muestra este formulario -->
+<div class="comments">
+    <div class="boxes-messages notifications">
+        <div class="comment rating more">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h5>Don’t Worry! You can reply to <span><%= model.get('nutritionist_info').full_name %></span> in case you have more questions</h5>
+                </div>
+            </div>
+
+            <form class="form-horizontal">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p id="messages_error" class="error"></p>
+                        <textarea class="form-control" name="messages" id="messages" placeholder="Reply to your nutritionist..."></textarea>
+                    </div>
+                    <div class="col-sm-12 text-right">
+                        <button class="btn btn-default" data-role='cancel'>cancel</button>
+                        <button class="btn btn-primary" data-role='send'>submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

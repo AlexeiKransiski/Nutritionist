@@ -1,0 +1,382 @@
+{%extends 'base.html'%}
+
+<!-- classes to be added to the body tag -->
+{%block bodyStyles%}login{%endblock%}
+
+{%block styles%}
+  <link rel="stylesheet" type="text/css" href="/css/login.css">
+{%endblock%}
+
+{%block scripts%}
+{% parent %}
+  <script type="text/javascript" src="/js/login.js"></script>
+{%endblock%}
+
+{%block layout%}
+
+<header>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12">
+      
+        <div class="logo-head">
+          <a href="/" title="Qalorie">
+            <img src="/img/qalorie_logo_pixel.svg" height="40" onerror="this.onerror=null; this.src='/img/logo.png'" alt"Qalorie" />
+          </a>
+        </div>
+
+        <div class="pull-right">
+          <p>New to Qalorie?</p>
+          <a href="/signup" class="btn-green-open btn-large mg-header-login">create account</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="title-page text-green">terms of service</h2>
+
+        <div class="box-centered box-full-height-auto">
+          <ol class="level">
+            <li>
+              <h6 class="title-terms">Qalorie Site and App</h6>
+              <ol class="level">
+                <li>
+                  Qalorie Inc. (“Qalorie”) is an LLC under the laws of Puerto Rico.
+                </li>
+                <li>
+                  Qalorie offers software (“the Software”) which is accessed through an internet browser or through mobile operating systems that offers lifestyle, exercise and nutrition tracking and nutritionist services. 
+                </li>
+              </ol>
+            </li>
+            <li>
+              <h6 class="title-terms">Applicability</h6>
+              <ol class="level">
+                <li>
+                  These terms and conditions (“the Terms and Conditions”) govern the contractual relationship between Qalorie and the user (“you or your”) of http://www.qalorie.com/ (or any page indexed therein) (“the Site”) and the Software.
+                </li>
+                <li>
+                  By using the Site or Software (“the Services”), your contractual relationship with Qalorie shall be governed by these Terms and Conditions and you hereby agree that you have read this document, along with any other terms contained on the Site and that you agree to be bound by the terms set out herein. 
+                </li>
+                <li>
+                  You agree not to use the Site and/or Services for any purpose that is unlawful or prohibited by these Terms and Conditions.
+                </li>
+                <li>
+                  Qalorie reserves the right to modify or replace these Terms and Conditions from time to time. Any modification or replacement shall be available on the Site and shall be applicable on the date such terms are available to view on the Site.
+                </li>
+                <li>
+                  Should you not be willing to accept any revised Terms and Conditions, your sole remedy is to stop using the Service and Site. If Qalorie has not received a notice of termination of use from you within the thirty (30) days following the user’s receipt of the notice of revised Terms and Conditions, you hereby agree that the new and revised document shall replace and supersede the previous version and be effective from the date it was placed on the Site.
+                </li>
+              </ol>
+            </li>
+            <li>
+              <h6 class="title-terms">Permission</h6>
+              <ol class="level">
+                <li>You must be at least 18 years of age to use the Service.</li>
+              </ol>
+            </li>
+            <li>
+              <h6 class="title-terms">Changes to the Service</h6>
+              <ol class="level">
+                <li>
+                  Qalorie may, at their sole discretion, without notice, change any aspect of, or the way that we provide, the Services, or even stop them. We also reserve the right to terminate or restrict access to any given user or group of users, at any time. Certain obligations accruing before any such termination shall not be extinguished as a result of termination.
+                </li>
+                <li>
+                  Qalorie reserves the right to change, update, limit or terminate any or all of the Services or certain features from time to time. Any change to the Services may be reflected in the subscription cost of the level of services offered. Any changes, update, upgrade, limitation or termination of the Services shall be notified to you upon it becoming into effect.
+
+                </li>
+              </ol>
+            </li>
+            <li>
+              <h6 class="title-terms">Your Account</h6>
+              <ol class="level">
+                <li>
+                  By creating an account on the Site, you hereby agree that you are solely responsible for maintaining the confidentiality of the password(s) associated with your account. You agree that you will not directly or indirectly allow any third party access to your account details and that you will be solely responsible for all activities and transactions that take place under your account and for any and all use or misuse of your password or account. 
+                </li>
+                <li>
+                  If you become aware of any unauthorized use of your account, you agree to notify Qalorie. 
+                </li>
+                <li>
+                  You are fully responsible for all actions that occur under your account or in connection with your account. You agree not to use your account in any unlawful, misleading or fraudulent manner. You are responsible for making sure that your use of the Site or Software does not breach these Terms and Conditions. Qalorie reserves the right to change or delete content that it considers is inappropriate, unlawful or causes any potential liability to Qalorie.
+
+                </li>
+              </ol>
+            </li>
+            <li>
+              <h6 class="title-terms">Free Trial</h6>
+              <ol class="level">
+                <li>
+                  If you wish to trial the Software, you have an option to do so free of charge for 30 days (“the Free Trial”) on the “Beginner” subscription. 
+                </li>
+                <li>
+                  During the Free Trial, you shall be given a license to use the Software, without limitation, for the Free Trial period.  Permissions are automated, no license code required.
+                </li>
+                <li>
+                  All Free Trials shall be subject to these Terms and Conditions. 
+                </li>
+                <li>
+                  Your payment details shall be taken by our payment gateway providers during the Free Trial. If you cancel your subscription before the expiry of the Free Trial, you shall not be charged. If you do not cancel your subscription, your subscription fee shall be taken from your registered card details automatically and your subscription shall begin.
+                </li>
+                <li>
+                  Each person, address or IP address is entitled to one Free Trial. Only at the discretion of Qalorie will your Free Trial be extended or be given the opportunity for another one.
+                </li>
+              </ol>
+            </li>
+            <li>
+              <h6 class="title-terms">Payment and Payment Security</h6>
+              <ol class="level">
+                <li>
+                  Following any Free Trial Period, you will be required to pay a subscription fee for your continued license to use the Software. All prices for subscription fees are quoted at the time of registration.
+                </li>
+                <li>
+                  Subscription terms are on a monthly or yearly rolling basis.
+                </li>
+                <li>
+                  Subscription fees are generally taken in advance of the services being provided, on a rolling month or yearly basis, however in the event that this does not occur, you agree to pay all subscriptions accruing. Fees paid by you are non-refundable except as provided in these terms or when required by law.
+                </li>
+                <li>
+                  The Term of each subscription is automatically renewed at the end of the subscription term, without notice. Payments are taken automatically from your registered billing information. 
+                </li>
+                <li>
+                  You may cancel the automatic renewal of your subscription at any time. No refund shall be given for the remainder of the current subscription term, however you will be able to continue to use of the Services under your subscription package, until the end of your subscription term.
+                </li>
+                <li>
+                  If you wish to cancel half way through a subscription term due to any reason that you state is the fault of Qalorie and you request a refund, Qalorie shall assess such requests and make a decision as to the refund at its sole discretion.
+                </li>
+                <li>
+                  Fees are subject to change from time to time, however any such change will only become effective upon the renewal of your subscription term. We shall endeavour to email you if any change in your subscription price is to become effective.
+                </li>
+                <li>
+                  If you are nervous about shopping on the web, don't be. Qalorie and its payment gateway partners use secure servers with state-of-the-art encryption and secure sockets layer (SSL) technology for the transfer of credit card information. Additionally, we have security measures in place to protect our customer database and access to this database is restricted internally.
+                </li>
+                <li>
+                  We do not hold any payment information on our servers or otherwise. Our payment gateway providers hold your information to be able to process your monthly payments, however they are held on encrypted and secure servers.
+                </li>
+              </ol>
+            </li>
+            <li>
+              <h6 class="title-terms">Termination</h6>
+              <ol class="level">
+                <li>
+                  Qalorie reserves the right to terminate, suspend or restrict a user’s account for breach of any term in these Terms of Service. In the event a user’s account is terminated, suspended or restricted, the user shall not be entitled to a refund for any remaining subscription fees already paid.
+                </li>
+                <li>
+                  Qalorie reserves the right to terminate, suspend or restrict a user’s account for any reason at its own discretion.
+                </li>
+                <li>
+                  You shall have the right to cancel your account at any time, in accordance with section 7 of these Terms and Conditions.
+                </li>
+              </ol>
+            </li>
+            <li>
+              <h6 class="title-terms">Copyright</h6>
+              <ol class="level">
+                <li>
+                  You agree and acknowledge that we own or are licensed to use all copyright, database rights, trade marks and other intellectual property rights in and to all parts of the Site and Software, and to the business of Qalorie, including the structure, design, essence and layout of the Site and Software, including the source code and any text placed in or them.
+                </li>
+                <li>
+                  You are entitled to use the Site in accordance with these Terms and Conditions only. You must obtain our prior written consent before you use the Site or any part of it in any other manner than herein prescribed.
+                </li>
+                <li>
+                  All persons, individual and corporate, are prohibited from providing hypertext or other links to the Site, other than to our home page, from their own web site or from a third party's web site, without our prior written consent.
+                </li>
+              </ol>
+            </li>
+            <li>
+              <h6 class="title-terms">Prohibited and Unlawful Use</h6>
+              <ol class="level">
+                <li>
+                  You agree not to use the Site or Software in any of the following ways:
+                    <ol class="level second">
+                      <li>
+                        To maliciously or vexatiously intend to damage the reputation of a Company or entity in anyway;
+                      </li>
+                      <li>
+                        To undermine the purpose that Qalorie provides its Services and the Site;
+                      </li>
+                      <li> 
+                        To act in competition with Qalorie;
+                      </li>
+                      <li>
+                        To reverse engineer, decompile, dissemble, decipher, test or otherwise derive the code used on the Site or Software;
+                      </li>
+                      <li>
+                        To use any robot, spider, scraper, or other automated means to access the Site;
+                      </li>
+                      <li>
+                        To transmit any virus, tojan horse or other harmful software, either onto the Site or providing hyperlinks that may do the same;
+                      </li>
+                      <li>
+                        To reproduce, duplicate, copy, sub-licence, broadcast, distribute, sell, re-brand or re-sell any part of the Site or Software;
+                      </li>
+                      <li>
+                        In any way that breaches any applicable local, national or international law, regulation or directive;
+                      </li>
+                      <li>
+                        In a way that is unlawful or fraudulent, or has any unlawful or fraudulent purpose or effect;
+                      </li>
+                    </ol>
+                </li>
+              </ol>
+            </li>
+            <li>
+              <h6 class="title-terms">Disclaimer as to the Services</h6>
+              <ol class="level">
+                <li>
+                  You agree and acknowledge that we own or are licensed to use all copyright, database rights, trade marks and other intellectual property rights in and to all parts of the Site and Software, and to the business of Qalorie, including the structure, design, essence and layout of the Site and Software, including the source code and any text placed in or them.
+                </li>
+                <li>
+                  You are entitled to use the Site in accordance with these Terms and Conditions only. You must obtain our prior written consent before you use the Site or any part of it in any other manner than herein prescribed.
+                </li>
+                <li>
+                  All persons, individual and corporate, are prohibited from providing hypertext or other links to the Site, other than to our home page, from their own web site or from a third party's web site, without our prior written consent.
+                </li>
+              </ol>
+            </li>
+            <li>
+              <h6 class="title-terms">Indemnification</h6>
+              <ol class="level">
+                <li>
+                  The user agrees to indemnify, defend and hold harmless Qalorie, its affiliates and their respective advertisers, agents, licensors, suppliers, officers, directors, shareholders, employees, agents, service providers and other contractors (collectively “Qalorie Indemnified Parties”) from and against any loss, expense, damage, cost, liability, claim, demand made by a third party, including, but not limited to, reasonable legal fees, accounting expenses, and legal costs), sustained, incurred or paid by the Qalorie Indemnified Parties and arising from or related to:
+                  <ol class="level second">
+                    <li>
+                      The access or use of the Site and Software by you (or any users of your account), including, without limitation, your or others’ access to Site Content or any content or other materials available by means of third-party websites; 
+                    </li>
+                    <li>
+                      Violation of these Terms and Conditions or breach of the Terms and Conditions (including, without limitation, any representation or warranty contained in this Agreement) or any activity related to your use of the Site; or 
+                    </li>
+                    <li>
+                      Your content or provision to the Site of information or any other products, postings, offerings, data or materials. You will assist and co-operate as fully as reasonably required by the Qalorie Indemnified Parties. The Qalorie Indemnified Parties will have the right, but not the obligation, to participate through counsel of their choice of any defense by you or any claim as to which you are required to defend, indemnify or hold harmless the Qalorie Indemnified Parties (the “Indemnified Claim”). You may not settle any Indemnified Claim without the prior written consent of the concerned Qalorie Indemnified Parties.
+                    </li>
+                  </ol>
+                </li>
+              </ol>
+            </li>
+            <li>
+              <h6 class="title-terms">Liability</h6>
+              <ol class="level">
+                <li>
+                  Qalorie, its suppliers, directors, employees, licensors or agents shall not be liable with respect to any subject matter of these Terms of Conditions, or any use by any party of the Site and Services, under any form or causes of action including contract, tort, strict liability or in any other action or dispute, except where such liability is prohibited by law, for:
+                  <ol class="level second">
+                    <li>
+                      General, special, incidental or consequential damages;
+                    </li>
+                    <li>
+                      For interruption of the Services or loss of data;
+                    </li>
+                    <li>
+                      For injury, loss or damage as a result of the advice given by any nutritionist;
+                    </li>
+                    <li>
+                      For unexpected physical results of using the Services;
+                    </li>
+                    <li>
+                      For any injury, loss or damage caused by not giving correct information to the nutritionists;
+                    </li>
+                    <li>
+                      For any failure or delay for any reason beyond Qalorie’s control.
+                    </li>
+                  </ol>
+                </li>
+                <li>
+                  TO THE MAXIMUM EXTENT PERMITTED BY LAW, QALORIE WILL NOT BE LIABLE FOR ANY CONSEQUENTIAL, INCIDENTAL, SPECIAL, DIRECT, INDIRECT, OR THIRD PARTY DAMAGES (INCLUDING BUT NOT LIMITED TO LOSS OF PROFIT, TRADING LOSSES, LOSS OF A CHANCE OR DAMAGES), EVEN WHERE QALORIE HAS KNOWLEDGE OF THE POTENTIAL OF THE AFOREMENTIONED LOSS OR DAMAGE.
+                </li>
+                <li>
+                  EXCEPT AS OTHERWISE REQUIRED BY LAW, QALORIE WILL NOT BE LIABLE TO YOU OR ANYONE ELSE FOR ANY LOSS RESULTING FROM A CAUSE OVER WHICH QALORIE DOES NOT HAVE DIRECT CONTROL. THIS INCLUDES FAILURE OF ELECTRONIC OR MECHANICAL EQUIPMENT OR COMMUNICATIONS LINES (INCLUDING TELEPHONE, CABLE AND INTERNET), UNAUTHORISED ACCESS, VIRUSES, THEFT, OPERATOR ERRORS, SEVERE OR EXTRAORDINARY WEATHER (INCLUDING FLOOD, EARTHQUAKE, OR OTHER ACT OF GOD), FIRE, WAR, INSURRECTION, TERRORIST ACT, RIOT, LABOR UNION DISPUTE AND OTHER LABOR PROBLEMS, ACCIDENT, EMERGENCY OR ACTION OF GOVERNMENT.
+                </li>
+              </ol>
+            </li>
+            <li>
+              <h6 class="title-terms">Warranties</h6>
+              <ol class="level">
+                <li>
+                  QALORIE MAKES NO EXPRESS OR IMPLIED WARRANTIES ABOUT THE SITE OR SERVICES, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT. THE QALORIE SITE AND SOFTWARE ARE MADE AVAILABLE TO YOU "AS IS" AND "AS AVAILABLE" AND QALORIE DOES NOT WARRANT THAT ANY DEFECTS OR INACCURACIES WILL BE CORRECTED.
+                </li>
+                <li>
+                  QALORIE DOES NOT WARRANT THAT THE SITE AND/OR SOFTWARE WILL MEET YOUR NEEDS, OR THAT THEY WILL BE UNINTERRUPTED, TIMELY, SECURE OR ERROR-FREE. QALORIE ALSO MAKES NO WARRANTY THAT THE RESULTS OBTAINED FROM THE USE OF THE SOFTWARE WILL BE ACCURATE OR RELIABLE, OR THAT THE QUALITY OF ANY PRODUCTS, SERVICES, INFORMATION, OR OTHER MATERIAL PURCHASED OR OBTAINED BY YOU WILL MEET YOUR EXPECTATIONS.
+                </li>
+              </ol>
+            </li>
+            <li>
+              <h6 class="title-terms">Errors on the Site or Software</h6>
+              <ol class="level">
+                <li>
+                  Although Qalorie strives to provide reliable and current information through the Site occasionally, there may be information on the Site that contains typographical errors, inaccuracies, omissions or mistakes that may relate to your data or advice given. Accordingly, we reserve the right to correct any errors, inaccuracies or omissions and to change or update information or to refuse, correct or cancel orders, at any time and from time to time without liability and without notice to you or any other person, if any information on the Site is inaccurate, to the extent permitted by law.
+                </li>
+              </ol>
+            </li>
+            <li>
+              <h6 class="title-terms">Links</h6>
+              <ol class="level">
+                <li>
+                  Except for this website, Qalorie, does not operate or maintain contents on websites that are directly or indirectly linked from this website (the “Linked Sites” aka links and/or banners located throughout this site). Any reference to a Linked Site or to a specific third party’s product or service on the website or a Linked Site, is not a recommendation by Qalorie.
+                </li>
+              </ol>
+            </li>
+            <li>
+              <h6 class="title-terms">Miscellaneous</h6>
+              <ol class="level">
+                <li>
+                  These Terms and Conditions shall be interpreted and construed according to, and governed by, the substantive laws of Puerto Rico, excluding any such laws that might direct the application of the laws of another jurisdiction.
+                </li>
+                <li>
+                  You understand that these Terms and Conditions represent the entire understanding and constitute the entire agreement between the parties in relation to its subject matter, and supersedes all prior agreements, covenants, arrangements, communications, representations or warranties, whether oral or written, by any officer, agent, employee or representative of either of the parties.
+                </li>
+                <li>
+                  If any part of these Terms and Conditions is held invalid or unenforceable, that part will be construed to reflect the parties’ original intent, and the remaining terms will remain in full force and in effect. A waiver by either party of any term or condition of these Terms or any breach thereof, in any one instance, will not waive such term or condition or any subsequent breach thereof.
+                </li>
+                <li>
+                  Qalorie may assign their rights under these Terms and Conditions without limitation. You may assign your rights to any party as long as they agree to be bound by these Terms and Conditions also.
+                </li>
+                <li>
+                  These Terms and Conditions shall be binding upon and shall inure to the benefit of the parties, their successors and permitted assigns.
+                </li>
+                <li>
+                  Any headings used in the Terms and Conditions are for convenience only.
+                </li>
+              </ol>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-offset-0 col-sm-9 col-md-offset-1 col-md-7">
+        <div class="text-left">
+          <p class="upper">
+            Copyright © 2016 Qalorie™, Inc. All Rights Reserved.
+          </p>
+          <ul class="breadcrumb ">
+            <li><a href="/terms">Terms of Use</a></li>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-3 col-md-3">
+        <div class="text-right">
+          <p>
+            <a href="/" title="">
+              <img src="/img/qalorie_logo_pixel.svg" height="40" onerror="this.onerror=null; this.src='/img/logo.png'" alt"Qalorie" />
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+{%endblock%}
+
+{%block inline_scripts%}
+  {%parent%}
+{%endblock%}

@@ -1,0 +1,196 @@
+{%extends 'base.html'%}
+
+<!-- classes to be added to the body tag -->
+{%block bodyStyles%}login{%endblock%}
+
+{%block styles%}
+  <link rel="stylesheet" type="text/css" href="/css/login.css">
+{%endblock%}
+
+{%block scripts%}
+{% parent %}
+  <script type="text/javascript" src="/js/login.js"></script>
+{%endblock%}
+
+{%block layout%}
+
+<header>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12">
+
+        <div class="logo-head">
+          <a href="/" title="Qalorie">
+            <img src="/img/qalorie_logo_pixel.svg" height="40" onerror="this.onerror=null; this.src='/img/logo.png'" alt"Qalorie" />
+          </a>
+        </div>
+
+        <div class="pull-right">
+          <p>New to Qalorie?</p>
+          <a href="/signup" class="btn-green-open btn-large mg-header-login">create account</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="title-page text-green">privacy policy</h2>
+
+        <div class="box-centered box-full-height-auto">
+          
+          <h6 class="title-terms title-privacy">Privacy Policy</h6>
+          <ul class="privacy">
+            <li>
+              Please read the following document (“the Privacy Policy”) to learn more about our Privacy Policy. By subscribing to use the Qalorie site, www.qalorie.com (“the Site”), or the Qalorie software, including mobile application, either a full subscription or free trial, you are accepting the practices outlined in this Privacy Policy.
+            </li>
+            <li>
+              This Privacy Policy is to be read alongside our Terms and Conditions
+            </li>
+          </ul>
+
+          <h6 class="title-terms title-privacy">Scope of the Privacy Policy</h6>
+          <ul class="privacy">
+            <li>
+              This Privacy Policy includes how Qalorie treats personal information that Qalorie gathers when you are on the Site and when you use Qalorie services (“the Services”).
+            </li>
+          </ul>
+
+          <h6 class="title-terms title-privacy">Information Used</h6>
+          <ul class="privacy">
+            <li>
+              Our primary goal in collecting personal information is to provide you with a friendly, customized, and efficient experience. We only collect personal information that is relevant to the purpose of our services.
+            </li>
+            <li>
+              Qalorie may collect personally identifying information during the registration process and in providing the Services, including name, email address, address, gender, physical information and medical information. We may also store information users knowingly provide such as feedback forms, suggestions, and emails to the Qalorie site. Qalorie may use such information for its internal purposes, including, but not limited to, email and web design optimizations, new features, and editorial and feedback purposes. Information entered may be aggregated across all users in order to determine and target demographics for marketing and advertising purposes.
+            </li>
+            <li>
+              All user information stored by Qalorie is considered confidential and will not be shared with outside parties except as described herein. Qalorie may share aggregated results of preferences for all users for marketing and advertising purposes, however these shall be anonymous.
+            </li>
+            <li>
+              If you object to such use for any reason, you can either let us know by sending us feedback, or you can unsubscribe from the Qalorie email service.
+            </li>
+          </ul>
+
+          <h6 class="title-terms title-privacy">Cookies</h6>
+          <ul class="privacy">
+            <li>
+              Qalorie may use cookies. Cookies are alphanumeric identifiers that we transfer to your computer through your web browser to enable our systems to recognize your browser and tell us how and when pages in our website are visited and by how many people. Qalorie cookies do not collect personal information, and we do not combine information collected through cookies with other personal information to tell us who you are, your screen name or email address is.
+            </li>
+            <li>
+              Some of our business partners may use cookies on our website (for example, advertisers). However, we have no access to or control over these cookies.
+            </li>
+          </ul>
+
+          <h6 class="title-terms title-privacy">Sharing</h6>
+          <ul class="privacy">
+            <li>
+              Information about our users is an integral part of our business. We share your personal information only as described below. WE DO NOT SELL YOUR INFORMATION, OR DISCLOSE IT FOR MARKETING PURPOSES WITHOUT YOUR CONSENT.
+            </li>
+            <li>
+              We may release personal information when we believe in good faith that release is necessary to comply with the law; enforce or apply our conditions of use and other agreements; or protect the rights, property, or safety of Qalorie, our employees, our users, or others.
+            </li>
+            <li>
+              We may also release your information to allow you to receive the products or services that you have purchased on the Site.
+            </li>
+            <li>
+              We allow third-party companies to collect certain information when you visit our web site. These companies may utilize cookies, pixels or other technologies to collect and use non-anonymous during your visits to this and other web sites in order to provide advertisements about goods and services likely to be of greater interest to you. 
+            </li>
+            <li>
+              We may share your information in connection with a merger between Qalorie and another entity, or in the event of a transfer of all or some of our assets to another company. We shall endeavour, however, to keep personal account information secure
+            </li>
+          </ul>
+
+          <h6 class="title-terms title-privacy">Security</h6>
+          <ul class="privacy">
+            <li>
+              Your Qalorie account information is protected by a password for your privacy and security. You need to work to protect against unauthorized access to your password and to your computer by logging off once you have finished using a shared computer.
+            </li>
+          </ul>
+
+          <h6 class="title-terms title-privacy">Links to Other Sites</h6>
+          <ul class="privacy">
+            <li>
+              Qalorie uses links to guide you toward valuable products, services and editorial. We are not responsible for any content that appears on these sites, nor do we endorse them. For questions about these sites, please consult their individual privacy policies.
+            </li>
+          </ul>
+
+          <h6 class="title-terms title-privacy">Unsubscribing</h6>
+          <ul class="privacy">
+            <li>
+              Qalorie may send you emails to let you know about our newest and best deals available on the Site. If you are unhappy about receiving these, you can unsubscribe.
+            </li>
+            <li>
+              To unsubscribe, click on the unsubscribe link in any Qalorie email. You will be taken to a confirmation page. Click on the confirm link and you will be unsubscribed. 
+            </li>
+          </ul>
+
+          <h6 class="title-terms title-privacy">Data Protection</h6>
+          <ul class="privacy">
+            <li>
+              We are totally committed to protecting the privacy of our site visitors and members. We are all customers of other Internet sites and fully appreciate and respect the importance of privacy on the Internet. We will not disclose information about our customers to third parties except where it is part of providing a service to you - e.g. arranging for a product to be sent to you, carrying out identification and security checks and for the purposes of customer research and profiling or where we have your express permission to do so.
+            </li>
+            <li>
+              To allow us to provide the membership area we must hold some of your private data and by becoming a member of the website you agree to allow us to hold this data.
+            </li>
+            <li>
+              We will not sell, or make available, your name, address, e-mail address, credit card information or personal information to any third party (excluding partners from whom you may have linked to our site) without your permission.
+            </li>
+          </ul>
+
+          <h6 class="title-terms title-privacy">Payment Information</h6>
+          <ul class="privacy">
+            <li>
+              We do not store billing information about you. However, when using our payment gateway partners, Stripe, to make purchases, they may store your billing information. We do not control how they use your information, however, if you are in doubt, please refer to this webpage https://stripe.com/docs/security.
+            </li>
+          </ul>
+          <h6 class="title-terms title-privacy">Modifications to Privacy Policy</h6>
+          <ul class="privacy">
+            <li>
+              Qalorie reserves the right to change this policy from time to time, however, all changes will be posted to this Privacy Policy at the time such changes are made. The date of the most recent revisions will appear on this page so please check back. Please note that continued access of Qalorie will constitute your acceptance of any changes or revisions to the Privacy Policy.
+            </li>
+            <li>
+              If you have concerns or questions about any aspect of the Qalorie Privacy Policy, please e-mail us. We welcome your questions and feedback. Please send all emails to: legal-serv@qalorie.com.
+            </li> 
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-offset-0 col-sm-9 col-md-offset-1 col-md-7">
+        <div class="text-left">
+          <p class="upper">
+            Copyright © 2016 Qalorie™, Inc. All Rights Reserved.
+          </p>
+          <ul class="breadcrumb ">
+            <li><a href="/terms">Terms of Use</a></li>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-3 col-md-3">
+        <div class="text-right">
+          <p>
+            <a href="/" title="">
+              <img src="/img/qalorie_logo_pixel.svg" height="40" onerror="this.onerror=null; this.src='/img/logo.png'" alt"Qalorie" />
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+{%endblock%}
+
+{%block inline_scripts%}
+  {%parent%}
+{%endblock%}

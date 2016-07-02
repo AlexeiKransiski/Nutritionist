@@ -1,0 +1,362 @@
+@import "variables";
+@import "mixins";
+
+button, .btn.active, input, textarea, a {
+    outline: 0px !important;
+    color: @white;
+
+    &:focus, &:active, &:hover {
+        color: @white;
+        text-decoration: none;
+        outline-color: transparent;
+        outline-style: none;
+        outline: 0px !important;
+    }
+}
+
+.btn-transparent {
+    .button-transp();
+    .button-margin(@button-plans-margin);
+    .button-size(@button-normal-width);
+
+    &:hover, &:active, &:focus, &.active {
+        color: @font-new;
+        .no-shadow();
+    }
+}
+
+.btn-white-open {
+    .button-white();
+    .button-margin(@button-plans-margin);
+    .button-size(@button-normal-width);
+
+    &:hover, &:active, &:focus, &.active {
+        background: @green;
+        color: @white;
+    }
+}
+
+.btn-green-open {
+
+    .button-green();
+    .button-margin(@button-normal-margin);
+    .button-height(@button-normal-height);
+    .button-size(@button-normal-width);
+
+    &:hover, &:active, &:focus {     
+        background: @lightgreen;
+        .button-transition();
+    }
+
+}
+
+.btn-green-open-small {
+
+    .button-green-small();
+    .button-margin(@margin-sidebar-right);
+    .button-size(@button-small-width);
+
+    &:hover, &:active, &:focus {     
+        background: @lightgreen;
+        .button-transition();
+    }
+
+}
+
+.btn-blue-open {
+
+    .button-blue();
+    .button-margin(@mgtop-10);
+    .button-size(@button-blue-normal);
+
+    &:hover, &:active, &:focus {     
+        background: @lightblue;
+        .button-transition();
+    }
+
+    &.mrgtop-16 {
+        margin-top: @txt-description - 1;
+    }
+}
+
+.btn-blue-open-small {
+
+    .button-blue-small();
+    .button-margin(@button-mrg);
+    .button-size(@button-small-app);
+
+    &:hover, &:active, &:focus {     
+        background: @lightblue;
+        .button-transition();
+    }
+
+}
+
+.btn-blue-open-small-two {
+
+    .button-blue-small();
+    .button-margin(@margin-no);
+    .button-size(@button-small-width);
+
+    &:hover, &:active, &:focus {     
+        background: @lightblue;
+        .button-transition();
+    }
+
+}
+
+.btn-facebook {
+    .lato(14px,normal,300);
+    border: none;
+    background:@facebook url("../img/facebook.png") 25px center no-repeat;
+    .border-radius(4px);
+    cursor: pointer;
+    display: inline-block;
+    padding: 0;
+    height: 53px;
+    line-height: 53px;
+    margin: 0 0 20px;
+    vertical-align: middle;
+    .align(center);
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    width: 287px;
+    .button-transition();
+
+    &:hover {
+        color: @white;
+        background:@lightfacebook url("../img/facebook.png") 25px center no-repeat;
+        .button-transition();
+    }
+}
+
+.ui-datepicker-trigger {
+    background: transparent;
+    border: none;
+    padding-right: 12px;
+    line-height: 35px;
+    .no-shadow();
+
+    &:hover {
+        >
+        img {
+            .opacity(0.7);
+            .transition-d(0.3s, linear);
+        }
+    }
+
+    img {
+        .opacity(1);
+        .transition-d(0.3s, linear);
+    }
+}
+
+// Buttons Sizes
+// -----------------------------------------------------
+.btn-full {
+    .button-size(@button-auto-width)
+}
+.btn-large {
+    .button-size(@button-large-width)
+}
+.btn-medium {
+    .button-size(@button-medium-width)
+}
+.btn-small {
+    .button-size(@button-small-width)
+}
+
+.btn-normal-app {
+    .button-size(@button-blue-normal)
+}
+
+.btn-search-small {
+    .button-size(@button-search-small)
+}
+
+.btn-small-app {
+    .button-size(@button-small-app)
+}
+
+.mg-form-login {
+    .button-margin(@button-login-form-margin)
+}
+.mg-header-login {
+    .button-margin(@button-header-login-margin)
+}
+
+.mrg {
+    .button-margin(@button-mrg)
+}
+
+.mrg-btn-down {
+    .button-margin(@margin-sidebar-down)
+}
+
+.mrg-no {
+    .button-margin(@margin-no)
+}
+
+.mrg-top-15 {
+    .button-margin(@mrg-top-15)
+}
+
+.mrg-top-4 {
+    .button-margin(@mrg-foot-appointments)  
+}
+
+.mrg-filter {
+    .button-margin(@mrg-filter)
+}
+
+.mrg-foot-appoit {
+    .button-margin(@mrg-foot-appoit)
+}
+
+.mrg-add-item {
+    .button-margin(@mrg-add-item)
+}
+
+// Buttons App
+// -----------------------------------------------------
+.button-transp(){
+    background-color: transparent;
+    border: none;
+    .border-radius(4px);
+    .no-shadow();
+    color: @font-new;
+    cursor: pointer;
+    display: inline-block;
+    .open-bold(11px);
+    height: 40px;
+    line-height: 40px;
+    padding: 0;
+    .align(center);
+    text-transform: uppercase;
+    vertical-align: middle;
+    white-space: nowrap;
+    .button-transition();
+}
+
+.button-white(){
+    background-color: transparent;
+    border: none;
+    .border-radius(4px);
+    color: @green;
+    cursor: pointer;
+    display: inline-block;
+    .open-bold(11px);
+    height: 40px;
+    line-height: 40px;
+    padding: 0;
+    .align(center);
+    text-transform: uppercase;
+    vertical-align: middle;
+    white-space: nowrap;
+    .button-transition();
+}
+
+.button-green(){
+    background-color: @green;
+    border: none;
+    .border-radius(4px);
+    cursor: pointer;
+    display: inline-block;
+    .open-bold(11px);
+    height: 40px;
+    line-height: 40px;
+    padding: 0;
+    .align(center);
+    text-transform: uppercase;
+    vertical-align: middle;
+    white-space: nowrap;
+    .button-transition();
+}
+
+.button-green-small(){
+    background-color: @green;
+    border: none;
+    .border-radius(4px);
+    cursor: pointer;
+    display: inline-block;
+    .open-bold(11px);
+    height: 36px;
+    line-height: 36px;
+    padding: 0;
+    .align(center);
+    text-transform: uppercase;
+    vertical-align: middle;
+    white-space: nowrap;
+    .button-transition();
+}
+
+.button-blue(){
+    background-color: @blue;
+    border: none;
+    .border-radius(4px);
+    cursor: pointer;
+    display: inline-block;
+    .open-bold(11px);
+    height: 40px;
+    line-height: 40px;
+    padding: 0;
+    text-transform: uppercase;
+    .align(center);
+    vertical-align: middle;
+    .button-transition();
+}
+
+.button-blue-small(){
+    background-color: @blue;
+    border: none;
+    .border-radius(3px);
+    cursor: pointer;
+    display: inline-block;
+    .open-bold(11px);
+    height: 34px;
+    line-height: 34px;
+    padding: 0;
+    text-transform: uppercase;
+    .align(center);
+    vertical-align: middle;
+    .button-transition();
+}
+
+// Landing Buttons
+// -----------------------------------------------------
+
+.boton-transparente(@height,@width,@margin,@font-size) {
+    background-color: transparent;
+    .lato(@font-size,normal,400);
+    border: 2px solid @white;
+    color: @white;
+    height: @height;
+  	margin: @margin;
+  	position: relative;
+  	text-transform: uppercase;
+  	width: @width;
+    .button-transition();
+}
+
+.boton-verde(@height,@width,@margin,@font-size) {
+    background-color: @green;
+    .lato(@font-size,normal,400);
+    color: @white;
+    height: @height;
+  	margin: @margin;
+  	text-transform: uppercase;
+  	width: @width;
+    .button-transition();
+}
+
+.boton-celeste(@height,@width,@margin,@font-size) {
+	background-color: @skyblue;
+	.lato(@font-size,normal,400);
+	color: @white;
+	height: @height;
+  	margin: @margin;
+  	text-transform: uppercase;
+  	width: @width;
+    .button-transition();
+}

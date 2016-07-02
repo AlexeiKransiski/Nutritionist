@@ -1,0 +1,25 @@
+<SCRIPT language=Javascript>
+
+   function isNumberKey(evt)
+   {
+      var charCode = (evt.which) ? evt.which : evt.keyCode;
+      if (charCode != 46 && charCode > 31 
+        && (charCode < 48 || charCode > 57))
+         return false;
+
+      return true;
+   }
+
+</SCRIPT>
+
+<div id="page-food" class="main_section">
+  <h1 class="main_section__title">food tracker</h1>
+
+  <div id="all" data-role="all">
+    <!-- backbien view all -->
+  </div>
+
+  <div id="breakfast" data-role="add-food">
+    <!-- backbone view add_food -->
+  </div>
+</div>

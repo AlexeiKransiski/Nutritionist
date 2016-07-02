@@ -1,0 +1,313 @@
+<div class="tab-body">
+    <div class="row">
+        <div class="col-md-offset-1 col-md-10">
+
+            <div class="current_goals">
+                <div class="row">
+                <!--ul class="list-unstyled boxes_goals" id="boxes_goals"-->
+                    <div class="col-sm-4">
+                        <div class="boxes_goals" id="weightLbl">
+                            <h5 class="text-green">Weight Goal</h5>
+                            <img src="<%= Helpers.getWeightGoalIcon(patientPreferences.get('maintain')) %>" alt="" />
+                            <!--%=Helpers.getMaintainIcon(patientPreferences.get("maintain"))%-->
+                            <!--p>
+                                Lose .5 kilograms/Week
+                            </p-->
+                            <div class="bottom">
+                                <h3><%= patientPreferences.get("maintain") %></h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="boxes_goals" id="activityLbl">
+                            <h5 class="text-green">Activity</h5>
+                            <img src="<%= Helpers.getActivityGoalIcon(patientPreferences.get('activity')) %>" alt="" />
+                            <!--p>
+                                Walk, Active Pause, etc.
+                            </p-->
+                            <div class="bottom">
+                                <h3><%= patientPreferences.get("activity") %></h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="boxes_goals" id="workoutLbl">
+                            <h5 class="text-green">Daily Exercise Time</h5>
+                            <img src="<%= Helpers.getWorkoutGoalIcon(patientPreferences.get('workout')) %>" alt="" />
+                            <!--p>
+                                Enough for a complete workout
+                            </p-->
+                            <div class="bottom">
+                                <h3><%= patientPreferences.get("workout") %> &nbsp; minutes/<span>day</span></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="boxes_goals" id="calorieLbl">
+                            <h5 class="text-green">Calorie Intake</h5>
+                            <img src="img/sug-food.png" alt="" />
+                            <!--p>
+                                Recomendamos  Consumir
+                            </p-->
+                            <div class="bottom">
+                                <h3><%= app.me.get("calories_recomended") %> &nbsp; <span>Cals/day</span></h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="boxes_goals" id="waterLbl">
+                            <h5 class="text-green">Water Consumption</h5>
+                            <img src="img/sug-water.png" alt="" />
+                            <!--p>
+                                Recomendamos  Consumir
+                            </p-->
+                            <div class="bottom">
+                                <h3><%= app.me.get("water_recomended") %> &nbsp; Lt <span>/ <%= Helpers.getWaterGlasses(app.me.get("water_recomended")) %> Glasses of Water</span></h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="boxes_goals" id="weatherLbl">
+                            <h5 class="text-green">Temperate Weather</h5>
+                            <img src="<%= Helpers.getWeatherGoalIcon(patientPreferences.get('weather')) %>" alt="" />
+                            <!--p>
+                                Enough for a complete workout
+                            </p-->
+                            <div class="bottom">
+                                <h3><%= patientPreferences.get("weather") %></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="new_goals">
+
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="flexslider" id='weight'>
+                            <ul class="slides">
+                                <li data-value='lose'>
+                                    <h4 class="blue">Weight Goal</h4>
+                                    <img src="img/goals/Weight-lose.png" alt="" />
+                                    <p>
+                                        Lose Weight
+                                    </p>
+                                    <div class="bottom">
+                                        
+                                    </div>
+                                </li>
+                                <li data-value='maintain'>
+                                    <h4>Weight Goal</h4>
+                                    <img src="img/goals/Weight-maintain.png" alt="" />
+                                    <p>
+                                        Maintain Weight
+                                    </p>
+                                    <div class="bottom">
+                                        
+                                    </div>
+                                </li>
+                                <li data-value='gain'>
+                                    <h4 class="red">Weight Goal</h4>
+                                    <img src="img/goals/Weight-gain.png" alt="" />
+                                    <p>
+                                        Weight Gain
+                                    </p>
+                                    <div class="bottom">
+                                        
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="flexslider" id='activity'>
+                            <ul class="slides">
+                              <li data-value='sedentary'>
+                                  <h4 class="blue">Activity</h4>
+                                  <img src="img/goals/Activity-sedentary.png" alt="" />
+                                  <p>
+                                      Sedentary - 0 to 2 Days/Week
+                                  </p>
+                                  <div class="bottom">
+                                      <h3>0 Workout/<span>week</span></h3>
+                                  </div>
+                              </li>
+                                <li data-value='light'>
+                                    <h4 class="red">Activity</h4>
+                                    <img src="img/goals/Activity-light.png" alt="" />
+                                    <p>
+                                        Light Active - 2 to 3 Days/Week
+                                    </p>
+                                    <div class="bottom">
+                                        <h3>2 Workout/<span>week</span></h3>
+                                    </div>
+                                </li>
+                                <li data-value='active'>
+                                    <h4 class="orange">Activity</h4>
+                                    <img src="img/goals/Activity-active.png" alt="" />
+                                    <p>
+                                        Active - 3 to 5 Days/Week
+                                    </p>
+                                    <div class="bottom">
+                                        <h3>3 Workout/<span>week</span></h3>
+                                    </div>
+                                </li>
+                                <li data-value='very_active'>
+                                    <h4>Activity</h4>
+                                    <img src="img/goals/Activity-veryactive.png" alt="" />
+                                    <p>
+                                        Very Active - 5 to 7 Days/Week
+                                    </p>
+                                    <div class="bottom">
+                                        <h3>5 Workout/<span>workout</span></h3>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="flexslider" id='daily'>
+                            <ul class="slides">
+                                <li data-value='15'>
+                                    <h4 class="blue">Daily Exercise Time</h4>
+                                    <img src="img/goals/Workout-15.png" alt="" />
+                                    <p>
+                                        15 Minutes Workout
+                                    </p>
+                                    <div class="bottom">
+                                        <h3>15 minutes/<span>day</span></h3>
+                                    </div>
+                                </li>
+                                <li data-value='30'>
+                                    <h4>Daily Exercise Time</h4>
+                                    <img src="img/goals/Workout-30.png" alt="" />
+                                    <p>
+                                        30 Minutes Workout
+                                    </p>
+                                    <div class="bottom">
+                                        <h3>30 minutes/<span>day</span></h3>
+                                    </div>
+                                </li>
+                                <li data-value='45'>
+                                    <h4 class="orange">Daily Exercise Time</h4>
+                                    <img src="img/goals/Workout-45.png" alt="" />
+                                    <p>
+                                        45 Minutes Workout
+                                    </p>
+                                    <div class="bottom">
+                                        <h3>45 minutes/<span>day</span></h3>
+                                    </div>
+                                </li>
+                                <li data-value='60'>
+                                    <h4 class="red">Daily Exercise Time</h4>
+                                    <img src="img/goals/Workout-60.png" alt="" />
+                                    <p>
+                                        60 Minutes Workout
+                                    </p>
+                                    <div class="bottom">
+                                        <h3>60 minutes/<span>day</span></h3>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="flexslider" id='intakes'>
+                            <ul class="slides">
+                                <li data-value='cold'>
+                                    <h4>Calorie Intake</h4>
+                                    <img src="img/sug-food.png" alt="" />
+                                    <p>
+                                        Calorie Recommendations
+                                    </p>
+                                    <div class="bottom">
+                                        <h3><strong class="recommened_calories"><%= app.me.get("calories_recomended") %></strong> <span>Cals/day</span></h3>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="flexslider" id='water'>
+                            <ul class="slides">
+                                <li data-value='cold'>
+                                    <h4 class="blue">Water Consumption</h4>
+                                    <img src="img/sug-water.png" alt="" />
+                                    <p>
+                                        Water Recommendations
+                                    </p>
+                                    <div class="bottom">
+                                        <h3><strong class="water_lt"><%= app.me.get("water_recomended") %></strong> Lt / <span class="water_glasses"><%= Helpers.getWaterGlasses(app.me.get("water_recomended")) %></span> <span>glasses of water</span></h3>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="flexslider" id='weather'>
+                            <ul class="slides">
+                                <li data-value='cold'>
+                                    <h4 class="blue">Weather</h4>
+                                    <img src="img/goals/Weather-cold.png" alt="" />
+                                    <p>
+                                        Cold Weather
+                                    </p>
+                                    <div class="bottom">
+                                        <h3>10 <span> Aprox</span></h3>
+                                    </div>
+                                </li>
+                                <li data-value='temperate'>
+                                    <h4>Weather</h4>
+                                    <img src="img/goals/Weather-temperate.png" alt="" />
+                                    <p>
+                                        Temperate Weather
+                                    </p>
+                                    <div class="bottom">
+                                        <h3>20 <span> Aprox</span></h3>
+                                    </div>
+                                </li>
+                                <li data-value='warm'>
+                                    <h4 class="orange">Weather</h4>
+                                    <img src="img/goals/Weather-warm.png" alt="" />
+                                    <p>
+                                        Warm Weather
+                                    </p>
+                                    <div class="bottom">
+                                        <h3>28 <span> Aprox</span></h3>
+                                    </div>
+                                </li>
+                                <li data-value='hot'>
+                                    <h4 class="red">Weather</h4>
+                                    <img src="img/goals/Weather-hot.png" alt="" />
+                                    <p>
+                                        Hot Weather
+                                    </p>
+                                    <div class="bottom">
+                                        <h3>35 <span> Aprox</span></h3>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="tab-foot">
+    <div class="row">
+        <div class="col-sm-12 text-right">
+            <button id="edit_goals" type="button" class="btn btn-primary">edit goals</button>
+            <div class="save_goals_btn">
+                <button type="button" class="btn btn-success">save changes</button>
+            </div>
+        </div>
+    </div>
+</div>

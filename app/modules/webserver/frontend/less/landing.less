@@ -1,0 +1,408 @@
+@import 'qalorie';
+
+body {
+    background: @white;
+}
+  
+section.firts_secc {
+    background: url("../img/landing-pic.jpg") center top no-repeat;
+    .cover();
+    min-height: 670px;
+    
+    .container {
+        position: relative;
+    }
+    
+    .logo-landing {
+        margin-top: 20px
+    }
+    
+    .tryal {
+        position: absolute;
+        right: 15px;
+        top: 100px;
+        text-align: center;
+        width: 140px;
+        z-index: 1;
+    }
+
+    .big_buttons {
+        margin-top: 65px;
+      
+        .btn-green {
+            .boton-verde(59px,320px,25px 15px 0 0, 16px);
+
+            &:hover {
+
+                background: @lightgreen;
+                .button-transition();
+
+            }
+        
+        }
+      
+    }
+
+    .small_buttons {
+        margin-top: 40px;
+      
+        .btn-transparent {
+            
+            .boton-transparente(50px,140px, 0, 13px);
+
+            &:hover {
+                background: @green;
+                border-color: @green;
+                .button-transition();
+            }
+
+            &.no-border {
+                .border(none);
+
+                &:hover {
+                    color: @green;
+                    background: transparent;
+                    .button-transition();
+                }
+
+            }
+        
+        }
+                
+    }
+    
+} // first seccion
+  
+section.sec_secc {
+    min-height: 800px;
+
+    .nav {
+        width: 780px;
+        margin: 0 auto;
+        border: none;
+
+        li {
+            border: none;
+            width: 16.6%;
+            margin: 0;
+
+            a {
+                background: @white;
+                border: none;
+                border-bottom: 3px solid @bg-body;
+                color: @font-menu;
+                .lato(11px,normal,600);            
+                margin: 0;
+                padding: 5px 15px 9px;
+                .button-transition();
+
+                span {
+                    background: @white;
+                    .border-radius(3.5px);
+                    display: block;
+                    height: 7px;
+                    margin: 5px auto 0;
+                    width: 7px;
+                    .button-transition();
+                }
+
+                &:focus, &:active, &:hover {
+                    border: none
+                }
+
+            }
+
+            &:hover > a.dashboard {
+                color: @green;
+                border-bottom: 3px solid @green;
+                .button-transition();
+
+                span {
+                    background: @green;
+                    .button-transition();
+                }
+
+            }
+
+            &:hover > a.status {
+                color: @red;
+                border-bottom: 3px solid @red;
+                .button-transition();
+                span {
+                    background: @red;
+                    .button-transition();
+                }
+            }
+
+            &:hover > a.progresss {
+                color: @morado;
+                border-bottom: 3px solid @morado;
+                .button-transition();
+                span {
+                    background: @morado;
+                    .button-transition();
+                }
+            }
+
+            &:hover > a.food {
+                color: @orange;
+                border-bottom: 3px solid @orange;
+                .button-transition();
+                span {
+                    background: @orange;
+                    .button-transition();
+                }
+            }
+
+            &:hover > a.exercises {
+                color: @blue;
+                border-bottom: 3px solid @blue;
+                .button-transition();
+                span {
+                    background: @blue;
+                    .button-transition();
+                }
+            }
+
+            &:hover > a.nutritionist {
+                color: @skyblue;
+                border-bottom: 3px solid @skyblue;
+                .button-transition();
+                span {
+                    background: @skyblue;
+                    .button-transition();
+                }
+            }
+
+        }
+
+        li.active > a.dashboard {
+            color: @green;
+            border-bottom: 3px solid @green;
+            .button-transition();
+
+            span {
+                background: @green;
+                .button-transition();
+            }
+
+        }
+
+        li.active > a.status {
+            color: @red;
+            border-bottom: 3px solid @red;
+
+            span {
+                background: @red;
+            }
+        }
+
+        li.active > a.progresss {
+            color: @morado;
+            border-bottom: 3px solid @morado;
+            .button-transition();
+
+            span {
+                background: @morado;
+                .button-transition();
+            }
+        }
+
+        li.active > a.food {
+            color: @orange;
+            border-bottom: 3px solid @orange;
+            .button-transition();
+
+            span {
+                background: @orange;
+                .button-transition();
+            }
+        }
+
+        li.active > a.exercises {
+            color: @blue;
+            border-bottom: 3px solid @blue;
+            .button-transition();
+            
+            span {
+              background: @blue;
+              .button-transition();
+            }
+        }
+
+        li.active > a.nutritionist {
+            color: @skyblue;
+            border-bottom: 3px solid @skyblue;
+            .button-transition();
+            
+            span {
+              background: @skyblue;
+              .button-transition();
+            }
+        }
+
+    } //nav
+    
+    .tab-content {
+        background: url("../img/bg_tabs.png") 25px 0 repeat-y;
+        min-height: 544px;
+        .button-transition();
+
+        .tab-pane {
+            position: relative;
+
+            .box_ {
+                display: block;
+                position: absolute;
+                height: 60px;
+                width: 60px;
+                top: 130px;
+                left: -2px;
+            }
+        
+            .box_left {
+                display: inline-block;
+                padding: 130px 0 0 80px;
+
+                h5 {
+                    font-weight: 400;
+                    margin: 0 0 20px;
+                }
+
+                p {
+                    .font-size(@txt-description);
+                    font-weight: 400;
+                    line-height: 25px;
+                    margin-bottom: 25px;
+                }
+
+            }
+
+            .carousel {
+                padding-top: 130px
+            }
+
+            .carousel-indicators {
+                bottom: -60px;
+
+                li {
+                    background-color: @font-menu;
+                    border: none;
+                    height: 12px;
+                    margin: 0;
+                    width: 12px;   
+
+                    &.active {
+                        background-color: @green
+                    }
+                }
+            }
+      
+        } // tab pane
+
+        #progress {
+            .carousel {
+                padding-top: 100px
+            }
+        }
+
+        #food, #exercises {
+            .carousel {
+                padding-top: 75px
+            }
+        }
+
+    } // tab content
+
+} // second section
+  
+section.thrid_secc {
+    background: url("../img/bg-third.jpg") center 0 no-repeat;
+    .cover();
+    min-height: 404px;
+    padding-top: 38px;
+    
+    .btn-green {
+        .boton-verde(59px,320px,0,16px);
+
+        &:hover {
+            background: @lightgreen;
+            .button-transition();
+        }
+
+    }
+
+} // third seccion
+  
+section.fiveth_secc {
+    margin-bottom: 30px;
+
+    .mg-top {
+        margin-top: 30px
+    }
+    
+    .price_month, .price_consult {
+
+        p {
+            .font-size(@txt-h2 + 2);
+            font-weight: 400;
+            line-height: 28px;
+            
+            span {
+                .font-size(@txt-description);
+                font-weight: 300;
+            }
+
+            span {
+                
+                &.small {
+                    .font-size(@txt-h5);
+                    vertical-align: super;
+                }
+
+            }
+
+        }
+
+        p {
+            
+            &.mini {
+                .font-size(@txt-small);
+                letter-spacing: 0.5px;
+                line-height: 12px;
+            }
+
+        }
+
+    }
+
+    .price_consult {
+
+        p {
+            color: @font-input
+        }          
+
+    }
+
+} // fiveth section
+
+footer {
+
+    .copyright {
+        border-top: 1px solid @line-new;
+        font-weight: 400;
+        line-height:85px;
+        text-transform: uppercase;
+
+        img {
+            margin: -10px 15px 0 0   
+        }
+        
+        a {
+            color: @skyblue;
+            text-transform: none;
+        }
+
+    }
+
+}

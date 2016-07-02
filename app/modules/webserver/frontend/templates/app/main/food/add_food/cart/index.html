@@ -1,0 +1,60 @@
+<style>
+  .error{
+    display:none;
+    color:red;
+  }
+</style>
+<div class="food-cart" data-role="food-cart">    
+  <div class="title_sidebar">
+    <h4 id="listName" class="title_sidebar-center">NEW FOOD LIST</h4>
+
+    <button style="display:none;" type="submit" class="saveList btn-green-open-small pull-right actions hide" data-role="save-list">save list</button>
+    <button type="click" class="newList btn-green-open-small pull-right actions hide" data-role="new-list-food" style="display:none;">new list</button>
+  </div>
+  <div class="result_list">
+    <div class="empty cart">
+      <p>NO ITEMS ADDED YET</p>
+      <p>Please Select Meals</p>
+    </div>
+    <ul class="list-unstyled cart hide fooditems" data-role="cart-items">
+
+    </ul>
+  </div>
+  <div class="addmore actions hide">
+    <button style="display:none;"  type="button" class="saveList btn-green-open-small mrg-btn-down pull-right" data-role="save-list">save list</button>
+    <button type="click" class="newList btn-green-open-small mrg-btn-down pull-right actions hide" data-role="new-list-food" style="display:none;">new list</button>
+    <!--button type="button" class="useList btn btn-success pull-right" data-role="use-list">use list</button-->
+  </div>
+</div> 
+
+<!-- save list -->
+<div class="save-list" data-role="create-list"> 
+  <div class="title_sidebar text-left">
+    <h4 class="title_sidebar-center">FOOD LIST</h4>
+  </div>
+  <div class="result_list" style="overflow-y: auto;">
+    <form role="form" data-role="new-list-form" novalidate>
+      <div class="form-group">
+        <label for="name" class="lb-open">List name</label>
+        <input type="text" class="form-control" id="name" required/>
+      </div>
+      <p id="name_list_error" class="error"></p>
+      <div class="form-group">
+        <label for="description" class="lb-open">Description</label>
+        <textarea class="form-control" id="description"></textarea>
+      <p id="description_list_error" class="error"></p> 
+      </div>
+
+      <button type="submit" class="btn-green-open-small mrg-no pull-right save" data-role="send-list">save</button>
+      <button type="reset" class="btn btn-default pull-right cancel" data-role="cancel-send">cancel</button>
+    </form>
+  </div>
+  <div class="addmore"></div>
+</div><!-- save list -->
+
+<!-- food info list -->
+<div class="foodinfo-list" data-role="food-info">
+  <!-- backbone view foo_info -->
+</div><!-- food-info-list -->
+
+

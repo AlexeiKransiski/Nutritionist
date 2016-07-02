@@ -1,0 +1,212 @@
+<div id="preferences">
+
+    <h2 class="title-page text-green">is there something else you want to tell us?</h2>
+    <h5 class="subtitle-page">Help Qalorie to tailor your fitness and nutrition experience</h5>
+
+    <div class="box-centered box-large">
+        
+        <div class="row">
+            <div class="col-sm-6">
+
+                <h5 class="title-preferences">
+                    <span class="icon-limitations"></span>
+                    physical limitations</h5>
+
+                <div class="box-preferences">
+                    <div class="ok">
+                        <span class="icon-ok mrg-ok"></span>
+                        <p>Thank you!</p>
+                    </div>
+                    <div class="add-preference-items" data-role="limitations">
+                        <button class="btn-preferences">add physical limitations</button>
+                    </div>
+                    <div class="items" data-field='limitations'>
+                      <ul class="unstyled-list preferences-list items">
+                        <% if (app.me.get("patientPreferences").limitations.length > 0) { %>
+                            <% _.each( model.get("limitations"), function( limit, index ){ %>
+                              <li>
+                                  <input name="" id="" class="form-control" placeholder="Physical Limitations" value="<%= limit %>"/>
+                              </li>
+                            <% }) %>
+                        <%}else{%>
+                          <li class="active">
+                              <input name="" id="" class="form-control" placeholder="Physical Limitations" />
+                              <a id="" class="icon-delete"></a>
+                          </li>
+                        <%}%>
+                      </ul>
+                    </div>
+                    <div class="box-foot">
+                        <div class="more">
+                            <button class="btn-more-item">
+                                <span class="icon-more-green"></span>
+                                add more
+                            </button>
+                        </div>
+                        <div class="terms">
+                            <label for="limitations">
+                                <input type="checkbox" name="limitations" id="limitations" />
+                                Check if you don't have Physical <span class="pro">Limitations</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+            </div> <!-- physical limitations -->
+
+            <div class="col-sm-6">
+
+                <h5 class="title-preferences">
+                    <span class="icon-preferences"></span>
+                    food preferences</h5>
+
+                <div class="box-preferences">
+                    <div class="ok">
+                        <span class="icon-ok mrg-ok"></span>
+                        <p>Thank you!</p>
+                    </div>
+                    <div class="add-preference-items" data-role="food">
+                        <button class="btn-preferences">add food preferences</button>
+                    </div>
+                    <div class="items" data-field='foods'>
+                      <ul class="unstyled-list preferences-list items">
+                        <% if (model.get("foods").length > 0) { %>
+                          <% _.each( model.get("foods"), function( food, index ){ %>
+                            <li>
+                              <input name="" id="" class="form-control" placeholder="Food Preferences" value="<%= food %>"/>
+                              <a id="" class="icon-delete"></a>
+                            </li>
+                          <% }); %>
+                        <%}else{%>
+                          <li class="active">
+                            <input name="" id="" class="form-control" placeholder="Food Preferences" />
+                            <a id="" class="icon-delete"></a>
+                          </li>
+                        <% } %>
+                      </ul>
+                    </div>
+                    <div class="box-foot">
+                        <div class="more">
+                            <button class="btn-more-item">
+                                <span class="icon-more-green"></span>
+                                add more
+                            </button>
+                        </div>
+                        <div class="terms">
+                            <label>
+                                <input type="checkbox" name="foodpreferences" />
+                                Check if you don't have Food <span class="pro">Preferences</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+            </div> <!-- food preferences -->
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+
+                <h5 class="title-preferences">
+                    <span class="icon-medicines"></span>
+                    medicines</h5>
+                <div class="box-preferences">
+                    <div class="ok">
+                        <span class="icon-ok mrg-ok"></span>
+                        <p>Thank you!</p>
+                    </div>
+                    <div class="add-preference-items" data-role="medicines">
+                        <button class="btn-preferences">add medicines</button>
+                    </div>
+                    <div class="items" data-field='medicines'>
+                      <ul class="unstyled-list preferences-list items">
+                        <% if (model.get("medicines").length > 0) { %>
+                          <% _.each( model.get("medicines"), function( medicine, index ){ %>
+                            <li>
+                              <input name="" id="" class="form-control" placeholder="Medicines" value="<%= medicine %>" />
+                              <a id="" class="icon-delete"></a>
+                            </li>
+                          <% }); %>
+                        <%}else{%>
+                          <li class="active">
+                              <input name="" id="" class="form-control" placeholder="Medicines" />
+                              <a id="" class="icon-delete"></a>
+                          </li>
+                        <% } %>
+                      </ul>
+                    </div>
+                    <div class="box-foot">
+                        <div class="more">
+                            <button class="btn-more-item">
+                                <span class="icon-more-green"></span>
+                                add more
+                            </button>
+                        </div>
+                        <div class="terms">
+                            <label>
+                                <input type="checkbox" name="medicines" />
+                                Check if you don't take any Medicine
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+            </div> <!-- mediciones -->
+            <div class="col-sm-6">
+
+                <h5 class="title-preferences">
+                    <span class="icon-vitamins"></span>
+                    vitamins & supplements</h5>
+
+                <div class="box-preferences">
+                    <div class="ok">
+                        <span class="icon-ok mrg-ok"></span>
+                        <p>Thank you!</p>
+                    </div>
+                    <div class="add-preference-items" data-role="vitamins">
+                        <button class="btn-preferences">add vitamins & supplements</button>
+                    </div>
+                    <div class="items" data-field='vitamins'>
+                      <ul class="unstyled-list preferences-list items">
+                        <% if (model.get("vitamins").length > 0) { %>
+                          <% _.each( model.get("vitamins"), function( medicine, index ){ %>
+                            <li>
+                              <input name="" id="" class="form-control" placeholder="Vitamins & Suplements" value="<%= medicine %>" />
+                              <a id="" class="icon-delete"></a>
+                            </li>
+                          <% }); %>
+                        <%}else{%>
+                          <li class="active">
+                              <input name="" id="" class="form-control" placeholder="Vitamins & Suplements" />
+                              <a id="" class="icon-delete"></a>
+                          </li>
+                        <% } %>
+                      </ul>
+                    </div>
+                    <div class="box-foot">
+                        <div class="more">
+                            <button class="btn-more-item">
+                                <span class="icon-more-green"></span>
+                                add more
+                            </button>
+                        </div>
+                        <div class="terms">
+                            <label>
+                                <input type="checkbox" name="vitamins" />
+                                Check if you don't take any Vitamins <span class="pre">& supplements</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- vitamins & suplements -->
+        </div>
+
+        <div class="box-down-foot">
+            <div class="row">
+                <div class="col-sm-12 text-right">
+                    <button type="submit" class="btn-green-open mrg-no next-step">next</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

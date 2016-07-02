@@ -1,0 +1,7 @@
+<p class="ratings pull-left">
+  <input tabindex="5" type="checkbox" id="icheckbox_futurico-1" <%= Helpers.checkedIfUserFoodFavorites(model) %>>
+</p>
+<span><%= model.escape('name') %></span> - <%= Helpers.truncateString(model.escape('description'), 150) %> <%= model.escape('time') %>
+<span class="help"></span>
+<a href='' class="adds" data-role="add-servings">add</a>
+

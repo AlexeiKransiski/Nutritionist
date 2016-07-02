@@ -1,0 +1,96 @@
+	@import "../../variables";
+  	@import "../../mixins";
+		
+	.checklist {
+
+		.input-group {
+            margin-bottom: 15px;
+            input {
+                .border-radius(0px);
+                .no-shadow();
+                border-color: @line-new;
+            }
+            button {
+                .border-radius(0px);
+                border-color: @line-new;
+                width: 40px;
+                height: 34px;
+                background-color: @white;
+                padding: 0;
+
+                &:hover, &:active {
+                  	background-color: @white;
+                }
+            }
+
+        }
+
+		.today, .weeks {
+            min-height: 180px;
+            position: relative;
+
+            input[type="text"] {
+                box-shadow: none;
+                .border-radius(0px);
+                border-color: @line-new;
+				color: @font-input;
+				.lato(14px,italic,400);
+				height: 34px;
+				margin: 0 auto;
+				width: 100%;
+            }
+
+            .empty {
+                font-size: 13px;
+                font-weight: 400;
+                color: @font-new;
+                margin: 60px 0 0;
+                padding: 0 40px;
+                .align(center);
+            }
+
+        }
+
+        .list-checklist {
+          	margin: 0;
+          	border-bottom: none;
+
+          	li {
+	            border: none;
+	            color: @font-new;
+	            display: block;   
+	            line-height: 28px;
+	            padding-left: 18px;
+	            position: relative;
+	            .align(left);
+
+	            &:hover > a {
+	              	display: block
+	            }
+	            &:hover {
+	              	background: @line-table url("../img/drag.png") 6px center no-repeat
+	            }
+	            
+	            label {
+	            	.open-bold(12px);  
+	              	margin: 0;
+	            }
+
+	            del {
+	              	color: @green
+	            }
+
+	            a {
+	              	height: 9px;
+	              	width: 9px;
+	              	background: url("../img/delete-small.png") 0 0 no-repeat;
+	              	position: absolute;
+	              	top: 9px;
+	              	right: 10px;
+	              	display: none;
+	            }
+
+          	} // li
+
+        } // ul
+	}	

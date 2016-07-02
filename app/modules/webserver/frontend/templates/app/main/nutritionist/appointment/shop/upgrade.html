@@ -1,0 +1,61 @@
+<!-- upgrade plan -->
+<div id="upgrade_plan">
+  <div class="panel-header text-left">
+      <h4>select your plan</h4>
+    <div class="back">
+      <a href="#" class="backr">X</a>
+    </div>
+  </div>
+
+  <div class="plans">
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-12">
+          <h3>Pricing, consectetur adipiscing elit. Nunc luctus ultrices lorem,</h3>
+        </div>
+      </div>
+
+      <div id="widgetPlanYear" class="box_small">
+        <div class="free">
+          2 months free!
+        </div>
+        <h5>Yearly Plan</h5>
+        <h2 class="orange">$299.50/Yearly</h2>
+        <p>
+          You are currently on the Yearly Subscription plan and walking towards a healthy lifestyle!
+        </p>
+        <div class="down">
+          <button type="submit" id="yearPlan" class="btn btn-default pull-right plan-selector plan active" value="<%= Config.stripe.plans.yearly.id %>" data-amount="<%= Config.stripe.plans.yearly.amount %>"><%=Helpers.getActivePlanBtnLabel(Config.stripe.plans.yearly.id)%></button>
+       </div>
+    </div>
+
+    <div id="widgetPlanMonth" class="box_small">
+        <h5>Monthly Plan</h5>
+        <h2 class="red">$29.95/Month</h2>
+        <p>
+          Experience our nutritionist platform and get access to monthly consultations. 
+        </p>
+        <div class="down">
+          <button type="submit" id="monthPlan" class="btn btn-default pull-right plan-selector plan" value="<%= Config.stripe.plans.monthly.id %>" data-amount="<%= Config.stripe.plans.monthly.amount %>"><%=Helpers.getActivePlanBtnLabel(Config.stripe.plans.monthly.id)%></button>
+        </div>
+    </div>
+
+    <div id="widgetPlanFree" class="box_small expired">
+        <h5>Beginner Plan</h5>
+        <h2 class="blue">Free Membership</h2>
+        <p>
+          This plan will give you access to all our fantastic tools for a healthy living.
+        </p>
+        <div class="down">
+          <button type="submit" id="freePlan" class="btn btn-default pull-right disabled" value="plan-3">expired</button>
+        </div>
+    </div>
+
+    </div>
+    <div class="panel-footer">
+      <!--p>You have selected Yearly Plan as your prefered program.</p-->
+      <button type="button" class="btn-blue-open btn-normal-app mrg-top-4 pull-right" data-role="update-subscription">next</button>
+      <button type="button" class="btn btn-default pull-right" data-role="cancel">cancel</button>
+    </div>
+  </div>
+</div> <!-- upgrade your plan -->

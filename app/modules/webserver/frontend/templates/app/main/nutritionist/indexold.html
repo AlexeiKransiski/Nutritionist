@@ -1,0 +1,736 @@
+<script type="text/javascript">
+  // ...
+  // emoticons
+    $('.emo').click(function(){
+        //$e(this).parent().parent().parent().find('.emoticons').slideDown('slow');
+        if ($(this).parent().parent().parent().find('.emoticons').css('display') === 'none')
+        {
+            $(this).parent().parent().parent().find('.emoticons').slideDown('slow');
+            $(this).find('.caret').hide('fast');
+            $(this).addClass('active');
+        }
+        else{
+            $(this).parent().parent().parent().find('.emoticons').slideUp('slow');
+            $(this).find('.caret').show('fast');
+            $(this).removeClass('active');
+        }
+    });
+    $('.emoticons label').click(function(){
+        var icon = $(this).find('span').attr('class');
+        $(this).parent().parent().parent().find('.emoticons').slideUp('slow');
+        $(this).parent().parent().parent().find("button span[class*='icon-']").attr('class',icon);
+        $(this).parent().parent().parent().find('.caret').show('fast');
+        $(this).parent().parent().parent().find('.emo').removeClass('active');
+    });
+
+    $('#messages').keyup(function(){
+      var max = 400;
+      var len = $(this).val().length;
+          if (len >= max) {
+            $(this).val($(this).val().substr(0, max));
+            $('#letters').text('0');
+          } else {
+            var char = max - len;
+            $('#letters').text(char);
+        }
+    });
+</script>
+<style>
+.error{
+  display:none;
+}
+</style>
+<div id="page-nutritionist" class="main_section">
+  <h1 class="dashboard2">NUTRITIONIST</h1>
+  <h6 id="globalMessage">“Think of water drinking like wine tasting. Taste the various brands and types of bottled waters available”</h6>
+
+
+  <!-- active account -->
+  <div id="active-account-2">
+    <div class="box_down">
+      <!-- left sidebar -->
+      <div class="content pull-left">
+        <!-- user info -->
+        <div class="info_user">
+          <h1>HI <%= me.escape('full_name') %></h1>
+          <h4>WELCOME TO QLORIE NUTRITIONIST SECTION.</h4>
+          <ul class="list-unstyled">
+          <p><%= console.log(me) %></p>
+          <p><%= console.log(me.get("height").value) %></p>
+            <li>Age: <%= new moment().diff(me.get('dob'), 'years') %>yrs</li>
+            <li>Weight: <%= me.get("weight").value %> <%= me.get('weight').units %></li>
+            <li>Height: <%= me.get("height").value %> <%= me.get('height').units %></li>
+          </ul>
+
+          <% if (lastAppointment) { %>
+          <h6>Your last appointment was...</h6>
+          <p>
+            <%= lastAppointment.get('quiz').question1 %>
+          </p>
+          <% } else {  %>
+          <!-- Esto deberia cargar si no hay consultas -->
+          <h6>Aún no has creado una Consulta.</h6>
+          <p>
+            Al crear una consulta, tendrás acceso a nuestro selecto personal de Nutritionistas elegidos. Altamente capacitados, brindarán asesoría personalizada y en tiempo record para que todas tus dudas sean resueltas. Que esperas, crea tu primera consulta ya!
+          </p>
+          <% } %>
+
+        </div>
+
+        <div class="addmore">
+          <% if (lastAppointment) { %>
+          <p>
+            STATUS: <%= lastAppointment.escape('status') %>
+          </p>
+          <a href="/#appointment/<%= lastAppointment.get('_id') %>" >
+            <button type="button" class="btn btn-default pull-right">go to last appointment</button>
+          </a>
+          <% } else {%>
+            <!-- Esto deberia cargar si no hay consultas y la cuenta es free -->
+            <p>
+              STATUS: Trial Plan
+            </p>
+            <!-- Esto debe aparecer cuando se acaba el nro de consultas por mes del plan -->
+            <p class="hidden">
+              STATUS: Exceed number of consultations this month
+            </p>
+            <!-- Este texto debe aparecer cuando se acaba el periodo de pruebas -->
+            <p class="hidden">
+              STATUS: Trial ended. Please select plan
+            </p>
+          <% } %>
+        </div>
+
+        </div>
+
+        <!-- right sidebar -->
+        <div class="sidebar-right pull-right">
+          <div class="title_sidebar text-left">
+            <h4>Appointments Calendar</h4>
+          </div>
+          <div class="calendar">
+
+            <div class="calendario"></div>
+
+            <div class="addmore">
+              <button type="button" class="btn btn-primary pull-right">new appointment</button>
+            </div>
+
+            <!-- Este bottom debe aparecer cuando se terminen las consultas -->
+            <div class="getconsult hidden">
+              <button type="button" class="btn btn-primary pull-right">get more consults</button>
+            </div>
+
+            <!-- Esto debe mostrarse cuando se termina el periodo de prueba -->
+            <div class="upgradeplan hidden">
+              <p>0 Trial Days left.</p>
+              <button type="button" class="btn btn-primary pull-right">select plan</button>
+            </div>
+
+
+          </div>
+        </div>
+      </div>  <!-- /box_down -->
+
+      <!-- appointments -->
+      <div id="appointments">
+        <div class="panel-header text-left">
+            <h4>new consult</h4>
+          <div class="back">
+            <a href="#" class="back">X</a>
+          </div>
+        </div>
+
+        <div id="appointment_part_1">
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-md-12 text-center">
+                <h3>These is your lifestyle and current goals... Do you want to change this?</h3>
+              </div>
+            </div>
+            <div class="left pull-left">
+              <label for="question1">lifestyle:</label>
+              <textarea rows="7" id="question1" name="question1"></textarea>
+              <p id="question1_error" class="error"></p>
+              <div class="down">
+                <button class="btn btn-success pull-right">save lifestyle</button>
+              </div>
+            </div>
+
+            <div class="right pull-right">
+              <label for="question2">objetives:</label>
+              <!--textarea rows="7" id="question2" name="question2"></textarea-->
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id tempor ante, non condimentum nunc.
+                Fusce sit amet ligula eget mauris ultricies ornare et posuere metus. Proin porttitor pretium tortor, ut blandit neque venenatis nec.
+              </p>
+              <p id="question2_error" class="error"></p>
+              <div class="down">
+                <button class="btn btn-success pull-right">change objetives</button>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="panel-footer">
+            <button type="button" class="btn btn-primary pull-right">next</button>
+            <button type="button" class="btn btn-default pull-right">cancel</button>
+          </div>
+        </div>
+
+        <div id="appointment_part_2a">
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-md-12 text-left">
+                <h3>Tell us... What is the reason of your consult?</h3>
+              </div>
+            </div>
+            <div class="reason">
+
+              <textarea id="messages" class="form-control"></textarea>
+              <div class="input-group">
+                <p class="form-control"><span id="letters">400</span>/400 Character left</p>
+                <div class="input-group-btn">
+                  <button type="button" class="btn btn-default dropdown-toggle emo" data-toggle="dropdown">
+                    <span class="icon-great"></span>
+                    <span class="caret"></span>
+                  </button>
+                </div><!-- /btn-group -->
+              </div><!-- /input-group -->
+              <div class="emoticons">
+                <div class="btn-group" data-toggle="buttons">
+                  <label class="btn btn-primary active">
+                    <span class="icon-great"></span>
+                    <input type="radio" name="options" id="option1" value="Great" checked> Great
+                  </label>
+                  <label class="btn btn-primary">
+                    <span class="icon-happy"></span>
+                    <input type="radio" name="options" id="option2" value="Happy"> Happy
+                  </label>
+                  <label class="btn btn-primary">
+                    <span class="icon-chill"></span>
+                    <input type="radio" name="options" id="option3" value="Chill"> Chill
+                  </label>
+                  <label class="btn btn-primary">
+                    <span class="icon-sick"></span>
+                    <input type="radio" name="options" id="option4" value="Sick"> Sick
+                  </label>
+                  <label class="btn btn-primary">
+                    <span class="icon-bad"></span>
+                    <input type="radio" name="options" id="option5" value="Bad"> Bad
+                  </label>
+                  <label class="btn btn-primary">
+                    <span class="icon-depress"></span>
+                    <input type="radio" name="options" id="option6" value="Depress"> Depress
+                  </label>
+                </div>
+              </div>
+            </div> <!-- reason -->
+          </div>
+          <div class="panel-footer">
+            <p>Stress level being 10 the highest, you are in?</p>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-primary" style="display:none;">
+                <input type="radio" name="question3" value="" />
+              </label>
+              <label class="btn btn-primary">
+                <input type="radio" name="question3" value="1" /> 1
+              </label>
+              <label class="btn btn-primary">
+                <input type="radio" name="question3" value="2" /> 2
+              </label>
+              <label class="btn btn-primary">
+                <input type="radio" name="question3" value="3" /> 3
+              </label>
+              <label class="btn btn-primary">
+                <input type="radio" name="question3" value="4" /> 4
+              </label>
+              <label class="btn btn-primary">
+                <input type="radio" name="question3" value="5" /> 5
+              </label>
+              <label class="btn btn-primary">
+                <input type="radio" name="question3" value="6" /> 6
+              </label>
+              <label class="btn btn-primary">
+                <input type="radio" name="question3" value="7" /> 7
+              </label>
+              <label class="btn btn-primary">
+                <input type="radio" name="question3" value="8" /> 8
+              </label>
+              <label class="btn btn-primary">
+                <input type="radio" name="question3" value="9" /> 9
+              </label>
+              <label class="btn btn-primary">
+                <input type="radio" name="question3" value="10" /> 10
+              </label>
+            </div>
+            <p id="question3_error" class="error"></p>
+            <button type="button" class="btn btn-primary pull-right">next</button>
+            <button type="button" class="btn btn-default pull-right">back</button>
+          </div>
+        </div>
+
+      </div>  <!-- /appoitment -->
+
+      <div id="add_more_consults">
+        <div class="panel-header text-left">
+            <h4>how many consults do you want?</h4>
+          <div class="back">
+            <a href="#" class="backr">X</a>
+          </div>
+        </div>
+
+        <div id="choose_plan">
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-md-12">
+                <h3>Your consults will accumulate if you don’t use them all this month!</h3>
+              </div>
+            </div>
+
+            <div id="widgetPlanYear" class="box_small">
+              <div class="free">
+                2 consults free
+              </div>
+              <h5>6 Consults</h5>
+              <h2 class="orange">$39.99 <span>usd</span></h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas enim diam.
+              </p>
+              <div class="down">
+                <button type="submit" id="yearPlan" class="btn btn-default pull-right plan-selector active" value="plan-1">select plan</button>
+             </div>
+          </div>
+
+          <div id="widgetPlanMonth" class="box_small">
+              <div class="free rojo">
+                1 consults free
+              </div>
+              <h5>4 Consults</h5>
+              <h2 class="red">$29.99 <span>usd</span></h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas enim diam.
+              </p>
+              <div class="down">
+                <button type="submit" id="monthPlan" class="btn btn-default pull-right plan-selector" value="plan-2">select plan</button>
+              </div>
+          </div>
+
+          <div id="widgetPlanFree" class="box_small">
+              <h5>1 Consult</h5>
+              <h2 class="blue">30 Days Trial</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas enim diam.
+              </p>
+              <div class="down">
+                <button type="submit" id="freePlan" class="btn btn-default pull-right plan-selector" value="plan-3">plan selected</button>
+              </div>
+          </div>
+
+          </div>
+          <div class="panel-footer">
+            <p>You have selected 6 Consults Plan as your prefered program.</p>
+            <button type="button" class="btn btn-primary pull-right">next</button>
+            <button type="button" class="btn btn-default pull-right">cancel</button>
+          </div>
+        </div>
+
+      </div> <!-- add more consult -->
+
+      <div id="credit_card">
+        <div class="panel-header text-left">
+            <h4>select your payment method</h4>
+          <div class="back">
+            <a href="#" class="backr">X</a>
+          </div>
+        </div>
+        <div id="appointment_part_2">
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-md-12 text-center">
+                <h3>Pricing, consectetur adipiscing elit. Nunc luctus ultrices lorem,</h3>
+              </div>
+            </div>
+
+            <!--div class="left pull-left">
+              <label>Please select the credit card you want to use or add a new Credit Card</label>
+              <ul class="list-unstyled">
+              </ul>
+
+              <p><a href="" data-toggle="modal" data-target="#myModalcard">add new credit card</a></p>
+            </div-->
+
+            <div class="box_big">
+
+              <div class="left_col pull-left">
+                <h5>select credit card or add new one</h5>
+                <p>No se te cobrará hasta que termine tu periodo de prueba. Pellentesque pulvinar felis:</p>
+                <ul class="list-unstyled">
+                  <li class="custom_radios active">
+                    <input tabindex="23" type="radio" id="card3" name="cards" value="" checked />
+                    <img src="img/card-3.png">
+                    <span>5891</span>
+                  </li>
+                  <li class="custom_radios">
+                    <input tabindex="23" type="radio" id="card4" name="cards" value="" />
+                    <img src="img/card-2.png">
+                    <span>4121</span>
+                  </li>
+                  <li class="custom_radios">
+                    <input tabindex="23" type="radio" id="card5" name="cards" value="" />
+                    <img src="img/card-1.png">
+                    <span>5891</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="right_col pull-right">
+                <form class="text-left" id="card-form" action="" method="POST" name="">
+                  <div class="form-group">
+                    <label for="firstname">FIRST NAME</label>
+                    <input type="text" id="firstname" class="form-control" name="firstname" />
+                    <p id="firstname_error" class="error"></p>
+                  </div>
+                  <div class="form-group">
+                    <label for="lastname">LAST NAME</label>
+                    <input type="text" id="lastname" class="form-control" name="lastname" />
+                    <p id="lastname_error" class="error"></p>
+                  </div>
+                  <div class="form-group">
+                    <label for="creditcard">CREDIT CARD NUMBER</label>
+
+                    <span class="pull-right">
+                      <img src="img/visa.png" alt="Qalorie" class="" />
+                    </span>
+                    <span class="pull-right">
+                      <img src="img/mastercard.png" alt="Qalorie" class="" />
+                    </span>
+
+                    <input type="text" id="creditcard" class="form-control" name="creditcard" />
+                    <p id="creditcard_error" class="error"></p>
+                  </div>
+
+                  <div class="form-group input180">
+                    <label for="cvv2">CVV2</label><a href="#" class="icon-help" data-toggle="modal" data-target="#myModal"></a>
+                    <input type="text" id="cvv2" class="form-control" name="cvv2" />
+                    <p id="cvv2_error" class="error"></p>
+                  </div>
+
+                  <div class="form-group pull-right input170">
+                    <label>EXPIRATION DATE</label>
+                      <div id="monthExp" class="bfh-selectbox mr10" data-name="month" data-value="">
+                        <div data-value="">MM</div>
+                        <div data-value="1">Jan</div>
+                        <div data-value="2">Feb</div>
+                        <div data-value="3">Mar</div>
+                        <div data-value="4">Apr</div>
+                        <div data-value="5">May</div>
+                        <div data-value="6">Jun</div>
+                        <div data-value="7">Jul</div>
+                        <div data-value="8">Aug</div>
+                        <div data-value="9">Sept</div>
+                        <div data-value="10">Oct</div>
+                        <div data-value="11">Nov</div>
+                        <div data-value="12">Dec</div>
+                      </div>
+                      <div id="yearExp" class="bfh-selectbox" data-name="year" data-value="">
+                        <div data-value="">YYYY</div>
+                        <div data-value="2015">2015</div>
+                        <div data-value="2016">2016</div>
+                        <div data-value="2017">2017</div>
+                        <div data-value="2018">2018</div>
+                        <div data-value="2019">2019</div>
+                        <div data-value="2020">2020</div>
+                        <div data-value="2021">2021</div>
+                        <div data-value="2022">2022</div>
+                        <div data-value="2023">2023</div>
+                        <div data-value="2024">2024</div>
+                        <div data-value="2025">2025</div>
+                      </div>
+                      <p id="expiration_error" class="error"></p>
+                  </div>
+                  <button class="btn btn-sucess">add new</button>
+                </form>
+              </div>
+
+            </div><!-- big_box -->
+
+          </div>
+
+          <div class="panel-footer">
+            <p>
+              Enter Promo-Code:
+            </p>
+            <input class="form-control" id="code" type="text" name="code" />
+
+            <button type="button" class="btn btn-primary pull-right">next</button>
+            <button type="button" class="btn btn-default pull-right">cancel</button>
+          </div>
+        </div>
+
+      </div> <!-- credit card -->
+
+      <!-- accepted payment-->
+      <div id="payment">
+        <div class="panel-header text-left">
+            <h4>transaction accepted!</h4>
+        </div>
+
+        <div id="accepted">
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-md-12 text-center">
+                <h3 class="green">paymente completed!</h3>
+              </div>
+            </div>
+            <div class="box">
+              <div class="ok">
+                <span class="icon-ok"></span>
+              </div>
+              <p>
+                The total amount of $39.99 USD have been succesfully charged to the credit card ending 9087. You will be receiving a confirmation email for this transaction shortly.
+              </p>
+            </div>
+          </div>
+
+          <div class="panel-footer">
+            <button type="button" class="btn btn-primary pull-right">create new consultion</button>
+            <button type="button" class="btn btn-default pull-right">back to nutritionist</button>
+          </div>
+        </div>
+
+      </div> <!-- payment -->
+
+      <!-- upgrade plan -->
+      <div id="upgrade_plan">
+        <div class="panel-header text-left">
+            <h4>select your plan</h4>
+          <div class="back">
+            <a href="#" class="backr">X</a>
+          </div>
+        </div>
+
+        <div class="plans">
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-md-12">
+                <h3>Pricing, consectetur adipiscing elit. Nunc luctus ultrices lorem,</h3>
+              </div>
+            </div>
+
+            <div id="widgetPlanYear" class="box_small">
+              <div class="free">
+                2 months free!
+              </div>
+              <h5>Yearly Plan</h5>
+              <h2 class="orange">19.95/Month</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas enim diam.
+              </p>
+              <div class="down">
+                <button type="submit" id="yearPlan" class="btn btn-default pull-right plan-selector active" value="plan-1">select plan</button>
+             </div>
+          </div>
+
+          <div id="widgetPlanMonth" class="box_small">
+              <h5>Mounthly Plan</h5>
+              <h2 class="red">24.95/Month</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas enim diam.
+              </p>
+              <div class="down">
+                <button type="submit" id="monthPlan" class="btn btn-default pull-right plan-selector" value="plan-2">select plan</button>
+              </div>
+          </div>
+
+          <div id="widgetPlanFree" class="box_small expired">
+              <h5>Begginer Plan</h5>
+              <h2>30 Days Trial</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas enim diam.
+              </p>
+              <div class="down">
+                <button type="submit" id="freePlan" class="btn btn-default pull-right disabled" value="plan-3">expired</button>
+              </div>
+          </div>
+
+          </div>
+          <div class="panel-footer">
+            <p>You have selected Yearly Plan as your prefered program.</p>
+            <button type="button" class="btn btn-primary pull-right">next</button>
+            <button type="button" class="btn btn-default pull-right">cancel</button>
+          </div>
+        </div>
+      </div> <!-- upgrade your plan -->
+
+      <div class="account_down">
+
+      <% if (appointments.length > 0) { %>
+
+      <h2>My Appointments</h2>
+
+      <div class="filter">
+        <div class="filter-top">
+          <div class="filter-options pull-left">
+            <p>FILTER BY:</p>
+            <ul id="filters">
+              <li><span class="filter btn btn-default" data-filter="all">All</span></li>
+              <li><span class="filter btn btn-default" data-filter="open">open</span></li>
+              <li><span class="filter btn btn-default" data-filter="answered">answered</span></li>
+              <li><span class="filter btn btn-default" data-filter="completed">completed</span></li>
+            </ul>
+          </div>
+
+          <div class="search-inbox pull-right">
+            <form class="form-inline" id="search-appointment">
+              <label>Search:</label>
+              <input type="text" name="inbox" class="form-control" value="<%= qSearch %>" placeholder="Search..." />
+              <button class="btn btn-success" type="submit">search</button>
+            </form>
+          </div>
+        </div><!-- /filter-top -->
+
+          <div class="filter-head">
+            <div class="date pull-left">Date</div>
+            <div class="image-nutri pull-left">Nutritionist</div>
+            <div class="consult pull-left text-left">Consult</div>
+            <div class="replies pull-left">Replies</div>
+            <div class="case pull-right">Case No.</div>
+          </div><!-- /filter-head -->
+
+        <div class="filter-list">
+          <!-- Item. It's selected by Magnet via magnet-item class -->
+
+            <% _.each( appointments.models, function( appointment, index ){ %>
+
+            <div class="item" style="opacity:1;display:inline;" data-appointment="<%= appointment.get("_id") %>">
+              <div class="box<% if (index == appointments.length - 1) { %> last<% } %>">
+                <div class="date pull-left">
+                  <p><%= moment(appointment.escape('date')).format('D MMM YYYY') %></p>
+                </div>
+                <div class="image-nutri pull-left">
+                  <p>
+                    <img src="img/jenn-small.png" alt="Jennifer Newmaan" class="" />
+                  </p>
+                </div>
+                <div class="consult pull-left text-left">
+                  <span class="assigned">Status: <%= appointment.escape("status") %></span>
+                  <p>
+                    <a href="#">Nutritionist:  Jennifer Newman</a><br>
+                    <%= appointment.get('quiz').question1.substr(0, 130) %> <a href="/#appointment/<%= appointment.get('_id') %>" class="more">View More...</a>
+                  </p>
+                </div>
+                <div class="replies pull-left">
+                  <p><%= appointment.get('replies').length %></p>
+                </div>
+                <div class="case pull-right">
+                  <p>
+                    CN: 000000123456
+                    <% if (appointment.get('status') == 'completed') { %>
+                      <br>Closed
+                    <% } else { %>
+                    <button type="button" class="btn btn-primary completed">close case</button>
+                    <% } %>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <% }) %>
+
+          </div><!-- /filter-list -->
+        </div><!-- /filter -->
+
+      <% } else { %>
+
+        <h2>how consults works</h2>
+
+        <div class="empty_state">
+
+          <div class="box">
+
+            <div class="thumbs">
+              <span class="icon-you"></span>
+            </div>
+            <div class="comment">
+              <p>
+                <span>you:</span>
+                In less than 400 characters, leave your questions to your Nutritionist. Make sure you leave pretty clear what’s the reason of your Consult, so the Nutritionist can answer accurately all your doubts.
+              </p>
+            </div>
+
+          </div> <!-- /box -->
+
+          <div class="box">
+
+            <div class="thumbs">
+              <span class="icon-nutri"></span>
+            </div>
+            <div class="comment">
+              <p>
+                <span>nutritionist answer:</span>
+                Your designated Nutritionist will answer your questions. He will provide sustantial recomendations for you to follow in order to give solutions to your doubts. After this, your consultation will be finished, you can either Rate your Nutritionist or you can Reply just in case you have more doubts on that consultation.
+              </p>
+            </div>
+
+          </div> <!-- /box -->
+
+          <div class="box">
+
+            <div class="thumbs">
+              <span class="icon-you"></span>
+            </div>
+            <div class="comment">
+              <p>
+                <span>you:</span>
+                There are some cases where the answers were not clear enough. so you can reply to your Nutritionist. Qalorie is always looking forward for his patients, reason why you can clear any doubts that may remain during your initial meeting.
+              </p>
+            </div>
+
+          </div> <!-- /box -->
+
+          <div class="box">
+
+            <div class="thumbs">
+              <span class="icon-nutri"></span>
+            </div>
+            <div class="comment">
+              <p>
+                <span>nutritionist answer:</span>
+                Your Nutritionist will take care of your final questions. After this answers, the consultation will be consirered finished and then you will be able to Rate this consult.
+              </p>
+            </div>
+
+          </div> <!-- /box -->
+
+        </div> <!-- empty state -->
+
+
+      <% } %>
+
+      </div><!-- /account_down-->
+
+    </div><!-- /active-account -->
+</div><!-- /main_section -->
+
+
+<!-- Modal -->
+<div class="modal fade cvv2" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title text-left" id="myModalLabel">WHAT IS A CARD SECURITY CODE?</h4>
+            </div>
+            <div class="modal-body">
+
+                <p>
+                    A three- or four-digit code on your credit card, separate from the 16-digit card number. The location varies slightly depending on your type of card:
+                </p>
+
+                <img src="img/svv2.png" alt="" />
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,59 @@
+<div class="title_sidebar">
+  <h4 class="title_sidebar-center">FOOD LOG</h4>
+  <p class="pull-right date-change">
+    <input id="todayListDatesGlobal" disabled="disabled" type="text" type="text" class="datepicker form-control" />
+  </p>
+</div>
+
+<ul class="list-unstyled kinds">
+  <li>
+    <span class="icon-big-breakfast"></span>
+    BREAKFAST <p data-role="breakfast-kcal-logs"></p>
+    <button type="reset" class="btn btn-default pull-right openbreakfast add-log" data-role="breakfast">add</button>
+  </li>
+  <li>
+    <span class="icon-big-earlysnack"></span>
+    EARLY SNACK<p data-role="early-snack-kcal-logs"></p>
+    <button type="reset" class="btn btn-default pull-right openearlysnack add-log" data-role="early_snack">add</button>
+  </li>
+  <li>
+    <span class="icon-big-lunch"></span>
+    LUNCH<p data-role="lunch-kcal-logs"></p>
+    <button type="reset" class="btn btn-default pull-right openlunch add-log" data-role="lunch">add</button>
+  </li>
+  <li>
+    <span class="icon-big-afternoonsnack"></span>
+    AFTERNOON SNACK<p data-role="afternoon-snack-kcal-logs"></p>
+    <button type="reset" class="btn btn-default pull-right openaftersnack add-log" data-role="afternoon_snack">add</button>
+  </li>
+  <li>
+    <span class="icon-big-dinner"></span>
+    DINNER<p data-role="dinner-kcal-logs"></p>
+    <button type="reset" class="btn btn-default pull-right opendinner add-log" data-role="dinner">add</button>
+  </li>
+  <li>
+    <span class="icon-big-latesnack"></span>
+    LATE SNACK<p data-role="late-snack-kcal-logs"></p>
+    <button type="reset" class="btn btn-default pull-right openlatesnack add-log" data-role="late_snack">add</button>
+  </li>
+  <li>
+    <div class="info_bottom_top">
+      <ul class="list-unstyled pull-left">
+        <li>+<span class="totalCaloriesLbl">0</span> Cal</li>
+        <li>-<span class="totalCaloriesBurnedLbl">0</span> Cal</li>
+        <li><span class="totalCaloriesBalanceLbl">0</span> Cal</li>
+      </ul>
+      <p class="pull-right"><span class="CaloriesGoal"><%= app.me.get('calories_recomended') || 0 %></span> Cal</p>
+    </div>
+    <div class="info_bottom_down">
+      <ul class="list-unstyled pull-left">
+        <li>FOOD</li>
+        <li>-</li>
+        <li>EXERCISE</li>
+        <li>=</li>
+        <li>NET</li>
+      </ul>
+      <p class="pull-right">GOAL</p>
+    </div>
+  </li>
+</ul>

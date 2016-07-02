@@ -1,0 +1,25 @@
+<% if (oldImage && actualImage) { %>
+<img id="before-image-progress" src="<% if (oldImage) { %><%= oldImage.get('photo_src') %><% } %>" alt="" class="pull-left" />
+<img id="current-image-progress" src="<% if (actualImage) { %><%= actualImage.get('photo_src') %><% } %>" alt="" class="pull-right" />
+<% } else { if (oldImage) { %>
+    <img id="before-image-progress" src="<% if (oldImage) { %><%= oldImage.get('photo_src') %><% } %>" alt="" class="pull-left" />
+
+    <div class="empty_right pull-right">
+
+      <div class="circle"><div class="camara"></div></div>
+      <h3 class="text-center">No Photo to compare</h3>
+      <p class="text-center">Take a moment, take a photo of yourself. Come back later and compare your progress.</p>
+      <button class="btn-blue-open btn-medium" data-role="new-entry">add new entry</button>
+
+    </div>
+  <% } else {  %>
+
+    <div class="empty pull-right">
+
+      <div class="circle"><div class="camara"></div></div>
+      <h3 class="text-center">No picture yet?</h3>
+      <p class="text-center">Track even the smallest of changes you achieve and share the progress with our certified nutritionists.</p>
+      <button class="btn-blue-open btn-medium" data-role="new-entry">add new entry</button>
+    </div>
+  <% } %>
+<% } %>

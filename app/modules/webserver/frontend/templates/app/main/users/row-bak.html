@@ -1,0 +1,27 @@
+<td><%= model.id %></td>
+<td><%= model.escape('ssn') %></td>
+<td><%= model.escape('username') %></td>
+<td><% if (model.get('active')){ %>active<% }else { %>inactive<% } %></td>
+<td>
+  <% if(model.get('name')) { %>
+    <% if(model.get('name').prefix) { %><%= model.get('name').prefix %><% } %> <% if(model.get('name').first) { %><%= model.get('name').first %><% } %> <% if(model.get('name').last) { %><%= model.get('name').last %><% } %>
+  <% } %>
+</td>
+<td><%= moment(model.get('dob')).format('YYYY/MM/DD hh:mm a') %></td>
+<td><%= model.escape('role') %></td>
+<td>
+  <% if(model.get('contactInfo')) { %>
+    <% if(model.get('contactInfo').email && model.get('contactInfo').email.work) { %>work: <%= model.get('contactInfo').email.work %> <br><% } %><% if(model.get('contactInfo').email && model.get('contactInfo').email.personal) { %>personal: <%= model.get('contactInfo').email.personal %><% } %>
+
+  <% } %>
+</td>
+<td>
+  <% if(model.get('contactInfo')) { %>
+    <% if(model.get('contactInfo').phone && model.get('contactInfo').phone.office) { %>  office: <%= model.get('contactInfo').phone.office %> <br><% } %><% if(model.get('contactInfo').phone && model.get('contactInfo').phone.cell) { %>cell: <%= model.get('contactInfo').phone.cell %><% } %>
+
+  <% } %>
+</td>
+<td>
+  <button class="btn btn-danger delete"><span class="glyphicon glyphicon-trash"></span></button>
+  <button class="btn btn-warning edit"><span class="glyphicon glyphicon-edit"></span></button>
+</td>

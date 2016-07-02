@@ -1,0 +1,396 @@
+@import 'base';
+@import 'jquery-selectUISlider';
+
+
+// progress page overwrite
+section .main #page-progress.main_section .main_info .tab-content .tab-body .observationsnew .form p.error {
+  font-size: 8px !important;
+}
+
+section .main #page-progress.main_section .main_info {
+  [data-role=progress-photo-container] {
+    width:313px;
+    height:389px;
+    overflow: hidden;
+  }
+}
+
+.inline-progress-edit {
+  overflow: hidden;
+  height: 600px !important;
+  display: none;
+  .tab-foot {
+    height: 70px;
+    background: @green;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: @white;
+    p {
+      line-height: 70px;
+      .open-bold(14px);
+      font-style: italic;
+      padding-left: 25px;
+      margin: 0;
+    }
+    button.btn-primary {
+      .btn-primary(40px,100px);
+      margin-right: 20px;
+      margin-top: 16px;
+    }
+    button.btn-default {
+      .btn-default(40px,100px);
+      color: @white;
+      margin-top: 16px;
+
+      &:hover, &:focus {
+        box-shadow: none;
+      }
+
+    } // tab-foot
+  }
+}
+
+// search form css overwrite
+.search-form {
+  height: 100%;
+  margin: 0 !important;
+  .result, .mCustomScrollBox, ul.search {
+    height: 100%;
+  }
+  .result ul{
+    margin-bottom: 100px !important;
+  }
+}
+
+// Modals
+.modal .modal-dialog {
+  margin-top: 180px;
+  width: 500px;
+
+  button[data-role="close"] {
+    color: #646b74 !important;
+  }
+}
+
+// extend css
+.btn.cancel-action {
+  background-color: transparent;
+  border: 0;
+  font-family: "Open Sans";
+  font-weight: 600;
+  font-size: 11px;
+  height: 36px;
+  width: 75px;
+  text-transform: uppercase;
+  color: #646b74;
+  margin-top: 17px;
+}
+
+
+ul.element-boxes {
+  padding-left: 0px;
+
+  li {
+    width: 100%;
+    font-family: "Lato";
+    font-size: 15px;
+    font-style: italic;
+    font-weight: 600;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 4px;
+    border-color: #bfbfbf;
+    box-shadow: none;
+    background-color: #fff;
+    padding-left: 8px;
+    text-transform: capitalize;
+  }
+}
+
+table.settings-widget-nutricional tr td {
+  padding: 0 !important;
+  width: 50% !important;
+  vertical-align: top !important;
+}
+
+.element-boxes.widget-nutricional {
+  max-width: 80%;
+  min-height: 217px;
+  border: solid 1px #ccc;
+}
+
+.ui-state-highlight { height: 1.5em; line-height: 1.2em; }
+
+
+/* crop jcrop */
+// .jcrop-holder
+#preview-pane {
+  display: block;
+  // position: absolute;
+  z-index: 2000;
+  top: 10px;
+  // right: -280px;
+  padding: 6px;
+  border: 1px rgba(0,0,0,.4) solid;
+  background-color: white;
+
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+
+  -webkit-box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* The Javascript code will set the aspect ratio of the crop
+   area based on the size of the thumbnail preview,
+   specified here */
+#preview-pane .preview-container {
+  width: 250px;
+  height: 170px;
+  overflow: hidden;
+}
+
+
+/* Jcrop Demo Site CSS - 2012 Tapmodo Interactive LLC - MIT License
+   Not required to run Jcrop - contains twitter bootstrap code */
+/* To build these CSS files you must have LESS and run
+ * $ git submodule init
+ * $ git submodule update
+ * ...to pull in the Twitter bootstrap files
+ */
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.clearfix:after {
+  clear: both;
+}
+.hide-text {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+.input-block-level {
+  display: block;
+  width: 100%;
+  min-height: 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* JCROP DEMOS CSS */
+li small {
+  color: #f07878;
+}
+.inline-labels label {
+  display: inline;
+}
+div#interface.span3 fieldset {
+  margin-bottom: 1.5em;
+}
+div#interface.span3 fieldset legend {
+  margin-bottom: 2px;
+  padding-bottom: 2px;
+  line-height: 1.2;
+}
+.article h1 {
+  color: #333;
+  margin-top: .2em;
+}
+.jc-demo {
+  text-align: center;
+}
+.jcropper-holder {
+  border: 1px #bbb solid;
+}
+.jc-demo-box {
+  text-align: left;
+  // margin: 2em auto;
+  // background: white;
+  // border: 1px #bbb solid;
+  // -webkit-border-radius: 4px;
+  // -moz-border-radius: 4px;
+  // border-radius: 4px;
+  // -webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.25);
+  // -moz-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.25);
+  // box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.25);
+  padding: 1em 2em 2em;
+}
+form.coords label {
+  margin-right: 1em;
+  font-weight: bold;
+  color: #900;
+}
+form.coords input {
+  width: 3em;
+}
+.ui-widget-overlay {
+  opacity: 0.80;
+  filter: alpha(opacity=70);
+}
+.jc-dialog {
+  padding-top: 1em;
+}
+.ui-dialog p tt {
+  color: yellow;
+}
+.jcrop-light .jcrop-selection {
+  -moz-box-shadow: 0px 0px 15px #999;
+  /* Firefox */
+
+  -webkit-box-shadow: 0px 0px 15px #999;
+  /* Safari, Chrome */
+
+  box-shadow: 0px 0px 15px #999;
+  /* CSS3 */
+
+}
+.jcrop-dark .jcrop-selection {
+  -moz-box-shadow: 0px 0px 15px #000;
+  /* Firefox */
+
+  -webkit-box-shadow: 0px 0px 15px #000;
+  /* Safari, Chrome */
+
+  box-shadow: 0px 0px 15px #000;
+  /* CSS3 */
+
+}
+.jcrop-fancy .jcrop-handle.ord-e {
+  -webkit-border-top-left-radius: 0px;
+  -webkit-border-bottom-left-radius: 0px;
+}
+.jcrop-fancy .jcrop-handle.ord-w {
+  -webkit-border-top-right-radius: 0px;
+  -webkit-border-bottom-right-radius: 0px;
+}
+.jcrop-fancy .jcrop-handle.ord-nw {
+  -webkit-border-bottom-right-radius: 0px;
+}
+.jcrop-fancy .jcrop-handle.ord-ne {
+  -webkit-border-bottom-left-radius: 0px;
+}
+.jcrop-fancy .jcrop-handle.ord-sw {
+  -webkit-border-top-right-radius: 0px;
+}
+.jcrop-fancy .jcrop-handle.ord-se {
+  -webkit-border-top-left-radius: 0px;
+}
+.jcrop-fancy .jcrop-handle.ord-s {
+  -webkit-border-top-left-radius: 0px;
+  -webkit-border-top-right-radius: 0px;
+}
+.jcrop-fancy .jcrop-handle.ord-n {
+  -webkit-border-bottom-left-radius: 0px;
+  -webkit-border-bottom-right-radius: 0px;
+}
+.description {
+  margin: 16px 0;
+}
+.jcrop-droptarget canvas {
+  background-color: #f0f0f0;
+}
+
+// .jcrop-tracker, img#target, .jcrop-holder, .jcrop-holder img {
+//   max-width: 500px;
+// }
+
+.modal.crop_image .modal-dialog {
+  width: 900px !important;
+  input.jcrop-keymgr {
+    left: -10000px !important;
+  }
+}
+
+.form.avatar-crop {
+  margin: 0 !important;
+}
+
+
+/*
+* Status overrider
+*/
+
+
+/*
+* Settings subscriptions
+*/
+tbody#tableCards {
+  input[type=radio] {
+    width: auto !important;
+  }
+}
+
+/*
+* User nutricionist
+*/
+
+.q-btn {
+  border: none;
+  font-family: "Open Sans";
+  font-weight: 600;
+  font-size: 11px;
+  height: 40px;
+  width: 105px;
+  text-transform: uppercase;
+  margin: 5px 5px 0 0;
+}
+
+ul li .icon-delete {
+  z-index: 9999999;
+}
+
+section .main #page-nutritionist.main_section #message .main_info .tab-content .tab-body .box2 .box-body {
+  padding: 0 2px 0 20px;
+  ul {
+    height: 190px;
+  }
+}
+
+section .main #page-nutritionist.main_section #active-account-2 .filter .filter-list .item .box:last{
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  -webkit-box-shadow: 0 1px 1px 0 #a8afb1;
+  -moz-box-shadow: 0 1px 1px 0 #a8afb1;
+  box-shadow: 0 1px 1px 0 #a8afb1;
+}
+
+.box_plan {
+  &.expired * {
+    color: #bdc3c6 !important;
+    button {
+      background-color: transparent !important;
+      visibility: hidden;
+    }
+  }
+}
+
+#goals {
+  #boxes_goals.boxes_goals {
+    height: auto !important;
+    margin: 0px !important;
+  }
+}
+
+li.water-tracker-step {
+  span, i {
+    top: inherit !important;
+    bottom: 0px !important;
+  }
+  &:first-child {
+    height: 0% !important;
+    i {
+      position: relative !important;
+    }
+  }
+}
+

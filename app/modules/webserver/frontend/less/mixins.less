@@ -1,0 +1,165 @@
+// mixings
+
+// fonts
+.lato(@size, @style, @weight) {
+  font-family: @lato;
+  font-size: @size;
+  font-style: @style;
+  font-weight: @weight;
+}
+.open-light(@size) {
+  font-family: @opensans;
+  font-weight: 300;
+  font-size: @size;
+}
+.open-normal(@size) {
+  font-family: @opensans;
+  font-weight: 400;
+  font-size: @size;
+}
+.open-bold(@size) {
+  font-family: @opensans;
+  font-weight: 600;
+  font-size: @size;
+}
+.open-semibold(@size) {
+  font-family: @opensans;
+  font-weight: 700;
+  font-size: @size;
+}
+
+.align(@align) {
+  text-align: @align;
+}
+
+.btn-default(@height,@width) {
+  background-color: transparent;
+  border: none;
+  .open-bold(11px);
+  height: @height;
+  width: @width;
+  text-transform: uppercase;
+  color: @font-new;
+}
+
+.btn-primary(@height,@width) {
+  background-color: @blue;
+  border: none;
+  .open-bold(11px);
+  height: @height;
+  width: @width;
+  text-transform: uppercase;
+  .button-transition();
+}
+
+.btn-success (@height,@width) {
+  background-color: @green;
+  border: none;
+  .open-bold(11px);
+  height: @height;
+  width: @width;
+  text-transform: uppercase;
+  .button-transition();
+}
+
+.btn-danger (@height,@width) {
+  background-color: @red;
+  border: none;
+  .lato(10px,normal,700);
+  height: @height;
+  width: @width;
+  text-transform: uppercase;
+  .button-transition();
+}
+
+.opacity(@opacity) {
+  opacity: @opacity / 100;
+  filter: ~"alpha(opacity=@{opacity})";
+}
+
+.border(@border) {
+  border: @border;
+}
+
+.border-radius (@rad) {
+  -webkit-border-radius: @rad;
+  -moz-border-radius: @rad;
+  border-radius: @rad;
+}
+
+.no-shadow() {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.shadow-box() {
+      -webkit-box-shadow: 0 1px 1px 0 rgba(168, 175, 177, 1);
+    -moz-box-shadow: 0 1px 1px 0 rgba(168, 175, 177, 1);
+  box-shadow: 0 1px 1px 0 rgba(168, 175, 177, 1);
+}
+
+.line(@width, @margin) {
+  display: inline-block;
+  margin: @margin;
+  height: 1px;
+  content: " ";
+  background: @line-new;
+  width: @width; 
+}
+
+.title_head_box() {
+  background: @white;
+  height: 60px;
+  border-top-left-radius:5px;  
+  border-top-right-radius:5px;  
+}
+
+// sign up
+
+.main_col() {
+  margin: 0 auto;      
+  width: 950px;
+  overflow: hidden;
+  .align(center);
+  position: relative;
+}
+
+.cover () {
+    background-size: cover; 
+    -moz-background-size: cover; 
+    -webkit-background-size: cover; 
+    -o-background-size: cover;
+}
+
+// Buttons Mixins
+// --------------------------------------------------
+
+.button-size (@width) {
+    width: @width;
+}
+.button-height (@height){
+    height: @height;
+}
+.button-margin (@margin){
+    margin: @margin;
+}
+
+// Boxes Mixins
+// --------------------------------------------------
+.box-size(@width, @height) {
+    height: @height;
+    width: @width;
+}
+.boxes-size (@width, @height, @margin) {
+    height: @height;
+    width: @width;
+    margin: @margin;
+}
+
+
+// Font Mixins
+// --------------------------------------------------
+.font-size(@size) {
+    font-size: @size;
+}

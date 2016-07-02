@@ -1,0 +1,22 @@
+<span><%= model.get('name') %>:</span> <span>- <%= Helpers.fixDecimals(model.get('calories_burned'), 2) %>  calories</span>
+<a href="" data-role="remove"></a>
+<br>
+<% if (model.get('exercise_type') == 1) { %>
+
+	<div class="row">
+		<div class="col-md-11">
+			<%= Helpers.getExerciseTypeDescription(model.get('exercise_type')) %> &nbsp; <%= model.get('time') %> &nbsp; <%= model.get('distance') %>
+		</div>
+	</div>
+
+<% } %>
+
+<% if (model.get('exercise_type') == 2) { %>
+
+	<div class="row">
+		<div class="col-md-11">
+			<%= Helpers.getExerciseTypeDescription(model.get('exercise_type')) %> &nbsp; <%= model.get('time') %> &nbsp; <%= model.get('sets') %> &nbsp; <%= model.get('repetitions') %> &nbsp; <%= model.get('weight') %>
+		</div>
+
+	</div>
+<% } %>

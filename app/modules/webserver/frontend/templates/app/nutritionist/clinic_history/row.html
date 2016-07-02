@@ -1,0 +1,5 @@
+<td><%= Helpers.dateFormat(model.get('createdAt'), 'MMM.DD.YYYY') %></td>
+<td>-</td>
+<td><%= model.get('status') %></td>
+<td class="left"><%= model.get('replies')[0].message %></td>
+<td> <a href="/appointment/<%= model.id %>" data-role="route" class="route">view</a></td>

@@ -1,0 +1,34 @@
+<div class="panel panel-default">
+  <div class="panel-heading">Create</div>
+  <div class="panel-body">
+    <form role="form" class="appointment-form">
+      <div class="form-group">
+        <label for="customer">Patient</label>
+        <select class="form-control" id="patient" placeholder="Select User">
+          <option value=""></option>
+          <option value="" disabled>Select user</option>
+          <!-- backbone view -->
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="customer">Nutricionist</label>
+        <select class="form-control" id="nutricionist" placeholder="Select User">
+          <option value=""></option>
+          <option value="" disabled>Select user</option>
+          <!-- backbone view -->
+        </select>
+      </div>
+      <div class="form-group col-lg-2 no-padding">
+          <label for="first_name">Date</label>
+          <input type="date" class="form-control col-xs-3" id="date" min="<%= moment().format('YYYY-MM-DD') %>"  max="<%= moment().add('M', 2).format('YYYY-MM-DD') %>" placeholder="Date" required>
+      </div>
+      <div class="form-group col-lg-2">
+        <label for="first_name">Time</label>
+        <input type="time" class="form-control col-xs-3" id="time" placeholder="Time" required>
+      </div>
+      <div class="row"></div>
+      <button type="submit" class="btn btn-default save">Submit</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,166 @@
+@import url("variables.less");
+@import url("mixins.less");
+
+.title-preferences {
+    color: @green;
+    margin: 0 0 12px 0;
+    text-transform: capitalize;
+    .align(left);
+
+    span {
+        .border-radius(50px);
+        background-color: @white;
+        display: inline-block;
+        height: 50px;
+        margin-right: 10px;
+        vertical-align: middle;
+        width: 50px;
+    }
+
+}
+
+.box-preferences {
+    background: @white;
+    border: 1px solid @line-new;
+    height: 300px;
+    margin-bottom: 30px;
+    position: relative
+}
+
+.preferences-list {
+    margin: 10px 15px;
+    display: none;
+    padding: 0;
+    z-index: 8;
+
+    li {
+        border-bottom: 1px solid @line-new;
+        color: @font-menu;
+        .lato(14px,italic,600);
+        height: 40px;
+        line-height: 40px;
+        list-style: none;
+        margin: 0;
+        position: relative;
+        text-transform: capitalize;
+
+        &:hover 
+        	> 
+        	.icon-delete {
+            	display: block
+        }
+
+        input {
+            .no-shadow();
+            border: none;
+            height: 39px;
+            width: auto
+        }
+
+        &.active {
+
+            input {
+                .no-shadow();
+                border: none;
+                height: 39px;
+                width: auto
+            }
+              
+        }
+
+    }
+
+}
+
+.ok, .add-preference-items {
+    background: @white;
+    bottom: 50px;
+    display: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    .align(center);
+
+    p {
+        font-size: 16px;
+        font-weight: 400
+    }
+
+}
+
+.mrg-ok {
+    margin: 60px auto 25px;
+}
+
+.add-preference-items {
+  	display: block;
+  	z-index: 5;
+}
+
+.btn-preferences {
+    background-color: @bg-active;
+    border: none;
+    .border-radius(3px);
+    .open-bold(11px);
+    color: @font-new;
+    height: 40px;
+    margin: 120px auto 0;
+    text-transform: uppercase;
+    width: 200px;
+
+    &:hover, &:active, &:focus {
+        color: @font-new
+    }
+}
+
+.box-foot {
+    border-top: 1px solid @line-new;
+    bottom: 0;
+    height: 50px;
+    left: 0;
+    position: absolute;
+    right: 0;
+
+  	.more {
+    	display: none
+  	}
+
+  	.terms {
+
+    	label {
+      		.open-normal(14px);
+            color: @font-new;
+            font-style: italic;
+            line-height: 50px;
+            padding-left: 20px;
+    	}
+
+  	}
+
+  	.red {
+        background: rgba(253, 75, 83, 0.1);
+        border: 1px solid @white;
+        height: 49px;
+    	label {
+      		color: @red;
+    	}
+
+  	}
+
+}
+
+.btn-more-item {
+    background-color: transparent;
+    border: none;
+    color: @green;
+    .open-bold(11px);
+    height: 40px;
+    margin-top: 6px;
+    text-transform: uppercase;
+    width: 110px;
+
+    &:hover, &:active, &:focus {
+        color: @green
+    }
+}

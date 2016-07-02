@@ -1,0 +1,120 @@
+<div class="tab-pane" id="preferences">
+    <div class="tab-head">
+        <div class="row">
+            <div class="col-sm-12 text-left">
+                <p>Appointment <%= moment(model.escape('createdAt')).format('MMM.D.YYYY') %></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-body">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="boxdoble">
+                    <h5 class="title_box text-green text-left">
+                        <span class="icon-limitations"></span>physical limitations
+                    </h5>
+                    <div class="box-body">
+                        <% if (app.me.get("patientPreferences").limitations.length > 0) { %>
+                            <ul class="list-unstyled">
+                                <% _.each( model.get("limitations"), function( limit, index ){ %>
+                                    <li>
+                                        <%= limit %>
+                                    </li>
+                                <% }); %>
+                            </ul>
+                        <%}else{%>
+                            <ul class="list-unstyled">
+                                <li>
+                                    Theres no limitations
+                                </li>
+                            </ul>
+                        <%}%>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="boxdoble">
+                    <h5 class="title_box text-green text-left">
+                        <span class="icon-preferences"></span>food preferences
+                    </h5>
+                    <div class="box-body">
+                        <% if (model.get("foods").length > 0) { %>
+                            <ul class="list-unstyled">
+                                <% _.each( model.get("foods"), function( food, index ){ %>
+                                    <li>
+                                        <%= food %>
+                                    </li>
+                                <% }); %>
+                            </ul>
+                        <%}else{%>
+                            <ul class="list-unstyled">
+                                <li>
+                                    Theres no limitations
+                                </li>
+                            </ul>
+                        <%}%>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="boxdoble">
+                    <h5 class="title_box text-green text-left">
+                        <span class="icon-medicines"></span>medicines
+                    </h5>
+                    <div class="box-body">
+                        <% if (model.get("medicines").length > 0) { %>
+                            <ul class="list-unstyled">
+                                <% _.each( model.get("medicines"), function( medicine, index ){ %>
+                                    <li>
+                                        <%= medicine %>
+                                    </li>
+                                <% }); %>
+                            </ul>
+                        <%}else{%>
+                            <ul class="list-unstyled">
+                                <li>
+                                    Theres no limitations
+                                </li>
+                            </ul>
+                        <%}%>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="boxdoble">
+                    <h5 class="title_box text-green text-left">
+                        <span class="icon-vitamins"></span>vitamins &amp; suplementts
+                    </h5>
+                    <div class="box-body">
+                        <% if (model.get("vitamins").length > 0) { %>
+                            <ul class="list-unstyled">
+                                <% _.each( model.get("vitamins"), function( medicine, index ){ %>
+                                    <li>
+                                        <%= medicine %>
+                                    </li>
+                                <% }); %>
+                            </ul>
+                        <%}else{%>
+                            <ul class="list-unstyled">
+                                <li>
+                                    Theres no limitations
+                                </li>
+                            </ul>
+                        <%}%>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-foot">
+        <div class="row">
+            <div class="col-sm-12">
+                <p>STATUS: <%= model.escape("status") %></p>
+            </div>
+        </div>
+    </div>
+</div>

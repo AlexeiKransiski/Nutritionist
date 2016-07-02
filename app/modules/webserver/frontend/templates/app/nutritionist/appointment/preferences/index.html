@@ -1,0 +1,125 @@
+<div class="boxdoble preferences-box-view">
+  <h4 class="title_box"><span class="icon-limitations"></span>physical limitations</h4>
+  <div class="box-body">
+    <% if (model.get("limitations").length > 0) { %>
+      <ul class="list-unstyled">
+        <% _.each( model.get("limitations"), function( limit, index ){ %>
+          <li>
+            <%= limit %>
+          </li>
+        <% }); %>
+      </ul>
+    <%}else{%>
+      <ul class="list-unstyled">
+        <li>
+          Theres no limitations
+        </li>
+      </ul>
+    <%}%>
+  </div>
+</div>
+<div class="boxdoble preferences-box-view last">
+  <h4 class="title_box"><span class="icon-preferences"></span>food preferences</h4>
+  <div class="box-body">
+    <% if (model.get("foods").length > 0) { %>
+      <ul class="list-unstyled">
+        <% _.each( model.get("foods"), function( food, index ){ %>
+          <li>
+            <%= food %>
+          </li>
+        <% }); %>
+      </ul>
+    <%}else{%>
+      <ul class="list-unstyled">
+        <li>
+          Theres no food
+        </li>
+      </ul>
+    <%}%>
+  </div>
+</div>
+<div class="boxdoble preferences-box-view">
+  <h4 class="title_box"><span class="icon-medicines"></span>medicines</h4>
+  <div class="box-body">
+    <% if (model.get("medicines").length > 0) { %>
+      <ul class="list-unstyled">
+        <% _.each( model.get("medicines"), function( medicine, index ){ %>
+          <li>
+            <%= medicine %>
+          </li>
+        <% }); %>
+      </ul>
+    <%}else{%>
+      <ul class="list-unstyled">
+        <li>
+          Theres no medicine
+        </li>
+      </ul>
+    <%}%>
+  </div>
+</div>
+<div class="boxdoble preferences-box-view last">
+  <h4 class="title_box"><span class="icon-vitamins"></span>vitamins &amp;&amp; suplementts</h4>
+  <div class="box-body">
+    <% if (model.get("vitamins").length > 0) { %>
+      <ul class="list-unstyled">
+        <% _.each( model.get("vitamins"), function( vitamin, index ){ %>
+          <li>
+            <%= vitamin %>
+          </li>
+        <% }); %>
+      </ul>
+    <%}else{%>
+      <ul class="list-unstyled">
+        <li>
+          Theres no vitamins
+        </li>
+      </ul>
+    <%}%>
+  </div>
+</div>
+<!--
+<div class="boxdoble">
+  <h4 class="title_box"><span class="icon-limitations"></span>physical limitations</h4>
+  <div class="box-body">
+    <ul class="list-unstyled">
+      <li>Alimento 1</li>
+      <li>Alimento 2</li>
+      <li>Alimento 3</li>
+      <li>Alimento 4</li>
+    </ul>
+  </div>
+</div>
+<div class="boxdoble last">
+  <h4 class="title_box"><span class="icon-preferences"></span>food preferences</h4>
+  <div class="box-body">
+    <ul class="list-unstyled">
+      <li>Alimento 1</li>
+      <li>Alimento 2</li>
+      <li>Alimento 3</li>
+      <li>Alimento 4</li>
+    </ul>
+  </div>
+</div>
+<div class="boxdoble">
+  <h4 class="title_box"><span class="icon-medicines"></span>medicines</h4>
+  <div class="box-body">
+    <ul class="list-unstyled">
+      <li>Alimento 1</li>
+      <li>Alimento 2</li>
+      <li>Alimento 3</li>
+      <li>Alimento 4</li>
+    </ul>
+  </div>
+</div>
+<div class="boxdoble last">
+  <h4 class="title_box"><span class="icon-vitamins"></span>vitamins && suplementts</h4>
+  <div class="box-body">
+    <ul class="list-unstyled">
+      <li>Alimento 1</li>
+      <li>Alimento 2</li>
+      <li>Alimento 3</li>
+      <li>Alimento 4</li>
+    </ul>
+  </div>
+</div> -->

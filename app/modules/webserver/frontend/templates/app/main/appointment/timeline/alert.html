@@ -1,0 +1,81 @@
+<!-- notificacion de la primera consulta -->
+<div class="comments hide" data-role="first-msg">
+    <div class="boxes-messages notifications">
+        <div class="row">
+            <div class="col-xs-4 col-sm-2 col-md-1 pd-right_0">
+                <div class="thumbs inactive">
+                    <span class="icon-nutri"></span>
+                </div>
+            </div>
+            <div class="col-xs-8 col-sm-10 col-md-11">
+                <div class="comment vertical-align">
+                    <h5><span><%= model.get('nutritionist_info').full_name %></span> is your Nutritionist. She will provide Answers Shortly.</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- notificacion de la primera respuesta de la consulta -->
+<div class="comments hide" data-role="first-answer-survey">
+    <div class="boxes-messages notifications">
+        <div class="row">
+            <div class="col-sm-6 col-md-8 pd-right_0">
+                <div class="comment vertical-align text-left">
+                    <h5>Did <span><%= model.get('nutritionist_info').full_name %></span> answer your question during the consult?</h5>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 pd-left_0 text-right hidden-xs">
+                <button class="btn btn-primary" data-role="answer-accepted">yes, thank you</button>
+                <button class="btn btn-default" data-role="answer-no-accepted">no, sorry!</button>
+            </div>
+            <div class="visible-xs">
+                <div class="col-xs-6">
+                    <button class="btn btn-primary" data-role="answer-accepted">yes, thank you</button>
+                </div>
+                <div class="col-xs-6">
+                    <button class="btn btn-default" data-role="answer-no-accepted">no, sorry!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- esta notificacion sale al enviar el formulario de arriba -->
+<div class="comments hide" data-role="completed">
+    <div class="boxes-messages notifications">
+        <div class="row">
+            <div class="col-sm-7 col-md-8">
+                <div class="comment vertical-align">
+                    <h5>Thank you! Your Consultations has ended.</h5>
+                </div>
+            </div>
+            <div class="col-sm-5 col-md-4 rated">
+                <div class="result">
+                    <p>Your Rate was:</p>
+                    <div class="under">
+                        <div class="points" data-role="rating-stars"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- notificacion despues de la segunda pregunta dentro de la primera consulta -->
+<div class="comments" data-role="second-msg">
+    <div class="boxes-messages notifications">
+        <div class="row">
+            <div class="col-xs-4 col-sm-2 col-md-1 pd-right_0">
+                <div class="thumbs mrg-top_15">
+                    <img src="<%= model.get('nutritionist_info').avatar_src %>" alt="<%= model.get('nutritionist_info').full_name %>" class="box_image_user" />
+                </div>
+            </div>
+            <div class="col-xs-8 col-sm-10 col-md-11 text-left">
+                <div class="comment vertical-align normal">
+                    <h5><span><%= model.get('nutritionist_info').full_name %></span> will provide Answers Shortly.</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

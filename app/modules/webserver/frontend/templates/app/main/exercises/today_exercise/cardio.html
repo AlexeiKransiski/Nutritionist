@@ -1,0 +1,16 @@
+<td>
+  	<p class="ratings pull-left">
+    	<input tabindex="5" type="checkbox" disabled <%= Helpers.checkedIfUserExerciseFavoritesOnTodayList(model, favorites) %>>
+  	</p>
+</td>
+<td>
+  	<p>
+  		<span><%= model.get("name") %></span> - <% if (model.get("description") && model.get("description") != ''){ %><%= model.escape("description") %><% }else{ %>CARDIO<% } %>
+  	</p>
+</td>
+<td><%= model.get("time") %></td>
+<td><%= model.get("distance") %></td>
+<td><%= model.get("calories_burned").toFixed(0) %></td>
+<td>
+  	<a href="javascript:void(0);" data-role="remove-exercise-log" class="icon-delete"></a>
+</td>

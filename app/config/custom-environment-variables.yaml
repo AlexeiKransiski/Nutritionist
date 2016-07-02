@@ -1,0 +1,23 @@
+mongo:
+  ip: "MONGO_HOST"
+  port: "MONGO_PORT"
+  database: "MONGO_DB"
+  uri: "MONGO_URI"
+
+app:
+  baseUrl: "BASE_URL"
+  domain: "DOMAIN"
+  host: "HOST"
+  port: "PORT"
+
+stripe:
+  private_key: 'STRIPE_PRIVATE_KEY'
+  public_key: 'STRIPE_PUBLIC_KEY'
+
+sendgrid:
+  app_id: 'SENDGRID_APP_ID'
+  secret_id: 'SENDGRID_APP_SECRET_ID'
+
+emails:
+  sender: 'SENDER_EMAIL'
+  support: 'SUPPORT_EMAIL'
